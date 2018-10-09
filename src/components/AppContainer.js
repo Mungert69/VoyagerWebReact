@@ -7,7 +7,6 @@ import TripContainer from '../containers/TripContainer';
 export class AppContainer extends Component {
     displayName = "App Container";
 
-    
     render() {
         return (
             <Grid fluid>
