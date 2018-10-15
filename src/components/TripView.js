@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { HotelList } from '../components/HotelList';
-import {ItineraryView } from './ItineraryView';
+import ItineraryView  from '../containers/ItineraryView';
 import _ from 'lodash';
 
 import { FlightView } from './FlightVIew';

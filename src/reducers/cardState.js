@@ -26,6 +26,8 @@ const cardState = (state = defaultState, action) => {
     switch (action.type) {
         case ActionTypes.UPDATE_PLACE_CARDS:
             return Object.assign({}, state, { placeCards: action.payload });
+        case ActionTypes.UPDATE_PLACE_CARDS_WITH_PLACE_STATE:
+            return Object.assign({}, state, { placeCards: updatePlaceCardsWithPlaceState(state.placeCards,action.payload) });
         case ActionTypes.UPDATE_HOTEL_CARDS:
             return Object.assign({}, state, { hotelCards: action.payload });
         case ActionTypes.UPDATE_TRIP_CARDS:
@@ -49,16 +51,16 @@ const cardState = (state = defaultState, action) => {
             return Object.assign({}, state, { filteredCards: filterCards(state, state.orderBy, state.queryTxt, state.cardType) });
 
         case ActionTypes.FILTER_STYLE_CARDS:
-            return Object.assign({}, state, { filteredStyleCards: filterStyleCards(state,false, state.cardType) });
+            return Object.assign({}, state, { filteredStyleCards: filterStyleCards(state, false, state.cardType) });
 
         case ActionTypes.FILTER_STYLE_CARD:
-            return Object.assign({}, state, { filteredStyleCard: filterStyleCard(state,false, state.cardType, state.cardDetailLevel) });
+            return Object.assign({}, state, { filteredStyleCard: filterStyleCard(state, false, state.cardType, state.cardDetailLevel) });
 
         case ActionTypes.FILTER_MAPSTYLE_CARDS:
-            return Object.assign({}, state, { filteredMapStyleCards: filterStyleCards(state,true, state.cardType) });
+            return Object.assign({}, state, { filteredMapStyleCards: filterStyleCards(state, true, state.cardType) });
 
-         case ActionTypes.FILTER_MAPSTYLE_CARD:
-            return Object.assign({}, state, { filteredMapStyleCard: filterStyleCard(state,true ,state.cardType, state.cardDetailLevel) });
+        case ActionTypes.FILTER_MAPSTYLE_CARD:
+            return Object.assign({}, state, { filteredMapStyleCard: filterStyleCard(state, true, state.cardType, state.cardDetailLevel) });
 
         // Note we must also update the idividual style card with a card detail update
         case ActionTypes.SET_TRIP_CARD_DETAIL_LEVEL:
@@ -75,6 +77,17 @@ const cardState = (state = defaultState, action) => {
             return state;
     }
 };
+
+const updatePlaceCardsWithPlaceState = (placeCards,placeStates) => {
+
+    placeStates.forEach(function (item, index) {
+        placeCards[index].placeState = item;
+    }//function
+    );//forEach
+    return placeCards;
+};
+
+
 
 const filterCards = (state, orderBy, queryTxt, cardType) => {
     var orderDir = orderBy ? 'desc' : 'asc';
@@ -132,7 +145,7 @@ const filterStyleCards = (state, isMap, cardType) => {
     return cards;
 };
 
-const filterStyleCard = (state,isMap, cardType, cardDetailLevel) => {
+const filterStyleCard = (state, isMap, cardType, cardDetailLevel) => {
 
     var card = {};
     if (isMap) {

@@ -22,7 +22,8 @@ const mapDispatchToProps = dispatch => {
         
         filterMapStyleCard: () => {
             dispatch(filterMapStyleCard());
-        }
+        },
+       
     };
 };
 

@@ -1,5 +1,6 @@
 ﻿import { connect } from 'react-redux';
 import { TripView } from '../components/TripView';
+
 import {
     setTripCardDetailLevel
 } from '../actions/actions';

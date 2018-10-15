@@ -5,7 +5,6 @@ const defaultState = {
     loadingCards: false,
     loadingItinObj : false,
     itinObj: {}
-
 }; 
 
 const apiState = (state = defaultState, action) => {

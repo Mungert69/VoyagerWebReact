@@ -44,6 +44,12 @@ export function updatePlaceCards(cards) {
         payload: cards
     };
 }
+export function updatePlaceCardsWithPlaceState(placeStates) {
+    return {
+        type: ActionTypes.UPDATE_PLACE_CARDS_WITH_PLACE_STATE,
+        payload: placeStates
+    };
+}
 export function updateHotelCards(cards) {
     return {
         type: ActionTypes.UPDATE_HOTEL_CARDS,

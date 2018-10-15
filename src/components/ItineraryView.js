@@ -18,8 +18,7 @@ export class ItineraryView extends Component {
             loading: true,
             changeCard: false,
             nights: 0,
-            placeCount: 0,
-            itinObj: {}
+            placeCount: 0
         };
         this.refreshPrSelections();
 
@@ -33,13 +32,15 @@ export class ItineraryView extends Component {
     }
 
     refreshPrSelections = () => {
-        fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/')
+        /*fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/')
             .then((res) => res.text())
             .then((text) => text.length ? JSON.parse(text) : {})
             .then(data => {
                 this.setState({ itinObj: data, loading: false });
                 console.log("In  ItineraryView.refreshPrSelections value of data = " + data.prSelections);
-            });
+            });*/
+           
+            this.props.fetchStoredItinObj();
     }
 
     passBackClick() {
@@ -96,7 +97,7 @@ export class ItineraryView extends Component {
 
 
     renderPRSelections = (itinObj) => {
-
+        if (itinObj===undefined) return;
         // Only render if there are items in the itinerary.
         if (itinObj.prSelections !== undefined && itinObj.prSelections !== null && itinObj.prSelections.length) {
             return (
@@ -154,7 +155,7 @@ export class ItineraryView extends Component {
 
         let contents = this.props.loading
             ? <p><em>Loading...</em></p>
-            : this.renderPRSelections(this.state.itinObj);
+            : this.renderPRSelections(this.props.itinObj);
         return (
             <div className="Voyager_Trip_Panel">
                 <l className="Voyager_Trip_Control_Places_Total"> </l>

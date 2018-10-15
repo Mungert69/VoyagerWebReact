@@ -1,7 +1,7 @@
 ﻿import { ApiActionTypes } from './types';
 import {
     updatePlaceCards, updateHotelCards, updateTripCards, updateHotelMapStyleCards, updateHotelStyleCards,
-    updatePlaceMapStyleCards,updatePlaceStyleCards,updateTripMapStyleCards, updateTripStyleCards
+    updatePlaceMapStyleCards,updatePlaceStyleCards,updateTripMapStyleCards, updateTripStyleCards, updatePlaceCardsWithPlaceState
 
 } from './actions';
 
@@ -40,16 +40,34 @@ export function updateItinObj(itinObj) {
 }
 
 
+
+
 export function fetchPlaceCards() {
     return function (dispatch) {
         dispatch(requestCards());
         return fetch(apiBaseUrl+`api/Places/Cards/`)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchPlaceCards : ', error)
             )
             .then(data => {
                 dispatch(updatePlaceCards(data));
+                dispatch(receiveCards());
+            }
+            );
+    };
+}
+
+export function fetchPlaceStates() {
+    return function (dispatch) {
+        dispatch(requestCards());
+        return fetch(apiBaseUrl+`api/Places/PlaceStates/`)
+            .then(
+                response => response.json(),
+                error => console.log('An error occurred in  apiActions.fetchPlaceStates : ', error)
+            )
+            .then(data => {
+                dispatch(updatePlaceCardsWithPlaceState(data));
                 dispatch(receiveCards());
             }
             );
@@ -64,7 +82,7 @@ export function fetchHotelCards() {
         return fetch(apiBaseUrl+`api/Hotels/Cards/`)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchHotelCards : ', error)
             )
             .then(data => {
                 dispatch(updateHotelCards(data));
@@ -80,7 +98,7 @@ export function fetchTripCards(templateTypeID) {
         return fetch(apiBaseUrl+`api/Itinerary/Cards/` + templateTypeID)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchTripCards : ', error)
             )
             .then(data => {
                 dispatch(updateTripCards(data));
@@ -98,7 +116,7 @@ export function fetchPlaceStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Places/StyleCards/`+templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchPlaceStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updatePlaceStyleCards(data));
@@ -116,7 +134,7 @@ export function fetchHotelStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Hotels/StyleCards/` + templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchHotelStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updateHotelStyleCards(data));
@@ -132,7 +150,7 @@ export function fetchTripStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Itinerary/StyleCards/` + templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchTripStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updateTripStyleCards(data));
@@ -148,7 +166,7 @@ export function fetchPlaceMapStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Places/StyleCards/` + templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchPlaceMapStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updatePlaceMapStyleCards(data));
@@ -166,7 +184,7 @@ export function fetchHotelMapStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Hotels/StyleCards/` + templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchHotelMapStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updateHotelMapStyleCards(data));
@@ -182,7 +200,7 @@ export function fetchTripMapStyleCards(templateTypeId) {
         return fetch(apiBaseUrl+`api/Itinerary/StyleCards/` + templateTypeId)
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in  apiActions.fetchTripMapStyleCards : ', error)
             )
             .then(data => {
                 dispatch(updateTripMapStyleCards(data));
@@ -199,10 +217,29 @@ export const fetchItinObj = (cardVal) => {
         return fetch(apiBaseUrl+'api/Itinerary/ItinObj/' + cardVal.id + '/' + cardVal.typeId + '/')
             .then(
                 response => response.json(),
-                error => console.log('An error occurred.', error)
+                error => console.log('An error occurred in apiActions.fetchItinObj : ', error)
             )
             .then(data => {
                 dispatch(updateItinObj(data));
+                dispatch(receiveItinObj());
+            }
+            );
+    };
+
+};
+
+export const fetchStoredItinObj = () => {
+
+    return function (dispatch) {
+        dispatch(requestItinObj());
+        return fetch(apiBaseUrl+'api/Itinerary/StoredItinObj')
+            .then(
+                response => response.json(),
+                error => console.log('An error occurred in apiActions.fetchStoredItinObj :', error)
+            )
+            .then(data => {
+                dispatch(updateItinObj(data));
+                dispatch(updatePlaceCardsWithPlaceState(data.placeStates))
                 dispatch(receiveItinObj());
             }
             );
