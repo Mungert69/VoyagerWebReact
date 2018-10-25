@@ -1,12 +1,13 @@
 ﻿import React, { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {apiBaseUrl} from './Constants';
 export class HotelList extends Component {
 
     constructor(props) {
         super(props);
         this.state = { hotels: [], loading: true };
-        let str = 'api/Hotels/Details/' + props.placeNameId;
+        let str =apiBaseUrl+ 'api/Hotels/Details/' + props.placeNameId;
         
         // Get hotels api call
         fetch(str)
