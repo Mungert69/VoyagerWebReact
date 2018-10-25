@@ -51,7 +51,7 @@ export class ItineraryView extends Component {
 
     deleteHotel = () => {
         // Add Hotel api call
-        let str = 'api/Itinerary/DelHotel';
+        let str = apiBaseUrl+'api/Itinerary/DelHotel';
         fetch(str)
             .then(response => response.json())
             .then(result => {
@@ -65,7 +65,7 @@ export class ItineraryView extends Component {
 
     addNight = (index) => {
         // Add Hotel api call
-        let str = 'api/Itinerary/AddNight/' + index + '/';
+        let str = apiBaseUrl+'api/Itinerary/AddNight/' + index + '/';
         fetch(str)
             .then(response => response.json())
             .then(result => {
@@ -79,7 +79,7 @@ export class ItineraryView extends Component {
 
     removeNight = (index) => {
         // Add Hotel api call
-        let str = 'api/Itinerary/RemoveNight/' + index + '/';
+        let str =apiBaseUrl+ 'api/Itinerary/RemoveNight/' + index + '/';
         fetch(str)
             .then(response => response.json())
             .then(result => {
