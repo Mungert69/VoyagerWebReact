@@ -19,7 +19,7 @@ function withItinObj(WrappedComponent) {
         let str = "";
         str =
           apiBaseUrl +
-          "api/Itinerary/ItinObj/" +
+          "api/Itinerary/ViewItinObj/" +
           this.props.card.id +
           "/" +
           this.props.card.typeId +
