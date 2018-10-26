@@ -20,7 +20,7 @@ export class HotelList extends Component {
 
     addHotel = (hotelID) => {
         // Add Hotel api call
-        let str = 'api/Itinerary/AddHotel/' + this.props.placeNameId+'/'+hotelID+'/';
+        let str = apiBaseUrl+'api/Itinerary/AddHotel/' + this.props.placeNameId+'/'+hotelID+'/';
         fetch(str)
             .then(response => response.json())
             .then(result => {
