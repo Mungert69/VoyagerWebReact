@@ -2,6 +2,9 @@
 import { Carousel, Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { AccommodationRoomSpecification } from './SubComponents/AccommodationRoomSpecification';
+import { AccommodationCharacteristics } from './SubComponents/AccommodationCharacteristics';
+import { AccommodationDescription } from './SubComponents/AccommodationDescription';
 
 export class CardView extends Component {
 
@@ -110,10 +113,14 @@ export class CardView extends Component {
                             </Panel>
                         </Collapse>
                        
-                            <PerfectScrollbar className="Hide Voyager_Card_Content_Container_Panel">
+                            <PerfectScrollbar className="Voyager_Card_Content_Container_Panel">
                             <div className="Voyager_Card_Content_Container" />
                             <p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
+                            <AccommodationRoomSpecification card={this.props.card}/>                          
+                            <AccommodationCharacteristics card={this.props.card}/>
+                            <AccommodationDescription card={this.props.card}/>
+ 
+                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel2}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel3}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel4}</span>
