@@ -9,7 +9,7 @@ export class AccommodationSelfCater extends Component {
     renderHtml() {
 
         return (
-            <span>
+            <div className="Hotel_Feature_Panel" >
          
 
             {this.props.card.accommodationSelfCater.shower ? <span className="Hotel_Feature_Item_Title">shower</span> : null }<span className="Hotel_Feature_Item_Note">{this.props.card.accommodationSelfCater.showerNote}</span>
@@ -30,7 +30,7 @@ export class AccommodationSelfCater extends Component {
             {this.props.card.accommodationSelfCater.spaSauna ? <span className="Hotel_Feature_Item_Title">spa Sauna</span> : null }<span className="Hotel_Feature_Item_Note">{this.props.card.accommodationSelfCater.spaSaunaNote}</span>
             
 
-       </span>
+       </div>
         );
 
     }
