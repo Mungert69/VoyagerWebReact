@@ -5,6 +5,8 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import { AccommodationRoomSpecification } from './SubComponents/AccommodationRoomSpecification';
 import { AccommodationCharacteristics } from './SubComponents/AccommodationCharacteristics';
 import { AccommodationDescription } from './SubComponents/AccommodationDescription';
+import { AccommodationAllInclusiveFacilities } from './SubComponents/AccommodationAllInclusiveFacilities';
+import { AccommodationSelfCater } from './SubComponents/AccommodationSelfCater';
 
 export class CardView extends Component {
 
@@ -119,7 +121,8 @@ export class CardView extends Component {
                             <AccommodationRoomSpecification card={this.props.card}/>                          
                             <AccommodationCharacteristics card={this.props.card}/>
                             <AccommodationDescription card={this.props.card}/>
- 
+                            <AccommodationSelfCater card={this.props.card}></AccommodationSelfCater>
+                            <AccommodationAllInclusiveFacilities card={this.props.card}></AccommodationAllInclusiveFacilities>
                              <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel2}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel3}</span>
