@@ -2974,3 +2974,30 @@ a:hover .Voyager_Control_Stage_Number_Text {
     zoom: 1;
 }
 
+
+
+.Hotel_Feature_Panel {
+margin-left: 6px;
+margin-right: 6px;
+padding-left: 6px;
+padding-right: 6px;
+}
+
+.Hotel_Feature_Item_Title
+{
+    color: #0071bc;
+    font-size: .8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline;
+    margin-right: 4px;
+}
+
+.Hotel_Feature_Item_Note
+{
+color: #666666;
+font-size: .8em;
+font-weight: 500;
+display: inline;
+margin-right: 4px;
+}

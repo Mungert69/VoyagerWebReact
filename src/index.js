@@ -14,6 +14,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 //const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
@@ -21,10 +22,10 @@ const loggerMiddleware = createLogger()
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(
+    composeWithDevTools(applyMiddleware(
         thunkMiddleware, // lets us dispatch() functions
         loggerMiddleware // neat middleware that logs actions
-    )
+    ))
 );
 
 ReactDOM.render(
