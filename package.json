@@ -6,6 +6,7 @@
     "antd": "^3.9.3",
     "bootstrap": "^3.3.7",
     "git": "^0.1.5",
+    "install": "^0.12.2",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
