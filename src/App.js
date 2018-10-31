@@ -6,8 +6,8 @@ import { TestView } from './components/TestView';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faCircle, faHeart, faShareAlt, faMapMarkerAlt, faHome, faPlus, faMinus, faTimes, faSortAlphaDown, faSearch, faMapMarked, faMap, faAngleUp, faAngleDown, faCar, faBus, faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
-
-
+import './voyager.css';
+require('./voyager.css');
 library.add(fab, faCircle, faHeart, faShareAlt, faMapMarkerAlt, faHome, faPlus, faMinus, faTimes, faSortAlphaDown, faSearch, faMapMarked, faMap, faAngleUp, faAngleDown, faCar, faBus, faGripHorizontal);
 
 export default class App extends Component {
