@@ -44,7 +44,7 @@ export class AccommodationCharacteristics extends Component {
 
 
     render() {
-        let contents = (this.props.card.accommodationCharacteristics === undefined)
+        let contents = (this.props.card.accommodationCharacteristics === undefined || this.props.card.accommodationCharacteristics===null)
             ? null : <span>{this.renderHtml()}></span>;
       
 
