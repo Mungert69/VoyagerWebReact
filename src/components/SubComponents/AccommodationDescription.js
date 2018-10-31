@@ -18,7 +18,7 @@ export class AccommodationDescription extends Component {
 
 
     render() {
-        let contents = (this.props.card.accommodationDescription === undefined)
+        let contents = (this.props.card.accommodationDescription === undefined || this.props.card.accommodationDescription === null )
             ? null : <span>{this.renderHtml()}></span>;
       
 
