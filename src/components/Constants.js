@@ -1,1 +1,1 @@
-export const apiBaseUrl = "http://www.voyagercub:10202/";
+export const apiBaseUrl = "http://www.voyagercuba.co.uk:10202/";
