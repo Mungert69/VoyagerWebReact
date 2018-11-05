@@ -107,7 +107,7 @@ export class CardView extends Component {
                         <span className={this.props.styleCard.card1ElementTagsStyle}>{this.props.card.tags}</span>
                         <span className={this.props.styleCard.card1ElementIdStyle}>{this.props.card.Id}</span>
  
-                        <Collapse className="Show" bordered={false} defaultActiveKey={['0']} >
+                        <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
                             <Panel header={
                    
                                 <div className="Voyager_Card_Container_Trip_Details_SubPanel1">
