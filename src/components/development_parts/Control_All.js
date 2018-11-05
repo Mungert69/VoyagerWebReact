@@ -1,6 +1,5 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
@@ -68,13 +67,13 @@ export class Control_All extends Component {
                     </div>
 
                     <div key="Control_Map_StreetView" className="Show" title="">
-                        <a className="Voyager_Control_Item_A" title=""">
+                        <a className="Voyager_Control_Item_A" >
                             <i className="fas fa-street-view Voyager_Control_Icon_Size_1"></i>
                         </a>
                     </div>
 
                     <div key="Control_Map" className="Show" title="">
-                        <a className="Voyager_Control_Item_A" title=">
+                        <a className="Voyager_Control_Item_A" title="">
                             <i className="fas fa-map Voyager_Control_Icon_Size_1"></i>
                         </a>
                     </div>
@@ -253,7 +252,7 @@ export class Control_All extends Component {
 
 
                     <div className="Show" title="">
-                        <a key="Control_Country" className="Voyager_Control_Item_A" ">
+                        <a key="Control_Country" className="Voyager_Control_Item_A">
                             <i className="fas fa-globe-americas Voyager_Control_Icon_Size_2"></i>
                             <span className="Voyager_Control_Text_Size_1_Link" >cuba</span>
                         </a>
