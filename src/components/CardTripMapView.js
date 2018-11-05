@@ -41,12 +41,12 @@ export class CardTripMapView extends Component {
             <div>
                 <div>
 
-                    <span key="Card_Map_Panel_1" className="Card_Map_Panel_1">
+                    <span className="Card_Map_Panel_1">
                         <i className="fas fa-map-marker Card_Map_Logic_Icon_1"></i>
                         <span key="Card_Map_Stage" className="Show Card_Map_Stage">{this.props.index}</span>
                     </span>
 
-                    <div key="Card_Map_Panel_2" className={panel2Css}>
+                    <div  className={panel2Css}>
                         <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.title}</span></span>
                         <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.subtitle}<span key="Card_Map_Night" className="Hide"><i className="fas fa-moon Card_Map_Night_Icon"></i><span className="Card_Map_Night_Text">2</span></span></span></span>
                         <span><p className={this.props.styleCard.Card1ElementDescriptionStyle}>{cardDescription}</p></span>
@@ -57,7 +57,7 @@ export class CardTripMapView extends Component {
                     </div>
                     {carouselToggle === true ?
 
-                        <div key="Card_Map_Image_Panel" className="Card_Map_Image_Panel">
+                        <div className="Card_Map_Image_Panel">
                             <div>
                                 < Carousel autoplay dots='false' >
                                     {this.props.selection.placeCard.picFileNames.map((pic, index) =>

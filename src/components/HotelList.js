@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {apiBaseUrl} from './Constants';
 export class HotelList extends Component {
 
@@ -38,10 +36,10 @@ export class HotelList extends Component {
             <ul className="Voyager_Hotels_List">
                 {hotels.map((hotelValue) =>
                     <p className="Voyager_Hotels_List_Item" key={hotelValue.hotelID}>
-                        <FontAwesomeIcon className="Voyager_Hotels_List_Item_Icon" icon="home" />
-                        <a className="Voyager_Hotels_List_Item" onClick={() => this.addHotel(hotelValue.hotelID)} >
+                    <i className="fas fa-home Voyager_Hotels_List_Item_Icon"></i>
+                                <a className="Voyager_Hotels_List_Item" onClick={() => this.addHotel(hotelValue.hotelID)} >
                            
-                            {hotelValue.hotel + ' . ' + this.state.addResult}<FontAwesomeIcon className="Voyager_Hotels_List_Item_Nights_Add" icon="plus" />
+                            {hotelValue.hotel + ' . ' + this.state.addResult}<i className="fas fa-plus Voyager_Hotels_List_Item_Nights_Add"></i>
                         </a>
                          
                         </p>

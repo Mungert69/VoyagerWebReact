@@ -52,28 +52,42 @@ export class TripContainer extends Component {
                                
                             <div key="" className="flex-container">
                                   
-                                <div key="Control_Menu" className="Show" title="" >
+                                <div  className="Show" >
                                     <a className="Voyager_Control_Item_A AnimationRipple"  >
                                         <i className="fas fa-bars Voyager_Control_Icon_Size_2"></i>
                                     </a>
                                 </div>
-                                <div key="Control_Profile" className="Show" title="">
+                                <div className="Show" >
                                     <a className="Voyager_Control_Item_A AnimationRipple"  >
                                         <i className="fas fa-user Voyager_Control_Icon_Size_2"></i>
                                     </a>
                                 </div>
 
-                                <div key="Control_Filter" className="Show" title="">
+                                     <div className="Show">
+                        <a className="Voyager_Control_Item_A" >
+                            <i className="Voyager_Control_Icon_Layer_Stack_Small">12</i>
+                            <i className="fas fa-heart Voyager_Control_Icon_Layer_Stack_Large"></i>
+                        </a>
+                    </div>
+
+                    <div  className="Show" >
+                        <a className="Voyager_Control_Item_A" >
+                            <i className="Voyager_Control_Icon_Layer_Stack_Small">12</i>
+                            <i className="fas fa-comment Voyager_Control_Icon_Layer_Stack_Large"></i>
+                        </a>
+                    </div>
+
+                                <div className="Show" >
                                     <a className="Voyager_Control_Item_A AnimationRipple"  >
                                         <i className="fas fa-filter Voyager_Control_Icon_Size_2"></i>
                                     </a>
                                 </div>
-                                <div key="Control_Sort" className="Show" title=""  >
+                                <div  className="Show"   >
                                     <a className="Voyager_Control_Item_A AnimationRipple" >
                                         <i className="fas fa-sort Voyager_Control_Icon_Size_2"></i>
                                     </a>
                                 </div>
-                                <div key="Control_Search" className="Hide" title=""  >
+                                <div  className="Hide"  >
                                     <span><input className="Voyager_Control_Search_Text" type="text" placeholder="SEARCH" ></input>
                                         <a className="Voyager_Control_Search_Item" >
                                             <i className="far fa-search Voyager_Control_Icon_Size_2" ></i>  </a>
@@ -81,9 +95,9 @@ export class TripContainer extends Component {
                                 </div>
 
 
-                                <div key="Control_Detail_Level" className="Show" title="" >
+                                <div  className="Show" >
 
-                                    <select key="Voyager_Control_Select_Detail_Level" onChange={this.props.changeDetailLevel.bind(this)} value={this.props.cardDetailLevel} className="Voyager_Control_Select_Detail_Level">
+                                    <select  onChange={this.props.changeDetailLevel.bind(this)} value={this.props.cardDetailLevel} className="Voyager_Control_Select_Detail_Level">
                                         <option value="0" >detail low</option>
                                         <option value="1">detail medium</option>
                                         <option value="2">detail high</option>
@@ -94,25 +108,33 @@ export class TripContainer extends Component {
 
 
                         </div>
+
+
+
+
+               
+
+
+
                         <div className="Control3">
 
-                            <div key="" className="flex-container">
+                            <div  className="flex-container">
 
-                                <div key="Control_Trip" className="Show" title="">
+                                <div  className="Show" >
                                     <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('trip')}>
                                         <i className="fas fa-map-marked Voyager_Control_Icon_Size_2"></i>
                                         <span className="Voyager_Control_Text_Size_1_Link" >trip</span>
                                     </a>
                                 </div>
 
-                                <div key="Control_Places" className="Show" title="">
+                                <div  className="Show">
                                     <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('place')}>
                                         <i className="fas fa-map-marker Voyager_Control_Icon_Size_2"></i>
                                         <span className="Voyager_Control_Text_Size_1_Link" >places</span>
                                     </a>
                                 </div>
 
-                                <div key="Control_Hotels" className="Show" title="">
+                                <div className="Show" >
                                     <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('hotel')}>
                                         <i className="fas fa-home Voyager_Control_Icon_Size_2"></i>
                                         <span className="Voyager_Control_Text_Size_1_Link" >hotels</span>

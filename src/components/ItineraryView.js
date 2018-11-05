@@ -1,11 +1,8 @@
 ﻿import React, { Component } from 'react';
 import { HotelList } from '../components/HotelList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CardView } from '../components/CardView';
-import { Button } from 'antd';
-import { Carousel } from 'antd';
 import '../voyager.css';
-
+import { Select, Button } from 'antd';
 import {apiBaseUrl} from './Constants';
 
 export class ItineraryView extends Component {
@@ -129,12 +126,11 @@ export class ItineraryView extends Component {
                                     </div>
                                     <div className="Show">
 
-                                        <a className="Voyager_Trip_Control_Nights_remove" title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)} ><FontAwesomeIcon className="Voyager_Trip_Nights_Subtract" icon="angle-down" /></a>
+                                        <a className="Voyager_Trip_Control_Nights_remove" title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)} ><i className="fas fa-angle-down Voyager_Trip_Nights_Subtract"></i></a>
                                         {prSelection.nights}
-                                        <a className="Voyager_Trip_Control_Nights_add" title="ADD NIGHTS" onClick={() => this.addNight(index)} > <FontAwesomeIcon className="Voyager_Trip_Nights_Add" icon="angle-up" /></a>
-                                        <a className="Voyager_Trip_Control_Delete" title="DELETE STAGE" onClick={() => this.deleteHotel()} ><FontAwesomeIcon className="Voyager_Trip_Hotel_Remove" icon="times" /></a>
-                                        <FontAwesomeIcon className="Voyager_Trip_Transport_Icon" icon="bus" />
-
+                                        <a className="Voyager_Trip_Control_Nights_add" title="ADD NIGHTS" onClick={() => this.addNight(index)} ><i className="fas fa-angle-up Voyager_Trip_Nights_Add"></i></a>
+                                        <a className="Voyager_Trip_Control_Delete" title="DELETE STAGE" onClick={() => this.deleteHotel()} ><i className="fas fa-times Voyager_Trip_Hotel_Remove"></i></a> <i className="fas fa-bus Voyager_Trip_Transport_Icon"></i>
+                                   
                                         <p className="Voyager_Trip_Transfer" > {itinObj.transferItems[index+1]}</p>
 
                                     </div>

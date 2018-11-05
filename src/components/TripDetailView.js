@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-
-import { Carousel } from 'antd';
 import { CardView } from './CardView';
 import { TripScrollView } from './TripScrollView';
 import { TripNavView } from './TripNavView';

@@ -47,70 +47,77 @@ export class CardView extends Component {
                             <div><img className="Voyager_Card_Image_Rounded" src={url + this.props.card.picFileName} /></div>
                             <div><img className="Voyager_Card_Map" src={urlMap} /></div>
                             </Carousel>
-                            <span className="Hide">
-                       <div className="Voyager_Card_Image_Carousel_Controls">
-                        <a onClick={this.previous}><i className="fas fa-angle-left Voyager_Icon_Base_1"></i></a>
-                        <a onClick={this.map}> <i className="fas fa-map Voyager_Icon_Base_1"></i></a>
-                        <a onClick={this.next}><i className="fas fa-angle-right Voyager_Icon_Base_1"></i></a>
-                                </div>
-                            </span>
+                       
                             </div>
                         : null
                     }
                     <div>   
+                    
+                    
+                    <span className="Show">
+                       <div className="Voyager_Card_Image_Carousel_Controls">
+                        <a onClick={this.previous}><i className="fas fa-caret-left Voyager_Icon_Base_1"></i></a>
+                   
+                        <a onClick={this.next}><i className="fas fa-caret-right Voyager_Icon_Base_1"></i></a>
+                                </div>
+                            </span>
+                                           <div key="" className="Hide Card_Control_Container">
+                            <div key="Control_Save" className="Show" title="">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-heart Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div>
+                           
+                      
+                            <div className="show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-share-alt Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div>   
+                            <div className="show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-map-marker Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div>         <div className="show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-images Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div>         <div className="show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-home Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div>         <div className="show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-plus-circle Voyager_Control_Icon_Size_0"></i>
+                            </a>
+                            </div> 
+                               <div className="Show">
+                            <a className="Voyager_Control_Item_B AnimationRipple">
+                            <i className="fas fa-expand-arrows-alt Voyager_Control_Icon_Size_0"></i>   
+                            </a>
+                            </div>
+                            </div>
                         <span className={this.props.styleCard.card1ElementTitleStyle} >{this.props.card.title}</span>
-                        <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.country}</span>
-                        <span className={this.props.styleCard.card1ElementHotelFeaturesStyle}>{this.props.card.hotelFeatures}</span>
+                        <span className={this.props.styleCard.card1ElementCountryStyle}>placename - {this.props.card.country}</span>
+                        <AccommodationCharacteristics card={this.props.card}/>
+ <span className="Hide"><span className={this.props.styleCard.card1ElementHotelFeaturesStyle}>{this.props.card.hotelFeatures}</span></span>
  <span className="Hide"><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>{this.props.card.placeFeatures}</span></span>
                         <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>havana - Varadero - Sancti Spiritus - Guardalavaca - Pinar del Rio - Baracoa</span>
                         <span className={this.props.styleCard.card1ElementCategoriesStyle}>{this.props.card.categories}</span>
                         <span className={this.props.styleCard.card1ElementTagsStyle}>{this.props.card.tags}</span>
                         <span className={this.props.styleCard.card1ElementIdStyle}>{this.props.card.Id}</span>
-
-                        <Collapse className="Hide" bordered={false} defaultActiveKey={['0']} >
+ 
+                        <Collapse className="Show" bordered={false} defaultActiveKey={['0']} >
                             <Panel header={
                    
-                                <div key="" className="Voyager_Card_Container_Trip_Details_SubPanel1">
-                                <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}><i className="Hide fas fa-map-marker Voyager_Control_Icon_Size_0"></i>9 places</span>
-                                </div>
-                                <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}><i className="Hide fas fa-map-marker Voyager_Control_Icon_Size_0"></i>14 nights</span>
+                                <div className="Voyager_Card_Container_Trip_Details_SubPanel1">
+          <i className="fas fa-caret-down Voyager_Control_Icon_Expand"></i> 
                                 </div>
 
+                                } className="Voyager_Card_Container_Trip_Details AnimationRipple" showArrow={false} style={customPanelStyle}>
+xxx
 
-
-                                    <div key="Control_Save" className="Show" title="">
-                                        <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}><i className="show fas fa-plane Voyager_Control_Icon_Size_5"></i></span>
-                                    </div>
-
-
-                                    <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}><i className="Hide fas fa-map-marker Voyager_Control_Icon_Size_0"></i>ID 834543</span>
-                                </div>
-                                <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}><i className="Hide fas fa-map-marker Voyager_Control_Icon_Size_0"></i>£1245</span>
-                                </div>
-                                </div>
-
-                                } key="1" className="Voyager_Card_Container_Trip_Details AnimationRipple" showArrow={false} style={customPanelStyle}>
-
-
-                                <div key="" className="Voyager_Card_Container_Trip_Details_SubPanel2">
-                                <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>airline virgin</span>
-                                </div>
-                                <div key="Control_Save" className="Show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>airport gatwick</span>
-                                </div>
-                                </div>
-
-                                <div key="" className="Voyager_Card_Container_Trip_Details_SubPanel3">
-                                <div key="Control_Save" className="show" title="">
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>departure - wednesday 29 june 2019</span>
-                                <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>return - thursday 14 december 2019</span>
-                                </div>
-                                </div>
+                            
 
                             </Panel>
                         </Collapse>
@@ -118,12 +125,12 @@ export class CardView extends Component {
                             <PerfectScrollbar className="Voyager_Card_Content_Container_Panel">
                             <div className="Voyager_Card_Content_Container" />
                             <p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p>
-                            <AccommodationRoomSpecification card={this.props.card}/>                          
-                            <AccommodationCharacteristics card={this.props.card}/>
                             <AccommodationDescription card={this.props.card}/>
+                            <AccommodationRoomSpecification card={this.props.card}/>                          
                             <AccommodationSelfCater card={this.props.card}></AccommodationSelfCater>
                             <AccommodationAllInclusiveFacilities card={this.props.card}></AccommodationAllInclusiveFacilities>
-                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
+                            
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel2}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel3}</span>
                             <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel4}</span>
@@ -138,39 +145,22 @@ export class CardView extends Component {
                         </PerfectScrollbar>
 
                         <div className="Hide Voyager_Card_Container_Follow_User AnimationRipple">
-                        <div key="" className="Voyager_Card_Container_Follow_User_SubPanel ">
-                        <div key="Control_Save" className="Show" title="">
-                                    <a onClick=""><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>Explore {this.props.card.title} Hotels</span></a>
+                        <div className="Voyager_Card_Container_Follow_User_SubPanel ">
+                        <div className="Show" title="">
+                                    <a ><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>Explore {this.props.card.title} Hotels</span></a>
                         </div>
                         </div>
                         </div>
                         
                         <div className="Hide Voyager_Card_Container_Follow_User AnimationRipple">
-                        <div key="" className="Voyager_Card_Container_Follow_User_SubPanel ">
-                        <div key="Control_Save" className="Show" title="">
-                        <a onClick=""><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>Explore BEN19743 trips</span></a>
+                        <div  className="Voyager_Card_Container_Follow_User_SubPanel ">
+                        <div  className="Show" title="">
+                        <a ><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>Explore BEN19743 trips</span></a>
                         </div>
                         </div>
                         </div>
 
-                            <div key="" className="Hide Card_Control_Container">
-                            <div key="Control_Save" className="Show" title="">
-                            <a className="Voyager_Control_Item_B AnimationRipple" onClick="">
-                            <i className="fas fa-heart Voyager_Control_Icon_Size_0"></i>
-                            </a>
-                            </div>
-                           
-                            <div key="Control_Info" className="Show" title="">
-                            <a className="Voyager_Control_Item_B AnimationRipple" onClick="">
-                            <i className="fas fa-book-open Voyager_Control_Icon_Size_4"></i>   
-                            </a>
-                            </div>
-                            <div key="Control_Share" className="show" title="" onClick="">
-                            <a className="Voyager_Control_Item_B AnimationRipple">
-                            <i className="fas fa-share-alt Voyager_Control_Icon_Size_0"></i>
-                            </a>
-                            </div>
-                            </div>
+        
                  </div>
               </span>
             </div>

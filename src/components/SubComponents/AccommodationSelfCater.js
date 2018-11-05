@@ -11,7 +11,7 @@ export class AccommodationSelfCater extends Component {
         return (
             <div className="Hotel_Feature_Panel" >
          
-
+         <span className="Hotel_Feature_Title">self catering</span>
             {this.props.card.accommodationSelfCater.shower ? <span className="Hotel_Feature_Item_Title">shower</span> : null }<span className="Hotel_Feature_Item_Note">{this.props.card.accommodationSelfCater.showerNote}</span>
             {this.props.card.accommodationSelfCater.linenSupplied ? <span className="Hotel_Feature_Item_Title">linen Supplied</span> : null }<span className="Hotel_Feature_Item_Note">{this.props.card.accommodationSelfCater.linenSuppliedNote}</span>
             {this.props.card.accommodationSelfCater.bathRoom ? <span className="Hotel_Feature_Item_Title">Bath Room</span> : null }<span className="Hotel_Feature_Item_Note">{this.props.card.accommodationSelfCater.bathRoomNote}</span>

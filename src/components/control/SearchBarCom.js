@@ -1,5 +1,4 @@
-﻿import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import { connect} from 'react-redux';
 
 import { toggleOrderBy,setQueryTxt } from '../../actions/actions';
@@ -27,10 +26,10 @@ class _SearchBar extends React.Component {
     render() {
         return (
            <span>
-                <FontAwesomeIcon className="Show Voyager_Trip_Filter_Search" icon="search" />
+           <i className="fas fa-search Voyager_Trip_Filter_Search"></i>
                 <input type="text" placeholder="SEARCH" value={this.props.queryTxt} className="Show Voyager_Search" onChange={this.handleChange} />
-                    <a className="Show Voyager_Trip_Sort_Alpha" title="SORT ALPHABETICAL" onClick={this.props.toggleOrderBy}><FontAwesomeIcon className="Voyager_Trip_Sort_Alpha" icon="sort-alpha-down" />orderBy</a>
-                    <a className="Show Voyager_Trip_Sort_Location" title="SORT NEXT NEAREST" onClick={this.props.filterByNearest}><FontAwesomeIcon className="Voyager_Trip_Sort_Location" icon="map-marked" /></a>
+                    <a className="Show Voyager_Trip_Sort_Alpha" title="SORT ALPHABETICAL" onClick={this.props.toggleOrderBy}><i className="fas fa-sort-alpha-down Voyager_Trip_Sort_Alpha"></i>orderBy</a>
+                    <a className="Show Voyager_Trip_Sort_Location" title="SORT NEXT NEAREST" onClick={this.props.filterByNearest}><i className="fas fa-map-marked Voyager_Trip_Sort_Location"></i></a>
           </span>  
         );
     }

@@ -2,12 +2,8 @@
 import { HotelList } from '../components/HotelList';
 import ItineraryView  from '../containers/ItineraryView';
 import _ from 'lodash';
-
 import { FlightView } from './FlightVIew';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { TripScrollView } from './TripScrollView';
-
 import {apiBaseUrl} from './Constants';
 export class TripView extends Component {
 
@@ -105,16 +101,16 @@ export class TripView extends Component {
                 <FlightView changeFlight={this.state.changeFlight} />
                 <h1 className="Voyager_Title_2">PLACES & HOTELS</h1>
 
-                <FontAwesomeIcon className="Voyager_Trip_Filter_Search" icon="search" /><input placeholder="SEARCH" className="Voyager_Search" onChange={this.searchTrigger.bind(this)} />
+               <i className="fas fa-search Voyager_Trip_Filter_Search"></i> <input placeholder="SEARCH" className="Voyager_Search" onChange={this.searchTrigger.bind(this)} />
 
-                <a className="Voyager_Trip_Sort_Alpha" title="SORT ALPHABETICAL" onClick={this.changeSortOrder.bind(this)}><FontAwesomeIcon className="Voyager_Trip_Sort_Alpha" icon="sort-alpha-down" /></a>
-                <a className="Voyager_Trip_Sort_Location" title="SORT NEXT NEAREST" onClick={this.changeSortOrder.bind(this)}><FontAwesomeIcon className="Voyager_Trip_Sort_Location" icon="map-marked" /></a>
+                <a className="Voyager_Trip_Sort_Alpha" title="SORT ALPHABETICAL" onClick={this.changeSortOrder.bind(this)}><i className="fas fa-sort-alpha-down Voyager_Trip_Sort_Alpha"></i></a>
+                <a className="Voyager_Trip_Sort_Location" title="SORT NEXT NEAREST" onClick={this.changeSortOrder.bind(this)}><i className="fas fa-map-marked Voyager_Trip_Sort_Location"></i></a>
 
 
                 <ul>
                     {filteredPlaces.map((placeValue) =>
                         <p className="Voyager_Places_List" key={placeValue.placeID}>
-                            <FontAwesomeIcon className="Voyager_Places_List_Item_Icon_1" icon="map-marker-alt" />
+                        <i className="fas fa-map-marker-alt Voyager_Places_List_Item_Icon_1"></i>
                             <a className="Voyager_Places_List_Item" onClick={() => this.togglePlaceClick(placeValue.placeID)}>{placeValue.placeName}</a>
                             {this.state.togglePlace[placeValue.placeID] ?
                                 <HotelList key={placeValue.placeID} placeNameId={placeValue.placeID} changingItin={this.changingItin.bind(this)} />

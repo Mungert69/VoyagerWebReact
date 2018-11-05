@@ -2,7 +2,6 @@
 import { Link } from 'react-router-dom';
 import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './NavMenu.css';
 
 
@@ -22,14 +21,14 @@ export class NavMenu extends Component {
                     <Nav>
                         <LinkContainer to={'/tripcontainer'}>
                             <NavItem>
-                            <FontAwesomeIcon className="Voyager_Trip_Nights_Add" icon="map-marked" /> TRIPS
+                            <i className="fas fa-map-marked Voyager_Trip_Nights_Add"></i> TRIPS
                             </NavItem>
                         </LinkContainer>
                      
                  
                         <LinkContainer to={'/mapview'}>
                             <NavItem>
-                                <FontAwesomeIcon className="Voyager_Trip_Nights_Add" icon="grip-horizontal" /> Testing
+                            <i className="fas fa-grip-horizontal Voyager_Trip_Nights_Add"></i> Testing
 
                             </NavItem>
                         </LinkContainer>
