@@ -69,11 +69,11 @@ export class TripContainer extends Component {
 
              
                         <div>                         
-                        <div className="Hide"><Control_1/></div>
+                        <div className="Show"><Control_1/></div>
                         <div className="Hide"><Control_2/></div>
                         <div className="Hide"><Control_2_Place/></div>
                         <div className="Hide"><Control_2_Hotel/></div>
-                        <div className="Hide"><Control_2_1_Trip/></div>
+                        <div className="Show"><Control_2_1_Trip/></div>
                         <div className="hide"><Control_2_2_Trip/></div>
                         <div className="Hide"><Control_2_3_Trip/></div>
                         <div className="Hide"><Control_2_Info/></div>
@@ -81,7 +81,7 @@ export class TripContainer extends Component {
                         <div className="Hide"><Control_3/></div>
                         <div className="hide"><Control_3_1_Trip/></div>
                         <div className="Hide"><Control_3_2_Trip/></div>
-                        <div className="show"><Control_Filter_Hotel/></div>
+                        <div className="Hide"><Control_Filter_Hotel/></div>
                         <div className="hide"><Control_Trip_Flights/></div>
                         <div className="Hide"><Control_Trip_Dates/></div>
                         <div className="hide"><Control_Trip_Stages/></div>
@@ -150,7 +150,7 @@ export class TripContainer extends Component {
 
                         </div>
 
-                        <div className="Hide Control_3_1">
+                        <div className="Show Control_3_1">
 
                             <div  className="flex-container">
 
