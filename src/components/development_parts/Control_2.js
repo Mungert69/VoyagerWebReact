@@ -1,9 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-
 export class Control_2 extends Component {
 
     render() {

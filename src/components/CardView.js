@@ -8,6 +8,7 @@ import { AccommodationDescription } from './SubComponents/AccommodationDescripti
 import { AccommodationAllInclusiveFacilities } from './SubComponents/AccommodationAllInclusiveFacilities';
 import { AccommodationSelfCater } from './SubComponents/AccommodationSelfCater';
 
+
 export class CardView extends Component {
 
     constructor(props) {
@@ -125,6 +126,7 @@ xxx
                             <PerfectScrollbar className="Voyager_Card_Content_Container_Panel">
                             <div className="Voyager_Card_Content_Container" />
                             <p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p>
+                          
                             <AccommodationDescription card={this.props.card}/>
                             <AccommodationRoomSpecification card={this.props.card}/>                          
                             <AccommodationSelfCater card={this.props.card}></AccommodationSelfCater>

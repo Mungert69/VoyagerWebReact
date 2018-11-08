@@ -6,6 +6,25 @@ import MapView from '../containers/MapView';
 import TripDetailView from '../containers/TripDetailView';
 import NodeListView from '../containers/NodeListView';
 import  SearchBar  from './control/SearchBarCom';
+import { Control_1 } from './development_parts/Control_1';
+import { Control_2 } from './development_parts/Control_2';
+import { Control_2_1_Trip } from './development_parts/Control_2_1_Trip';
+import { Control_2_2_Trip } from './development_parts/Control_2_2_Trip';
+import { Control_2_3_Trip } from './development_parts/Control_2_3_Trip';
+import { Control_2_Place } from './development_parts/Control_2_Place';
+import { Control_2_Hotel } from './development_parts/Control_2_Hotel';
+import { Control_2_Info } from './development_parts/Control_2_Info';
+import { Control_3 } from './development_parts/Control_3';
+import { Control_3_1_Trip } from './development_parts/Control_3_1_Trip';
+import { Control_3_2_Trip } from './development_parts/Control_3_2_Trip';
+import { Control_Share } from './development_parts/Control_Share';
+import { Control_Filter_Trip } from './development_parts/Control_Filter_Trip';
+import { Control_Filter_Place } from './development_parts/Control_Filter_Place';
+import { Control_Filter_Hotel } from './development_parts/Control_Filter_Hotel';
+import { Control_Filter_Info } from './development_parts/Control_Filter_Info';
+import { Control_Trip_Flights } from './development_parts/Control_Trip_Flights';
+import { Control_Trip_Dates } from './development_parts/Control_Trip_Dates';
+import { Control_Trip_Stages } from './development_parts/Control_Trip_Stages';
 import _ from 'lodash';
 
 const itinTemplateTypeID = 1;
@@ -47,8 +66,30 @@ export class TripContainer extends Component {
         <span>
             {
                 this.props.loading ? <span>LOADING...</span> :
-                        <div> 
-                        <div className="Control1">
+
+             
+                        <div>                         
+                        <div className="Hide"><Control_1/></div>
+                        <div className="Hide"><Control_2/></div>
+                        <div className="Hide"><Control_2_Place/></div>
+                        <div className="Hide"><Control_2_Hotel/></div>
+                        <div className="Hide"><Control_2_1_Trip/></div>
+                        <div className="Show"><Control_2_2_Trip/></div>
+                        <div className="Hide"><Control_2_3_Trip/></div>
+                        <div className="Hide"><Control_2_Info/></div>
+                        <div className="Hide"><Control_Share/></div>
+                        <div className="Hide"><Control_3/></div>
+                        <div className="Show"><Control_3_1_Trip/></div>
+                        <div className="Hide"><Control_3_2_Trip/></div>
+                        <div className="Hide"><Control_Filter_Hotel/></div>
+                        <div className="Hide"><Control_Trip_Flights/></div>
+                        <div className="Hide"><Control_Trip_Dates/></div>
+                        <div className="Show"><Control_Trip_Stages/></div>
+                        
+                        
+                        
+
+                        <div className="Hide Control1">
                                
                             <div key="" className="flex-container">
                                   
@@ -109,14 +150,7 @@ export class TripContainer extends Component {
 
                         </div>
 
-
-
-
-               
-
-
-
-                        <div className="Control3">
+                        <div className="Hide Control_3_1">
 
                             <div  className="flex-container">
 
@@ -144,8 +178,26 @@ export class TripContainer extends Component {
                             </div>
                         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <span>
-                                <SearchBar />
+                         
+                    
                             {this.props.isDetailViewVisible || this.props.isTripViewVisible ? <MapView  /> : null}
 
                             {this.props.isDetailViewVisible ? <TripDetailView   /> : null}

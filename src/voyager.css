@@ -2212,66 +2212,48 @@ word-wrap:break-word;
 
 
 
+.Control_Details_Panel_Expand {
+    justify-content: space-between;
+    width: 100%;
+ margin-top:-8px;
+ border-top: 8px;
+ border-top-color: #0071bc;
+ transition: all 1s ease-out;
+ transition: all 1s ease-in;
+}
 
-.Voyager_Card_Container_Trip_Details {
-    box-shadow: 0 -5px 5px -5px  rgba(0, 0, 0, 0.9);
+
+.Control_Details_Panel_Expand:hover {
+
+
+
+}
+
+.Control_Details_Panel {
+    box-shadow: 0 -5px 8px -5px  rgba(0, 0, 0, 0.4);
     border-radius: 3px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     transition: all 0.6s ease-out;
     overflow: hidden;
-
+    margin-top:5px;
     
 }
 
-    .Voyager_Card_Container_Trip_Details:hover {
+    .Control_Details_Panel:hover {
         box-shadow: 0 -5px 5px -5px  rgba(0, 0, 0, 0.9);
         transition: all 0.6s ease-out;
     }
 
 
+    .Control_Details_Panel_Content {
+        overflow: auto;
+        height: auto;
+        max-height: 300px;
+        background-color: #fff;
+        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 2%, rgb(255,255,255) 5%, rgb(255,255,255) 99%, rgba(0,0,0,.01) 100% );
+        margin-top: 2px;
+    }
 
-
-.Voyager_Card_Container_Trip_Details_SubPanel1 {
-    justify-content: space-between;
-    width: 95%;
- margin-top:-5px;
- border-top: 8px;
- border-top-color: #0071bc;
-
-
-
-
-}
-.Voyager_Card_Container_Trip_Details_SubPanel2 {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    margin: 0 auto;
-    line-height: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    margin-bottom: 2px;
-}
-
-
-
-
-
-
-
-
-.Voyager_Card_Container_Trip_Details_SubPanel3 {
-    display: block;
-    justify-content: space-between;
-    width: 87%;
-    margin: 0 auto;
-    line-height: 10px;
-    padding-top: 2px;
-    padding-bottom: -6px;
-    margin-bottom: -10px;
-}
 
 
 
@@ -2312,8 +2294,8 @@ word-wrap:break-word;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 
@@ -2456,6 +2438,12 @@ word-wrap:break-word;
     height: 50px;
     z-index: 999;
     transition: all 0.6s ease-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 0px, rgb(255,255,255) 10px);
 }
 
@@ -2464,27 +2452,59 @@ word-wrap:break-word;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.2);
     }
 
-    .Control2 {
+    .Control_2_1 {
         background: #f2f2f2;
         position: fixed;
         left: 0;
         right: 0;
         top: 300px;
-        height: 25px;
+        height: 55px;
+        padding-top: 1px;
         z-index: 1;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.01) 0px, rgb(255,255,255) 10px);
     }
+    .Control_2_2 {
+        background: #f2f2f2;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 325px;
+        height: auto;
+        z-index: 1;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+       
+  }
+
+
 
     
-.Control3 {
+.Control_3_1 {
     background: #f2f2f2;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 50px;
+    padding-top:5px;
+    height: auto;
     z-index: 1;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.01) 0px, rgb(255,255,255) 10px);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.01) 0px, rgb(255,255,255) 5px);
 }
 
 
@@ -2530,15 +2550,6 @@ word-wrap:break-word;
 
 
 
-
-
-
-
-
-
-
-
-Voyager_Control3_Icon_Bookmark
 
     .Voyager_Icon_Base_1:hover {
         -webkit-transition: color .5s ease-out;
@@ -2674,10 +2685,12 @@ Voyager_Control3_Icon_Bookmark
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    border-radius: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     min-width: 40px;
-    min-height: 40px;
+    min-height: auto;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -2704,6 +2717,44 @@ Voyager_Control3_Icon_Bookmark
     user-select: none;
 }
 
+.Control_Item_C {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Control_Item_D {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-left: 9px;
+    padding-right: 9px;
+ 
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 
 .Voyager_Control_Icon_Size_0 {
@@ -2800,6 +2851,7 @@ a:hover .Voyager_Control_Icon_Size_5 {
     color: #9b9b9b;
     font-size: 1.4em;
     text-align: center;
+  
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
@@ -2838,9 +2890,9 @@ a:hover .Voyager_Control_Icon_Layer_Side_Small {
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
-    font-weight: 300;
-    margin-top: -5px;
-    margin-bottom: -1px;
+    font-weight: 500;
+    margin-top: -20px;
+    margin-bottom: -3px;
 }
 
 a:hover .Voyager_Control_Icon_Layer_Stack_Large {
@@ -2851,15 +2903,15 @@ a:hover .Voyager_Control_Icon_Layer_Stack_Large {
 
 .Voyager_Control_Icon_Layer_Stack_Small {
     color: #9b9b9b;
-    font-size: .8em;
+    font-size: 1em;
+    text-align: center;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
-    float: right;
-    margin-top: 4px;
-    margin-right: 1px;
-    position: absolute;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 a:hover .Voyager_Control_Icon_Layer_Stack_Small {
@@ -2867,20 +2919,21 @@ a:hover .Voyager_Control_Icon_Layer_Stack_Small {
 }
 
 .Voyager_Control_Icon_Layer_Stack_Small_Text {
-    color: #9b9b9b;
-    font-size: .8em;
+    color: #ffffff;
+    font-size: 1em;
     font-weight: 800;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
     float: right;
-    margin-top: 1px;
-    margin-right: 1px;
+    margin-top: -2px;
+    margin-right: 0px;
     position: absolute;
+    font-family: open-sans;
 }
 a:hover .Voyager_Control_Icon_Layer_Stack_Small_Text {
-    color: #0071bc;
+    color: #fff;
 }
 
 
@@ -2910,7 +2963,7 @@ a:hover .Voyager_Control_Icon_Layer_Stack_Small_Text {
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
-    font-weight: 300;
+    font-weight: 600;
     margin-top: -5px;
     margin-bottom: -1px;
     margin-left: 2px;
@@ -2935,9 +2988,9 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
 
 
 
-.Voyager_Control_Icon_Expand {
+.Control_Icon_Expand {
     color: #666666;
-    font-size: 1.4em;
+    font-size: 1.9em;
     text-align: center;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
@@ -2947,7 +3000,7 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
 
 }
 
-a:hover .Voyager_Control_Icon_Expand {
+.Control_Icon_Expand:hover {
     color: #0071bc;
 }
 
@@ -3140,4 +3193,469 @@ font-size: .8em;
 font-weight: 500;
 display: inline;
 margin-right: 4px;
+}
+
+
+
+
+            .Control_Sort_Panel {
+                margin-right: 10%;
+                margin-left: 10%;
+               
+                }
+                
+                .Control_Sort_Item {
+                margin-bottom: 6px;
+               
+                    }
+                    
+
+
+                            .Control_Sort_Item_UpDown {
+                                color: #666666;
+                                font-size: .8em;
+                                font-weight: 500;
+                               text-transform: uppercase;
+                               margin-top:4px;
+                               margin-right:4px;
+                         float: right;
+                                    }
+
+                            .Control_Sort_Item_Label {
+                        color: #666666;
+                        font-size: .8em;
+                        font-weight: 500;
+                       text-align: left;
+                       margin-left:12px;
+                       margin-right:4px;
+                       text-transform: uppercase;
+                
+                       
+                            }
+
+.Control_Filter_Panel{
+margin-right: 10%;
+margin-left: 10%;
+
+}
+
+.Control_Filter_Item{
+margin-bottom: 6px;
+
+    }
+    
+    .Control_Filter_Item_Label{
+        color: #666666;
+        font-size: .8em;
+        font-weight: 500;
+       text-align: left;
+       margin-left:12px;
+       text-transform: uppercase;
+
+       
+            }
+            
+
+.Control_Trip_Flight_Approximate_Date
+
+{
+width: 100%;
+
+
+}
+
+
+
+
+
+
+.Control_Trip_Dates_Position_outer_wrapper {
+    display: flex;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+  }
+
+  .Control_Trip_Dates_Position_center{
+    display: flex;
+  }
+  .Control_Trip_Dates_Position_left.Control_Trip_Dates_Position_inner_wrapper, .Control_Trip_Dates_Position_right.Control_Trip_Dates_Position_inner_wrapper {
+    flex: 1;
+    display: flex;
+    min-width: -webkit-min-content; /* Workaround to Chrome bug */
+  }
+  .Control_Trip_Dates_Position_right.Control_Trip_Dates_Position_inner_wrapper {
+    justify-content: flex-end;
+  }
+
+
+
+.Control_Trip_Dates_Item_Group{
+color: #666666;
+}
+
+
+.Control_Trip_Dates_Item_Group:hover{
+color: #0071bc;
+}
+
+.Control_Trip_Dates_Item_Month{
+
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.Control_Trip_Dates_Item_Year{
+
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.Control_Trip_Dates_Item_Price{
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+
+
+.Control_Position_outer_wrapper {
+    display: flex;
+  }
+
+  .Control_Position_center{
+    display: flex;
+  }
+  .Control_Position_left.Control_Position_inner_wrapper, .Control_Position_right.Control_Position_inner_wrapper {
+    flex: 1;
+    display: flex;
+    min-width: -webkit-min-content; /* Workaround to Chrome bug */
+  }
+  .Control_Position_right.Control_Position_inner_wrapper {
+    justify-content: flex-end;
+  }
+
+  .inline-block {
+  display: inline-block;
+  }
+
+  .Control_Text_Left{
+    color: #666666;
+    font-size: .8em;
+    font-weight: 500;
+    text-transform: uppercase;
+margin-right: 3px;
+-webkit-transition: color .5s ease-out;
+-moz-transition: color .5s ease-out;
+-o-transition: color .5s ease-out;
+transition: color .5s ease-out;
+  }
+  .Control_Text_Left:hover{
+    color: #0071bc;
+}
+
+  .Control_Text_Right{
+    color: #666666;
+    font-size: .8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 3px;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+.Control_Text_Right:hover{
+    color: #0071bc;
+}
+
+
+
+
+
+
+
+
+
+
+
+.Place_Name
+{
+color: #666666;
+font-size: 1em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
+letter-spacing: 3px;
+margin-top: 5px;
+}
+
+.Country_Name
+{
+color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
+letter-spacing: 2px;
+margin-top: -3px;
+}
+
+.Feature
+{
+    color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
+letter-spacing: 2px;
+margin-top: -3px;
+}
+
+
+.Trip_Date_Price
+{
+color: #666666;
+font-size: .9em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:inline-block;
+letter-spacing: 2px;
+margin-top: -3px;
+}
+
+
+
+
+.Control_Trip_Stages_Scrollbar{
+    overflow: auto;
+    height: auto;
+    max-height: 180px;
+    background-color: #fff;
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 2%, rgb(255,255,255) 5%, rgb(255,255,255) 99%, rgba(0,0,0,.01) 100% );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.Control_Trip_Stages{
+    -webkit-transition: background-color .5s ease-out;
+    -moz-transition: background-color .5s ease-out;
+    -o-transition: background-color .5s ease-out;
+    transition: background-color .5s ease-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 4px;
+    margin-right: 16px;
+    margin-left: 4px;
+    border-radius: 9px;
+}
+
+.Control_Trip_Stages:hover{
+      background-color:rgba(233, 233, 233, 0.4);  
+
+}
+
+.Control_Trip_Stages_Item_Group{
+    color: #666666;
+    }
+    
+    
+    .Control_Trip_Stages_Item_Group:hover{
+    color: #0071bc;
+
+    }
+
+
+.Control_Trip_Stages_Position_outer_wrapper {
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 2px;
+  }
+
+  .Control_Trip_Stages_Position_center{
+    display: flex;
+  }
+  .Control_Trip_Stages_Position_left.Control_Trip_Stages_Position_inner_wrapper, .Control_Trip_Stages_Position_right.Control_Trip_Stages_Position_inner_wrapper {
+    flex: 1;
+    display: flex;
+    min-width: -webkit-min-content; /* Workaround to Chrome bug */
+  }
+  .Control_Trip_Stages_Position_right.Control_Trip_Stages_Position_inner_wrapper {
+    justify-content: flex-end;
+  }
+
+
+
+  .Control_Trip_Stages_Stage_Transport_Icon{
+    float: right;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 2px;
+    margin-bottom: -20px;
+    }
+    
+    .Control_Trip_Stages_Stage_Nights_Icon{
+   
+        font-size: 1em;
+        font-weight: 600;
+        margin-top: 2px;
+        margin-bottom: -20px;
+        margin-right: 2px;
+        }
+        
+        
+    
+
+
+.Control_Trip_Stages_Stage_Detail_Icon{
+float: right;
+margin-top: -37px;
+font-size: 2.4em;
+font-weight: 600;
+color: #666666;
+}
+
+
+.Control_Trip_Stages_Stage_Detail_Icon:hover{
+    color: #0071bc;
+    }
+    
+
+
+    .Control_Trip_Stages_Stage_Icon {
+ 
+        font-size: 1.2em;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 4px;
+        margin-bottom: -20px;
+        margin-left: -2px;
+    }
+    
+    
+    .Control_Trip_Stages_Stage_Icon_Number {
+        color: #ffffff;
+        font-size: .8em;
+        font-weight: 800;
+        float: left;
+        margin-top: 1px;
+        margin-left: -11px;
+        position: absolute;
+        font-family: open-sans;
+    }
+
+    
+    .Control_Trip_Stages_Stage_PlaceName{
+      
+        font-size: 1em;
+        font-weight: 600;
+        margin-left: 6px;
+        text-transform: uppercase;
+
+    }
+
+    
+    .Control_Trip_Stages_Stage_HotelName{
+      
+        font-size: 1em;
+        font-weight: 600;
+   text-transform: uppercase;
+    }
+
+    
+    .Control_Trip_Stages_Stage_HotelFeatures{
+      
+        font-size: .9em;
+        font-weight: 600;
+   margin-right: 4px;
+   text-transform: uppercase;
+
+
+    }
+
+
+
+
+.Trip_Stages
+{
+    text-align: center;
+}
+
+
+.Trip_Stage
+{
+    display: inline-flex;
+
+
+}
+
+.Trip_Stage:hover
+{
+    color: #0071bc;
+}
+
+
+.Trip_Stage_PlaceName{
+    color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+padding-left: 4px;
+padding-right: 6px;
+}
+
+.Trip_Stage_PlaceName:hover
+{color: #0071bc;}   
+
+.Trip_Stage_Icon {
+    color: #9b9b9b;
+    font-size: 1.2em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.Trip_Stage_Icon:hover {
+    color: #0071bc;
+}
+
+.Trip_Stage_Icon_Number {
+    color: #ffffff;
+    font-size: .8em;
+    font-weight: 800;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    float: left;
+    margin-top: 1px;
+    margin-left: -11px;
+    position: absolute;
+    font-family: open-sans;
 }

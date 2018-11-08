@@ -1,7 +1,7 @@
 ﻿import { Carousel } from 'antd';
 import React, { Component } from 'react';
-import Gallery from '../components/Gallery';
-import CustomSpinner from '../components/Spinner';
+import Gallery from './Gallery';
+import CustomSpinner from './Spinner';
 
 
 export class ImageCarouselLightbox extends Component {

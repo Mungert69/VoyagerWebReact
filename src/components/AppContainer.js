@@ -11,10 +11,11 @@ test='test';
         return (
             <Grid fluid>
                 <Row>
-             
+            
+
                     <Col >
                      
-                        <TripContainer/>>
+                        <TripContainer/>
 
                     </Col>
                 </Row>
