@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { FlightView } from './FlightVIew';
 import { TripScrollView } from './TripScrollView';
 import {apiBaseUrl} from './Constants';
+import { Control_3_1_Trip } from './control/Control_3_1_Trip';
 export class TripView extends Component {
 
 
@@ -99,6 +100,9 @@ export class TripView extends Component {
                 <TripScrollView setItem={this.setItem.bind(this)} itemNumber={this.state.itemNumber} />
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                 <FlightView changeFlight={this.state.changeFlight} />
+
+                <Control_3_1_Trip/>
+
                 <h1 className="Voyager_Title_2">PLACES & HOTELS</h1>
 
                <i className="fas fa-search Voyager_Trip_Filter_Search"></i> <input placeholder="SEARCH" className="Voyager_Search" onChange={this.searchTrigger.bind(this)} />

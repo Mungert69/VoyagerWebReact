@@ -1,6 +1,8 @@
 ﻿import React, { Component } from 'react';
 import { CardView } from '../components/CardView';
 import { SearchBar } from './control/SearchBarCom';
+import { Control_2_Place } from './control/Control_2_Place';
+import { Control_2_Hotel } from './control/Control_2_Hotel';
 
 //import 'antd/dist/antd.css';
 
@@ -19,6 +21,10 @@ export class NodeListView extends Component {
     
         return (           
                 < span >
+                {this.props.cardType === 'hotel' ?
+                    <div className='Show this does not show when set to show' ><Control_2_Place/></div> : <Control_2_Hotel/>
+                }
+               
                    {
                         filteredCards.map((cardValue, index) =>
                             <span className="Voyager_Places_List" key={cardValue.id}>
