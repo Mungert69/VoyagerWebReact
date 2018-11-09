@@ -12,7 +12,7 @@ import { Control_2 } from "./control/Control_2";
 import { Control_2_Info } from "./control/Control_2_Info";
 import { Control_3 } from "./control/Control_3";
 
-import { Control_3_2_Trip } from "./control/Control_3_2_Trip";
+
 import { Control_Share } from "./control/Control_Share";
 
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
@@ -93,9 +93,7 @@ export class TripContainer extends Component {
               <Control_Share />
             </div>
 
-            <div className="Hide  where is this placed?">
-              <Control_3_2_Trip />
-            </div>
+           
 
             <div className="Hide merge this code with FlightView.js">
               <Control_Trip_Flights />

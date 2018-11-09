@@ -1,8 +1,8 @@
 ﻿import React, { Component } from 'react';
 import { CardView } from './CardView';
 import { TripScrollView } from './TripScrollView';
-import { TripNavView } from './TripNavView';
 import {apiBaseUrl} from './Constants';
+import { Control_3_2_Trip } from "./control/Control_3_2_Trip";
 
 export class TripDetailView extends Component {
 
@@ -157,7 +157,8 @@ export class TripDetailView extends Component {
                     <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
                     {this.renderTripDetailView(this.state.itinObj.prSelections, this.state.itinObj)}
-                    <TripNavView />
+                    <Control_3_2_Trip />
+           
                 </div>
 
             );//return
@@ -169,7 +170,8 @@ export class TripDetailView extends Component {
                         <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
                         {this.renderNodeDetailView()}
-                        <TripNavView />
+                         <Control_3_2_Trip />
+            
                     </div>
 
                 );//return
