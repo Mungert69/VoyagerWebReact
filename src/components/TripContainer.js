@@ -2,16 +2,14 @@ import React, { Component } from "react";
 import { Select, Button } from "antd";
 import TripListView from "../containers/TripListView";
 import TripView from "../containers/TripView";
-import {VisualView} from "./VisualView";
+import { VisualView } from "./VisualView";
 import TripDetailView from "../containers/TripDetailView";
 import NodeListView from "../containers/NodeListView";
 import SearchBar from "./control/SearchBarCom";
 import { Control_1 } from "./control/Control_1";
 
-
 import { Control_2_Info } from "./control/Control_2_Info";
 import { Control_3 } from "./control/Control_3";
-
 
 import { Control_Share } from "./control/Control_Share";
 
@@ -82,15 +80,12 @@ export class TripContainer extends Component {
 
             <Control_3 changeView={this.props.changeView} />
 
-
             <div className="Hide where is this placed?">
               <Control_2_Info />
             </div>
             <div className="Hide where is this placed?">
               <Control_Share />
             </div>
-
-           
 
             <div className="Hide merge this code with FlightView.js">
               <Control_Trip_Flights />
