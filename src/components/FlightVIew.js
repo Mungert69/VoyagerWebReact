@@ -39,7 +39,7 @@ export class FlightView extends Component {
             costCalcStatus: ''
             
         };
-        let str = apiBaseUrl+'api/Flight/GetAirlines';
+        let str = apiBaseUrl+'api/Flight/GetAirlines/'+ this.props.userId + '/';
 
         // Get airlines api call
         fetch(str)
@@ -62,7 +62,7 @@ export class FlightView extends Component {
     }
 
     initialiseComponent() {
-        let str = apiBaseUrl+'api/Flight/GetAirlines';
+        let str = apiBaseUrl+'api/Flight/GetAirlines/'+ this.props.userId + '/';
         this.setState({
             airlines: [],
             airports: [],
@@ -90,7 +90,7 @@ export class FlightView extends Component {
 
 
     handleChangeAirlines(e) {
-        let str = apiBaseUrl+'api/Flight/GetAirports/' + e.target.value;
+        let str = apiBaseUrl+'api/Flight/GetAirports/' + e.target.value + '/' + this.props.userId + '/';
         this.setState({ selectedSupplierID: e.target.value });
 
         // Get airlines api call
@@ -102,7 +102,7 @@ export class FlightView extends Component {
     }
 
     handleChangeAirports(e) {
-        let str = apiBaseUrl+'api/Flight/GetOutFlight/' + e.target.value;
+        let str = apiBaseUrl+'api/Flight/GetOutFlight/' + e.target.value + '/' + this.props.userId + '/';
         this.setState({ selectedAirport: e.target.value });
 
         // Get OutFlights api call
@@ -115,7 +115,7 @@ export class FlightView extends Component {
 
     handleChangeOutFlight(e) {
        
-        let str = apiBaseUrl+'api/Flight/GetInFlight/' + e.target.value + '/' + e.target.options[e.target.selectedIndex].text + '/';
+        let str = apiBaseUrl+'api/Flight/GetInFlight/' + e.target.value + '/' + e.target.options[e.target.selectedIndex].text +  '/' + this.props.userId + '/';
         this.setState({ selectedOutDate: e.target.options[e.target.selectedIndex].text });
         this.setState({ selectedOutFlightID: e.target.value });
 
@@ -128,7 +128,7 @@ export class FlightView extends Component {
     }
 
     handleChangeInFlight(e) {
-        let str = apiBaseUrl+'api/Flight/GetCost/' + e.target.value + '/' + e.target.options[e.target.selectedIndex].text + '/';
+        let str = apiBaseUrl+'api/Flight/GetCost/' + e.target.value + '/' + e.target.options[e.target.selectedIndex].text + '/' + this.props.userId + '/';
 
         this.setState({ selectedInDate: e.target.options[e.target.selectedIndex].text });
         this.setState({ selectedInFlightID: e.target.value });
@@ -141,7 +141,7 @@ export class FlightView extends Component {
     }
 
     checkCost = () => {
-        let str = apiBaseUrl+'api/Flight/GetCost';
+        let str = apiBaseUrl+'api/Flight/GetCost/' + this.props.userId + '/';
 
         // Get Cost api call
         fetch(str)

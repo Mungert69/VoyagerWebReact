@@ -210,11 +210,11 @@ export function fetchTripMapStyleCards(templateTypeId) {
     };
 }
 
-export const fetchItinObj = (cardVal) => {
+export const fetchItinObj = (cardVal,userId) => {
 
     return function (dispatch) {
         dispatch(requestItinObj());
-        return fetch(apiBaseUrl+'api/Itinerary/ItinObj/' + cardVal.id + '/' + cardVal.typeId + '/')
+        return fetch(apiBaseUrl+'api/Itinerary/ItinObj/'+ cardVal.id + '/' + cardVal.typeId + '/' + userId + '/' )
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in apiActions.fetchItinObj : ', error)
@@ -228,11 +228,11 @@ export const fetchItinObj = (cardVal) => {
 
 };
 
-export const fetchStoredItinObj = () => {
+export const fetchStoredItinObj = (userId) => {
 
     return function (dispatch) {
         dispatch(requestItinObj());
-        return fetch(apiBaseUrl+'api/Itinerary/StoredItinObj')
+        return fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/' + userId +'/')
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in apiActions.fetchStoredItinObj :', error)

@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
     card: state.tripViewState.card,
     stylePlaceCard: state.cardState.placeStyleCards[state.cardState.cardDetailLevel],
     styleHotelCard: state.cardState.hotelStyleCards[state.cardState.cardDetailLevel],
+    userId :  state.userState.userId
 });
 
 

@@ -1,6 +1,7 @@
 ﻿
 import { ApiActionTypes } from '../actions/types';
 
+
 const defaultState = {
     loadingCards: false,
     loadingItinObj : false,
@@ -23,6 +24,5 @@ const apiState = (state = defaultState, action) => {
             return state;
     }
 };
-
 
 export default apiState;

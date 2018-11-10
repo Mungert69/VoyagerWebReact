@@ -99,7 +99,7 @@ export class TripView extends Component {
                 <p>Trip View : </p>
                 <TripScrollView setItem={this.setItem.bind(this)} itemNumber={this.state.itemNumber} />
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
-                <FlightView changeFlight={this.state.changeFlight} />
+                <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />
 
                 <Control_3_1_Trip/>
 
@@ -117,7 +117,7 @@ export class TripView extends Component {
                         <i className="fas fa-map-marker-alt Voyager_Places_List_Item_Icon_1"></i>
                             <a className="Voyager_Places_List_Item" onClick={() => this.togglePlaceClick(placeValue.placeID)}>{placeValue.placeName}</a>
                             {this.state.togglePlace[placeValue.placeID] ?
-                                <HotelList key={placeValue.placeID} placeNameId={placeValue.placeID} changingItin={this.changingItin.bind(this)} />
+                                <HotelList key={placeValue.placeID} placeNameId={placeValue.placeID} changingItin={this.changingItin.bind(this)} userId={this.props.userId} />
                                 : null}
                         </p>
                     )//places.map //<img className="Voyager_Places_List_Image" src={"http://www.voyagercuba.co.uk:10200/Images/Images-PlacesHotels/SANTIAGOgranmaIslandViewAcrossBay2.jpg"} />

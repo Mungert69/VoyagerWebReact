@@ -94,7 +94,7 @@ export class MapView extends Component {
 
         var styleString = this.updateStyleMode();
         if (this.props.builderMode) {
-            fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/')
+            fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/'+this.props.userId + '/')
                 .then((res) => res.text())
                 .then((text) => text.length ? JSON.parse(text) : {})
                 .then(data => {

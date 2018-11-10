@@ -29,15 +29,8 @@ export class ItineraryView extends Component {
     }
 
     refreshPrSelections = () => {
-        /*fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/')
-            .then((res) => res.text())
-            .then((text) => text.length ? JSON.parse(text) : {})
-            .then(data => {
-                this.setState({ itinObj: data, loading: false });
-                console.log("In  ItineraryView.refreshPrSelections value of data = " + data.prSelections);
-            });*/
-           
-            this.props.fetchStoredItinObj();
+       
+            this.props.fetchStoredItinObj(this.props.userId);
     }
 
     passBackClick() {
@@ -48,7 +41,7 @@ export class ItineraryView extends Component {
 
     deleteHotel = () => {
         // Add Hotel api call
-        let str = apiBaseUrl+'api/Itinerary/DelHotel';
+        let str = apiBaseUrl+'api/Itinerary/DelHotel/'+ this.props.userId + '/';
         fetch(str)
             .then(response => response.json())
             .then(result => {
@@ -62,7 +55,7 @@ export class ItineraryView extends Component {
 
     addNight = (index) => {
         // Add Hotel api call
-        let str = apiBaseUrl+'api/Itinerary/AddNight/' + index + '/';
+        let str = apiBaseUrl+'api/Itinerary/AddNight/' + index + '/'+ this.props.userId + '/';
         fetch(str)
             .then(response => response.json())
             .then(result => {
@@ -76,7 +69,7 @@ export class ItineraryView extends Component {
 
     removeNight = (index) => {
         // Add Hotel api call
-        let str =apiBaseUrl+ 'api/Itinerary/RemoveNight/' + index + '/';
+        let str =apiBaseUrl+ 'api/Itinerary/RemoveNight/' + index + '/'+ this.props.userId + '/';
         fetch(str)
             .then(response => response.json())
             .then(result => {

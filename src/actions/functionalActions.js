@@ -27,9 +27,9 @@ export const setBuilderCardEvent = (cardVal, item, cardType) => {
 
 
 // Gets card from api call usnig cardVal. Sets TripViewState so TripView is visible and sets card state. 
-export const setTripCardEvent = (cardVal) => {
+export const setTripCardEvent = (cardVal,userId) => {
     return function (dispatch) {
-        dispatch(fetchItinObj(cardVal)).then(() => {         
+        dispatch(fetchItinObj(cardVal,userId)).then(() => {         
             dispatch(setTripViewState(true, false, true, false));  
             dispatch(setTripCard(cardVal));
         });

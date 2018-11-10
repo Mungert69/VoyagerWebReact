@@ -7,15 +7,16 @@ import {
 } from '../actions/apiActions';
 
 const mapStateToProps = state => ({
-  itinObj: state.apiState.itinObj,  
+  itinObj: state.apiState.itinObj, 
+  userId : state.userState.userId 
 });
 
 
 const mapDispatchToProps = dispatch => {
     return {
        
-        fetchStoredItinObj: () => {
-            dispatch(fetchStoredItinObj());
+        fetchStoredItinObj: (userId) => {
+            dispatch(fetchStoredItinObj(userId));
         }
        
     };

@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
     cards: state.cardState.filteredCards,
     cardType: state.cardState.cardType,
     item: state.tripViewState.item,
-    jumpCounter: state.tripViewState.jumpCounter
+    jumpCounter: state.tripViewState.jumpCounter,
+    userId : state.userState.userId
 });
 
 

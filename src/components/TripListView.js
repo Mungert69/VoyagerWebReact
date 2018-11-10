@@ -21,7 +21,7 @@ export class TripListView extends Component {
                         <div className="Hide why is there three components for this"><Control_2_3_Trip/></div>
         {filteredCards.map(cardValue => (
           <span>
-            <Button onClick={() => this.props.setTripCardEvent(cardValue)}>
+            <Button onClick={() => this.props.setTripCardEvent(cardValue, this.props.userId)}>
               View Trip : {cardValue.title}
             </Button>
             <p className="Voyager_Places_List" key={cardValue.id}>

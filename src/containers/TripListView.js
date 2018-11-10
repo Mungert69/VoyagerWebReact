@@ -11,15 +11,16 @@ import {
 const mapStateToProps = state => ({
     cards: state.cardState.filteredCards,
     stylePlaceCard: state.cardState.placeStyleCards[state.cardState.cardDetailLevel],
-    styleHotelCard: state.cardState.hotelStyleCards[state.cardState.cardDetailLevel]
+    styleHotelCard: state.cardState.hotelStyleCards[state.cardState.cardDetailLevel],
+    userId : state.userState.userId
 });
 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
        
-        setTripCardEvent: (cardVal) => {
-            dispatch(setTripCardEvent(cardVal));
+        setTripCardEvent: (cardVal,userId) => {
+            dispatch(setTripCardEvent(cardVal,userId));
         }
     };
 };
