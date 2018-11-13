@@ -86,9 +86,9 @@ export class Control_Menu_2_Hotel extends Component {
 
             <div className="Control_2_2">     
 
-            <span className="Hotel_Name">placename</span>
+            <span className="Hotel_Name">Hotel Name</span>
             <span className="Country_Name">country</span>
-            <span className="Feature" >place feature - place feature - place feature</span>
+            <span className="Feature" >hotel feature - hotel feature - hotel feature</span>
             <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
             <Panel header={
             <div className="Control_Details_Panel_Expand">
