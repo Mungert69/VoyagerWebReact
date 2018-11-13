@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-export class Control_Menu_Trip_3_1 extends Component {
+export class Control_Menu_3_1_Trip extends Component {
 render() {
 return (
 <div>

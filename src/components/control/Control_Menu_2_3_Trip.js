@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-export class Control_Menu_Trip_2_3 extends Component {
+export class Control_Menu_2_3_Trip extends Component {
 
     render() {
         const Panel = Collapse.Panel;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-export class Control_Menu_Trip_2_1 extends Component {
+export class Control_Menu_2_2_Trip extends Component {
 
     render() {
         const Panel = Collapse.Panel;
@@ -74,19 +74,17 @@ export class Control_Menu_Trip_2_1 extends Component {
         </div>
 
 
-
-
-
-
-
-
-                <div className="Control_2_2">
+<div className="Control_2_2">
 
 
 
                     <div class="Control_Position_outer_wrapper">
                         <div className="Control_Position_left Control_Position_inner_wrapper">
 
+                            <div className="Show" >
+                                <a className="Control_Item_C" >
+                                    <i className="fas fa-caret-left Voyager_Control_Icon_Size_2"></i>
+                                </a> </div>
                         </div>
 
                         <div className="Control_Position_center Control_Position_inner_wrapper">
@@ -94,7 +92,11 @@ export class Control_Menu_Trip_2_1 extends Component {
                         </div>
 
                         <div className="Control_Position_right Control_Position_inner_wrapper">
-    
+                            <div className="Show" >
+                                <a className="Control_Item_C" >
+                                    <i className="fas fa-caret-right Voyager_Control_Icon_Size_2"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -132,24 +134,7 @@ export class Control_Menu_Trip_2_1 extends Component {
 
                         <div className="Trip_Stages">
                         
-                        <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">1</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>
-                        <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">2</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>
-                       <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">3</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>   
-                        <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">4</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>
-                        <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">5</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>
-                       <div className="Trip_Stage">
-                        <a><i className="show fas fa-circle Trip_Stage_Icon"><l className="Trip_Stage_Icon_Number">6</l><span className="Trip_Stage_PlaceName" >placename</span></i></a>
-                        </div>
+                     <p>trip short discription</p>
                         </div>
 
             <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
@@ -168,6 +153,7 @@ export class Control_Menu_Trip_2_1 extends Component {
                    
             </div>
 </div>  
+          
         );
     }
 }

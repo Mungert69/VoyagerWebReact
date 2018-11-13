@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-export class Control_Menu_Place_2 extends Component {
+export class Control_Menu_2_Hotel extends Component {
 
     render() {
         const Panel = Collapse.Panel;
@@ -86,7 +86,7 @@ export class Control_Menu_Place_2 extends Component {
 
             <div className="Control_2_2">     
 
-            <span className="Place_Name">placename</span>
+            <span className="Hotel_Name">placename</span>
             <span className="Country_Name">country</span>
             <span className="Feature" >place feature - place feature - place feature</span>
             <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >

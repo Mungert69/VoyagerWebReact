@@ -4,9 +4,9 @@ import { ItineraryListView } from "./ItineraryListView";
 import { Button } from "antd";
 import "antd/dist/antd.css";
 import { SearchBar } from "./control/SearchBarCom";
-import { Control_Menu_Trip_2_1 } from './control/Control_Menu_Trip_2_1';
-import { Control_Menu_Trip_2_2 } from './control/Control_Menu_Trip_2_2';
-import { Control_Menu_Trip_2_3 } from './control/Control_Menu_Trip_2_3';
+import { Control_Menu_2_1_Trip } from './control/Control_Menu_2_1_Trip';
+import { Control_Menu_2_2_Trip } from './control/Control_Menu_2_2_Trip';
+import { Control_Menu_2_3_Trip } from './control/Control_Menu_2_3_Trip';
 
 const ItineraryListViewWithItinObj = withItinObj(ItineraryListView);
 
@@ -16,9 +16,9 @@ export class TripListView extends Component {
 
     return (
       <span>
-        <div className="Hide"><Control_Menu_Trip_2_1/></div>
-                        <div className="Hide why is there three components for this"><Control_Menu_Trip_2_2/></div>
-                        <div className="Hide why is there three components for this"><Control_Menu_Trip_2_3/></div>
+        <div className="Hide"><Control_Menu_2_1_Trip/></div>
+                        <div className="Hide why is there three components for this"><Control_Menu_2_2_Trip/></div>
+                        <div className="Hide why is there three components for this"><Control_Menu_2_3_Trip/></div>
         {filteredCards.map(cardValue => (
           <span>
             <Button onClick={() => this.props.setTripCardEvent(cardValue, this.props.userId)}>

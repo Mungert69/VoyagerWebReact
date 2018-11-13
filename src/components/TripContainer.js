@@ -8,7 +8,7 @@ import NodeListView from "../containers/NodeListView";
 import SearchBar from "./control/SearchBarCom";
 import { Control_Menu_1 } from "./control/Control_Menu_1";
 
-import { Control_Menu_Info_2 } from "./control/Control_Menu_Info_2";
+import { Control_Menu_2_Info } from "./control/Control_Menu_2_Info";
 import { Control_Menu_3 } from "./control/Control_Menu_3";
 
 import { Control_Share } from "./control/Control_Share";
@@ -81,7 +81,7 @@ export class TripContainer extends Component {
             <Control_Menu_3 changeView={this.props.changeView} />
 
             <div className="Hide where is this placed?">
-              <Control_Menu_Info_2 />
+              <Control_Menu_2_Info />
             </div>
             <div className="Hide where is this placed?">
               <Control_Share />
