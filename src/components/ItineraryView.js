@@ -91,7 +91,12 @@ export class ItineraryView extends Component {
         // Only render if there are items in the itinerary.
         if (itinObj.prSelections !== undefined && itinObj.prSelections !== null && itinObj.prSelections.length) {
             return (
-                <div>
+
+
+
+
+
+                <div className="Control_Trip_Stages">
                     <p className="Voyager_Trip_Transfer" > {itinObj.transferItems[0]}</p>
                     {itinObj.prSelections.map((prSelection, index) =>
                         <div key={index}>
@@ -117,6 +122,13 @@ export class ItineraryView extends Component {
                                         </div>
 
                                     </div>
+
+
+
+
+
+
+
                                     <div className="Show">
 
                                         <a className="Voyager_Trip_Control_Nights_remove" title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)} ><i className="fas fa-angle-down Voyager_Trip_Nights_Subtract"></i></a>
@@ -135,7 +147,18 @@ export class ItineraryView extends Component {
                     )}
                     <p className="Voyager_Trip_Transfer" > {itinObj.transferItems[itinObj.transferItems.length+1]}</p>
 
+
+
+
+
                 </div>
+
+
+
+
+
+
+
             );//return
         }//if
     }//renderPRSelections
@@ -152,6 +175,35 @@ export class ItineraryView extends Component {
                 <l className="Voyager_Trip_Control_Nights_Total"> </l>
 
                 {contents}
+
+<div className="Control_Trip_Stages AnimationRipple">
+<a className="Control_Trip_Stages_Item_Group ">
+<div class="Control_Trip_Stages_Position_outer_wrapper">
+<div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
+<i className="show fas fa-circle Control_Trip_Stages_Stage_Icon"><l className="Control_Trip_Stages_Stage_Icon_Number">1</l></i>
+                       
+<span className="Control_Trip_Stages_Stage_PlaceName">Havana</span>
+</div>
+
+<div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
+<span className="Control_Trip_Stages_Stage_HotelName">Palacio Marques Felipe</span>
+</div>
+</div>
+<div class="Control_Trip_Stages_Position_outer_wrapper">
+<div className="Control_Trip_Dates_Position_left Control_Trip_Stages_Position_inner_wrapper">
+<i className="show far fa-car Control_Trip_Stages_Stage_Transport_Icon"></i>
+<i className="hide far fa-bus Control_Trip_Stages_Stage_Transport_Icon"></i>
+</div>
+
+<div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
+<span className="Control_Trip_Stages_Stage_HotelFeatures">CITY CENTRE - SMALL HOTEL - HERITAGE - £££</span>
+<i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon">3</i>
+</div>
+</div>
+</a><div>
+</div>
+<a><i className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon"></i></a>
+</div>
 
             </div>
         );//return
