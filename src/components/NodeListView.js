@@ -22,7 +22,7 @@ export class NodeListView extends Component {
         return (           
                 < span >
                 {this.props.cardType === 'hotel' ?
-                    <div className='Show' ><Control_Menu_2_Place/></div> : <Control_Menu_2_Hotel/>
+                    <div className='Show' ><Control_Menu_2_Hotel/></div> : <Control_Menu_2_Place/>
                 }
                
                    {
