@@ -2,7 +2,7 @@
 import { CardView } from './CardView';
 import { TripScrollView } from './TripScrollView';
 import {apiBaseUrl} from './Constants';
-import { Control_3_2_Trip } from "./control/Control_3_2_Trip";
+import { Control_Menu_Trip_3_2 } from "./control/Control_Menu_Trip_3_2";
 
 export class TripDetailView extends Component {
 
@@ -157,7 +157,7 @@ export class TripDetailView extends Component {
                     <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
                     {this.renderTripDetailView(this.state.itinObj.prSelections, this.state.itinObj)}
-                    <Control_3_2_Trip />
+                    <Control_Menu_Trip_3_2 />
            
                 </div>
 
@@ -170,7 +170,7 @@ export class TripDetailView extends Component {
                         <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
                         {this.renderNodeDetailView()}
-                         <Control_3_2_Trip />
+                         <Control_Menu_Trip_3_2 />
             
                     </div>
 

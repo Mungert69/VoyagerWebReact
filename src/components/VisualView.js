@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MapView from '../containers/MapView';
-import { Control_2 } from "./control/Control_2";
+import { Control_Menu_2 } from "./control/Control_Menu_2";
 
 export class VisualView extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export class VisualView extends React.Component {
     return <span >
 
         <MapView/>
-        <Control_2 />
+        <Control_Menu_2 />
     </span>
     ;
   }

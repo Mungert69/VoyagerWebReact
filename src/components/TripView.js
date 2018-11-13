@@ -5,7 +5,7 @@ import _ from 'lodash';
 import { FlightView } from './FlightVIew';
 import { TripScrollView } from './TripScrollView';
 import {apiBaseUrl} from './Constants';
-import { Control_3_1_Trip } from './control/Control_3_1_Trip';
+import { Control_Menu_Trip_3_1 } from './control/Control_Menu_Trip_3_1';
 export class TripView extends Component {
 
 
@@ -101,7 +101,7 @@ export class TripView extends Component {
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                 <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />
 
-                <Control_3_1_Trip/>
+                <Control_Menu_Trip_3_1/>
 
                 <h1 className="Voyager_Title_2">PLACES & HOTELS</h1>
 

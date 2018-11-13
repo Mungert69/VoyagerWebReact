@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export class Control_2 extends Component {
+export class Control_Menu_2 extends Component {
 
     render() {
         return (

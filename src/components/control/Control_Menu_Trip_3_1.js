@@ -1,20 +1,10 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-
-
-export class Control_3_1_Trip extends Component {
-
-    render() {
-        return (
-
-
-
-            <div>
-
-
-
-                        <div className="Control_3_1">
+export class Control_Menu_Trip_3_1 extends Component {
+render() {
+return (
+<div>
+<div className="Control_3_1">
 
 <div  className="flex-container">
 <div className="Show" >
@@ -64,16 +54,10 @@ export class Control_3_1_Trip extends Component {
             <span className="Voyager_Control_Text_Size_1_Link" >update</span>
         </a>
     </div>
-
-
-  
 </div>
 
 
-
-
 <div>
-
 <div  className="flex-container">
 <div  className="Show" >
         <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('allTrips')}>
@@ -124,27 +108,8 @@ export class Control_3_1_Trip extends Component {
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-        );
+</div>
+ 
+ );
     }
 }

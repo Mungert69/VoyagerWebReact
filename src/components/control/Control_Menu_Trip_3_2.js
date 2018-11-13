@@ -1,38 +1,16 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+export class Control_Menu_Trip_3_2 extends Component {
+
+render() {
+return (
 
 
+<div>
 
-export class Control_3_2_Trip extends Component {
+<div className="Control_3_1">
 
-    render() {
-        return (
-
-
-
-            <div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div className="Control_3_1">
-
-
-
-
-
-
-                <div key="" className="flex-container">
+ <div key="" className="flex-container">
 
 <div className="Show">
     <a key="Control_Trip_Stage" className="Voyager_Control_Item_A" >
@@ -130,20 +108,9 @@ export class Control_3_2_Trip extends Component {
         </a>
     </div>
 
-
-   
 </div>
-
-
-
-
-
-
 </div>
-            </div>
-
-
-
+</div>
 
         );
     }
