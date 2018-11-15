@@ -4,8 +4,8 @@ import { Control_Item_Trip_Hotel_Modify } from './Control_Item/Control_Item_Trip
 import { Control_Item_Trip_Nights_Modify } from './Control_Item/Control_Item_Trip_Nights_Modify';
 import { Control_Item_Trip_Transport_Modify } from './Control_Item/Control_Item_Trip_Transport_Modify';
 
-import { Control_Item_Trip_Place_Add } from './Control_Item/Control_Item_Trip_Place_Add';
-import { Control_Item_Trip_Place_Remove } from './Control_Item/Control_Item_Trip_Place_Remove';
+import { Control_Item_Trip_Stage_Add } from './Control_Item/Control_Item_Trip_Stage_Add';
+import { Control_Item_Trip_Stage_Remove } from './Control_Item/Control_Item_Trip_Stage_Remove';
 import { Control_Item_Trip_Update } from './Control_Item/Control_Item_Trip_Update';
 
 
@@ -28,6 +28,9 @@ import { Control_Item_Message } from './Control_Item/Control_Item_Message';
 import { Control_Item_Update } from './Control_Item/Control_Item_Update';
 import { Control_Item_Close } from './Control_Item/Control_Item_Close';
 
+
+import { Control_Item_Trip_Stage_Numbers } from './Control_Item/Control_Item_Trip_Stage_Numbers';
+
 export class Control_Menu_3_Modular extends Component {
   render() {
     return (
@@ -39,8 +42,8 @@ export class Control_Menu_3_Modular extends Component {
           <Control_Item_Trip_Nights_Modify/>
           <Control_Item_Trip_Transport_Modify/>
 
-          <Control_Item_Trip_Place_Add/>
-          <Control_Item_Trip_Place_Remove/>
+          <Control_Item_Trip_Stage_Add/>
+          <Control_Item_Trip_Stage_Remove/>
           <Control_Item_Trip_Update/>
           </div>
 
@@ -64,6 +67,15 @@ export class Control_Menu_3_Modular extends Component {
           <Control_Item_Close/>
 
           </div>
+         
+     
+          
+          <Control_Item_Trip_Stage_Numbers/>
+
+
+     
+
+
         </div>
       </div>
     );
