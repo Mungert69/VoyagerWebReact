@@ -74,7 +74,7 @@ export class Control_Item_Trip_Stage_Control extends Component {
 
 <div  className="flex-container">
 <div  className="Show" >
-        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('country')}>
+        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('country')} title="information">
             <i className="fas fa-book-open Voyager_Control_Icon_Size_2"></i>
 
         </a>
@@ -83,14 +83,14 @@ export class Control_Item_Trip_Stage_Control extends Component {
 
 
     <div  className="Show">
-        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('place')}>
+        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('place')} title="place">
             <i className="fas fa-map-marker Voyager_Control_Icon_Size_2"></i>
 
         </a>
     </div>
 
     <div className="Show" >
-        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('hotel')}>
+        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('hotel')} title="hotel">
             <i className="fas fa-home Voyager_Control_Icon_Size_2"></i>
 
         </a>
@@ -98,7 +98,7 @@ export class Control_Item_Trip_Stage_Control extends Component {
 
 
     <div className="Show" >
-        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('hotel')}>
+        <a className="Voyager_Control_Item_A" onClick={() => this.props.changeView('hotel')} title="transport">
             <i className="fas fa-bus Voyager_Control_Icon_Size_2"></i>
 
         </a>
