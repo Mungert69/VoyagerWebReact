@@ -2717,6 +2717,55 @@ word-wrap:break-word;
     user-select: none;
 }
 
+
+
+
+
+
+
+
+.Control_Item_A {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-width: 40px;
+    min-height: auto;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Control_Item_B {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+    border-radius: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+
+
+
+
 .Control_Item_C {
     display: inline-block;
     flex-direction: column;
@@ -2755,6 +2804,293 @@ word-wrap:break-word;
     -ms-user-select: none;
     user-select: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Control_Icon_Size_0 {
+    color: #efeded;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+
+a:hover .Control_Icon_Size_0 {
+    color: #9b9b9b;
+}
+
+
+.Control_Icon_Size_1 {
+    color: #9b9b9b;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+a:hover .Control_Icon_Size_1 {
+    color: #0071bc;
+}
+
+
+
+.Control_Icon_Size_2 {
+    color: #9b9b9b;
+    font-size: 1.4em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+a:hover .Control_Icon_Size_2 {
+    color: #0071bc;
+}
+
+
+.Control_Icon_Size_3 {
+    color: #9b9b9b;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+
+a:hover .Control_Icon_Size_3 {
+    color: #9b9b9b;
+}
+
+.Control_Icon_Size_4 {
+    color: #b7b7b7;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+
+a:hover .Control_Icon_Size_4 {
+    color: #666;
+}
+
+.Control_Icon_Size_5 {
+    color: #b7b7b7;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    margin-top: -4px;
+    margin-left: -4px;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+
+a:hover .Control_Icon_Size_5 {
+    color: #666;
+}
+
+
+.Control_Icon_Layer_Side_Large {
+    color: #9b9b9b;
+    font-size: 1.4em;
+    text-align: center;
+  
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+}
+a:hover .Control_Icon_Layer_Side_Large {
+    color: #0071bc;
+}
+
+
+
+.Control_Icon_Layer_Side_Small {
+    color: #9b9b9b;
+    font-size: 1em;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    float: right;
+    margin-top: -10px;
+    margin-left: 16px;
+    position: absolute;
+}
+a:hover .Control_Icon_Layer_Side_Small {
+    color: #0071bc;
+}
+
+
+
+
+.Control_Icon_Layer_Stack_Large {
+    color: #9b9b9b;
+    font-size: 2em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    font-weight: 500;
+    margin-top: -20px;
+    margin-bottom: -3px;
+}
+
+a:hover .Control_Icon_Layer_Stack_Large {
+    color: #0071bc;
+}
+
+
+
+.Control_Icon_Layer_Stack_Small {
+    color: #9b9b9b;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+a:hover .Control_Icon_Layer_Stack_Small {
+    color: #0071bc;
+}
+
+.Control_Icon_Layer_Stack_Small_Text {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 800;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    float: right;
+    margin-top: -2px;
+    margin-right: 0px;
+    position: absolute;
+    font-family: open-sans;
+}
+a:hover .Control_Icon_Layer_Stack_Small_Text {
+    color: #fff;
+}
+
+
+.Control_Icon_Layer_Stack_Inline_Label_Text {
+    color: #9b9b9b;
+    font-size: 1.2em;
+    font-weight: 600;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    float: left;
+    margin-top: -3px;
+    margin-right: 1px;
+    margin-left: 25px;
+    position: absolute;
+}
+
+
+
+
+.Control_Icon_Layer_Sidebyside {
+    color: #9b9b9b;
+    font-size: 1.5em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    font-weight: 600;
+    margin-top: -5px;
+    margin-bottom: -1px;
+    margin-left: 2px;
+}
+a:hover .Control_Icon_Layer_Sidebyside {
+    color: #0071bc;
+}
+
+
+
+.Control_Icon_Divider {
+    color: #efeded;
+    font-size: 1em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .Voyager_Control_Icon_Size_0 {
@@ -3052,6 +3388,70 @@ a:hover .Voyager_Control_Text_Size_1_Link {
     margin-top: -2px;
     margin-bottom: -2px;
 }
+
+
+
+
+
+
+
+
+
+.Control_Text_Size_1_Link {
+    text-align: center;
+    font-size: .8em;
+    color: #9b9b9b;
+    text-transform: uppercase;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    margin-top: 1px;
+}
+a:hover .Control_Text_Size_1_Link {
+    color: #0071bc;
+}
+
+.Control_Text_Size_2 {
+    color: #9b9b9b;
+    font-size: 1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+
+.Control_Text_Size_3 {
+    color: #9b9b9b;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+.Control_Text_Size_4 {
+    color: #9b9b9b;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+
+
+
+
+
+
 
 
 .Voyager_Control_Stage_Number_Text {
@@ -3670,4 +4070,29 @@ padding-right: 6px;
     margin-left: -11px;
     position: absolute;
     font-family: open-sans;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Control_Item_A
+{
+
 }

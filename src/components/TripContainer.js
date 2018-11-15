@@ -6,11 +6,14 @@ import { VisualView } from "./VisualView";
 import TripDetailView from "../containers/TripDetailView";
 import NodeListView from "../containers/NodeListView";
 import SearchBar from "./control/SearchBarCom";
+import { Control_Menu_1_Modular } from "./control/Control_Menu_1_Modular";
 import { Control_Menu_1 } from "./control/Control_Menu_1";
 
-import { Control_Menu_2_Info } from "./control/Control_Menu_2_Info";
-import { Control_Menu_3 } from "./control/Control_Menu_3";
 
+
+import { Control_Menu_2_1_Trip } from "./control/Control_Menu_2_1_Trip";
+import { Control_Menu_3 } from "./control/Control_Menu_3";
+import { Control_Menu_3_Modular } from "./control/Control_Menu_3_Modular";
 import { Control_Share } from "./control/Control_Share";
 
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
@@ -55,11 +58,13 @@ export class TripContainer extends Component {
           <span>LOADING...</span>
         ) : (
           <div>
-            <Control_Menu_1
+
+           <Control_Menu_1_Modular />
+            <div className="Hide"><Control_Menu_1
               changeView={this.props.changeView}
               changeDetailLevel={this.props.changeDetailLevel}
               cardDetailLevel={this.props.cardDetailLevel}
-            />
+            /></div>
 
             {this.props.isDetailViewVisible || this.props.isTripViewVisible ? (
               <VisualView />
@@ -80,8 +85,12 @@ export class TripContainer extends Component {
 
             <Control_Menu_3 changeView={this.props.changeView} />
 
-            <div className="Hide where is this placed?">
-              <Control_Menu_2_Info />
+
+              <Control_Menu_3_Modular />
+
+
+            <div className="">
+              <Control_Menu_2_1_Trip />
             </div>
             <div className="Hide where is this placed?">
               <Control_Share />
