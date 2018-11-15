@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-export class Control_Item_Trip_Places_Total extends Component {
+export class Control_Item_Trip_Stage_Total extends Component {
   render() {
     return (
       <div className="show" >
