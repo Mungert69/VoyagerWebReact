@@ -29,7 +29,7 @@ import { Control_Item_Update } from './Control_Item/Control_Item_Update';
 import { Control_Item_Close } from './Control_Item/Control_Item_Close';
 
 
-import { Control_Item_Trip_Stage_Numbers } from './Control_Item/Control_Item_Trip_Stage_Numbers';
+import { Control_Item_Trip_Stage_Control } from './Control_Item/Control_Item_Trip_Stage_Control';
 
 export class Control_Menu_3_Modular extends Component {
   render() {
@@ -66,16 +66,11 @@ export class Control_Menu_3_Modular extends Component {
           <Control_Item_Update/>
           <Control_Item_Close/>
 
+          <Control_Item_Trip_Stage_Control/>
+
           </div>
          
      
-          
-          <Control_Item_Trip_Stage_Numbers/>
-
-
-     
-
-
         </div>
       </div>
     );
