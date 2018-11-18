@@ -50,7 +50,7 @@ const Hotel_Filter_Type = [
               );
 
            
-export class Control_Filter_Hotel extends Component {
+export class Control_Filter_Sort_Hotel extends Component {
 
     render() {
         return (
@@ -78,8 +78,8 @@ export class Control_Filter_Hotel extends Component {
                      
                             <span className="Control_Sort_Item_UpDown" >
                             <span className="Control_Sort_Item_Label">ascending or descending</span>
-                                   <a ><i className="fas fa-caret-up Voyager_Control_Icon_Layer_Sidebyside"></i>   </a>
-                                   <a ><i className="fas fa-caret-down Voyager_Control_Icon_Layer_Sidebyside"></i>   </a>
+                                   <a ><i className="fas fa-caret-up Control_Icon_Layer_Sidebyside"></i>   </a>
+                                   <a ><i className="fas fa-caret-down Control_Icon_Layer_Sidebyside"></i>   </a>
                             </span>
                           
                      
