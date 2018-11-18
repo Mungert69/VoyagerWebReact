@@ -59,12 +59,10 @@ export class TripContainer extends Component {
         ) : (
           <div>
 
-           <Control_Menu_1_Modular />
-            <div className="Hide"><Control_Menu_1
-              changeView={this.props.changeView}
+           <Control_Menu_1_Modular  changeView={this.props.changeView}
               changeDetailLevel={this.props.changeDetailLevel}
-              cardDetailLevel={this.props.cardDetailLevel}
-            /></div>
+              cardDetailLevel={this.props.cardDetailLevel}/>
+           
 
             {this.props.isDetailViewVisible || this.props.isTripViewVisible ? (
               <VisualView />
@@ -84,15 +82,13 @@ export class TripContainer extends Component {
             {this.props.isTripViewVisible ? <TripView /> : null}
           
 
-            <Control_Menu_3 changeView={this.props.changeView} />
+           
 
 
-              <Control_Menu_3_Modular />
+              <Control_Menu_3_Modular changeView={this.props.changeView}/>
 
 
-            <div className="">
-              <Control_Menu_2_1_Trip />
-            </div>
+           
             <div className="Hide where is this placed?">
               <Control_Share />
             </div>

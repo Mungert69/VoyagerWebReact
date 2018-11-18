@@ -50,9 +50,9 @@ export class Control_Menu_3_Modular extends Component {
           <div className="flex-container">
           
           <Control_Item_Countrys/>
-          <Control_Item_Trips/>
-          <Control_Item_Places/>
-          <Control_Item_Hotels/>
+          <Control_Item_Trips changeView={ this.props.changeView}/>
+          <Control_Item_Places changeView={ this.props.changeView}/>
+          <Control_Item_Hotels changeView={ this.props.changeView}/>
           <Control_Item_Info/>
           <Control_Item_Profiles/>
 
