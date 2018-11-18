@@ -11,8 +11,8 @@ import {
 const mapStateToProps = state => ({
     cards: state.cardState.filteredCards,
     cardType: state.cardState.cardType,
-    stylePlaceCard: state.cardState.placeStyleCards[state.cardState.cardDetailLevel],
-    styleHotelCard: state.cardState.hotelStyleCards[state.cardState.cardDetailLevel]
+    stylePlaceCards: state.cardState.placeStyleCards,
+    styleHotelCards: state.cardState.hotelStyleCards
 });
 
 const mapDispatchToProps = dispatch => {

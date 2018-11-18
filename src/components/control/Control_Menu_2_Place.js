@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { CardView } from '../CardView';
 export class Control_Menu_2_Place extends Component {
 
     render() {
@@ -10,6 +11,7 @@ export class Control_Menu_2_Place extends Component {
         const customPanelStyle = {
 
         };
+        if (this.props.card==undefined) return null;
         return (
             <div>
              <div className="Control_2_1">                 
@@ -86,7 +88,7 @@ export class Control_Menu_2_Place extends Component {
 
             <div className="Control_2_2">     
 
-            <span className="Place_Name">placename</span>
+            <span className="Place_Name">{this.props.card.title}</span>
             <span className="Country_Name">country</span>
             <span className="Feature" >place feature - place feature - place feature</span>
             <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
@@ -97,7 +99,7 @@ export class Control_Menu_2_Place extends Component {
             } className="Control_Details_Panel AnimationRipple" showArrow={false} style={customPanelStyle}>
           
           <PerfectScrollbar className="Control_Details_Panel_Content">
-          <img className="Voyager_Card_Image_Rounded" src="http://www.voyagercuba.co.uk/Images/Detail_Hotel.png" />
+          <CardView styleCard={this.props.styleCard}  card={this.props.card} />
           </PerfectScrollbar>
     
             </Panel>

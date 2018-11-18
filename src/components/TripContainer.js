@@ -77,6 +77,7 @@ export class TripContainer extends Component {
             ) : null}
 
             {this.props.isTripViewVisible ? <TripView /> : null}
+          
 
             <Control_Menu_3 changeView={this.props.changeView} />
 
