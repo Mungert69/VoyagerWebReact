@@ -1,10 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
+import Slider, { Range } from 'rc-slider';
+import Tooltip from 'rc-tooltip';
+import 'rc-tooltip/assets/bootstrap.css';
+import 'rc-slider/assets/index.css';
 import makeAnimated from 'react-select/lib/animated';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+const marks = {
+  20: {
+    label: <i className="fas fa-star Control_Icon_Size_1"></i>,
+  },
+  40: {
+    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i></i>,
+  },
+  60: {
+    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
+  },
+  80: {
+    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
+  },
+  100: {
+    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
+  },
+};
 
- const Hotel_Sort = [
+function log(value) {
+  console.log(value); //eslint-disable-line
+}
+const Hotel_Sort = [
                 { value: 'Hotel Name', label: 'Hotel Name' },
                 { value: 'Hotel Rating', label: 'Hotel Rating' },
                 { value: 'Hotel Location ', label: 'Hotel Location' }
@@ -30,9 +54,9 @@ const Hotel_Filter_Type = [
                 justifyContent: 'space-between',
               };
               const groupBadgeStyles = {
-                backgroundColor: '#EBECF0',
+                backgroundColor: '#F5F5F5',
                 borderRadius: '2em',
-                color: '#172B4D',
+                color: '#0071bc',
                 display: 'inline-block',
                 fontSize: 12,
                 fontWeight: 'normal',
@@ -73,6 +97,16 @@ export class Control_Filter_Sort_Hotel extends Component {
     components={makeAnimated()}
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 
                      
@@ -92,7 +126,12 @@ export class Control_Filter_Sort_Hotel extends Component {
 
  <div className="Control_Filter_Panel" > 
 
-
+  <div className="Control_Filter_Item">
+<span className="Control_Filter_Item_Label_Centre">3 - 4 HOTEL RATING</span>
+<div className="Control_Filter_Item_Slider">
+      <Slider.Range min={20} marks={marks} step={20} onChange={log} defaultValue={[40, 80]} allowCross={false} pushable={true}  railStyle={{ backgroundColor: '#d1d1d1' }} trackStyle={[{ backgroundColor: '#0071bc' }]} />
+ 
+  </div> </div>
 
   <div className="Control_Filter_Item">
   <span className="Control_Filter_Item_Label">FILTER by HOTEL FEATURES</span>
@@ -109,6 +148,16 @@ export class Control_Filter_Sort_Hotel extends Component {
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
     isMulti
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
 
@@ -128,6 +177,16 @@ export class Control_Filter_Sort_Hotel extends Component {
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
     isMulti
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
 </div>

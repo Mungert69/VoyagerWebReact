@@ -9,7 +9,7 @@ import SearchBar from "./control/SearchBarCom";
 import { Control_Menu_1_Modular } from "./control/Control_Menu_1_Modular";
 import { Control_Menu_1 } from "./control/Control_Menu_1";
 
-
+import { Control_Filter_Sort_Hotel } from "./control/Control_Filter_Sort_Hotel";
 
 import { Control_Menu_2_1_Trip } from "./control/Control_Menu_2_1_Trip";
 import { Control_Menu_3 } from "./control/Control_Menu_3";
@@ -92,8 +92,8 @@ export class TripContainer extends Component {
             <div className="">
               <Control_Menu_2_1_Trip />
             </div>
-            <div className="Hide where is this placed?">
-              <Control_Share />
+            <div className="Show">
+              <Control_Filter_Sort_Hotel />
             </div>
 
             <div className="Hide merge this code with FlightView.js">

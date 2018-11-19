@@ -28,6 +28,13 @@ import { Control_Item_Message } from './Control_Item/Control_Item_Message';
 import { Control_Item_Update } from './Control_Item/Control_Item_Update';
 import { Control_Item_Close } from './Control_Item/Control_Item_Close';
 
+import { Control_Item_Message_Cancel } from './Control_Item/Control_Item_Message_Cancel';
+import { Control_Item_Message_Attach } from './Control_Item/Control_Item_Message_Attach';
+import { Control_Item_Message_Send } from './Control_Item/Control_Item_Message_Send';
+import { Control_Item_Message_Call } from './Control_Item/Control_Item_Message_Call';
+import { Control_Item_Message_Attach_Finish } from './Control_Item/Control_Item_Message_Attach_Finish';
+
+import { Control_Item_Notification_ClearAll } from './Control_Item/Control_Item_Notification_ClearAll';
 
 import { Control_Item_Trip_Stage_Control } from './Control_Item/Control_Item_Trip_Stage_Control';
 
@@ -45,7 +52,16 @@ export class Control_Menu_3_Modular extends Component {
           <Control_Item_Trip_Stage_Add/>
           <Control_Item_Trip_Stage_Remove/>
           <Control_Item_Trip_Update/>
+
+          <Control_Item_Message_Cancel/>
+          <Control_Item_Message_Attach/>
+          <Control_Item_Message_Send/>
+          <Control_Item_Message_Call/>
+          <Control_Item_Message_Attach_Finish/>
+
+          <Control_Item_Notification_ClearAll/>
           </div>
+
 
           <div className="flex-container">
           

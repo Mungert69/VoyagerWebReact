@@ -3655,6 +3655,24 @@ margin-bottom: 6px;
        
             }
             
+            .Control_Filter_Item_Label_Centre{
+                color: #666;
+                font-size: 1em;
+                font-weight: 500;
+                display:block;
+             text-align: center;
+               text-transform: uppercase;
+               margin-bottom: -15px;
+                    }
+                    
+
+.Control_Filter_Item_Slider{
+margin-top: 15px;
+margin-bottom: 25px;
+margin-left:10%;
+margin-right:10%;
+    }
+
 
 .Control_Trip_Flight_Approximate_Date
 
