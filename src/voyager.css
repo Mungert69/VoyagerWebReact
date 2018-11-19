@@ -3340,6 +3340,7 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
     color: #0071bc;
 }
 
+
 .Voyager_Control_Text_Size_1_Link {
     text-align: center;
     font-size: .8em;
@@ -3392,6 +3393,24 @@ a:hover .Voyager_Control_Text_Size_1_Link {
 
 
 
+
+.Control_Text_Size_1_Link_Count {
+    text-align: center;
+    font-size: .8em;
+    color: #9b9b9b;
+    text-transform: uppercase;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    margin-top: 0px;
+    margin-left: 2px;
+    float: right;
+    font-weight: 700;
+}
+a:hover .Control_Text_Size_1_Link_Count {
+    color: #0071bc;
+}
 
 
 
