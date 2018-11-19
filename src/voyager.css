@@ -2445,6 +2445,12 @@ word-wrap:break-word;
     -ms-user-select: none;
     user-select: none;
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 0px, rgb(255,255,255) 10px);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
     .Control1:hover {
@@ -2457,8 +2463,8 @@ word-wrap:break-word;
         position: fixed;
         left: 0;
         right: 0;
-        top: 300px;
-        height: 55px;
+        top: 500px;
+        height: 600px;
         padding-top: 1px;
         z-index: 1;
         -webkit-touch-callout: none;
@@ -2468,14 +2474,21 @@ word-wrap:break-word;
         -ms-user-select: none;
         user-select: none;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.01) 0px, rgb(255,255,255) 10px);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     .Control_2_2 {
         background: #f2f2f2;
         position: fixed;
         left: 0;
         right: 0;
-        top: 325px;
-        height: auto;
+        top: 505px;
+        height: 600px;
+
         z-index: 1;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -3814,14 +3827,24 @@ transition: color .5s ease-out;
 
 
 
-
+.Trip_Name
+{
+color: purple;
+font-size: 1em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
+letter-spacing: 3px;
+margin-top: 5px;
+}
 
 
 
 
 .Place_Name
 {
-color: #666666;
+color: green;
 font-size: 1em;
 font-weight: 500;
 text-transform: uppercase;
@@ -3834,7 +3857,7 @@ margin-top: 5px;
 
 .Hotel_Name
 {
-color: #666666;
+color: red;
 font-size: 1em;
 font-weight: 500;
 text-transform: uppercase;
@@ -3855,23 +3878,10 @@ letter-spacing: 2px;
 margin-top: -3px;
 }
 
-.Feature
+.Place_Feature
 {
     color: #666666;
 font-size: .8em;
-font-weight: 500;
-text-transform: uppercase;
-text-align: center;
-display:block;
-letter-spacing: 2px;
-margin-top: -3px;
-}
-
-
-.Trip_Date_Price
-{
-color: #666666;
-font-size: .9em;
 font-weight: 500;
 text-transform: uppercase;
 text-align: center;
@@ -3880,8 +3890,62 @@ letter-spacing: 2px;
 margin-top: -3px;
 }
 
+.Hotel_Feature
+{
+    color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:inline-block;
+letter-spacing: 2px;
+margin-top: -3px;
+}
 
+.Hotel_Place_Country_Name_Panel
+{
+    color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
 
+}
+.Hotel_Place_Country_Name
+{
+    color: #666666;
+font-size: .8em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:inline-block;
+
+}
+.Trip_Date_Price
+{
+color: #666666;
+font-size: .9em;
+font-weight: 500;
+text-transform: uppercase;
+text-align: center;
+display:block;
+letter-spacing: 2px;
+
+}
+
+.Trip_Description_Short
+{
+    color: #666666;
+    font-size: .9em;
+    font-weight: 500;
+   
+    letter-spacing: 1px;
+    margin-top: -3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    
 
 .Control_Trip_Stages_Scrollbar{
     overflow: auto;

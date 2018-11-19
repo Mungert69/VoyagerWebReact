@@ -119,6 +119,16 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
 
@@ -136,6 +146,16 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
 
@@ -167,6 +187,16 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
 
@@ -184,6 +214,16 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 3,
+      colors: {
+      ...theme.colors,
+        text: '#666',
+        primary25: '#F5F5F5',
+        primary: '#0071bc',
+      },
+    })}
     />
 </div>
   <span className="Control_Filter_Item_Label">Nights are modified on first place by default</span>
