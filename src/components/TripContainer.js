@@ -89,10 +89,10 @@ export class TripContainer extends Component {
               <Control_Menu_3_Modular changeView={this.props.changeView}/>
 
 
-            <div className="">
+            <div className="Hide">
               <Control_Menu_2_Modular />
             </div>
-            <div className="Show">
+            <div className="Hide">
               <Control_Filter_Sort_Hotel />
             </div>
             <div className="Hide">
