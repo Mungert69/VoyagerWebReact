@@ -1,4 +1,4 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
 hr {
     width: 70%;
@@ -2463,8 +2463,8 @@ word-wrap:break-word;
         position: fixed;
         left: 0;
         right: 0;
-        top: 500px;
-        height: 600px;
+        top: 300px;
+        height: 300px;
         padding-top: 1px;
         z-index: 1;
         -webkit-touch-callout: none;
@@ -2487,7 +2487,7 @@ word-wrap:break-word;
         left: 0;
         right: 0;
         top: 505px;
-        height: 600px;
+        height: 300px;
 
         z-index: 1;
         -webkit-touch-callout: none;
@@ -3015,7 +3015,8 @@ a:hover .Control_Icon_Layer_Stack_Small {
     margin-top: -2px;
     margin-right: 0px;
     position: absolute;
-    font-family: open-sans;
+    font-family: 'Open Sans', sans-serif;
+
 }
 a:hover .Control_Icon_Layer_Stack_Small_Text {
     color: #fff;
@@ -3364,6 +3365,8 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
     margin-top: 1px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 a:hover .Voyager_Control_Text_Size_1_Link {
     color: #0071bc;
@@ -3378,6 +3381,8 @@ a:hover .Voyager_Control_Text_Size_1_Link {
     align-items: center;
     margin-top: -2px;
     margin-bottom: -2px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -3390,6 +3395,8 @@ a:hover .Voyager_Control_Text_Size_1_Link {
     align-items: center;
     margin-top: -2px;
     margin-bottom: -2px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .Voyager_Control_Text_Size_4 {
@@ -3401,6 +3408,8 @@ a:hover .Voyager_Control_Text_Size_1_Link {
     align-items: center;
     margin-top: -2px;
     margin-bottom: -2px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -3420,6 +3429,8 @@ a:hover .Voyager_Control_Text_Size_1_Link {
     margin-left: 2px;
     float: right;
     font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+
 }
 a:hover .Control_Text_Size_1_Link_Count {
     color: #0071bc;
@@ -3831,12 +3842,14 @@ transition: color .5s ease-out;
 {
 color: purple;
 font-size: 1em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
 letter-spacing: 3px;
 margin-top: 5px;
+font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -3846,12 +3859,13 @@ margin-top: 5px;
 {
 color: green;
 font-size: 1em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
 letter-spacing: 3px;
 margin-top: 5px;
+font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -3859,78 +3873,92 @@ margin-top: 5px;
 {
 color: red;
 font-size: 1em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
 letter-spacing: 3px;
 margin-top: 5px;
+font-family: 'Open Sans', sans-serif;
+
 }
 .Country_Name
 {
 color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
 letter-spacing: 2px;
 margin-top: -3px;
+font-family: 'Open Sans', sans-serif;
+
 }
 
 .Place_Feature
 {
     color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:inline-block;
 letter-spacing: 2px;
 margin-top: -3px;
+font-family: 'Open Sans', sans-serif;
+
 }
 
 .Hotel_Feature
 {
     color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:inline-block;
 letter-spacing: 2px;
 margin-top: -3px;
+font-family: 'Open Sans', sans-serif;
+
 }
 
 .Hotel_Place_Country_Name_Panel
 {
     color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
+font-family: 'Open Sans', sans-serif;
+
 
 }
 .Hotel_Place_Country_Name
 {
     color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:inline-block;
+font-family: 'Open Sans', sans-serif;
+
 
 }
 .Trip_Date_Price
 {
 color: #666666;
 font-size: .9em;
-font-weight: 500;
+font-weight: 600;
 text-transform: uppercase;
 text-align: center;
 display:block;
 letter-spacing: 2px;
+font-family: 'Open Sans', sans-serif;
+
 
 }
 
@@ -3938,12 +3966,14 @@ letter-spacing: 2px;
 {
     color: #666666;
     font-size: .9em;
-    font-weight: 500;
+    font-weight: 400;
    
     letter-spacing: 1px;
     margin-top: -3px;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+
     }
     
 
@@ -4070,12 +4100,12 @@ color: #666666;
     .Control_Trip_Stages_Stage_Icon_Number {
         color: #ffffff;
         font-size: .8em;
-        font-weight: 800;
+        font-weight: 700;
         float: left;
         margin-top: 1px;
         margin-left: -11px;
         position: absolute;
-        font-family: open-sans;
+        font-family: 'Open Sans', sans-serif;
     }
 
     
@@ -4132,10 +4162,11 @@ color: #666666;
 .Trip_Stage_PlaceName{
     color: #666666;
 font-size: .8em;
-font-weight: 500;
+font-weight: 400;
 text-transform: uppercase;
 padding-left: 4px;
 padding-right: 6px;
+font-family: 'Open Sans', sans-serif;
 }
 
 .Trip_Stage_PlaceName:hover
@@ -4160,17 +4191,17 @@ padding-right: 6px;
 
 .Trip_Stage_Icon_Number {
     color: #ffffff;
-    font-size: .8em;
-    font-weight: 800;
+    font-size: .7em;
+    font-weight: 700;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
     float: left;
-    margin-top: 1px;
-    margin-left: -11px;
+    margin-top: 3px;
+    margin-left: -12px;
     position: absolute;
-    font-family: open-sans;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
