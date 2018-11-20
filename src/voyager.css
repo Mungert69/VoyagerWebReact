@@ -317,8 +317,6 @@ a {
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700');
-
 .Hidden {
     display: none;
 }
@@ -2665,16 +2663,19 @@ word-wrap:break-word;
     border-left: none;
     border-right: none;
     outline: none;
-    margin-top: 10px;
-    margin-right: 10px;
+    border: none;
     font-family: 'Open Sans', sans-serif;
-    font-size: .8em;
+    font-size: .7em;
     letter-spacing: .4px;
-    font-weight: 500;
+    font-weight: 600;
     color: #666;
-    background: #f2f2f2;
+
     text-transform: uppercase;
+    width: 140px;
+    
+
 }
+
 
 .Voyager_Control_Select_Stage {
     border-top: none;
@@ -4406,4 +4407,25 @@ margin-top:10px;
             
                 font-size: 14px;
              
+            }
+
+
+
+            .Control_Filter_Sort_Select_List {
+                border-top: none;
+                border-bottom: none;
+                border-left: none;
+                border-right: none;
+                outline: none;
+                border: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: .7em;
+                letter-spacing: .4px;
+                font-weight: 600;
+                color: #666;
+            
+                text-transform: uppercase;
+                width: 140px;
+                
+            
             }

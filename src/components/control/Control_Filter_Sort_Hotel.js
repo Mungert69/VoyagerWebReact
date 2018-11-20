@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
+import { components } from 'react-select';
 import Slider, { Range } from 'rc-slider';
-import Tooltip from 'rc-tooltip';
-import 'rc-tooltip/assets/bootstrap.css';
 import 'rc-slider/assets/index.css';
 import makeAnimated from 'react-select/lib/animated';
-import PerfectScrollbar from 'react-perfect-scrollbar';
+
+
 const marks = {
-  20: {
-    label: <i className="fas fa-star Control_Icon_Size_1"></i>,
-  },
-  40: {
-    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i></i>,
-  },
-  60: {
-    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
-  },
-  80: {
-    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
-  },
-  100: {
-    label: <i className="fas fa-star Control_Icon_Size_1"><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i><i className="fas fa-star Control_Icon_Size_1"></i></i>,
-  },
+  20: {label: <i className="fas fa-star Icon_Size_1"></i>,},
+  40: {label: <i className="fas fa-star Icon_Size_1"><i className="fas fa-star Icon_Size_1"></i></i>, },
+  60: {label: <i className="fas fa-star Icon_Size_1"><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i></i>,},
+  80: {label: <i className="fas fa-star Icon_Size_1"><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i></i>, },
+  100: {label: <i className="fas fa-star Icon_Size_1"><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i><i className="fas fa-star Icon_Size_1"></i></i>,},
 };
+
+const Control_Filter_Sort_Select_Style = {  
+
+  control: styles => ({ ...styles, backgroundColor: 'Transparent',  borderColor: '#f2f2f2',    borderRadius: 0,  borderWidth: 3,   borderLeft: 'none',  borderRight: 'none',   borderTop: 'none', boxShadow: 'none', textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600'}),
+  option: (provided, state) => ({ ...provided, borderBottom: '0px solid #f2f2f2',  borderRadius: 9,  color: '#666',   padding: 6, textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600'}),
+  multiValue: styles => ({ ...styles, backgroundColor: '#f2f2f2',   borderRadius: 6 }),
+  multiValueRemove: styles => ({ ...styles, backgroundColor: '#f2f2f2',   borderTopRightRadius: 6, borderBottomRightRadius: 6 }),
+};
+
+const { Option } = components;
+const IconOption = (props) => (
+    <Option {...props}>
+      <i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>
+      {props.data.label}
+    </Option>
+);
+
+
+
 
 function log(value) {
   console.log(value); //eslint-disable-line
@@ -97,9 +106,12 @@ export class Control_Filter_Sort_Hotel extends Component {
     components={makeAnimated()}
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
+    components={{ Option: IconOption }}
+
     theme={(theme) => ({
       ...theme,
-      borderRadius: 3,
+     
       colors: {
       ...theme.colors,
         text: '#666',
@@ -112,8 +124,8 @@ export class Control_Filter_Sort_Hotel extends Component {
                      
                             <span className="Control_Sort_Item_UpDown" >
                             <span className="Control_Sort_Item_Label">ascending or descending</span>
-                                   <a ><i className="fas fa-caret-up Control_Icon_Layer_Sidebyside"></i>   </a>
-                                   <a ><i className="fas fa-caret-down Control_Icon_Layer_Sidebyside"></i>   </a>
+                                   <a ><i className="fas fa-caret-up Icon_Layer_Sidebyside"></i>   </a>
+                                   <a ><i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>   </a>
                             </span>
                           
                      
@@ -147,6 +159,7 @@ export class Control_Filter_Sort_Hotel extends Component {
     components={makeAnimated()}
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
     isMulti
     theme={(theme) => ({
       ...theme,
@@ -176,6 +189,7 @@ export class Control_Filter_Sort_Hotel extends Component {
     components={makeAnimated()}
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
     isMulti
     theme={(theme) => ({
       ...theme,

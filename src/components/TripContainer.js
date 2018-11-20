@@ -92,7 +92,7 @@ export class TripContainer extends Component {
             <div className="">
               <Control_Menu_2_Modular />
             </div>
-            <div className="Hide">
+            <div className="Show">
               <Control_Filter_Sort_Hotel />
             </div>
             <div className="Hide">
