@@ -100,7 +100,7 @@ export class ItineraryView extends Component {
 
 <div className="Control_Trip_Stages">
 
-<p className="Voyager_Trip_Transfer" > {itinObj.transferItems[0]}</p>{itinObj.prSelections.map((prSelection, index) =>
+<p className="Voyager_Trip_Transfer" > {itinObj.transferNodeItems[0].transferItem.transferItem1}</p>{itinObj.prSelections.map((prSelection, index) =>
 
 <div key={index}>
                        
@@ -135,11 +135,11 @@ export class ItineraryView extends Component {
 </div>
 <a><i className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon" onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}></i></a>
 
-<p className="Voyager_Trip_Transfer" > {itinObj.transferItems[index+1]}</p>
+<p className="Voyager_Trip_Transfer" > {itinObj.transferNodeItems[index+1].transferItem.transferItem1}</p>
 </div>
 
 )}
-<p className="Voyager_Trip_Transfer" > {itinObj.transferItems[itinObj.transferItems.length+1]}</p>
+<p className="Voyager_Trip_Transfer" > {itinObj.transferNodeItems[itinObj.transferNodeItems.length+1].transferItem.transferItem1}</p>
 
 </div>
 

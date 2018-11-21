@@ -83,7 +83,7 @@ export class TripContainer extends Component {
                 <TripListView />
               ) : null}
 
-              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView/></div>: null}
+              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView changeView={this.props.changeView}/></div>: null}
 
               {this.props.isDetailViewVisible ? <div><TripDetailView /> <MenuDetailView/></div>: null}
 
