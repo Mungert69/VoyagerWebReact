@@ -104,7 +104,7 @@ export class ItineraryView extends Component {
 
 <div key={index}>
                        
-<a className="Control_Trip_Stages_Item_Group AnimationRipple" onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>
+<a className="Control_Trip_Stages_Item_Group AnimationRipple" >
 <div class="Control_Trip_Stages_Position_outer_wrapper">
 <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
 <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon"><l className="Control_Trip_Stages_Stage_Icon_Number">{index}</l></i>
@@ -133,7 +133,7 @@ export class ItineraryView extends Component {
 </div>
 </a><div>
 </div>
-<a><i className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon"></i></a>
+<a><i className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon" onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}></i></a>
 
 <p className="Voyager_Trip_Transfer" > {itinObj.transferItems[index+1]}</p>
 </div>
