@@ -1,24 +1,18 @@
 ﻿import React, { Component } from "react";
-import  withItinObj  from "./HOCs/WithItinObj";
+import withItinObj from "./HOCs/WithItinObj";
 import { ItineraryListView } from "./ItineraryListView";
 import { Button } from "antd";
 import "antd/dist/antd.css";
-import { SearchBar } from "./control/SearchBarCom";
-import { Control_Menu_2_1_Trip } from './control/Control_Menu_2_1_Trip';
-import { Control_Menu_2_2_Trip } from './control/Control_Menu_2_2_Trip';
-import { Control_Menu_2_3_Trip } from './control/Control_Menu_2_3_Trip';
-
+import MenuTripListView from './control/Menus/MenuTripListView';
 const ItineraryListViewWithItinObj = withItinObj(ItineraryListView);
 
 export class TripListView extends Component {
   renderCardList = () => {
     let filteredCards = this.props.cards;
-
+    if (filteredCards.length===0) return null;
     return (
       <span>
-        <div className="Hide"><Control_Menu_2_1_Trip/></div>
-                        <div className="Hide why is there three components for this"><Control_Menu_2_2_Trip/></div>
-                        <div className="Hide why is there three components for this"><Control_Menu_2_3_Trip/></div>
+        <MenuTripListView />
         {filteredCards.map(cardValue => (
           <span>
             <Button onClick={() => this.props.setTripCardEvent(cardValue, this.props.userId)}>
@@ -44,8 +38,8 @@ export class TripListView extends Component {
         <em>Loading...</em>
       </p>
     ) : (
-      this.renderCardList(this.props.cards)
-    );
+        this.renderCardList(this.props.cards)
+      );
 
     return <div>{contents}</div>; //Return
   } //Render

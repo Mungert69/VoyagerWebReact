@@ -1,9 +1,8 @@
 ﻿import React, { Component } from 'react';
 import { CardView } from '../components/CardView';
-import { SearchBar } from './control/SearchBarCom';
-import { Control_Menu_2_Place } from './control/Control_Menu_2_Place';
-import { Control_Menu_2_Hotel } from './control/Control_Menu_2_Hotel';
 import Waypoint from 'react-waypoint';
+import MenuHotelListView from './control/Menus/MenuHotelListView';
+import MenuPlaceListView from './control/Menus/MenuPlaceListView';
 
 //import 'antd/dist/antd.css';
 
@@ -23,14 +22,14 @@ export class NodeListView extends Component {
 
         this.setState({ card: card });
     }
-    renderCardList = () => {
+    renderNodeList = () => {
 
         var filteredCards = this.props.cards;
 
         return (
             < span >
                 {this.props.cardType === 'hotel' ?
-                    <Control_Menu_2_Hotel card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <Control_Menu_2_Place card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
+                    <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
                 }
 
                 {
@@ -55,7 +54,7 @@ export class NodeListView extends Component {
 
         let contents = this.props.loading
             ? <p><em>Loading...</em></p>
-            : this.renderCardList();
+            : this.renderNodeList();
 
         return (
             <div>
