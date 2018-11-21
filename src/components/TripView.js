@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { FlightView } from './FlightVIew';
 import { TripScrollView } from './TripScrollView';
 import {apiBaseUrl} from './Constants';
+import MenuTripListView from './control/Menus/MenuTripListView';
 export class TripView extends Component {
 
 
@@ -96,6 +97,7 @@ export class TripView extends Component {
         return (
             <span>
                 <p>Trip View : </p>
+                <MenuTripListView />
                 <TripScrollView setItem={this.setItem.bind(this)} itemNumber={this.state.itemNumber} />
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                 <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />

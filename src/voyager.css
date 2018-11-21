@@ -148,6 +148,8 @@ a {
 
 .Voyager_Trip_Transfer{
     width:100%;
+    text-align: center;
+    color:rgb(160, 160, 160);
 }
 
 .Voyager_Trip_Panel {
@@ -4031,6 +4033,7 @@ font-family: 'Open Sans', sans-serif;
 
 .Control_Trip_Stages_Item_Group{
     color: #666666;
+  
     }
     
     
