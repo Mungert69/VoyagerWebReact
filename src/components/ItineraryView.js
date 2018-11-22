@@ -139,7 +139,7 @@ export class ItineraryView extends Component {
 </div>
 
 )}
-<p className="Voyager_Trip_Transfer" > {itinObj.transferNodeItems[itinObj.transferNodeItems.length+1].transferItem.transferItem1}</p>
+<p className="Voyager_Trip_Transfer" > {itinObj.transferNodeItems[itinObj.transferNodeItems.length-1].transferItem.transferItem1}</p>
 
 </div>
 
