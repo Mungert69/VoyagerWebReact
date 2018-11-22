@@ -145,6 +145,7 @@ export class ItineraryView extends Component {
                     </a>
                   </div>
                 </div>
+                
                 <div class="Control_Trip_Stages_Position_outer_wrapper">
                   <div className="Control_Trip_Dates_Position_left Control_Trip_Stages_Position_inner_wrapper">
                     <i className="show far fa-car Control_Trip_Stages_Stage_Transport_Icon" />
