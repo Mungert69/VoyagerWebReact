@@ -25,10 +25,7 @@ function withItinObj(WrappedComponent) {
           this.props.card.typeId +
           "/";
         // Get  Card
-        fetch(str,{
-          headers: {
-            'Accept-Encoding': 'gzip'
-          }})
+        fetch(str)
           .then(res => res.text())
           .then(text => (text.length ? JSON.parse(text) : {}))
           .then(data => {
