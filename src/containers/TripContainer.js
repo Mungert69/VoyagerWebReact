@@ -6,7 +6,7 @@ import {
     fetchPlaceMapStyleCards,fetchPlaceStyleCards,fetchTripMapStyleCards,fetchTripStyleCards
 } from '../actions/apiActions';
 import {
-  changeView,changeDetailLevel
+  changeView,changeDetailLevel,changeViewPlaceWithFilterByNextHop
 } from '../actions/functionalActions';
 
 
@@ -56,6 +56,9 @@ const mapDispatchToProps = dispatch => {
 
        
         // local event handlers
+        changeViewPlaceWithFilterByNextHop : () => {
+            dispatch(changeViewPlaceWithFilterByNextHop());
+        },
         changeView: (cardVal) => {
             dispatch(changeView(cardVal));
         },

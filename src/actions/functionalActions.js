@@ -1,6 +1,7 @@
 ﻿import {
-    setTripViewState, setTripItem, setTripJumpCounter, setTripCard, setCardType,setQueryTxt,setTripCardDetailLevel
-} from '../actions/actions';
+    setTripViewState, setTripItem, setTripJumpCounter, setTripCard,
+     setCardType,setQueryTxt,setTripCardDetailLevel, filterPlaceCardsByNextHop
+} from './actions';
 import { fetchItinObj } from './apiActions';
 
 
@@ -36,6 +37,15 @@ export const setTripCardEvent = (cardVal,userId) => {
     };
 
 };
+
+export const changeViewPlaceWithFilterByNextHop = () => {
+    return function (dispatch) {
+        dispatch(setCardType('place'));
+        dispatch(setQueryTxt(''));
+        dispatch(filterPlaceCardsByNextHop());
+        dispatch(setTripViewState(false, true, false, false));
+        };
+}
 
 export const changeView = (cardType) => {
 

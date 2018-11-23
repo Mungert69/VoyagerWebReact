@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { CardView } from './CardView';
 import { TripScrollView } from './TripScrollView';
-import {apiBaseUrl} from './Constants';
+import { apiBaseUrl } from './Constants';
 
 export class TripDetailView extends Component {
 
@@ -19,11 +19,8 @@ export class TripDetailView extends Component {
             if (props.cardType === 'hotel') prItemShift = 2;
             itemCounted = prItemCounted * props.jumpCounter + prItemShift;
         }
-        
+
         this.state = {
-            builderMode: false,
-            loading: true,
-            itinObj: {},
             item: itemCounted,
             prItem: prItemCounted,
             cardType: cardTypeIn,
@@ -38,9 +35,8 @@ export class TripDetailView extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-       // console.log("logger: In TripDetailsView.componentWillReceiveProps value nextProp changeItin = " + nextProps.changeItin + " value of thisProp changeItin = " + this.props.changeItin);
-        if (this.props.changeItin !== nextProps.changeItin || this.props.cardType !== nextProps.cardType) {
-            this.setState({ loading: true });
+        // console.log("logger: In TripDetailsView.componentWillReceiveProps value nextProp changeItin = " + nextProps.changeItin + " value of thisProp changeItin = " + this.props.changeItin);
+        if (this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections();
             this.setParams();
         }
@@ -57,34 +53,28 @@ export class TripDetailView extends Component {
             if (this.props.cardType === 'place') prItemShift = 1;
             if (this.props.cardType === 'hotel') prItemShift = 2;
             itemCounted = prItemCounted * this.props.jumpCounter + this.props.prItemShift;
-        }      
+        }
         this.setState({ item: itemCounted, prItem: prItemCounted });
     }
 
     refreshPrSelections = () => {
         if (this.props.builderMode === true) {
-            fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/')
-                .then((res) => res.text())
-                .then((text) => text.length ? JSON.parse(text) : {})
-                .then(data => {
-                    let itemCount = data.prSelections.length;
-                    this.setState({ itinObj: data, loading: false, itemNumber: itemCount });
-                    //console.log("logger: In TripDetailsView.refreshPrSelections value of data = " + data.prSelections);
+            let itemCount = this.props.itinObj.prSelections.length;
+            this.setState({ itemNumber: itemCount });
 
-                });
         }
         else {
             if (this.props.cardType === 'place') {
 
                 let itemCount = this.props.cards.length;
-                this.setState({ loading: false, itemNumber: itemCount });
+                this.setState({ itemNumber: itemCount });
                 //console.log("logger: In TripDetailsView.refreshPrSelections value of data = " + this.props.cards);
 
 
             }
             if (this.props.cardType === 'hotel') {
                 let itemCount = this.props.cards.length;
-                this.setState({ loading: false, itemNumber: itemCount });
+                this.setState({ itemNumber: itemCount });
                 //console.log("logger: In TripDetailsView.refreshPrSelections value of data = " + this.props.cards);
 
             }
@@ -101,14 +91,14 @@ export class TripDetailView extends Component {
         if (this.props.cardType === 'hotel') {
             return (
                 <div>
-                    <CardView key='hotel' styleCard={this.props.styleHotelCard} card={this.props.cards[this.state.item]}  />
+                    <CardView key='hotel' styleCard={this.props.styleHotelCard} card={this.props.cards[this.state.item]} />
                 </div >
             );
         }
         if (this.props.cardType === 'place') {
             return (
                 <div>
-                    <CardView key='place' styleCard={this.props.stylePlaceCard} card={this.props.cards[this.state.item]}  />
+                    <CardView key='place' styleCard={this.props.stylePlaceCard} card={this.props.cards[this.state.item]} />
                 </div >
             );
         }
@@ -130,7 +120,7 @@ export class TripDetailView extends Component {
                 return (
 
                     <div>
-                        <CardView key='placecard' styleCard={this.props.stylePlaceCard} card={prSelections[this.state.prItem].placeCard}  />
+                        <CardView key='placecard' styleCard={this.props.stylePlaceCard} card={prSelections[this.state.prItem].placeCard} />
                     </div>
 
                 );//return};
@@ -139,7 +129,7 @@ export class TripDetailView extends Component {
                 return (
 
                     <div>
-                        <CardView key='hotelcard' styleCard={this.props.styleHotelCard} card={prSelections[this.state.prItem].hotelCard}  />
+                        <CardView key='hotelcard' styleCard={this.props.styleHotelCard} card={prSelections[this.state.prItem].hotelCard} />
                     </div>
 
                 );//return};
@@ -155,8 +145,8 @@ export class TripDetailView extends Component {
                 <div >
                     <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
-                    {this.renderTripDetailView(this.state.itinObj.prSelections, this.state.itinObj)}
-           
+                    {this.renderTripDetailView(this.props.itinObj.prSelections, this.props.itinObj)}
+
                 </div>
 
             );//return
@@ -168,13 +158,13 @@ export class TripDetailView extends Component {
                         <TripScrollView setItem={this.setItem.bind(this)} item={this.state.item} itemNumber={this.state.itemNumber * this.props.jumpCounter} />
 
                         {this.renderNodeDetailView()}
-            
+
                     </div>
 
                 );//return
             }//if
         }//else
-       
+
     }//render
 
 }

@@ -39,7 +39,7 @@ const MenuTripView = (props) => {
       <Control_Item_Trip_Nights_Modify/>
       <Control_Item_Trip_Transport_Modify/>
 
-      <Control_Item_Trip_Stage_Add/>
+      <Control_Item_Trip_Stage_Add changeViewPlaceWithFilterByNextHop={props.changeViewPlaceWithFilterByNextHop}/>
       <Control_Item_Trip_Stage_Remove/>
       <Control_Item_Trip_Update/>
 
@@ -57,7 +57,7 @@ const MenuTripView = (props) => {
       
      
 
-      <Control_Item_Trips_All/>
+      <Control_Item_Trips_All changeView={props.changeView}/>
       <Control_Item_Share/>
       <Control_Item_Bookmark/>
       <Control_Item_Trip_Date/>

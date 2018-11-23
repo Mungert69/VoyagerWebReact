@@ -9,11 +9,8 @@ import MenuListView from './control/Menus/MenuListView';
 
 import TripView from "../containers/TripView";
 
-import TripDetailView from "../containers/TripDetailView";
+import DetailView from "../containers/DetailView";
 
-import { Control_Filter_Sort_Hotel } from "./control/Filter/Control_Filter_Sort_Hotel";
-import { Control_Message } from "./control/Control_Message";
-import { Control_Menu_2_Modular } from "./control/Control_Menu_2_Modular";
 
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
 import { Control_Trip_Dates } from "./control/Control_Trip_Dates";
@@ -83,9 +80,9 @@ export class TripContainer extends Component {
                 <TripListView />
               ) : null}
 
-              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView changeView={this.props.changeView}/></div>: null}
+              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView changeViewPlaceWithFilterByNextHop={this.props.changeViewPlaceWithFilterByNextHop} changeView={this.props.changeView}/></div>: null}
 
-              {this.props.isDetailViewVisible ? <div><TripDetailView /> <MenuDetailView/></div>: null}
+              {this.props.isDetailViewVisible ? <div><DetailView /> <MenuDetailView/></div>: null}
 
 
               {this.props.isDetailViewVisible || this.props.isTripViewVisible ? (

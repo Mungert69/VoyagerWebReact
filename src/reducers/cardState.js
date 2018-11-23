@@ -1,5 +1,6 @@
 ﻿import { ActionTypes } from '../actions/types';
 import _ from 'lodash';
+import CardFilter from '../Objects/CardFilter';
 
 const defaultState = {
     placeCards: [],
@@ -27,7 +28,7 @@ const cardState = (state = defaultState, action) => {
         case ActionTypes.UPDATE_PLACE_CARDS:
             return Object.assign({}, state, { placeCards: action.payload });
         case ActionTypes.UPDATE_PLACE_CARDS_WITH_PLACE_STATE:
-            return Object.assign({}, state, { placeCards: updatePlaceCardsWithPlaceState(state.placeCards,action.payload) });
+            return Object.assign({}, state, { placeCards: updatePlaceCardsWithPlaceState(state.placeCards, action.payload) });
         case ActionTypes.UPDATE_HOTEL_CARDS:
             return Object.assign({}, state, { hotelCards: action.payload });
         case ActionTypes.UPDATE_TRIP_CARDS:
@@ -49,6 +50,8 @@ const cardState = (state = defaultState, action) => {
 
         case ActionTypes.FILTER_CARDS:
             return Object.assign({}, state, { filteredCards: filterCards(state, state.orderBy, state.queryTxt, state.cardType) });
+        case ActionTypes.FILTER_PLACE_CARDS_BY_NEXT_HOP:
+            return Object.assign({}, state, { filteredCards: filterPlaceCardsByNextHop(state) });
 
         case ActionTypes.FILTER_STYLE_CARDS:
             return Object.assign({}, state, { filteredStyleCards: filterStyleCards(state, false, state.cardType) });
@@ -62,7 +65,7 @@ const cardState = (state = defaultState, action) => {
         case ActionTypes.FILTER_MAPSTYLE_CARD:
             return Object.assign({}, state, { filteredMapStyleCard: filterStyleCard(state, true, state.cardType, state.cardDetailLevel) });
 
-        // Note we must also update the idividual style card with a card detail update
+        // Note we must also update the individual style card with a card detail update
         case ActionTypes.SET_TRIP_CARD_DETAIL_LEVEL:
             return Object.assign({}, state, { cardDetailLevel: action.payload, filteredMapStyleCard: filterStyleCard(state, true, state.cardType, action.payload) });
 
@@ -78,7 +81,7 @@ const cardState = (state = defaultState, action) => {
     }
 };
 
-const updatePlaceCardsWithPlaceState = (placeCards,placeStates) => {
+const updatePlaceCardsWithPlaceState = (placeCards, placeStates) => {
 
     placeStates.forEach(function (item, index) {
         placeCards[index].placeState = item;
@@ -88,33 +91,25 @@ const updatePlaceCardsWithPlaceState = (placeCards,placeStates) => {
 };
 
 
-
 const filterCards = (state, orderBy, queryTxt, cardType) => {
-    var orderDir = orderBy ? 'desc' : 'asc';
-    var cards = [];
+    var cardFilter = new CardFilter(cardType, state);
+    var test = cardFilter.filterByTitle(orderBy, queryTxt);
+    return cardFilter.cards;
+}
 
-    if (cardType === 'trip') {
-        cards = state.tripCards;
+const filterPlaceCardsByNextHop = (state) => {
+    var titleList = [];
+    state.placeCards.forEach((item) => {
+        if (item.placeState.isHop) titleList.push(item);
     }
-    if (cardType === 'hotel') {
-        cards = state.hotelCards;
-    }
-    if (cardType === 'place') {
-        cards = state.placeCards;
-    }
-    var filteredCards = [];
-    cards = _.orderBy(cards, ['title'], [orderDir]);
 
-
-    cards.forEach(function (item) {
-        if (item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1) {
-            filteredCards.push(item);
-        }
-    }//function
-    );//forEach
-
-    return filteredCards;
+    );
+    var cardFilter = new CardFilter('place', state);
+    cardFilter.filterTitleByList(titleList);
+    return cardFilter.cards;
 };
+
+
 
 const filterStyleCards = (state, isMap, cardType) => {
 

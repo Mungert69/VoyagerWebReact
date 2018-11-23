@@ -179,6 +179,8 @@ export class ItineraryView extends Component {
                     >
                       <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
                     </a>{" "}
+                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>View Builder Place</Button>
+                                                   
                     <i className="fas fa-bus Voyager_Trip_Transport_Icon" />
                   </div>
                 </div>
