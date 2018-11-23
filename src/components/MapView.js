@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 import { MapStylePlace, MapStylePlaces, MapStyleHotel, MapStyleHotels, MapStyleTrip, MapStyleTrips } from './MapCode';
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
-import {apiBaseUrl} from './Constants';
+import { apiBaseUrl } from './Constants';
 
 /*global google*/
 
@@ -24,7 +24,7 @@ export class MapView extends Component {
             if (props.cardType === 'hotel') prItemShift = 2;
             itemCounted = prItemCounted * props.jumpCounter + prItemShift;
         }
-    
+
         this.state = {
 
             loading: true,
@@ -34,7 +34,8 @@ export class MapView extends Component {
             itemNumber: 0,
             inputDataType: '',
             markers: [],
-            styleMode : ''
+            mapMarkers : [],
+            styleMode: ''
         };
 
 
@@ -43,7 +44,7 @@ export class MapView extends Component {
     }//constructor
 
     componentDidMount() {
-       
+
         this.refreshPrSelections();
         //console.log("logger: In MapView.componentDidMount buiderMode =" + this.props.builderMode + " style mode is :" + this.state.styleMode);
 
@@ -51,7 +52,7 @@ export class MapView extends Component {
 
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
-        if (this.props.changeItin !== nextProps.changeItin || this.props.cardType !== nextProps.cardType) {          
+        if (this.props.changeItin !== nextProps.changeItin || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections();
             this.setParams();
         }
@@ -60,15 +61,15 @@ export class MapView extends Component {
     updateStyleMode = () => {
         var str = '';
         if (this.props.cardType === 'hotel') {
-            str= 'MapStyleHotels';
+            str = 'MapStyleHotels';
         }
         if (this.props.cardType === 'place') {
-            str= 'MapStylePlaces';
+            str = 'MapStylePlaces';
         }
         if (this.props.builderMode === true) {
-            str= 'MapStyleTrips';
+            str = 'MapStyleTrips';
         }
-        
+
         return str;
     }
 
@@ -94,40 +95,39 @@ export class MapView extends Component {
 
         var styleString = this.updateStyleMode();
         if (this.props.builderMode) {
-            fetch(apiBaseUrl+'api/Itinerary/StoredItinObj/'+this.props.userId + '/')
+            fetch(apiBaseUrl + 'api/Itinerary/StoredItinObj/' + this.props.userId + '/')
                 .then((res) => res.text())
                 .then((text) => text.length ? JSON.parse(text) : {})
                 .then(data => {
                     var markers = [];
                     let itemCount = data.prSelections.length;
                     var marker;
-                    data.prSelections.map((selection) => { 
+                    data.prSelections.map((selection) => {
                         marker = { lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) };
-                    markers.push(marker);
-                }
-                        );
-                    this.setState({ itinObj: data, loading: false, itemNumber: itemCount, styleMode : styleString, markers : markers });
+                        markers.push(marker);
+                    }
+                    );
+                    this.setState({ itinObj: data, loading: false, itemNumber: itemCount, styleMode: styleString, markers: markers });
                     console.log("logger: In MapView.refreshPrSelections value of data = " + data.prSelections);
                 });
         }
 
 
-        if (this.props.cardType === 'place') {
+        if (this.props.cardType === 'place' || this.props.cardType === 'hotel') {
 
             let itemCount = this.props.cards.length;
-            
-            this.setState({ loading: false, itemNumber: itemCount, styleMode: styleString, markers : [] });
+            var markers = [];
+            var marker;
+            this.props.cards.map((card) => {
+                marker = { lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) };
+                markers.push(marker);
+            });
+            this.setState({mapMarkers : markers , loading: false, itemNumber: itemCount, styleMode: styleString, markers: [] });
             console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
-           
+
 
         }
-        if (this.props.cardType === 'hotel') {
-            let itemCount = this.props.cards.length;
-            this.setState({ loading: false, itemNumber: itemCount, styleMode: styleString, markers : [] });
-            console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
-          
-        }
-
+       
 
     }
 
@@ -181,7 +181,7 @@ export class MapView extends Component {
                     defaultCenter={props.center}
 
                     defaultOptions={{
-                        styles:  this.state.styleMode ,
+                        styles: this.state.styleMode,
                         streetViewControl: true,
                         scaleControl: false,
                         scrollwheel: true,
@@ -251,24 +251,24 @@ export class MapView extends Component {
                             )
                             :
                             null
-                        
+
                         :
-                        
-                            this.props.cards.map((card, index) =>
-                                <MarkerWithLabel
-                                    key={index}
-                                    position={{ lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) }}
-                                    labelAnchor={new google.maps.Point(14, 18)}
-                                    labelClass={'Card_Map_Panel_1'}
-                                    labelStyle={{}}
-                                    icon={{ url: '' }}
-                                >
+
+                        this.props.cards.map((card, index) =>
+                            <MarkerWithLabel
+                                key={index}
+                                position={{ lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) }}
+                                labelAnchor={new google.maps.Point(14, 18)}
+                                labelClass={'Card_Map_Panel_1'}
+                                labelStyle={{}}
+                                icon={{ url: '' }}
+                            >
                                 <CardMapView index={index + 1} styleCard={this.props.filteredMapStyleCard} key={index} card={card} />
-                                </MarkerWithLabel>
-                            )
-                        
-                        }
-                    
+                            </MarkerWithLabel>
+                        )
+
+                    }
+
 
 
 
