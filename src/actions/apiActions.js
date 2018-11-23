@@ -1,7 +1,8 @@
 ﻿import { ApiActionTypes } from './types';
 import {
     updatePlaceCards, updateHotelCards, updateTripCards, updateHotelMapStyleCards, updateHotelStyleCards,
-    updatePlaceMapStyleCards, updatePlaceStyleCards, updateTripMapStyleCards, updateTripStyleCards, updatePlaceCardsWithPlaceState
+    updatePlaceMapStyleCards, updatePlaceStyleCards, updateTripMapStyleCards, updateTripStyleCards,
+     updatePlaceCardsWithPlaceState,setTripViewState
 
 } from './actions';
 
@@ -222,8 +223,9 @@ export function addHotel(hotelId, placeNameId, userId) {
             )
             .then(result => {
                 dispatch(addHotelMessage(result));
-                //TODO implement changeItin action.
-                //dispatch(changeItin());
+                dispatch(fetchStoredItinObj(userId));
+                dispatch(setTripViewState(true, false, true, false));  
+               
             });
 
         // call the parent component to update other components on that level

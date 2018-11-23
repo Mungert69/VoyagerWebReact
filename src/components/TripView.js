@@ -102,28 +102,6 @@ export class TripView extends Component {
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                 <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />
 
-                <h1 className="Voyager_Title_2">PLACES & HOTELS</h1>
-
-               <i className="fas fa-search Voyager_Trip_Filter_Search"></i> <input placeholder="SEARCH" className="Voyager_Search" onChange={this.searchTrigger.bind(this)} />
-
-                <a className="Voyager_Trip_Sort_Alpha" title="SORT ALPHABETICAL" onClick={this.changeSortOrder.bind(this)}><i className="fas fa-sort-alpha-down Voyager_Trip_Sort_Alpha"></i></a>
-                <a className="Voyager_Trip_Sort_Location" title="SORT NEXT NEAREST" onClick={this.changeSortOrder.bind(this)}><i className="fas fa-map-marked Voyager_Trip_Sort_Location"></i></a>
-
-
-                <ul>
-                    {filteredPlaces.map((placeValue) =>
-                        <p className="Voyager_Places_List" key={placeValue.placeID}>
-                        <i className="fas fa-map-marker-alt Voyager_Places_List_Item_Icon_1"></i>
-                            <a className="Voyager_Places_List_Item" onClick={() => this.togglePlaceClick(placeValue.placeID)}>{placeValue.placeName}</a>
-                            {this.state.togglePlace[placeValue.placeID] ?
-                                <HotelList key={placeValue.placeID} placeNameId={placeValue.placeID} changingItin={this.changingItin.bind(this)} userId={this.props.userId} />
-                                : null}
-                        </p>
-                    )//places.map //<img className="Voyager_Places_List_Image" src={"http://www.voyagercuba.co.uk:10200/Images/Images-PlacesHotels/SANTIAGOgranmaIslandViewAcrossBay2.jpg"} />
-
-                    }
-                </ul>
-
 
             </span>
         )//Return;
