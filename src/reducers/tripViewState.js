@@ -8,7 +8,7 @@ const defaultState = {
     isDetailViewVisible: false,
     item: 0,
     card: {},
-    jumpCounter: 1
+    jumpCounter: 1,
 
 };
 

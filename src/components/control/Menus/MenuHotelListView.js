@@ -4,6 +4,7 @@ import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { CardView } from '../../CardView';
+import { addHotel } from "../../../actions/apiActions";
 
 const MenuHotelListView = (props) => {
     const Panel = Collapse.Panel;
@@ -38,7 +39,7 @@ return(
                         <i className="fas fa-thumbs-down Voyager_Control_Icon_Size_1"> </i>
                     </a></div>
                 <div className="show" >
-                    <a className="Control_Item_D">
+                    <a className="Control_Item_D" onClick={() => {props.changeView('place')}}>
                         <l className="Control_Text_Left">places</l>
                         <i className="fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
                     </a></div>
@@ -59,10 +60,12 @@ return(
                             <l className="Control_Text_Right">hotels</l></i>
                     </a></div>
 
-                <div className="hide" >
-                    <a className="Control_Item_D">
+                <div className="show" >
+                    <a className="Control_Item_D" onClick={()=> props.addHotel(props.card.id,props.card.placeNameId,props.userId)}>
                         <i className="fas fa-thumbs-up Voyager_Control_Icon_Size_1"> </i>
-                    </a></div>
+                    </a>
+                    {props.addHotelMsg}
+                    </div>
             </div>
 
 

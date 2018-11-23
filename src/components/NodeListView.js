@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { CardView } from '../components/CardView';
 import Waypoint from 'react-waypoint';
-import MenuHotelListView from './control/Menus/MenuHotelListView';
+import MenuHotelListView from '../containers/Menus/MenuHotelListView';
 import MenuPlaceListView from '../containers/Menus/MenuPlaceListView';
 
 //import 'antd/dist/antd.css';
@@ -35,9 +35,8 @@ export class NodeListView extends Component {
                 {
                     filteredCards.map((cardValue, index) =>
                         <span className="Voyager_Places_List" key={cardValue.id}>
-                            <a className="Control_Viewnode_Button" onClick={() => this.props.setCardEvent(cardValue, index)}>View Node</a>
-                            {this.props.cardType === 'hotel' ?
-                                <CardView styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
+                           {this.props.cardType === 'hotel' ?
+                            <p>{cardValue.title}</p>
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }

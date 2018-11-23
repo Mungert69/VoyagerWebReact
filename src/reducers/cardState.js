@@ -115,7 +115,7 @@ const filterHotelCardsByPlace = (state, placeName) => {
     var titleList = [{ title: placeName }];
 
     var cardFilter = new CardFilter('hotel', state);
-    cardFilter.filterByList(titleList, 'subtitle', 'title');
+    cardFilter.filterByListDiffFields(titleList, 'subtitle', 'title');
     return cardFilter.cards;
 };
 
