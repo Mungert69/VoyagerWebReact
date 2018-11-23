@@ -65,7 +65,7 @@ export class TripContainer extends Component {
                 cardDetailLevel={this.props.cardDetailLevel} />
 
 
-              {this.props.isDetailViewVisible || this.props.isTripViewVisible ? (
+              {this.props.isDetailViewVisible || this.props.isTripViewVisible ||  this.props.isListViewVisible? (
                 <VisualView />
               ) : null}
 
