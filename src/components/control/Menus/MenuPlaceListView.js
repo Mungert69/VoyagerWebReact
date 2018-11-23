@@ -54,13 +54,13 @@ const MenuPlaceListView = (props) => {
                             </a></div>
 
                         <div className="show" >
-                            <a className="Control_Item_D">
+                            <a className="Control_Item_D" onClick={() => props.changeViewHotelWithFilterByPlace(props.card.title)}>
                                 <i className="fas fa-home Voyager_Control_Icon_Size_1">
                                     <l className="Control_Text_Right">hotels</l></i>
                             </a></div>
 
-                        <div className="hide" >
-                            <a className="Control_Item_D">
+                        <div className="show" >
+                            <a className="Control_Item_D" >
                                 <i className="fas fa-thumbs-up Voyager_Control_Icon_Size_1"> </i>
                             </a></div>
                     </div>

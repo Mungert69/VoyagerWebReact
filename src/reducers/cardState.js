@@ -52,6 +52,8 @@ const cardState = (state = defaultState, action) => {
             return Object.assign({}, state, { filteredCards: filterCards(state, state.orderBy, state.queryTxt, state.cardType) });
         case ActionTypes.FILTER_PLACE_CARDS_BY_NEXT_HOP:
             return Object.assign({}, state, { filteredCards: filterPlaceCardsByNextHop(state) });
+        case ActionTypes.FILTER_HOTEL_CARDS_BY_PLACENAME:
+            return Object.assign({}, state, { filteredCards: filterHotelCardsByPlace(state, action.payload) });
 
         case ActionTypes.FILTER_STYLE_CARDS:
             return Object.assign({}, state, { filteredStyleCards: filterStyleCards(state, false, state.cardType) });
@@ -105,7 +107,15 @@ const filterPlaceCardsByNextHop = (state) => {
 
     );
     var cardFilter = new CardFilter('place', state);
-    cardFilter.filterTitleByList(titleList);
+    cardFilter.filterByList(titleList, 'title');
+    return cardFilter.cards;
+};
+
+const filterHotelCardsByPlace = (state, placeName) => {
+    var titleList = [{ title: placeName }];
+
+    var cardFilter = new CardFilter('hotel', state);
+    cardFilter.filterByList(titleList, 'subtitle', 'title');
     return cardFilter.cards;
 };
 

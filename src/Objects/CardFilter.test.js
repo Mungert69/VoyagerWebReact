@@ -2,8 +2,9 @@ import CardFilter from './CardFilter';
 import { isObject } from 'util';
 const tripCards = [{title : 'trip1'},{title : 'trip2'},{title : 'trip3'}];
 const placeCards= [{title : 'place1'},{title : 'place2'},{title : 'place3'}];
-const hotelCards=[{title : 'hotel1'},{title : 'hotel2'},{title : 'hotel3'}];
+const hotelCards=[{title : 'hotel1', subtitle : 'place1'},{title : 'hotel2', subtitle : 'place2'},{title : 'hotel3',subtitle : 'place1'}];
 const nextHops=[{title : 'place1'},{title : 'place2'}];
+const onePlace=[{title : 'place1'}];
 const state ={tripCards : tripCards, placeCards : placeCards , hotelCards : hotelCards };
 
 describe('CardFilter create object tests', () => {
@@ -61,9 +62,20 @@ describe('CardFilter create object tests', () => {
    
     it('Should return filtered place cards ', () => {
         var cardFitler=new CardFilter('place',state);
-        cardFitler.filterTitleByList(nextHops);
+        cardFitler.filterByList(nextHops,'title');
        expect(cardFitler.cards[0].title).toEqual('place1');
        expect(cardFitler.cards[1].title).toEqual('place2');
+     })
+    
+  })
+
+  describe('CardFilter get hotels filtered by place', () => {
+  //test
+    it('Should return filtered hotel cards ', () => {
+        var cardFitler=new CardFilter('hotel',state);
+        cardFitler.filterByListDiffFields(onePlace,'subtitle','title');
+       expect(cardFitler.cards[0].title).toEqual('hotel1');
+       expect(cardFitler.cards[1].title).toEqual('hotel3');
      })
     
   })

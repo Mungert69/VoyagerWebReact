@@ -1,6 +1,6 @@
 ﻿import {
     setTripViewState, setTripItem, setTripJumpCounter, setTripCard,
-     setCardType,setQueryTxt,setTripCardDetailLevel, filterPlaceCardsByNextHop
+     setCardType,setQueryTxt,setTripCardDetailLevel, filterPlaceCardsByNextHop, filterHotelCardsByPlace
 } from './actions';
 import { fetchItinObj } from './apiActions';
 
@@ -43,6 +43,15 @@ export const changeViewPlaceWithFilterByNextHop = () => {
         dispatch(setCardType('place'));
         dispatch(setQueryTxt(''));
         dispatch(filterPlaceCardsByNextHop());
+        dispatch(setTripViewState(false, true, false, false));
+        };
+}
+
+export const changeViewHotelWithFilterByPlace = (placeName) => {
+    return function (dispatch) {
+        dispatch(setCardType('hotel'));
+        dispatch(setQueryTxt(''));
+        dispatch(filterHotelCardsByPlace(placeName));
         dispatch(setTripViewState(false, true, false, false));
         };
 }

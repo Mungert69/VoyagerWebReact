@@ -139,6 +139,12 @@ export function filterPlaceCardsByNextHop() {
         type: ActionTypes.FILTER_PLACE_CARDS_BY_NEXT_HOP
     };
 }
+export function filterHotelCardsByPlace(placeName) {
+    return {
+        type: ActionTypes.FILTER_HOTEL_CARDS_BY_PLACENAME,
+        payload: placeName
+    };
+}
 
 export function toggleOrderBy() {
     return {

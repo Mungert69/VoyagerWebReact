@@ -2,7 +2,7 @@
 import { CardView } from '../components/CardView';
 import Waypoint from 'react-waypoint';
 import MenuHotelListView from './control/Menus/MenuHotelListView';
-import MenuPlaceListView from './control/Menus/MenuPlaceListView';
+import MenuPlaceListView from '../containers/Menus/MenuPlaceListView';
 
 //import 'antd/dist/antd.css';
 

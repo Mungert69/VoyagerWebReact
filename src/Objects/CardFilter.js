@@ -30,15 +30,34 @@ function CardFilter(cardType, state) {
 
     }
 
-    this.filterTitleByList = function (titleList) {
+    this.filterByList = function (list,fieldName) {
 
         var filteredCards = [];
 
+        this.cards.forEach((cardItem) => {
+            list.forEach(
+                (item) => {
+                    if (cardItem[fieldName].toLowerCase() == item[fieldName].toLowerCase()) {
+                        filteredCards.push(cardItem);
+                    }
+                }
+            );
+
+        }//function
+        );//forEach
+
+        this.cards = filteredCards;
+    };
+
+
+    this.filterByListDiffFields = function (list,fieldNameCard,fieldNameFilter) {
+
+        var filteredCards = [];
 
         this.cards.forEach((cardItem) => {
-            titleList.forEach(
+            list.forEach(
                 (item) => {
-                    if (cardItem.title.toLowerCase() == item.title.toLowerCase()) {
+                    if (cardItem[fieldNameCard].toLowerCase() == item[fieldNameFilter].toLowerCase()) {
                         filteredCards.push(cardItem);
                     }
                 }
