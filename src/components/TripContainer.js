@@ -5,11 +5,16 @@ import { VisualView } from "./VisualView";
 
 import NodeListView from "../containers/NodeListView";
 import TripListView from "../containers/TripListView";
+import TripView from "../containers/TripView";
+import DetailView from "../containers/DetailView";
+
+import MenuDetailView from "../containers/Menus/MenuDetailView";
+import MenuTripView from "../containers/Menus/MenuTripView";
+
+import MenuMain from './control/Menus/MenuMain';
 import MenuListView from './control/Menus/MenuListView';
 
-import TripView from "../containers/TripView";
 
-import DetailView from "../containers/DetailView";
 
 
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
@@ -18,9 +23,8 @@ import { Control_Trip_Stages } from "./control/Control_Trip_Stages";
 import _ from "lodash";
 
 
-import MenuMain from './control/Menus/MenuMain';
-import MenuTripView from "./control/Menus/MenuTripView";
-import MenuDetailView from "./control/Menus/MenuDetailView";
+
+
 
 const itinTemplateTypeID = 1;
 const placeTemplateTypeID = 43;
@@ -80,7 +84,7 @@ export class TripContainer extends Component {
                 <TripListView />
               ) : null}
 
-              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView changeViewPlaceWithFilterByNextHop={this.props.changeViewPlaceWithFilterByNextHop} changeView={this.props.changeView}/></div>: null}
+              {this.props.isTripViewVisible ? <div><TripView /> <MenuTripView /></div>: null}
 
               {this.props.isDetailViewVisible ? <div><DetailView /> <MenuDetailView/></div>: null}
 
