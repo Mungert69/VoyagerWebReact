@@ -34,7 +34,8 @@ export class MapView extends Component {
             mapMarkers: [],
             styleMode: '',
             centerMarker : {},
-            defaultCenter: { lat: 21.753351, lng: -79.339996 }
+            defaultCenter: { lat: 21.753351, lng: -79.339996 },
+            defaultZoom : 7
         };
 
 
@@ -51,7 +52,7 @@ export class MapView extends Component {
 
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
-        if (this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
+        if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections();
             this.setParams();
         }
@@ -110,7 +111,7 @@ export class MapView extends Component {
 
             let itemCount = this.props.cards.length;
             var newCenter=this.state.defaultCenter;
-           
+            var newZoom = this.state.defaultZoom;
 
             var markers = [];
             var marker;
@@ -120,8 +121,9 @@ export class MapView extends Component {
             });
             if (this.props.item!==0){
                 newCenter=markers[this.props.item];
+                newZoom=9;
             }
-            this.setState({defaultCenter : newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
+            this.setState({defaultZoom : newZoom ,defaultCenter : newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
             console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
 
 
@@ -176,7 +178,7 @@ export class MapView extends Component {
 
             <div className="VoyagerMap">
                 <GoogleMap
-                    defaultZoom={7}
+                    defaultZoom={this.state.defaultZoom}
                     defaultCenter={this.state.defaultCenter}
 
                     defaultOptions={{
