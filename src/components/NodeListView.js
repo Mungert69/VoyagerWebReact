@@ -11,15 +11,13 @@ export class NodeListView extends Component {
 
         super(props);
         this.state = {
-
             card: {}
         };
         //this.props.setTripCardDetailLevel(1);
 
     }//Constructor
 
-    setMessage = (card,index) => {
-
+    setMessage = (card, index) => {   
         this.setState({ card: card });
         this.props.setTripItem(index);
     }
@@ -35,14 +33,14 @@ export class NodeListView extends Component {
                 {
                     filteredCards.map((cardValue, index) =>
                         <span className="Voyager_Places_List" key={cardValue.id}>
-                           {this.props.cardType === 'hotel' ?
+                            {this.props.cardType === 'hotel' ?
+                                /* TODO Ollie replace this with style card or component.*/
                             <p>{cardValue.title}</p>
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
                             <Waypoint onEnter={() => this.setMessage(cardValue,index)} />
                         </span>
-
                     )
                 }
             </span >

@@ -56,5 +56,7 @@
         "typescript",
         "typescriptreact",
         "yml"
-    ]
+    ],
+    "terminal.integrated.fontWeight": "500",
+    "terminal.integrated.fontSize": 15
 }

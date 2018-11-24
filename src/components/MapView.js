@@ -3,6 +3,7 @@
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
 
+/*global google*/
 export class MapView extends Component {
 
     constructor(props) {
