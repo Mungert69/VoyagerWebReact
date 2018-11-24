@@ -32,7 +32,6 @@ export class NodeListView extends Component {
                 {this.props.cardType === 'hotel' ?
                     <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
                 }
-
                 {
                     filteredCards.map((cardValue, index) =>
                         <span className="Voyager_Places_List" key={cardValue.id}>
@@ -58,9 +57,7 @@ export class NodeListView extends Component {
 
         return (
             <div>
-
                 {contents}
-
             </div>
         );//Return
     }//Render

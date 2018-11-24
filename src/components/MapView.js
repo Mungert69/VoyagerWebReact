@@ -1,18 +1,14 @@
 ﻿import React, { Component } from 'react';
-import { Carousel } from 'antd';
-import { MapStylePlace, MapStylePlaces, MapStyleHotel, MapStyleHotels, MapStyleTrip, MapStyleTrips } from './MapCode';
+
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
-
-
-/*global google*/
 
 export class MapView extends Component {
 
     constructor(props) {
         super(props);
-        this.props.filterMapStyleCard();
 
+        this.props.filterMapStyleCard();
         var itemCounted = 0;
         var prItemCounted = 0;
         var prItemShift = 0;
@@ -33,14 +29,10 @@ export class MapView extends Component {
             markers: [],
             mapMarkers: [],
             styleMode: '',
-            centerMarker : {},
+            centerMarker: {},
             defaultCenter: { lat: 21.753351, lng: -79.339996 },
-            defaultZoom : 7
+            defaultZoom: 7
         };
-
-
-
-
     }//constructor
 
     componentDidMount() {
@@ -110,7 +102,7 @@ export class MapView extends Component {
         if (this.props.cardType === 'place' || this.props.cardType === 'hotel') {
 
             let itemCount = this.props.cards.length;
-            var newCenter=this.state.defaultCenter;
+            var newCenter = this.state.defaultCenter;
             var newZoom = this.state.defaultZoom;
 
             var markers = [];
@@ -119,17 +111,15 @@ export class MapView extends Component {
                 marker = { lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) };
                 markers.push(marker);
             });
-            if (this.props.item!==0){
-                newCenter=markers[this.props.item];
-                newZoom=9;
+            if (this.props.item !== 0) {
+                newCenter = markers[this.props.item];
+                newZoom = 9;
             }
-            this.setState({defaultZoom : newZoom ,defaultCenter : newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
+            this.setState({ defaultZoom: newZoom, defaultCenter: newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
             console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
 
 
         }
-
-
     }
 
     setItem(itemVal) {
@@ -168,10 +158,9 @@ export class MapView extends Component {
                 loadingElement: <div style={{ height: `100%` }} />,
                 containerElement: <div style={{ height: `300px` }} />,
                 mapElement: <div style={{ height: `100%`, width: `100%`, marginTop: `40px` }} />,
-                center : this.state.defaultCenter
+                center: this.state.defaultCenter
 
             }),
-
             withScriptjs,
             withGoogleMap
         )(props =>
@@ -180,7 +169,6 @@ export class MapView extends Component {
                 <GoogleMap
                     defaultZoom={this.state.defaultZoom}
                     defaultCenter={this.state.defaultCenter}
-
                     defaultOptions={{
                         styles: this.state.styleMode,
                         streetViewControl: true,
@@ -194,7 +182,6 @@ export class MapView extends Component {
                         fullscreenControl: true
                     }}>
 
-
                     <StreetViewPanorama defaultPosition={props.center} hidden>
                         <OverlayView
                             position={{ lat: 49.28590291211115, lng: -123.11248166065218 }}
@@ -207,9 +194,6 @@ export class MapView extends Component {
 
                         </OverlayView>
                     </StreetViewPanorama>
-
-
-
 
                     <Polyline
                         path={this.state.markers}
@@ -232,9 +216,7 @@ export class MapView extends Component {
 
                             }]
                         }}
-
                     />
-
 
                     {this.props.builderMode ?
                         this.props.itinObj.prSelections !== undefined ?
@@ -252,9 +234,7 @@ export class MapView extends Component {
                             )
                             :
                             null
-
                         :
-
                         this.props.cards.map((card, index) =>
                             <MarkerWithLabel
                                 key={index}
@@ -270,22 +250,12 @@ export class MapView extends Component {
 
                     }
 
-
-
-
                 </GoogleMap></div>
         );
 
-
-
         return (
-
-
             <div>
-
                 <StreetViewPanormaWithAnOverlayView />
-
-
             </div>
         );
     }
