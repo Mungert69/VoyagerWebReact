@@ -1,19 +1,27 @@
-import { connect } from 'react-redux';
-import { DetailView } from '../components/DetailView';
-
+import { connect } from "react-redux";
+import { DetailView } from "../components/DetailView";
+import { setTripItem } from "../actions/actions";
 
 const mapStateToProps = state => ({
-    cards: state.cardState.filteredCards,
-    cardType: state.cardState.cardType,
-    item: state.tripViewState.item,
-    jumpCounter: state.tripViewState.jumpCounter,
-    stylePlaceCard: state.cardState.placeStyleCards[2],
-    styleHotelCard: state.cardState.hotelStyleCards[2],
-    styleTripCard: state.cardState.tripStyleCards[2],
-    itinObj: state.apiState.itinObj
-
+  cards: state.cardState.filteredCards,
+  cardType: state.cardState.cardType,
+  //item: state.tripViewState.item,
+  jumpCounter: state.tripViewState.jumpCounter,
+  stylePlaceCards: state.cardState.placeStyleCards,
+  styleHotelCards: state.cardState.hotelStyleCards,
+  styleTripCards: state.cardState.tripStyleCards,
+  itinObj: state.apiState.itinObj
 });
 
+const mapDispatchToProps = dispatch => {
+  return {
+    setTripItem: item => {
+      dispatch(setTripItem(item));
+    }
+  };
+};
+
 export default connect(
-    mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DetailView);

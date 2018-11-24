@@ -22,7 +22,6 @@ export class NodeListView extends Component {
         this.props.setTripItem(index);
     }
     renderNodeList = () => {
-
         var filteredCards = this.props.cards;
 
         return (

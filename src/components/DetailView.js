@@ -67,7 +67,7 @@ export class DetailView extends Component {
 
   renderTripDetailView = itinObj => {
     //console.log("logger: In TripDetailsView.Render  pRSelections = " + prSelections);
-    var contents =
+    var menuContents =
       this.state.cardType === "hotel" ? (
         <MenuHotelListView
           card={this.state.card}
@@ -79,12 +79,12 @@ export class DetailView extends Component {
           styleCard={this.props.stylePlaceCards[2]}
         />
       );
-    contents += itinObj.prSelections.map((prSelection, index) => (
+    var contents = itinObj.prSelections.map((prSelection, index) => (
       <div key={index}>
         <div>
           <CardView
             key="itincard"
-            styleCard={this.props.styleTripCard}
+            styleCard={this.props.styleTripCards[0]}
             card={itinObj.card}
           />
         </div>
@@ -94,7 +94,7 @@ export class DetailView extends Component {
         <div>
           <CardView
             key="placecard"
-            styleCard={this.props.stylePlaceCard}
+            styleCard={this.props.stylePlaceCards[0]}
             card={prSelection.placeCard}
           />
         </div>
@@ -104,7 +104,7 @@ export class DetailView extends Component {
         <div>
           <CardView
             key="hotelcard"
-            styleCard={this.props.styleHotelCard}
+            styleCard={this.props.styleHotelCards[0]}
             card={prSelection.hotelCard}
           />
         </div>
@@ -113,7 +113,7 @@ export class DetailView extends Component {
         />
       </div>
     ));
-    return contents;
+    return (<div>{menuContents}{contents}</div>);
   }; //renderCardView
 
   render() {
