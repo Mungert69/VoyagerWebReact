@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 import { MapStylePlace, MapStylePlaces, MapStyleHotel, MapStyleHotels, MapStyleTrip, MapStyleTrips } from './MapCode';
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
-import { apiBaseUrl } from './Constants';
+
 
 /*global google*/
 
@@ -26,16 +26,15 @@ export class MapView extends Component {
         }
 
         this.state = {
-
-            loading: true,
-            itinObj: {},
             item: itemCounted,
             prItem: prItemCounted,
             itemNumber: 0,
             inputDataType: '',
             markers: [],
-            mapMarkers : [],
-            styleMode: ''
+            mapMarkers: [],
+            styleMode: '',
+            centerMarker : {},
+            defaultCenter: { lat: 21.753351, lng: -79.339996 }
         };
 
 
@@ -52,7 +51,7 @@ export class MapView extends Component {
 
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
-        if (this.props.changeItin !== nextProps.changeItin || this.props.cardType !== nextProps.cardType) {
+        if (this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections();
             this.setParams();
         }
@@ -95,39 +94,39 @@ export class MapView extends Component {
 
         var styleString = this.updateStyleMode();
         if (this.props.builderMode) {
-            fetch(apiBaseUrl + 'api/Itinerary/StoredItinObj/' + this.props.userId + '/')
-                .then((res) => res.text())
-                .then((text) => text.length ? JSON.parse(text) : {})
-                .then(data => {
-                    var markers = [];
-                    let itemCount = data.prSelections.length;
-                    var marker;
-                    data.prSelections.map((selection) => {
-                        marker = { lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) };
-                        markers.push(marker);
-                    }
-                    );
-                    this.setState({ itinObj: data, loading: false, itemNumber: itemCount, styleMode: styleString, markers: markers });
-                    console.log("logger: In MapView.refreshPrSelections value of data = " + data.prSelections);
-                });
-        }
 
+            var markers = [];
+            let itemCount = this.props.itinObj.prSelections.length;
+            var marker;
+            this.props.itinObj.prSelections.map((selection) => {
+                marker = { lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) };
+                markers.push(marker);
+            }
+            );
+            this.setState({ itemNumber: itemCount, styleMode: styleString, markers: markers });
+        }
 
         if (this.props.cardType === 'place' || this.props.cardType === 'hotel') {
 
             let itemCount = this.props.cards.length;
+            var newCenter=this.state.defaultCenter;
+           
+
             var markers = [];
             var marker;
             this.props.cards.map((card) => {
                 marker = { lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) };
                 markers.push(marker);
             });
-            this.setState({mapMarkers : markers , loading: false, itemNumber: itemCount, styleMode: styleString, markers: [] });
+            if (this.props.item!==0){
+                newCenter=markers[this.props.item];
+            }
+            this.setState({defaultCenter : newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
             console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
 
 
         }
-       
+
 
     }
 
@@ -167,7 +166,7 @@ export class MapView extends Component {
                 loadingElement: <div style={{ height: `100%` }} />,
                 containerElement: <div style={{ height: `300px` }} />,
                 mapElement: <div style={{ height: `100%`, width: `100%`, marginTop: `40px` }} />,
-                center: { lat: 21.753351, lng: -79.339996 }
+                center : this.state.defaultCenter
 
             }),
 
@@ -178,7 +177,7 @@ export class MapView extends Component {
             <div className="VoyagerMap">
                 <GoogleMap
                     defaultZoom={7}
-                    defaultCenter={props.center}
+                    defaultCenter={this.state.defaultCenter}
 
                     defaultOptions={{
                         styles: this.state.styleMode,
@@ -236,8 +235,8 @@ export class MapView extends Component {
 
 
                     {this.props.builderMode ?
-                        this.state.itinObj.prSelections !== undefined ?
-                            this.state.itinObj.prSelections.map((selection, index) =>
+                        this.props.itinObj.prSelections !== undefined ?
+                            this.props.itinObj.prSelections.map((selection, index) =>
                                 <MarkerWithLabel
                                     key={index}
                                     position={{ lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) }}

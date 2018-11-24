@@ -18,9 +18,10 @@ export class NodeListView extends Component {
 
     }//Constructor
 
-    setMessage = (card) => {
+    setMessage = (card,index) => {
 
         this.setState({ card: card });
+        this.props.setTripItem(index);
     }
     renderNodeList = () => {
 
@@ -40,7 +41,7 @@ export class NodeListView extends Component {
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
-                            <Waypoint onEnter={() => this.setMessage(cardValue)} />
+                            <Waypoint onEnter={() => this.setMessage(cardValue,index)} />
                         </span>
 
                     )

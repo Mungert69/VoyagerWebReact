@@ -6,11 +6,15 @@ import {
     filterMapStyleCard
 } from '../actions/actions';
 
+import {
+    fetchStoredItinObj
+} from '../actions/apiActions';
+
 const mapStateToProps = state => ({
     builderMode: state.tripViewState.builderMode,
-    detailLevel: state.cardState.cardDetailLevel,
     filteredMapStyleCard: state.cardState.filteredMapStyleCard,
     cards: state.cardState.filteredCards,
+    itinObj: state.apiState.itinObj, 
     cardType: state.cardState.cardType,
     item: state.tripViewState.item,
     jumpCounter: state.tripViewState.jumpCounter,
@@ -23,8 +27,7 @@ const mapDispatchToProps = dispatch => {
         
         filterMapStyleCard: () => {
             dispatch(filterMapStyleCard());
-        },
-       
+        },     
     };
 };
 
