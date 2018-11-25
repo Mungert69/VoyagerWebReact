@@ -1,8 +1,62 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
-import makeAnimated from 'react-select/lib/animated';
+
 import { DatePicker } from 'antd';
 import moment from 'moment';
+
+import Select from 'react-select';
+import { components } from 'react-select';
+
+import makeAnimated from 'react-select/lib/animated';
+import { Trip_Flights_Return, groupedOptions } from './data';
+import chroma from 'chroma-js';
+
+const Control_Filter_Sort_Select_Style = {  
+
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: isDisabled
+        ? null
+        : isSelected ? data.color : isFocused ? color.alpha(0.1).css() : null,
+      color: isDisabled
+        ? '#ccc'
+        : isSelected
+          ? chroma.contrast(color, 'white') > 2 ? 'white' : 'black'
+          : data.color,
+      cursor: isDisabled ? 'not-allowed' : 'default',
+      textTransform: 'uppercase'
+      
+    };
+  },
+  multiValue: (styles, { data }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: color.alpha(0.1).css(),
+      borderRadius: 6,
+ 
+    };
+  },
+
+  control: styles => ({ ...styles, backgroundColor: 'Transparent',  borderColor: '#f2f2f2',    borderRadius: 0,  borderWidth: 3,   borderLeft: 'none',  borderRight: 'none',   borderTop: 'none', boxShadow: 'none', textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600'}),
+  multiValueLabel: styles => ({ ...styles, backgroundColor: '#f2f2f2',      color: '#666',  borderTopRightRadius: 6, borderBottomRightRadius: 6,borderTopLeftRadius: 6, borderBottomLeftRadius: 6 }),
+  multiValueRemove: styles => ({ ...styles, backgroundColor: '#f2f2f2',   borderTopRightRadius: 6, borderBottomRightRadius: 6 }),
+  groupHeading: styles => ({ ...styles, backgroundColor: '#f5f5f5', color: '#666',  borderTopRightRadius:9, borderBottomRightRadius: 9, marginRight:10, textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600', fontSize:'14' }),
+  placeholder: styles => ({ ...styles,  color: '#666',  textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600', fontSize:'14' }),
+  singleValue: styles => ({ ...styles,  color: '#0071bc', }),
+
+};
+
+const { Option } = components;
+const IconOption = (props) => (
+    <Option {...props}>
+    
+      <i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>
+      {props.data.label}
+      {props.data.value}
+    </Option>
+);
 
 
 const { MonthPicker } = DatePicker;
@@ -60,17 +114,7 @@ const Trip_Flights_Departure = [
 { value: '1', label: 'WEDNESDAY 2 JUNE 2019 12:30' },
 { value: '2', label: 'THURSDAY 3 JUNE 2019 14:30' }
 ]
-
-const Trip_Flights_Return = [
-{ value: '1', label: 'MONDAY 1 JUNE 2019 10:30 8 NIGHTS - REMOVE 3 NIGHTS' },
-{ value: '2', label: 'TUESDAY 2 JUNE 2019 16:30 9 NIGHTS - REMOVE 2 NIGHTS' },
-{ value: '3', label: 'WEDNESDAY 3 JUNE 2019 12:30 10 NIGHTS - REMOVE 1 NIGHT' },
-{ value: '4', label: 'THURSDAY 4 JUNE 2019 14:30 11 NIGHTS' },
-{ value: '5', label: 'FRIDAY 5 JUNE 2019 18:30 12 NIGHTS - ADD 1 NIGHT' },
-{ value: '6', label: 'SATERDAY 6 JUNE 2019 14:30 13 NIGHTS - ADD 2 NIGHTS' },
-{ value: '7', label: 'SUNDAY 7 JUNE 2019 09:30 14 NIGHTS - ADD 3 NIGHTS' }
-]
-              
+ 
               const groupStyles = {
                 display: 'flex',
                 alignItems: 'center',
@@ -107,10 +151,9 @@ export class Control_Trip_Flights extends Component {
 
 
   <div className="Control_Filter_Item">
-  <span className="Control_Filter_Item_Label">Airline</span>
+  <span className="Control_Filter_Item_Label">AIRLINE</span>
     <Select
-    options={Trip_Flights_Airline}
-    placeholder="Select Airline"
+    placeholder="SELECT AIRLINE"
 
     isSearchable={true}
     isDisabled={false}
@@ -119,6 +162,8 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
+    options={groupedOptions}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -134,10 +179,9 @@ export class Control_Trip_Flights extends Component {
 
 
   <div className="Control_Filter_Item">
-  <span className="Control_Filter_Item_Label">Airport</span>
+  <span className="Control_Filter_Item_Label">AIRPORT</span>
     <Select
-    options={Trip_Flights_Airport}
-    placeholder="Select Airport"
+    placeholder="SELECT AIRPORT"
 
     isSearchable={true}
     isDisabled={false}
@@ -146,6 +190,8 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
+    options={groupedOptions}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -175,10 +221,9 @@ export class Control_Trip_Flights extends Component {
 
 
   <div className="Control_Filter_Item">
-  <span className="Control_Filter_Item_Label">Departure Flight</span>
+  <span className="Control_Filter_Item_Label">DEPARTURE FLIGHT</span>
     <Select
-    options={Trip_Flights_Departure}
-    placeholder="Select Departure Flight"
+    placeholder="SELECT DEPARTURE FLIGHT"
 
     isSearchable={true}
     isDisabled={false}
@@ -187,6 +232,8 @@ export class Control_Trip_Flights extends Component {
     closeMenuOnSelect={true}
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
+    styles={Control_Filter_Sort_Select_Style}
+    options={groupedOptions}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -200,12 +247,10 @@ export class Control_Trip_Flights extends Component {
     />
 </div>
 
-
   <div className="Control_Filter_Item">
-  <span className="Control_Filter_Item_Label">Return Flight</span>
+  <span className="Control_Filter_Item_Label">RETURN FLIGHT</span>
     <Select
-    options={Trip_Flights_Return}
-    placeholder="Select Return Flight"
+    placeholder="SELECT RETURN FLIGHT"
 
     isSearchable={true}
     isDisabled={false}
@@ -213,7 +258,10 @@ export class Control_Trip_Flights extends Component {
     isClearable={false}
     closeMenuOnSelect={true}
     components={makeAnimated()}
-    formatGroupLabel={formatGroupLabel}
+    components={{ Option: IconOption }}
+    styles={Control_Filter_Sort_Select_Style}
+    options={Trip_Flights_Return}
+
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,

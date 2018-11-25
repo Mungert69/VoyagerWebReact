@@ -5,6 +5,8 @@ import { components } from 'react-select';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import makeAnimated from 'react-select/lib/animated';
+import { colourOptions, groupedOptions } from './data';
+import chroma from 'chroma-js';
 
 
 const marks = {
@@ -17,20 +19,50 @@ const marks = {
 
 const Control_Filter_Sort_Select_Style = {  
 
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: isDisabled
+        ? null
+        : isSelected ? data.color : isFocused ? color.alpha(0.1).css() : null,
+      color: isDisabled
+        ? '#ccc'
+        : isSelected
+          ? chroma.contrast(color, 'white') > 2 ? 'white' : 'black'
+          : data.color,
+      cursor: isDisabled ? 'not-allowed' : 'default',
+      textTransform: 'uppercase'
+      
+    };
+  },
+  multiValue: (styles, { data }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: color.alpha(0.1).css(),
+      borderRadius: 6,
+ 
+    };
+  },
+
   control: styles => ({ ...styles, backgroundColor: 'Transparent',  borderColor: '#f2f2f2',    borderRadius: 0,  borderWidth: 3,   borderLeft: 'none',  borderRight: 'none',   borderTop: 'none', boxShadow: 'none', textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600'}),
-  option: (provided, state) => ({ ...provided, borderBottom: '0px solid #f2f2f2',  borderRadius: 9,  color: '#666',   padding: 6, textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600'}),
-  multiValue: styles => ({ ...styles, backgroundColor: '#f2f2f2',   borderRadius: 6 }),
+  multiValueLabel: styles => ({ ...styles, backgroundColor: '#f2f2f2',      color: '#666',  borderTopRightRadius: 6, borderBottomRightRadius: 6,borderTopLeftRadius: 6, borderBottomLeftRadius: 6 }),
   multiValueRemove: styles => ({ ...styles, backgroundColor: '#f2f2f2',   borderTopRightRadius: 6, borderBottomRightRadius: 6 }),
+  groupHeading: styles => ({ ...styles, backgroundColor: '#f5f5f5', color: '#666',  borderTopRightRadius:9, borderBottomRightRadius: 9, marginRight:10, textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600', fontSize:'14' }),
+  placeholder: styles => ({ ...styles,  color: '#0071bc',  textTransform: 'uppercase',  fontFamily: 'Open Sans', letterSpacing:'1px', fontWeight:'600', fontSize:'14' }),
+  singleValue: styles => ({ ...styles,  color: '#666', }),
+
 };
 
 const { Option } = components;
 const IconOption = (props) => (
     <Option {...props}>
+    
       <i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>
       {props.data.label}
     </Option>
 );
-
 
 
 
@@ -51,21 +83,20 @@ const Hotel_Filter_Type = [
 
 
  const Hotel_Filter_Features = [
-                { value: 'Bar', label: 'Bar' },
-                { value: 'Pool', label: 'Pool' },
-                { value: 'Gym', label: 'Gym' }
+                { value: 'Bar', label: 'Bar',color: 'red' },
+                { value: 'Pool', label: 'Pool',color: 'blue' },
+                { value: 'Gym', label: 'Gym',color: 'green' }
               ]
-
-                          
+   
               const groupStyles = {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
               };
               const groupBadgeStyles = {
-                backgroundColor: '#F5F5F5',
+                backgroundColor: '#0071bc',
                 borderRadius: '2em',
-                color: '#0071bc',
+                color: '#ffffff',
                 display: 'inline-block',
                 fontSize: 12,
                 fontWeight: 'normal',
@@ -73,6 +104,7 @@ const Hotel_Filter_Type = [
                 minWidth: 1,
                 padding: '0.16666666666667em 0.5em',
                 textAlign: 'center',
+                
               };
               
               const formatGroupLabel = data => (
@@ -108,6 +140,8 @@ export class Control_Filter_Sort_Hotel extends Component {
     formatGroupLabel={formatGroupLabel}
     styles={Control_Filter_Sort_Select_Style}
     components={{ Option: IconOption }}
+    styles={Control_Filter_Sort_Select_Style}
+    options={groupedOptions}
 
     theme={(theme) => ({
       ...theme,
@@ -123,9 +157,9 @@ export class Control_Filter_Sort_Hotel extends Component {
 
                      
                             <span className="Control_Sort_Item_UpDown" >
-                            <span className="Control_Sort_Item_Label">ascending or descending</span>
-                                   <a ><i className="fas fa-caret-up Icon_Layer_Sidebyside"></i>   </a>
-                                   <a ><i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>   </a>
+                            <span className="Hide Control_Sort_Item_Label">ascending or descending</span>
+                                   <a ><i className="fas fa-caret-up Control_Icon_Layer_Sidebyside_Sort_Ascend_Descend"></i>   </a>
+                                   <a ><i className="fas fa-caret-down Control_Icon_Layer_Sidebyside_Sort_Ascend_Descend"></i>   </a>
                             </span>
                           
                      
@@ -148,7 +182,6 @@ export class Control_Filter_Sort_Hotel extends Component {
   <div className="Control_Filter_Item">
   <span className="Control_Filter_Item_Label">FILTER by HOTEL FEATURES</span>
     <Select
-    options={Hotel_Filter_Type}
     placeholder="HOTEL FEATURES"
 
     isSearchable={true}
@@ -160,6 +193,8 @@ export class Control_Filter_Sort_Hotel extends Component {
     noOptionsMessage={() => "ALL FILTERS IN USE"}
     formatGroupLabel={formatGroupLabel}
     styles={Control_Filter_Sort_Select_Style}
+    options={groupedOptions}
+
     isMulti
     theme={(theme) => ({
       ...theme,
