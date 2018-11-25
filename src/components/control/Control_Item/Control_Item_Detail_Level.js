@@ -41,6 +41,7 @@ style={{
 controlHeight: 20,
 baseUnit: 2,
 menuGutter: 2,
+
 },
       colors: {
       ...theme.colors,

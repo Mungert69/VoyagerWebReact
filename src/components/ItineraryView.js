@@ -231,7 +231,6 @@ export class ItineraryView extends Component {
           {this.props.builderMode && "MY TRIP "}
         </l>
         <l className="Voyager_Trip_Control_Nights_Total"> </l>
-
         {contents}
       </div>
     ); //return

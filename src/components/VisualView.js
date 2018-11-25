@@ -10,7 +10,7 @@ export class VisualView extends React.Component {
   render() {
     return <span >
 
-        <MapView/>
+        <MapView />
         <Control_Menu_2 />
     </span>
     ;

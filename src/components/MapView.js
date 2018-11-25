@@ -157,8 +157,8 @@ export class MapView extends Component {
             withProps({
                 googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAww7cMvMFsHfWR6m0eSbFsOltKyeKyzCk&v=3.exp&libraries=geometry,drawing,places",
                 loadingElement: <div style={{ height: `100%` }} />,
-                containerElement: <div style={{ height: `300px` }} />,
-                mapElement: <div style={{ height: `100%`, width: `100%`, marginTop: `40px` }} />,
+                containerElement: <div style={{ height: `175px`,marginTop: `36px`, position:`fixed`, left:`0px`, right:`0px`, top:`0px`, zIndex:`2` }} />,
+                mapElement: <div style={{ height: `100%`, width: `100%`}} />,
                 center: this.state.defaultCenter
 
             }),
