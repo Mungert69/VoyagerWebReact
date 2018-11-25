@@ -3063,6 +3063,23 @@ a:hover .Control_Icon_Layer_Sidebyside {
     color: #0071bc;
 }
 
+.Control_Icon_Layer_Sidebyside_Sort_Ascend_Descend {
+    color: #9b9b9b;
+    font-size: 2em;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    font-weight: 600;
+    margin-top: -5px;
+    margin-bottom: -1px;
+    margin-Right: -2px;
+}
+a:hover .Control_Icon_Layer_Sidebyside_Sort_Ascend_Descend {
+    color: #0071bc;
+}
+
 
 
 .Control_Icon_Divider {
@@ -3678,67 +3695,74 @@ margin-right: 4px;
                                margin-right:4px;
                          float: right;
                                     }
-
-                            .Control_Sort_Item_Label {
-                        color: #666666;
+                                    .Control_Sort_Item_Label {
+                                        color: #c7c7c7;
+                                        font-size: .8em;
+                                        font-weight: 500;
+                                       text-align: left;
+                                       margin-left:12px;
+                                       margin-right:4px;
+                                       text-transform: uppercase;
+                                letter-spacing: .8px;
+                                       
+                                            }
+                
+                .Control_Filter_Panel{
+                margin-right: 10%;
+                margin-left: 10%;
+                
+                }
+                
+                .Control_Filter_Item{
+                margin-bottom: 6px;
+                
+                    }
+                    
+                    .Control_Filter_Item_Label{
+                        color: #c7c7c7;
                         font-size: .8em;
                         font-weight: 500;
                        text-align: left;
                        margin-left:12px;
-                       margin-right:4px;
                        text-transform: uppercase;
+                       letter-spacing: .8px;
                 
                        
                             }
-
-.Control_Filter_Panel{
-margin-right: 10%;
-margin-left: 10%;
-
-}
-
-.Control_Filter_Item{
-margin-bottom: 6px;
-
-    }
-    
-    .Control_Filter_Item_Label{
-        color: #666666;
-        font-size: .8em;
-        font-weight: 500;
-       text-align: left;
-       margin-left:12px;
-       text-transform: uppercase;
-
-       
-            }
-            
-            .Control_Filter_Item_Label_Centre{
-                color: #666;
-                font-size: 1em;
-                font-weight: 500;
-                display:block;
-             text-align: center;
-               text-transform: uppercase;
-               margin-bottom: -15px;
+                            
+                            .Control_Filter_Item_Label_Centre{
+                                color: #0071bc;
+                                 font-size: 1em;
+                                font-weight: 600;
+                                display:block;
+                             text-align: center;
+                               text-transform: uppercase;
+                               margin-bottom: -15px;
+                               letter-spacing: 1px;
+                                    }
+                                    
+                
+                .Control_Filter_Item_Slider{
+                margin-top: 15px;
+                margin-bottom: 25px;
+                margin-left:10%;
+                margin-right:10%;
                     }
-                    
-
-.Control_Filter_Item_Slider{
-margin-top: 15px;
-margin-bottom: 25px;
-margin-left:10%;
-margin-right:10%;
-    }
-
-
-.Control_Trip_Flight_Approximate_Date
-
-{
-width: 100%;
-
-
-}
+                
+                
+                .Control_Trip_Flight_Approximate_Date
+                
+                {
+                border-bottom: #666;
+                border-left: 0px;
+                border: none;
+                border-top: none;
+                    width: 100%;
+                
+                
+                }
+                
+                
 
 
 
