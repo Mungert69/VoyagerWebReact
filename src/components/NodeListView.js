@@ -3,7 +3,8 @@ import { CardView } from '../components/CardView';
 import Waypoint from 'react-waypoint';
 import MenuHotelListView from '../containers/Menus/MenuHotelListView';
 import MenuPlaceListView from '../containers/Menus/MenuPlaceListView';
-
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 //import 'antd/dist/antd.css';
 
 export class NodeListView extends Component {
@@ -17,7 +18,7 @@ export class NodeListView extends Component {
 
     }//Constructor
 
-    setMessage = (card, index) => {   
+    setCard = (card, index) => {   
         this.setState({ card: card });
         this.props.setTripItem(index);
     }
@@ -25,23 +26,31 @@ export class NodeListView extends Component {
         var filteredCards = this.props.cards;
 
         return (
-            < span  >
+            <span >
+            <div className="Show"  >
                 {this.props.cardType === 'hotel' ?
-                    <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[0]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
-                }
+                    <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
+                }</div>
+                <div className="abc"  >
+                
                 {
                     filteredCards.map((cardValue, index) =>
-                        <span  className="Voyager_Places_List" key={cardValue.id}>
-                            {this.props.cardType === 'hotel' ?
+                      
+               
+                       <span  className="Voyager_Places_List" key={cardValue.id}>
+                           <Waypoint onEnter={() => this.setCard(cardValue,index)} /> 
+                           {this.props.cardType === 'hotel' ?
                                 <CardView  styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                            
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
-                            <Waypoint onEnter={() => this.setMessage(cardValue,index)} />
+                            
                         </span>
+                      
                     )
-                }
+
+                }       </div>
             </span >
         )//Return;
     }//renderCardList
@@ -53,7 +62,7 @@ export class NodeListView extends Component {
             : this.renderNodeList();
 
         return (
-            <div  >
+            <div >
                 {contents}
             </div>
         );//Return

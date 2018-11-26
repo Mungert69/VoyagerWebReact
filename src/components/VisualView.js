@@ -8,7 +8,7 @@ export class VisualView extends React.Component {
   }
 
   render() {
-    return <span >
+    return <span  >
 
         <MapView />
         <Control_Menu_2 />

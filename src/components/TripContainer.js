@@ -65,7 +65,8 @@ export class TripContainer extends Component {
         {this.props.loading ? (
           <span>LOADING...</span>
         ) : (
-            <div>
+          <div>
+          
 
               <MenuMain changeView={this.props.changeView}
                 changeDetailLevel={this.props.changeDetailLevel}
@@ -73,11 +74,11 @@ export class TripContainer extends Component {
 
 
               {this.props.isDetailViewVisible || this.props.isTripViewVisible ||  this.props.isListViewVisible? (
-                <VisualView />
+                <VisualView  />
               ) : null}
 
               
-
+  
               {(this.props.cardType === "place" ||
                 this.props.cardType === "hotel") &&
                 this.props.isListViewVisible ? (

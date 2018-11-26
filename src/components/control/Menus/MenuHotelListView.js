@@ -5,7 +5,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { CardView } from '../../CardView';
 import { addHotel } from "../../../actions/apiActions";
-import { AccommodationCharacteristics } from '../../SubComponents/AccommodationCharacteristics';
+import  {AccommodationCharacteristics} from '../../SubComponents/AccommodationCharacteristics';
 
 const MenuHotelListView = (props) => {
     const Panel = Collapse.Panel;
@@ -89,10 +89,9 @@ return(
 
     <div className="Control_2_2">
 
-        <span className="Hotel_Name">{props.card.title}</span>
-        <span className="Country_Name">{props.card.country}</span>
-        <span className="Feature"> {props.card.AccommodationCharacteristics}</span>
-
+        <span  className="Hotel_Name">{props.card.title}</span>
+        <span className="Country_Name">{props.card.placeNameId} - {props.card.country}</span>
+     <AccommodationCharacteristics accommodationCharacteristics={props.card.accommodationCharacteristics}></AccommodationCharacteristics>
 
         <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
             <Panel header={
