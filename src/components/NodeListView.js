@@ -53,7 +53,7 @@ export class NodeListView extends Component {
             : this.renderNodeList();
 
         return (
-            <div className="top300"  >
+            <div  >
                 {contents}
             </div>
         );//Return
