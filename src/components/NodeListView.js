@@ -33,8 +33,8 @@ export class NodeListView extends Component {
                     filteredCards.map((cardValue, index) =>
                         <span className="Voyager_Places_List" key={cardValue.id}>
                             {this.props.cardType === 'hotel' ?
-                                /* TODO Ollie replace this with style card or component.*/
-                            <p>{cardValue.title}</p>
+                                <CardView styleCard={this.props.styleHotelCards[2]} key={cardValue.id + cardValue.title} card={cardValue} />
+                           
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[2]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
