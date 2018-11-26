@@ -3822,6 +3822,27 @@ color: #0071bc;
 
 
 
+
+
+
+
+.Control_Trip_Flights_Panel{
+margin-top:300px;
+}
+
+.Control_Trip_Flights_Return_Night_AddRemove{
+
+}
+
+.Control_Trip_Flights_Return_Date{
+
+}
+
+.Control_Trip_Flights_Return_Night_Total
+{
+
+    }
+
 .Control_Position_outer_wrapper {
     display: flex;
   }
