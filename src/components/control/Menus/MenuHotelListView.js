@@ -91,9 +91,8 @@ return(
 
         <span className="Hotel_Name">{props.card.title}</span>
         <span className="Country_Name">{props.card.country}</span>
-        <AccommodationCharacteristics card={this.props.card}/>
+        <span className="Feature"> {props.card.AccommodationCharacteristics}</span>
 
-        <span className="Feature" >hotel feature - hotel feature - hotel feature</span>
 
         <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
             <Panel header={
