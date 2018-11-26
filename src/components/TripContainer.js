@@ -20,6 +20,9 @@ import MenuListView from './control/Menus/MenuListView';
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
 import { Control_Trip_Dates } from "./control/Control_Trip_Dates";
 import { Control_Trip_Stages } from "./control/Control_Trip_Stages";
+
+import { Control_Profile } from "./control/Control_Profile";
+
 import _ from "lodash";
 
 
@@ -94,7 +97,7 @@ export class TripContainer extends Component {
               ) : <MenuListView changeView={this.props.changeView} />}
 
 
-              <div className="Hide merge this code with FlightView.js">
+              <div className="Show merge this code with FlightView.js">
                 <Control_Trip_Flights />
               </div>
               <div className="Hide where is this placed?">
@@ -103,6 +106,7 @@ export class TripContainer extends Component {
               <div className="Hide merge this with ItineraryView.js">
                 <Control_Trip_Stages />
               </div>
+
             </div>
           )}
       </span>

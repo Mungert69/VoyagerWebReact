@@ -7,7 +7,7 @@ import Select from 'react-select';
 import { components } from 'react-select';
 
 import makeAnimated from 'react-select/lib/animated';
-import { Trip_Flights_Return, groupedOptions } from './data';
+import { Control_Trip_Flights_Airline_Data, Control_Trip_Flights_Airport_Data, Control_Trip_Flights_Departure_Data, Control_Trip_Flights_Return_Data, groupedOptions } from './data';
 import chroma from 'chroma-js';
 
 const Control_Filter_Sort_Select_Style = {  
@@ -48,15 +48,6 @@ const Control_Filter_Sort_Select_Style = {
 
 };
 
-const { Option } = components;
-const IconOption = (props) => (
-    <Option {...props}>
-    
-      <i className="fas fa-caret-down Icon_Layer_Sidebyside"></i>
-      {props.data.label}
-      {props.data.value}
-    </Option>
-);
 
 
 const { MonthPicker } = DatePicker;
@@ -98,22 +89,7 @@ function disabledRangeTime(_, type) {
 }
 
 
-const Trip_Flights_Airline = [
-{ value: 'Air France', label: 'Air France' },
-{ value: 'British Airways', label: 'British Airways' },
-{ value: 'Virgin ', label: 'Virgin' }
-]   
 
-const Trip_Flights_Airport = [
-{ value: 'London', label: 'London' },
-{ value: 'Birmingham', label: 'Birmingham' },
-{ value: 'Manchester', label: 'Manchester' }
-]
-
-const Trip_Flights_Departure = [
-{ value: '1', label: 'WEDNESDAY 2 JUNE 2019 12:30' },
-{ value: '2', label: 'THURSDAY 3 JUNE 2019 14:30' }
-]
  
               const groupStyles = {
                 display: 'flex',
@@ -140,12 +116,36 @@ const Trip_Flights_Departure = [
                 </div>
               );
      
+
+              const { Option } = components;
+const IconOption = (props) => (
+    <Option {...props}>
+               <div class="Control_Position_outer_wrapper">
+                        <div className="Control_Position_left Control_Position_inner_wrapper">
+                        <span className="Control_Trip_Flights_Return_Date">{props.data.label}</span>
+                        </div>
+
+                        <div className="Control_Position_center Control_Position_inner_wrapper">
+      <span className="Control_Trip_Flights_Return_Night_Total"> {props.data.nighttotal}</span>
+                        </div>
+
+                        <div className="Control_Position_right Control_Position_inner_wrapper">
+                        <span className="Control_Trip_Flights_Return_Night_AddRemove"><i className="fas fa-moon"></i> {props.data.nightaddremove}</span>
+                        </div>
+                    </div>
+
+      
+
+      
+    </Option>
+);
+
 export class Control_Trip_Flights extends Component {
 
     render() {
         return (
 
-<div>
+<div className="Control_Trip_Flights_Panel">
 
  <div className="Control_Filter_Panel" > 
 
@@ -163,7 +163,7 @@ export class Control_Trip_Flights extends Component {
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
     styles={Control_Filter_Sort_Select_Style}
-    options={groupedOptions}
+    options={Control_Trip_Flights_Airline_Data}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -191,7 +191,7 @@ export class Control_Trip_Flights extends Component {
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
     styles={Control_Filter_Sort_Select_Style}
-    options={groupedOptions}
+    options={Control_Trip_Flights_Airport_Data}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -233,7 +233,7 @@ export class Control_Trip_Flights extends Component {
     components={makeAnimated()}
     formatGroupLabel={formatGroupLabel}
     styles={Control_Filter_Sort_Select_Style}
-    options={groupedOptions}
+    options={Control_Trip_Flights_Departure_Data}
     theme={(theme) => ({
       ...theme,
       borderRadius: 3,
@@ -260,7 +260,7 @@ export class Control_Trip_Flights extends Component {
     components={makeAnimated()}
     components={{ Option: IconOption }}
     styles={Control_Filter_Sort_Select_Style}
-    options={Trip_Flights_Return}
+    options={Control_Trip_Flights_Return_Data}
 
     theme={(theme) => ({
       ...theme,
