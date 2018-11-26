@@ -75,8 +75,10 @@ a {
     margin-right: 5px;
 }
 .top300 {
-
-    top:300px;
+margin-top: 400px;
+    top: 400px;
+    padding-top: 400px;
+    height: 200px;
 }
 
 .Voyager_Hotels_List {
@@ -365,6 +367,7 @@ a {
 }
 .percentageWidth100 {
     width: 100%;
+
 }
 
 
@@ -1817,13 +1820,36 @@ word-wrap:break-word;
 
 /* CARD */
 
+
+
+
+.Voyager_Card_A_Container_Panel{
+box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 17px 0 rgba(0, 0, 0, 0.15);
+border-radius: 6px;
+background-color: #fff;
+transition: all 0.6s ease-out;
+width: auto;
+cursor: pointer;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+ margin: 0 auto;
+ 
+}
+
+
+
+
+
 .Voyager_Card_A_Container {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 17px 0 rgba(0, 0, 0, 0.15);
     border-radius: 6px;
-    margin: 10px;
     background-color: #fff;
     transition: all 0.6s ease-out;
-    width: 300px;
+    width: auto;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1831,6 +1857,7 @@ word-wrap:break-word;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+     margin: 16px;
 }
 
 
@@ -2260,6 +2287,15 @@ position: fixed;
         margin-top: 2px;
     }
 
+
+    .Control_Details_Panel_Content_Full {
+        overflow: auto;
+        height: auto;
+        max-height: auto;
+        background-color: #fff;
+        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 2%, rgb(255,255,255) 5%, rgb(255,255,255) 99%, rgba(0,0,0,.01) 100% );
+        margin-top: 2px;
+    }
 
 
 
@@ -3374,7 +3410,7 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
-    z-index: 9999999999999999999999999999999999999999999;
+
 
 }
 
@@ -3572,6 +3608,7 @@ a:hover .Voyager_Control_Stage_Number_Text {
     transform: scale(0.66666667) rotate(0deg);
     transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     zoom: 1;
+    font-size: 3em;
 }
 
 .ant-table-row-expanded:after {
@@ -3597,7 +3634,7 @@ a:hover .Voyager_Control_Stage_Number_Text {
 }
 
 .ant-collapse-item {
-    line-height: 7px;
+
     padding: 1px 0 1px 1px;
     color: #0071bc;
     cursor: pointer;
@@ -3605,9 +3642,21 @@ a:hover .Voyager_Control_Stage_Number_Text {
     -webkit-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
-    text-align: center;
+  
     /* display: inline-block; */
 }
+
+
+
+.Voyager_Card_Container_Trip_Details_SubPanel1{
+background-color: transparent;
+z-index: 999999999999999999999999999;
+text-align: center;
+align-content: center;  
+margin-top: -10px;
+}
+
+
 
 .Hotel_Characteristics_Panel {
     margin-top: -6px;
@@ -4484,3 +4533,9 @@ margin-top:10px;
                 
             
             }
+
+
+
+
+
+        

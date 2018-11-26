@@ -11,7 +11,7 @@ export class TripListView extends Component {
     let filteredCards = this.props.cards;
     if (filteredCards.length===0) return null;
     return (
-      <span>
+      <span >
         <MenuTripListView />
         {filteredCards.map(cardValue => (
           <span>
@@ -41,6 +41,6 @@ export class TripListView extends Component {
         this.renderCardList(this.props.cards)
       );
 
-    return <div>{contents}</div>; //Return
+    return <div  >{contents}</div>; //Return
   } //Render
 }

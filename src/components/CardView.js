@@ -47,7 +47,8 @@ export class CardView extends Component {
 
 
         return (
-            <div className="percentageWidth100 Voyager_Card_A_Container">
+            <div className="percentageWidth100 ">
+            <div className="Voyager_Card_A_Container">
                 <span >
                      {carouselToggle ?
                         <div>
@@ -62,13 +63,14 @@ export class CardView extends Component {
                     <div>   
                     
                     
-                    <span className="Show">
+                    <span className="Hide">
                        <div className="Voyager_Card_Image_Carousel_Controls">
                         <a onClick={this.previous}><i className="fas fa-caret-left Voyager_Icon_Base_1"></i></a>
                    
                         <a onClick={this.next}><i className="fas fa-caret-right Voyager_Icon_Base_1"></i></a>
                                 </div>
                             </span>
+                            <div className="Hide">
                                            <div key="" className="Hide Card_Control_Container">
                             <div key="Control_Save" className="Show" title="">
                             <a className="Voyager_Control_Item_B AnimationRipple">
@@ -104,7 +106,7 @@ export class CardView extends Component {
                             <i className="fas fa-expand-arrows-alt Voyager_Control_Icon_Size_0"></i>   
                             </a>
                             </div>
-                            </div>
+                            </div></div>
                         <span className={this.props.styleCard.card1ElementTitleStyle} >{this.props.card.title}</span>
                         <span className={this.props.styleCard.card1ElementCountryStyle}>placename - {this.props.card.country}</span>
                         <AccommodationCharacteristics card={this.props.card}/>
@@ -115,45 +117,25 @@ export class CardView extends Component {
                         <span className={this.props.styleCard.card1ElementTagsStyle}>{this.props.card.tags}</span>
                         <span className={this.props.styleCard.card1ElementIdStyle}>{this.props.card.Id}</span>
  
+
+
+
                         <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
                             <Panel header={
                    
                                 <div className="Voyager_Card_Container_Trip_Details_SubPanel1">
-          <i className="fas fa-caret-down Voyager_Control_Icon_Expand"></i> 
+     <i className="fas fa-caret-down Control_Icon_Expand"></i> 
                                 </div>
 
                                 } className="Voyager_Card_Container_Trip_Details AnimationRipple" showArrow={false} style={customPanelStyle}>
-xxx
-
-                            
-
-                            </Panel>
-                        </Collapse>
-                       
-                            <PerfectScrollbar className="Voyager_Card_Content_Container_Panel">
-                            <div className="Voyager_Card_Content_Container" />
-                            <p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p>
-                          
-                            <AccommodationDescription card={this.props.card}/>
+                 
+                             <AccommodationDescription card={this.props.card}/>             
                             <AccommodationRoomSpecification card={this.props.card}/>                          
                             <AccommodationSelfCater card={this.props.card}></AccommodationSelfCater>
                             <AccommodationAllInclusiveFacilities card={this.props.card}></AccommodationAllInclusiveFacilities>
-                            
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel2}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel3}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel4}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel5}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel6}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel7}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel8}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel9}</span>
-                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel10}</span>
-                            <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>CAT1 - CAT2 - CAT3 - CAT4</span>
-                            <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>TAG1 - TAG2 - TAG3 - TAG4</span>
-                        </PerfectScrollbar>
 
-                        <div className="Hide Voyager_Card_Container_Follow_User AnimationRipple">
+
+                                        <div className="Hide Voyager_Card_Container_Follow_User AnimationRipple">
                         <div className="Voyager_Card_Container_Follow_User_SubPanel ">
                         <div className="Show" title="">
                                     <a ><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>Explore {this.props.card.title} Hotels</span></a>
@@ -168,10 +150,55 @@ xxx
                         </div>
                         </div>
                         </div>
+            
+            
+            
+            
+            
+               
+                            <PerfectScrollbar className="Voyager_Card_Content_Container_Panel">
+                            <div className="Voyager_Card_Content_Container" />
+                            <p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p>
+                          
+              
+                            <div className="">
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel1}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel2}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel3}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel4}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel5}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel6}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel7}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel8}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel9}</span>
+                            <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.panel10}</span></div>
+                            <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>CAT1 - CAT2 - CAT3 - CAT4</span>
+                            <span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>TAG1 - TAG2 - TAG3 - TAG4</span>
+                        </PerfectScrollbar>
+            
+            
+                        </Panel>
+
+
+            
+                        </Collapse>
+                       
+
+
+
+
+
+                    
+
+            
 
         
                  </div>
               </span>
+
+
+                     
+            </div>
             </div>
           
             
@@ -179,7 +206,7 @@ xxx
     }//renderCardView
     render() {
         return (
-            <div >
+            <div>
             {this.renderCardView()}
             </div>
         );//return

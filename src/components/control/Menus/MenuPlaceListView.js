@@ -59,10 +59,6 @@ const MenuPlaceListView = (props) => {
                                     <l className="Control_Text_Right">hotels</l></i>
                             </a></div>
 
-                        <div className="show" >
-                            <a className="Control_Item_D" >
-                                <i className="fas fa-thumbs-up Voyager_Control_Icon_Size_1"> </i>
-                            </a></div>
                     </div>
 
 
@@ -87,7 +83,8 @@ const MenuPlaceListView = (props) => {
             <div className="Control_2_2">
 
                 <span className="Place_Name">{props.card.title}</span>
-                <span className="Country_Name">country</span>
+                <span className="Country_Name">{props.card.country}</span>
+
                 <span className="Feature" >place feature - place feature - place feature</span>
                 <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
                     <Panel header={

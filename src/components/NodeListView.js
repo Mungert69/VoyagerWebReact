@@ -25,18 +25,18 @@ export class NodeListView extends Component {
         var filteredCards = this.props.cards;
 
         return (
-            < span >
+            < span  >
                 {this.props.cardType === 'hotel' ?
-                    <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
+                    <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[0]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
                 }
                 {
                     filteredCards.map((cardValue, index) =>
-                        <span className="Voyager_Places_List" key={cardValue.id}>
+                        <span  className="Voyager_Places_List" key={cardValue.id}>
                             {this.props.cardType === 'hotel' ?
-                                <CardView styleCard={this.props.styleHotelCards[2]} key={cardValue.id + cardValue.title} card={cardValue} />
+                                <CardView  styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                            
                                 :
-                                <CardView styleCard={this.props.stylePlaceCards[2]} key={cardValue.id + cardValue.title} card={cardValue} />
+                                <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
                             <Waypoint onEnter={() => this.setMessage(cardValue,index)} />
                         </span>
@@ -53,7 +53,7 @@ export class NodeListView extends Component {
             : this.renderNodeList();
 
         return (
-            <div >
+            <div className="top300"  >
                 {contents}
             </div>
         );//Return

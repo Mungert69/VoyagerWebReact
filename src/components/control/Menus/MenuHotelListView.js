@@ -5,6 +5,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { CardView } from '../../CardView';
 import { addHotel } from "../../../actions/apiActions";
+import { AccommodationCharacteristics } from '../../SubComponents/AccommodationCharacteristics';
 
 const MenuHotelListView = (props) => {
     const Panel = Collapse.Panel;
@@ -62,8 +63,7 @@ return(
 
                 <div className="show" >
                     <a className="Control_Item_D" onClick={()=> props.addHotel(props.card.id,props.card.placeNameId,props.userId)}>
-                        <i className="fas fa-thumbs-up Voyager_Control_Icon_Size_1"> </i>
-                    </a>
+                    <i className="fas fa-plus-circle Voyager_Control_Icon_Size_1">ADD </i>                    </a>
                     {props.addHotelMsg}
                     </div>
             </div>
@@ -90,17 +90,21 @@ return(
     <div className="Control_2_2">
 
         <span className="Hotel_Name">{props.card.title}</span>
-        <span className="Country_Name">country</span>
+        <span className="Country_Name">{props.card.country}</span>
+        <AccommodationCharacteristics card={this.props.card}/>
+
         <span className="Feature" >hotel feature - hotel feature - hotel feature</span>
 
         <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
             <Panel header={
-                <div className="Control_Details_Panel_Expand">
-                    <i className="fas fa-caret-down Control_Icon_Expand"></i>
-                </div>
+            
+            <div className="Voyager_Card_Container_Trip_Details_SubPanel1">
+     <i className="fas fa-caret-down Control_Icon_Expand"></i> 
+                                </div>
+
             } className="Control_Details_Panel AnimationRipple" showArrow={false} style={customPanelStyle}>
 
-                <PerfectScrollbar className="Control_Details_Panel_Content">
+                <PerfectScrollbar className="Control_Details_Panel_Content_Full">
                     <CardView styleCard={props.styleCard} card={props.card} />
 
                 </PerfectScrollbar>

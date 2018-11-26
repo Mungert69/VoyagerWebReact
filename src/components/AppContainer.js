@@ -9,13 +9,13 @@ export class AppContainer extends Component {
 test='test';
     render() {
         return (
-            <Grid fluid>
+            <Grid fluid >
                 <Row>
             
 
                     <Col >
                      
-                        <TripContainer/>
+                        <TripContainer /> 
 
                     </Col>
                 </Row>

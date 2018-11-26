@@ -54,7 +54,7 @@ export class HotelList extends Component {
             : this.renderHotelList(this.state.hotels);
        
         return (
-            <div >
+            <div  >
                 {contents}
             </div>
         );//return
