@@ -74,6 +74,11 @@ a {
     color: forestgreen;
     margin-right: 5px;
 }
+.top300 {
+
+    top:300px;
+}
+
 .Voyager_Hotels_List {
     margin-left: -43px;
     color: #666;

@@ -36,7 +36,7 @@ export class NodeListView extends Component {
                                 /* TODO Ollie replace this with style card or component.*/
                             <p>{cardValue.title}</p>
                                 :
-                                <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
+                                <CardView styleCard={this.props.stylePlaceCards[2]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
                             <Waypoint onEnter={() => this.setMessage(cardValue,index)} />
                         </span>
@@ -53,7 +53,7 @@ export class NodeListView extends Component {
             : this.renderNodeList();
 
         return (
-            <div>
+            <div >
                 {contents}
             </div>
         );//Return
