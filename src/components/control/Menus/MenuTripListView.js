@@ -47,7 +47,7 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
-                        <Control_Item_Trip_Date_Price  priceStr={props.card.pricesStr} />
+                        <Control_Item_Trip_Date_Price  pricesStr={props.card.pricesStr} />
                         <Control_Item_Country_Name country={props.card.country}/>
                         <Control_Item_Hotel_Place_Country_Name />                     
                     </div>
