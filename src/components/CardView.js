@@ -49,7 +49,7 @@ export class CardView extends Component {
         return (
    
             <div className="percentageWidth100 ">
-            <div className="Voyager_Card_A_Container">
+            <div className="Voyager_Card_A_Container AnimationRipple">
                 <span >
                      {carouselToggle ?
                         <div>

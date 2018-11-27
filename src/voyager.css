@@ -74,26 +74,7 @@ a {
     color: forestgreen;
     margin-right: 5px;
 }
-.abc1 {
 
-    display: flex;
-    justify-content: center;
-}
-.abc2 {
-    
-
- top: 290px;
-  
-        position: absolute;
-        width: 90%;
-        bottom: 75px;
-        
-        overflow: auto;
-    
-        background-color: #fff;
-    
-        
-    }
 .Voyager_Hotels_List {
     margin-left: -43px;
     color: #666;
@@ -168,8 +149,14 @@ a {
 
 .Voyager_Trip_Transfer{
     width:100%;
-    text-align: center;
+    text-align: left;
     color:rgb(160, 160, 160);
+    font-size: .8em;
+    font-weight: 400;
+    display:block;
+   letter-spacing: .5px;
+   margin-left:3%;
+   margin-right:3%;
 }
 
 .Voyager_Trip_Panel {
@@ -1834,24 +1821,18 @@ word-wrap:break-word;
 /* CARD */
 
 
-
-
-.Voyager_Card_A_Container_Panel{
-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 17px 0 rgba(0, 0, 0, 0.15);
-border-radius: 6px;
-background-color: #fff;
-transition: all 0.6s ease-out;
-width: auto;
-cursor: pointer;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
- margin: 0 auto;
- 
+.Voyager_Card_A_Container_Panel_1 {
+    display: flex;
+    justify-content: center;
 }
+
+.Voyager_Card_A_Container_Panel_2 {
+        top: 290px;
+        position: absolute;
+        width: 90%;
+        bottom: 75px; 
+        overflow: auto;
+    }
 
 
 
@@ -3969,15 +3950,15 @@ transition: color .5s ease-out;
 
 .Trip_Name
 {
-color: purple;
-font-size: 1em;
-font-weight: 600;
-text-transform: uppercase;
-text-align: center;
-display:block;
-letter-spacing: 3px;
-margin-top: 5px;
-font-family: 'Open Sans', sans-serif;
+    color:#666;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    display:block;
+    letter-spacing: 3px;
+    margin-top: 1px;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -4120,6 +4101,20 @@ font-family: 'Open Sans', sans-serif;
 
 
 
+.Control_Trip_Stages_Container_Panel_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.Control_Trip_Stages_Container_Panel_2 {
+        top: 345px;
+        position: absolute;
+        width: 100%;
+        bottom: 75px; 
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
 
 
 
@@ -4139,31 +4134,43 @@ font-family: 'Open Sans', sans-serif;
     margin-bottom: 4px;
     margin-right: 16px;
     margin-left: 4px;
-    border-radius: 9px;
+
+   
 }
 
-.Control_Trip_Stages:hover{
-      background-color:rgba(233, 233, 233, 0.4);  
 
-}
+
 
 .Control_Trip_Stages_Item_Group{
-    color: #666666;
-  
-    }
-    
-    
-    .Control_Trip_Stages_Item_Group:hover{
-    color: #0071bc;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 17px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.6s ease-out;
+    width: auto;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+     margin: 16px;
 
     }
+    
+    
+    .Control_Trip_Stages_Item_Group:hover {
+        box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.3), 0 15px 33px 0 rgba(0, 0, 0, 0.25);
+        transition: all 0.6s ease-out;
+    }
+
 
 
 .Control_Trip_Stages_Position_outer_wrapper {
     display: flex;
     margin-right: 5%;
     margin-left: 5%;
-    margin-bottom: 2px;
+ 
   }
 
   .Control_Trip_Stages_Position_center{

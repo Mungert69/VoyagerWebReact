@@ -114,8 +114,8 @@ export class ItineraryView extends Component {
             {itinObj.transferNodeItems[0].transferItem.transferItem1}
           </p>
           {itinObj.prSelections.map((prSelection, index) => (
-            <div key={index}>
-              <a className="Control_Trip_Stages_Item_Group AnimationRipple">
+            <div key={index} className="Control_Trip_Stages_Item_Group AnimationRipple">
+              <a className=" AnimationRipple">
                 <div class="Control_Trip_Stages_Position_outer_wrapper">
                   <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
                     <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon">
@@ -126,9 +126,7 @@ export class ItineraryView extends Component {
 
                     <a
                       className="Control_Trip_Stages_Stage_PlaceName"
-                      onClick={() =>
-                        this.props.setBuilderCardEvent(null, index, "place")
-                      }
+                      onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}
                     >
                       {prSelection.place}
                     </a>
@@ -179,7 +177,7 @@ export class ItineraryView extends Component {
                     >
                       <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
                     </a>{" "}
-                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>View Builder Place</Button>
+              
                                                    
                     <i className="fas fa-bus Voyager_Trip_Transport_Icon" />
                   </div>
@@ -225,6 +223,8 @@ export class ItineraryView extends Component {
       this.renderPRSelections(this.props.itinObj)
     );
     return (
+    <div className="Control_Trip_Stages_Container_Panel_1">
+    <div className="Control_Trip_Stages_Container_Panel_2">
       <div className="Voyager_Trip_Panel">
         <l className="Voyager_Trip_Control_Places_Total"> </l>
         <l className="Voyager_Title_3">
@@ -232,6 +232,8 @@ export class ItineraryView extends Component {
         </l>
         <l className="Voyager_Trip_Control_Nights_Total"> </l>
         {contents}
+      </div>
+      </div>
       </div>
     ); //return
   } //render
