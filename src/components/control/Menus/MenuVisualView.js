@@ -1,9 +1,9 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export class Control_Menu_2 extends Component {
+export const MenuVisualView = (props) => {
 
-    render() {
+   
         return (
             <div className="Control2">
                                
@@ -23,11 +23,11 @@ export class Control_Menu_2 extends Component {
          </div>   
          <div  className="show" >
          <a className="Voyager_Control_Item_B AnimationRipple">
-         <i className="fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
+         <i className="fas fa-map-marker Voyager_Control_Icon_Size_1" onClick={props.toggleShowMap(true)}></i>
          </a>
          </div>         <div className="show" >
          <a className="Voyager_Control_Item_B AnimationRipple">
-         <i className="fas fa-images Voyager_Control_Icon_Size_1"></i>
+                            <i className="fas fa-images Voyager_Control_Icon_Size_1" onClick={props.toggleShowMap(false)}></i>
          </a>
          </div>         <div  className="show" >
          <a className="Voyager_Control_Item_B AnimationRipple">
@@ -53,5 +53,5 @@ export class Control_Menu_2 extends Component {
 
           
         );
-    }
+    
 }

@@ -24,8 +24,6 @@ export class TripView extends Component {
         var tempArray = Array(100).fill(false);
         this.state = {
             itinId: 0,
-            togglePlace: tempArray,
-            places: [],
             loading: true,
             changeItin: true,
             changeFlight: true,
@@ -79,26 +77,12 @@ export class TripView extends Component {
     }//searchTrigger
 
 
-    renderPlaceHotelView = (places) => {
-
-        var orderDir = this.state.orderBy ? 'desc' : 'asc';
-        var filteredPlaces = [];
-        var queryTxt = this.state.queryTxt;
-
-        places = _.orderBy(places, ['placeName'], [orderDir]);
-
-        places.forEach(function (item) {
-            if (item.placeName.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1) {
-                filteredPlaces.push(item);
-            }
-        }//function
-        );//forEach
+    renderView = () => {
 
         return (
             <span>
                 <p>Trip View : </p>
                 <MenuTripListView />
-                <TripScrollView setItem={this.setItem.bind(this)} itemNumber={this.state.itemNumber} />
                 <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                 <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />
 
@@ -113,7 +97,7 @@ export class TripView extends Component {
 
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : this.renderPlaceHotelView(this.state.places);
+            : this.renderView();
         return (
             <div>
 

@@ -9,6 +9,7 @@ const defaultState = {
     item: 0,
     card: {},
     jumpCounter: 1,
+    showMap : false
 
 };
 
@@ -16,6 +17,8 @@ const tripViewState = (state = defaultState, action) => {
     switch (action.type) {
         case ActionTypes.TOGGLE_BUILDER_MODE:
             return Object.assign({}, state, { builderMode: action.payload });
+            case ActionTypes.TOGGLE_SHOW_MAP:
+            return Object.assign({}, state, { showMap: action.payload });
 
         case ActionTypes.TOGGLE_DETAILVIEW_VISIBLE:
             return Object.assign({}, state, { isDetailViewVisible: action.payload });

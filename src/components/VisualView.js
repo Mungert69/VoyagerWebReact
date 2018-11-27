@@ -1,18 +1,15 @@
 import React, { Component } from "react";
 import MapView from '../containers/MapView';
-import { Control_Menu_2 } from "./control/Control_Menu_2";
+import ImageView from '../containers/ImageView';
+import { MenuVisualView }  from "../components/control/Menus/MenuVisualView";
 
-export class VisualView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+export const VisualView = (props) => {
+ 
     return <span  >
-
-        <MapView />
-        <Control_Menu_2 />
+      {props.showMap ? <MapView />
+        : <ImageView />}
+        <MenuVisualView />
     </span>
     ;
-  }
+  
 }
