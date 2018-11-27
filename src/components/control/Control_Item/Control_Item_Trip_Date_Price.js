@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-export class Control_Item_Trip_Date_Price extends Component {
-  render() {
+export const Control_Item_Trip_Date_Price = (date,price) => {
+  
     return (
       <div>
-      <span className="Trip_Date_Price">AUGUST 2019 £1242</span>
+      <span className="Trip_Date_Price">{date} £{price}</span>
       </div>
     );
-  }
+  
 }
