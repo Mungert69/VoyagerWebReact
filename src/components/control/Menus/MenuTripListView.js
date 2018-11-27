@@ -71,9 +71,6 @@ const MenuTripListView = (props) => {
                     </div>
                 </div>
 
-               
-               
-
 
             </div>
         </div>

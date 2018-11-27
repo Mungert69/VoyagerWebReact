@@ -5,13 +5,21 @@ hr {
     margin-top: -6px;
     margin-bottom: 10px;
 }
-primary-color {
-    color: deeppink;
-}
 a {
-    text-decoration: none
+    color:#666 !important;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+    -webkit-text-decoration-skip: objects; 
 }
 
+a:hover {
+    color: none;
+}
 
 .Voyager_Title_1 {
     color:#9b9b9b;
@@ -214,10 +222,15 @@ a {
 
 .Voyager_Trip_Nights_Add {
     color: #9b9b9b;
-    margin-left: 5px;
-    margin-right: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top:-3px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.7em;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
 }
 
 .Voyager_Trip_Nights_Add:hover {
@@ -228,10 +241,15 @@ a {
 
 .Voyager_Trip_Nights_Subtract {
     color: #9b9b9b;
-    margin-left: 30px;
-    margin-right: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top:-3px;
     cursor: pointer;
-    font-size:1.2em;
+    font-size:1.7em;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
 }
 
     .Voyager_Trip_Nights_Subtract:hover {
@@ -243,7 +261,7 @@ a {
 
 .Voyager_Trip_Hotel_Remove {
     color: #9b9b9b;
-    margin-right: 10px;
+    margin-right: 1px;
     cursor: pointer;
     font-size: 1.2em;
 }
@@ -2249,6 +2267,7 @@ position: fixed;
 .Control_Details_Panel_Expand {
     justify-content: space-between;
     width: 100%;
+    height: 100%;
  margin-top:-8px;
  border-top: 8px;
  border-top-color: #0071bc;
@@ -4100,6 +4119,21 @@ font-family: 'Open Sans', sans-serif;
 
 
 
+.Control_Trip_Cards_Container_Panel_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.Control_Trip_Cards_Container_Panel_2 {
+        top: 405px;
+        position: absolute;
+        width: 100%;
+        bottom: 75px; 
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+
 
 .Control_Trip_Stages_Container_Panel_1 {
     display: flex;
@@ -4162,6 +4196,7 @@ font-family: 'Open Sans', sans-serif;
     .Control_Trip_Stages_Item_Group:hover {
         box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.3), 0 15px 33px 0 rgba(0, 0, 0, 0.25);
         transition: all 0.6s ease-out;
+        background: rgb(238, 238, 238);
     }
 
 
@@ -4209,23 +4244,25 @@ font-family: 'Open Sans', sans-serif;
 
 
 .Control_Trip_Stages_Stage_Detail_Icon{
-float: right;
-margin-top: -37px;
-font-size: 2.4em;
-font-weight: 600;
-color: #666666;
+    position:absolute;
+    right: 0;
+    top:2px;
+font-size: 3em;
+font-weight: 400;
+color: #a09e9e;
+
 }
 
 
 .Control_Trip_Stages_Stage_Detail_Icon:hover{
-    color: #0071bc;
+    color: #0071bc !important;
     }
     
 
 
     .Control_Trip_Stages_Stage_Icon {
  
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-align: center;
         font-weight: 600;
         margin-top: 4px;
@@ -4240,9 +4277,10 @@ color: #666666;
         font-weight: 700;
         float: left;
         margin-top: 1px;
-        margin-left: -11px;
+        margin-left: -14px;
         position: absolute;
         font-family: 'Open Sans', sans-serif;
+        text-align: center;
     }
 
     
@@ -4262,7 +4300,7 @@ color: #666666;
         font-weight: 600;
    text-transform: uppercase;
     }
-
+  
     
     .Control_Trip_Stages_Stage_HotelFeatures{
       
@@ -4274,7 +4312,14 @@ color: #666666;
 
     }
 
-
+    .Control_Trip_Stages_Stage_Nights{
+      
+        font-size: 1.1em;
+        font-weight: 600;
+   margin-right: 4px;
+   margin-top:-2px;
+   text-transform: uppercase;
+ }
 
 
 .Trip_Stages
@@ -4340,6 +4385,8 @@ font-family: 'Open Sans', sans-serif;
     position: absolute;
     font-family: 'Open Sans', sans-serif;
 }
+
+
 
 
 

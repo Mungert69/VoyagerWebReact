@@ -109,13 +109,11 @@ export class ItineraryView extends Component {
     ) {
       return (
         <div className="Control_Trip_Stages">
-          <p className="Voyager_Trip_Transfer">
-            {" "}
-            {itinObj.transferNodeItems[0].transferItem.transferItem1}
-          </p>
+          <p className="Voyager_Trip_Transfer"> {itinObj.transferNodeItems[0].transferItem.transferItem1}</p>
+
           {itinObj.prSelections.map((prSelection, index) => (
             <div key={index} className="Control_Trip_Stages_Item_Group AnimationRipple">
-              <a className=" AnimationRipple">
+              <a>
                 <div class="Control_Trip_Stages_Position_outer_wrapper">
                   <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
                     <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon">
@@ -124,22 +122,14 @@ export class ItineraryView extends Component {
                       </l>
                     </i>
 
-                    <a
-                      className="Control_Trip_Stages_Stage_PlaceName"
-                      onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}
-                    >
+                    <a className="Control_Trip_Stages_Stage_PlaceName" onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>
                       {prSelection.place}
                     </a>
                   </div>
 
                   <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
-                    <a
-                      className="Control_Trip_Stages_Stage_HotelName"
-                      onClick={() =>
-                        this.props.setBuilderCardEvent(null, index, "hotel")
-                      }
-                    >
-                      {prSelection.hotel}
+                    <a className="Control_Trip_Stages_Stage_HotelName" onClick={() => this.props.setBuilderCardEvent(null, index, "hotel")}>
+                    {prSelection.hotel}
                     </a>
                   </div>
                 </div>
@@ -155,60 +145,39 @@ export class ItineraryView extends Component {
                       CITY CENTRE - SMALL HOTEL - HERITAGE - £££
                     </span>
                     <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
-                    <a
-                      className="Voyager_Trip_Control_Nights_add"
-                      title="ADD NIGHTS"
-                      onClick={() => this.addNight(index)}
-                    >
-                      <i className="fas fa-angle-up Voyager_Trip_Nights_Add" />
+                    
+                    <p className="Control_Trip_Stages_Stage_Nights">{prSelection.nights}</p>
+                  
+
+                    <a title="ADD NIGHTS" onClick={() => this.addNight(index)}>
+                    <i className="fas fa-caret-up Voyager_Trip_Nights_Add" />
                     </a>
-                    {prSelection.nights}
-                    <a
-                      className="Voyager_Trip_Control_Nights_remove"
-                      title="SUBTRACT NIGHTS"
-                      onClick={() => this.removeNight(index)}
-                    >
-                      <i className="fas fa-angle-down Voyager_Trip_Nights_Subtract" />
+               
+                    <a  title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)}>
+                    <i className="fas fa-caret-down Voyager_Trip_Nights_Subtract" />
                     </a>
-                    <a
-                      className="Voyager_Trip_Control_Delete"
-                      title="DELETE STAGE"
-                      onClick={() => this.deleteHotel()}
-                    >
-                      <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
-                    </a>{" "}
-              
-                                                   
-                    <i className="fas fa-bus Voyager_Trip_Transport_Icon" />
+
+                    <a className="Hide Voyager_Trip_Control_Delete" title="DELETE STAGE" onClick={() => this.deleteHotel()}>
+                    <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
+                    </a>
+
                   </div>
                 </div>
-              </a>
+              </a>  
               <div />
-              <a>
-                <i
-                  className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon"
-                  onClick={() =>
-                    this.props.setBuilderCardEvent(null, index, "place")
-                  }
-                />
-              </a>
 
-              <p className="Voyager_Trip_Transfer">
-                {" "}
-                {
-                  itinObj.transferNodeItems[index + 1].transferItem
-                    .transferItem1
-                }
-              </p>
+              <a className="Control_Trip_Stages_Stage_Detail_Icon">
+              <i className="show fas fa-caret-right " onClick={() => this.props.setBuilderCardEvent(null, index, "place") } /> </a>
+
+          <p className=" hide Voyager_Trip_Transfer"> { itinObj.transferNodeItems[index + 1].transferItem .transferItem1}</p>
+          <p className="Voyager_Trip_Transfer">{itinObj.transferNodeItems[itinObj.transferNodeItems.length - 1] .transferItem.transferItem1 }</p>
             </div>
+
+
+
+            
           ))}
-          <p className="Voyager_Trip_Transfer">
-            {" "}
-            {
-              itinObj.transferNodeItems[itinObj.transferNodeItems.length - 1]
-                .transferItem.transferItem1
-            }
-          </p>
+         
         </div>
       ); //return
     } //if
