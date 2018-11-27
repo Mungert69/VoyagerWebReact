@@ -214,10 +214,10 @@ a {
 
 .Voyager_Trip_Nights_Add {
     color: #9b9b9b;
-    margin-left: 5px;
-    margin-right: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .Voyager_Trip_Nights_Add:hover {
@@ -228,10 +228,10 @@ a {
 
 .Voyager_Trip_Nights_Subtract {
     color: #9b9b9b;
-    margin-left: 30px;
-    margin-right: 10px;
+    margin-left: 1px;
+    margin-right: 11px;
     cursor: pointer;
-    font-size:1.2em;
+    font-size:1.4em;
 }
 
     .Voyager_Trip_Nights_Subtract:hover {
@@ -243,7 +243,7 @@ a {
 
 .Voyager_Trip_Hotel_Remove {
     color: #9b9b9b;
-    margin-right: 10px;
+    margin-right: 1px;
     cursor: pointer;
     font-size: 1.2em;
 }
@@ -4209,11 +4209,12 @@ font-family: 'Open Sans', sans-serif;
 
 
 .Control_Trip_Stages_Stage_Detail_Icon{
-float: right;
-margin-top: -37px;
+    position:absolute;
+    right: 0;
 font-size: 2.4em;
 font-weight: 600;
 color: #666666;
+
 }
 
 

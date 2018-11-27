@@ -155,38 +155,37 @@ export class ItineraryView extends Component {
                       CITY CENTRE - SMALL HOTEL - HERITAGE - £££
                     </span>
                     <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
-                    <a
-                      className="Voyager_Trip_Control_Nights_add"
-                      title="ADD NIGHTS"
-                      onClick={() => this.addNight(index)}
-                    >
-                      <i className="fas fa-angle-up Voyager_Trip_Nights_Add" />
+                    
+                    
+
+
+                    <a title="ADD NIGHTS" onClick={() => this.addNight(index)}>
+                    <i className="fas fa-angle-up Voyager_Trip_Nights_Add" />
+                    </a>
+               
+
+                    <a  title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)}>
+                    <i className="fas fa-angle-down Voyager_Trip_Nights_Subtract" />
                     </a>
                     {prSelection.nights}
+
+                    
+                    
                     <a
-                      className="Voyager_Trip_Control_Nights_remove"
-                      title="SUBTRACT NIGHTS"
-                      onClick={() => this.removeNight(index)}
-                    >
-                      <i className="fas fa-angle-down Voyager_Trip_Nights_Subtract" />
-                    </a>
-                    <a
-                      className="Voyager_Trip_Control_Delete"
+                      className="Hide Voyager_Trip_Control_Delete"
                       title="DELETE STAGE"
                       onClick={() => this.deleteHotel()}
                     >
                       <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
                     </a>{" "}
-              
-                                                   
-                    <i className="fas fa-bus Voyager_Trip_Transport_Icon" />
+
                   </div>
                 </div>
               </a>
               <div />
-              <a>
+              <a className="Control_Trip_Stages_Stage_Detail_Icon">
                 <i
-                  className="show fas fa-caret-right Control_Trip_Stages_Stage_Detail_Icon"
+                  className="show fas fa-caret-right "
                   onClick={() =>
                     this.props.setBuilderCardEvent(null, index, "place")
                   }
