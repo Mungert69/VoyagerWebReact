@@ -4,19 +4,20 @@ export class ImageCarousel extends Component {
     constructor(props) {
         super(props);
        
-    }
-    next() {
+    };
+    next = () => {
         //this.carousel.next();
         this.carousel.next();
-    }
-    previous() {
+    };
+    previous = () => {
         this.carousel.prev();
-    }
+    };
 
-    map() {
+    map = () => {
         //this.carousel.next();
         this.carousel.goTo(0);
-    }
+    };
+    
     render() {
         const props = {
             dots: true,
@@ -48,9 +49,9 @@ export class ImageCarousel extends Component {
                     </Carousel>
                     </div>
            <div className='Voyager_Card_Image_Carousel_Controls'>
-                    <a onClick={this.previous}><i className="fas fa-angle-left Voyager_Icon_Base_1"></i></a>
-                    <a onClick={this.map}> <i className="fas fa-map Voyager_Icon_Base_1"></i></a>
-                    <a onClick={this.next}><i className="fas fa-angle-right Voyager_Icon_Base_1"></i></a>
+                    <a onClick={ () => this.previous}><i className="fas fa-angle-left Voyager_Icon_Base_1"></i></a>
+                    <a onClick={() => this.map}> <i className="fas fa-map Voyager_Icon_Base_1"></i></a>
+                    <a onClick={() => this.next}><i className="fas fa-angle-right Voyager_Icon_Base_1"></i></a>
            </div>
 
                

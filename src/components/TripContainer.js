@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Select, Button } from "antd";
 
-import { VisualView } from "./VisualView";
-
+import  VisualView  from "../containers/VisualView";
 import NodeListView from "../containers/NodeListView";
 import TripListView from "../containers/TripListView";
 import TripView from "../containers/TripView";
