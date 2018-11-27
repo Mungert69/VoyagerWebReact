@@ -18,7 +18,7 @@ import { Control_Item_Hotel_Place_Country_Name } from '../Control_Item/Control_I
 
 
 const MenuTripListView = (props) => {
-   
+    if (props.card === undefined || props.card === null) return null;
     return (
         <div>
 
@@ -30,7 +30,7 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper">
-                        <Control_Item_Trip_Name />
+                        <Control_Item_Trip_Name tripName={props.card.title} />
                        
                     </div>
 
@@ -47,13 +47,13 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
-                        <Control_Item_Trip_Date_Price />
-                        <Control_Item_Country_Name />
+                        <Control_Item_Trip_Date_Price travelDate={props.card.travelDate} price={props.card.price}/>
+                        <Control_Item_Country_Name country={props.card.country}/>
                         <Control_Item_Hotel_Place_Country_Name />                     
                     </div>
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">
-                        <Control_Item_Trip_Nights_Total />
+                        <Control_Item_Trip_Nights_Total nights={props.card.nights} />
                     </div>
                 </div>
 

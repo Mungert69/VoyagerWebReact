@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-export class Control_Item_Trip_Name extends Component {
-  render() {
+export const Control_Item_Trip_Name = (props) => {
+    if (props.tripName===undefined || props.tripName===null) return <p>Trip Name N/A</p>
     return (
-      <span className="Trip_Name">TRIP NAME TRIP NAME TRIP NAME TRIP</span>
+      <span className="Trip_Name">{props.tripName}</span>
     );
-  }
+  
 }

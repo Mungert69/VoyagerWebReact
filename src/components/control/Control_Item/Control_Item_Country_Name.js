@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-export class Control_Item_Country_Name extends Component {
-  render() {
+export const Control_Item_Country_Name = (props) => {
+  if (props.country === undefined || props.country === null) return <p>Country N/A</p>;
     return (
-      <span className="Country_Name">country</span>
+      <span className="Country_Name">{props.country}</span>
     );
-  }
+  
 }
