@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { MenuVisualView } from '../../components/MenuVisualView';
+import MenuVisualView from '../../components/control/Menus/MenuVisualView';
 
 import {
     toggleShowMap

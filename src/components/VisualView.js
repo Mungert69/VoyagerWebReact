@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MapView from '../containers/MapView';
 import ImageView from '../containers/ImageView';
-import { MenuVisualView }  from "../components/control/Menus/MenuVisualView";
+import { ImageCarousel } from './control/ImageCarousel';
+import  MenuVisualView   from '../containers/Menus/MenuVisualView';
 
 export const VisualView = (props) => {
  

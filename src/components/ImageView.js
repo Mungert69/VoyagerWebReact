@@ -1,61 +1,34 @@
-import { Carousel } from 'antd';
-import React, { Component } from 'react';
-export class ImageView extends Component {
-    constructor(props) {
-        super(props);
-       
-    };
-    next = () => {
-        //this.carousel.next();
-        this.carousel.next();
-    };
-    previous = () => {
-        this.carousel.prev();
-    };
+import { Carousel } from "antd";
+import React, { Component } from "react";
+export const ImageView = props => {
+  if (props.card.picFileNames === undefined || props.card.picFileNames === null)
+    return <p>No Images</p>;
+  let url = "http://www.voyagercuba.co.uk/Images/Images-PlacesHotels/";
+  let urlMapStart =
+    "http://maps.googleapis.com/maps/api/staticmap?zoom=9&size=300x180&maptype=roadmap&markers=icon:http://voyagercuba.co.uk:10205/images/Images-Maps-Icon/map-marker-static.png|";
+  let urlMapEnd = "&key=AIzaSyAww7cMvMFsHfWR6m0eSbFsOltKyeKyzCk";
+  let urlMap =
+    urlMapStart + props.card.latitude + "," + props.card.longitude + urlMapEnd;
 
-    map = () => {
-        //this.carousel.next();
-        this.carousel.goTo(0);
-    };
-    
-    render() {
-        const props = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            autoplay: true,
-            fade: true,
-            pauseOnHover: true,
-            swipeToSlide: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            draggable: true,
-
-
-
-        };
-        return (
-            <div className="Voyager_Card_Image_Carousel">
-
-                <div className="AnimationRipple">
-                    <Carousel ref={node => this.carousel = node} {...props}>
-                        {
-                            this.props.card.picFileNames((fileName, index) => { 
-                                <div key={index}><img className='Voyager_Card_Image_Rounded' src='http://www.voyagercuba.co.uk/Images/Images-PlacesHotels/{fileName}' /></div>
-                    
-
-                            })
-                        }
-                   </Carousel>
-                    </div>
-           <div className='Voyager_Card_Image_Carousel_Controls'>
-                    <a onClick={ () => this.previous}><i className="fas fa-angle-left Voyager_Icon_Base_1"></i></a>
-                    <a onClick={() => this.map}> <i className="fas fa-map Voyager_Icon_Base_1"></i></a>
-                    <a onClick={() => this.next}><i className="fas fa-angle-right Voyager_Icon_Base_1"></i></a>
-           </div>
-
-               
-            </div>
-        );
-    }
-}
+  return (
+    <div>
+      <Carousel
+        className="Voyager_Card_Image_Carousel"
+        effect="fade"
+        easing="linear"
+        infinite="true"
+        arrows="true"
+        swipeToSlide="true"
+      >
+        {props.card.picFileNames.map(fileName => {
+          <div>
+            <img className="Voyager_Card_Image_Rounded" src={url + fileName} />
+          </div>;
+        })}
+        <div>
+          <img className="Voyager_Card_Map" src={urlMap} />
+        </div>
+      </Carousel>
+    </div>
+  );
+};

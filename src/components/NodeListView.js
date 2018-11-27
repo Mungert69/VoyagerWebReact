@@ -21,6 +21,7 @@ export class NodeListView extends Component {
     setCard = (card, index) => {   
         this.setState({ card: card });
         this.props.setTripItem(index);
+        this.props.setTripCard(card);
     }
     renderNodeList = () => {
         var filteredCards = this.props.cards;

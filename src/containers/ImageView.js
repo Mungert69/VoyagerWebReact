@@ -11,7 +11,7 @@ import {
 } from '../actions/apiActions';
 
 const mapStateToProps = state => ({
-  
+    card: state.tripViewState.card
 });
 
 
