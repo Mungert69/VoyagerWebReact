@@ -23,6 +23,9 @@ export class TripListView extends Component {
     let filteredCards = this.props.cards;
     if (filteredCards.length === 0) return null;
     return (
+      
+      <div className="Control_Trip_Cards_Container_Panel_1">
+      <div className="Control_Trip_Cards_Container_Panel_2">
       <span>
         <MenuTripListView card={this.state.card} /> 
         {filteredCards.map((cardValue,index) => (
@@ -44,8 +47,11 @@ export class TripListView extends Component {
               />
             </p>
           </span>
+ 
         ))}
-      </span>
+      </span> 
+      </div>
+      </div>
     ); //Return
   }; //renderCardList
 
