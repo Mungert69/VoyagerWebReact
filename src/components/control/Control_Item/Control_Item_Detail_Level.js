@@ -11,7 +11,7 @@ const Control_Detail_Level = [
 
 
 const colourStyles = {
-  control: styles => ({ ...styles, backgroundColor: 'white',          border: 'none', boxShadow: 'none',}),
+  control: styles => ({ ...styles, backgroundColor: 'white',         border: 'none', boxShadow: 'none',}),
 };
 
 export class Control_Item_Detail_Level extends Component {

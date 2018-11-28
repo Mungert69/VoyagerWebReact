@@ -88,12 +88,12 @@ const MenuPlaceListView = (props) => {
                 <span className="Feature" >place feature - place feature - place feature</span>
                 <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
                     <Panel header={
-                        <div className="Control_Details_Panel_Expand">
+                        <div className="Voyager_Card_Container_Trip_Details_SubPanel1">
                             <i className="fas fa-caret-down Control_Icon_Expand"></i>
                         </div>
                     } className="Control_Details_Panel AnimationRipple" showArrow={false} style={customPanelStyle}>
 
-                        <PerfectScrollbar className="Control_Details_Panel_Content">
+                        <PerfectScrollbar className="Control_Details_Panel_Content_Full">
                             <CardView styleCard={props.styleCard} card={props.card} />
                         </PerfectScrollbar>
 

@@ -1886,23 +1886,69 @@ word-wrap:break-word;
 
 
 .Voyager_Card_Image_Carousel {
-    max-width: 400px;
-    margin-top: 20px;
+
+   width: 200px;
+    margin-right: 0px;
 }
 
 
 .Voyager_Card_Image_Carousel_Controls {
     display: flex;
     text-align: center;
-    margin-top:-100px;
+
     position: absolute;
+
 
 }
 
+.Voyager_Card_Image_Carousel_Controls_Previous
+{
+color: #666;
 
+font-size: 2.3em;
+-webkit-transition: color .5s ease-out;
+-moz-transition: color .5s ease-out;
+-o-transition: color .5s ease-out;
+transition: color .5s ease-out;
+}
 
+.Voyager_Card_Image_Carousel_Controls_Previous:hover
+{
+    color: #0071bc;
 
+    }
 
+.Voyager_Card_Image_Carousel_Controls_Map
+{
+    color: #666;
+   
+    font-size: 1.6em;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    }
+
+    .Voyager_Card_Image_Carousel_Controls_Map:hover
+{
+    color: #0071bc;
+
+    }
+.Voyager_Card_Image_Carousel_Controls_Next
+{
+    color: #666;
+
+    font-size: 2.3em;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    }
+    .Voyager_Card_Image_Carousel_Controls_Next:hover
+    {
+        color: #0071bc;
+  
+        }
 
 
 
@@ -2489,11 +2535,11 @@ position: fixed;
 .Control_1 {
     background: #fff;
     position: fixed;
+    z-index: 9;
     left: 0;
     right: 0;
     top: 0;
-    height:40px;
-    z-index: 999999;
+    height:33px;
     transition: all 0.6s ease-out;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -2501,7 +2547,7 @@ position: fixed;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 0px, rgb(255,255,255) 1px);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.01) 0px, rgb(255,255,255) 5px);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -2562,13 +2608,13 @@ position: fixed;
     
 .Control_3_1 {
     background: #f2f2f2;
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     padding-top:5px;
     height: auto;
-    z-index: 1;
+    z-index: 9;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -2732,7 +2778,7 @@ position: fixed;
     color: #666;
     text-transform: uppercase;
     width: 140px;
-  
+
 
 }
 

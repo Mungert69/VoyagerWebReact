@@ -31,7 +31,7 @@ export class ImageView extends Component {
             pauseOnHover: true,
             swipeToSlide: true,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             draggable: true,
 
 
@@ -52,9 +52,9 @@ export class ImageView extends Component {
                    </Carousel>
                     </div>
            <div className='Voyager_Card_Image_Carousel_Controls'>
-                    <a onClick={ () => this.previous}><i className="fas fa-angle-left Voyager_Icon_Base_1"></i></a>
-                    <a onClick={() => this.map}> <i className="fas fa-map Voyager_Icon_Base_1"></i></a>
-                    <a onClick={() => this.next}><i className="fas fa-angle-right Voyager_Icon_Base_1"></i></a>
+                    <a onClick={ () => this.previous}><i className="fas fa-caret-left Voyager_Card_Image_Carousel_Controls_Previous"></i></a>
+                    <a onClick={() => this.map}> <i className="fas fa-map Voyager_Card_Image_Carousel_Controls_Map"></i></a>
+                    <a onClick={() => this.next}><i className="fas fa-caret-right Voyager_Card_Image_Carousel_Controls_Next"></i></a>
            </div>
 
                
