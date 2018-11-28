@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import MenuDetailView from "../../components/control/Menus/MenuDetailView";
+import MenuTripView from "../../components/control/Menus/MenuTripView";
 
 
 import { changeView,changeViewPlaceWithFilterByNextHop } from "../../actions/functionalActions";
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MenuDetailView);
+)(MenuTripView);

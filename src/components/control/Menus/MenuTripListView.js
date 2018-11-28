@@ -26,7 +26,7 @@ const MenuTripListView = (props) => {
 
                 <div class="Control_Position_outer_wrapper">
                     <div className="Control_Position_left Control_Position_inner_wrapper">
-                        <Control_Item_Trip_PreviousNext_Previous />
+                
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper">
@@ -35,7 +35,7 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">
-                        <Control_Item_Trip_PreviousNext_Next />
+                      
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@ const MenuTripListView = (props) => {
 
                 <div class="Control_Position_outer_wrapper">
                     <div className="Control_Position_left Control_Position_inner_wrapper">
-                        <Control_Item_Trip_Stage_Total />
+                        <Control_Item_Trip_Stage_Total stages={props.card.stages} />
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
@@ -63,7 +63,7 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
-                        <Control_Item_Trip_Stage_Places />
+                        <Control_Item_Trip_Stage_Places placeObjs={props.card.placeObjs} />
                         <Control_Item_Trip_Description_Short />
                     </div>
 

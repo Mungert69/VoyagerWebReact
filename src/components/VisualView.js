@@ -9,7 +9,8 @@ export const VisualView = (props) => {
     return <span  >
       {props.showMap ? <MapView />
         : <ImageView />}
-        <MenuVisualView />
+     
+     <MenuVisualView/>>
     </span>
     ;
   
