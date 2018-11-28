@@ -60,9 +60,11 @@ export class DetailView extends Component {
     });
   }
 
-  setMessage = (card, index, cardType) => {
+ 
+  setCard = (card, index, cardType) => {
     this.setState({ card: card, cardType: cardType });
     this.props.setTripItem(index);
+    this.props.setTripCard(card);
   };
 
   renderTripDetailView = itinObj => {
@@ -89,7 +91,7 @@ export class DetailView extends Component {
           />
         </div>
         <Waypoint
-          onEnter={() => this.setMessage(itinObj.card, index, "trip")}
+          onEnter={() => this.setCard(itinObj.card, index, "trip")}
         />
         <div>
           <CardView
@@ -99,7 +101,7 @@ export class DetailView extends Component {
           />
         </div>
         <Waypoint
-          onEnter={() => this.setMessage(prSelection.placeCard, index, "place")}
+          onEnter={() => this.setCard(prSelection.placeCard, index, "place")}
         />
         <div>
           <CardView
@@ -109,7 +111,7 @@ export class DetailView extends Component {
           />
         </div>
         <Waypoint
-          onEnter={() => this.setMessage(prSelection.hotelCard, index, "hotel")}
+          onEnter={() => this.setCard(prSelection.hotelCard, index, "hotel")}
         />
       </div>
     ));
@@ -119,12 +121,7 @@ export class DetailView extends Component {
   render() {
     return (
       <div>
-        <TripScrollView
-          setItem={this.setItem.bind(this)}
-          item={this.state.item}
-          itemNumber={this.state.itemNumber * this.props.jumpCounter}
-        />
-
+        
         {this.renderTripDetailView(this.props.itinObj)}
       </div>
     ); //return

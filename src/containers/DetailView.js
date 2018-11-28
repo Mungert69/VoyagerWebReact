@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { DetailView } from "../components/DetailView";
-import { setTripItem } from "../actions/actions";
+import { setTripItem,setTripCard } from "../actions/actions";
 
 const mapStateToProps = state => ({
   cards: state.cardState.filteredCards,
@@ -17,7 +17,10 @@ const mapDispatchToProps = dispatch => {
   return {
     setTripItem: item => {
       dispatch(setTripItem(item));
-    }
+    },
+    setTripCard: (cardVal) => {
+      dispatch(setTripCard(cardVal));
+  },
   };
 };
 

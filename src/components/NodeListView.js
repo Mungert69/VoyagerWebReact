@@ -40,7 +40,7 @@ export class NodeListView extends Component {
                       
         
                        <span  className="Voyager_Places_List" key={cardValue.id}>
-                         <Waypoint onEnter={() => this.setCard(cardValue,index)}></Waypoint>
+                         <Waypoint onEnter={() => this.setCard(cardValue,index)} >
                            <a onClick={() => this.setCard(cardValue,index)}>
                            {this.props.cardType === 'hotel' ?
                                 <CardView  styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
