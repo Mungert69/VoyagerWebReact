@@ -90,7 +90,7 @@ return(
     <div className="Control_2_2">
 
         <span  className="Hotel_Name">{props.card.title}</span>
-        <span className="Country_Name">{props.card.placeNameId} - {props.card.country}</span>
+        <span className="Country_Name">{props.card.subtitle} - {props.card.country}</span>
      <AccommodationCharacteristics accommodationCharacteristics={props.card.accommodationCharacteristics}></AccommodationCharacteristics>
 
         <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
