@@ -38,16 +38,17 @@ export class NodeListView extends Component {
                 {
                     filteredCards.map((cardValue, index) =>
                       
-               
+        
                        <span  className="Voyager_Places_List" key={cardValue.id}>
-                           <Waypoint onEnter={() => this.setCard(cardValue,index)} /> 
+                         
+                           <a onClick={() => this.setCard(cardValue,index)}>
                            {this.props.cardType === 'hotel' ?
                                 <CardView  styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                            
                                 :
                                 <CardView styleCard={this.props.stylePlaceCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />
                             }
-                            
+                            </a>
                         </span>
                       
                     )
