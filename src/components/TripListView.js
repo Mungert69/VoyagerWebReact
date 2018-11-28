@@ -5,7 +5,7 @@ import { Button } from "antd";
 import "antd/dist/antd.css";
 import MenuTripListView from "./control/Menus/MenuTripListView";
 import Waypoint from 'react-waypoint';
-const ItineraryListViewWithItinObj = withItinObj(ItineraryListView);
+import { TripCardView } from './TripCardView';
 
 export class TripListView extends Component {
   constructor(props) {
@@ -40,12 +40,7 @@ export class TripListView extends Component {
             </Button>
             <p className="Voyager_Places_List" key={cardValue.id}>
             <Waypoint onEnter={() => this.setCard(cardValue,index)} />                         
-              <ItineraryListViewWithItinObj
-                stylePlaceCard={this.props.stylePlaceCard}
-                styleHotelCard={this.props.styleHotelCard}
-                key={cardValue.id + cardValue.title}
-                card={cardValue}
-              />
+              <TripCardView   card={cardValue} />
             </p>
           </span>
  
