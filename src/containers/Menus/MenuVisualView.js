@@ -12,8 +12,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        toggleShowMap: (flag) => {
-            dispatch(toggleShowMap(flag));
+        toggleShowMap: () => {
+            dispatch(toggleShowMap());
         }
        
     };

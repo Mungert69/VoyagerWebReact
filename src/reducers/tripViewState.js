@@ -18,7 +18,7 @@ const tripViewState = (state = defaultState, action) => {
         case ActionTypes.TOGGLE_BUILDER_MODE:
             return Object.assign({}, state, { builderMode: action.payload });
             case ActionTypes.TOGGLE_SHOW_MAP:
-            return Object.assign({}, state, { showMap: action.payload });
+            return Object.assign({}, state, { showMap: !state.showMap });
 
         case ActionTypes.TOGGLE_DETAILVIEW_VISIBLE:
             return Object.assign({}, state, { isDetailViewVisible: action.payload });

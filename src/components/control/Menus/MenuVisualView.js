@@ -8,7 +8,7 @@ const MenuVisualView = props => {
           <a className="Voyager_Control_Item_B AnimationRipple">
             <i
               className="fas fa-map Voyager_Control_Icon_Map_Image"
-              onClick={() => props.toggleShowMap(true)}
+              onClick={() => props.toggleShowMap()}
             />
           </a>
         </div>
@@ -16,7 +16,7 @@ const MenuVisualView = props => {
           <a className="Voyager_Control_Item_B AnimationRipple">
             <i
               className="fas fa-images Voyager_Control_Icon_Map_Image"
-              onClick={() => props.toggleShowMap(false)}
+              onClick={() => props.toggleShowMap()}
             />
           </a>
         </div>    

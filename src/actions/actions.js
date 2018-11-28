@@ -13,9 +13,8 @@ export const setTripViewState = (builderMode, isListViewVisible, isTripViewVisib
 
 });
 
-export const toggleShowMap = (flag) => ({
-    type: ActionTypes.TOGGLE_SHOW_MAP,
-    payload: flag
+export const toggleShowMap = () => ({
+    type: ActionTypes.TOGGLE_SHOW_MAP
 
 });
 export const toggleBuilderMode = (flag) => ({
