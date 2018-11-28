@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-export class Control_Item_Trip_Description_Short extends Component {
-  render() {
+export const Control_Item_Trip_Description_Short = (props) => {
+  if (props.descriptionShort === undefined || props.descriptionShort === null) return <p>0</p>;
+ 
     return (
-      <span className="Trip_Description_Short">Lorem ipsum dolor sit amet, his natum quaeque accusamus ex, mei viris legimus ei. Vel exerci complectitur ex. Vim te gubergren repudiandae.</span>
+      <div>
+   <l className="Trip_Description_Short">{props.descriptionShort}</l>
+     </div>
     );
-  }
+  
 }
+

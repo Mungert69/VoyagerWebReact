@@ -27,6 +27,7 @@ const MenuMain = (props) =>  {
         <Control_Item_Filter_Sort/>
         <Control_Item_Search/>
 
+
         <Control_Item_Detail_Level changeDetailLevel={props.changeDetailLevel}
                 cardDetailLevel={props.cardDetailLevel}/>
 

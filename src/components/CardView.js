@@ -65,7 +65,7 @@ export class CardView extends Component {
               
                            
                         <span className={this.props.styleCard.card1ElementTitleStyle} >{this.props.card.title}</span>
-                        <span className="Show"> <span className={this.props.styleCard.card1ElementCountryStyle}>placename - {this.props.card.country}</span></span>
+                        <span className="Show"> <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.subtitle}  {this.props.card.country}</span></span>
                         <AccommodationCharacteristics card={this.props.card}/>
  <span className="Hide"><span className={this.props.styleCard.card1ElementHotelFeaturesStyle}>{this.props.card.hotelFeatures}</span></span>
  <span className="Hide"><span className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>{this.props.card.placeFeatures}</span></span>
