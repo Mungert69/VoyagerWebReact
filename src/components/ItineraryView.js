@@ -133,7 +133,7 @@ export class ItineraryView extends Component {
                       <a
                         className="Control_Trip_Stages_Stage_PlaceName"
                         onClick={() =>
-                          this.props.setBuilderCardEvent(null, index, "place")
+                          this.props.setBuilderCardEvent(prSelection.placeCard, index, "place")
                         }
                       >
                         {prSelection.place}
@@ -144,7 +144,7 @@ export class ItineraryView extends Component {
                       <a
                         className="Control_Trip_Stages_Stage_HotelName"
                         onClick={() =>
-                          this.props.setBuilderCardEvent(null, index, "hotel")
+                          this.props.setBuilderCardEvent(prSelection.hotelCard, index, "hotel")
                         }
                       >
                         {prSelection.hotel}
@@ -198,7 +198,7 @@ export class ItineraryView extends Component {
                   <i
                     className="show fas fa-caret-right "
                     onClick={() =>
-                      this.props.setBuilderCardEvent(null, index, "place")
+                      this.props.setBuilderCardEvent(prSelection.placeCard, index, "place")
                     }
                   />
                 </a>
