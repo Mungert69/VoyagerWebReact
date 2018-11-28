@@ -6,6 +6,7 @@ import { Select, Button } from "antd";
 import { apiBaseUrl } from "./Constants";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
+import { AccommodationCharacteristics } from "./SubComponents/AccommodationCharacteristics";
 
 export class ItineraryView extends Component {
   constructor(props) {
@@ -109,75 +110,117 @@ export class ItineraryView extends Component {
     ) {
       return (
         <div className="Control_Trip_Stages">
-          <p className="Voyager_Trip_Transfer"> {itinObj.transferNodeItems[0].transferItem.transferItem1}</p>
+          <p className="Voyager_Trip_Transfer">
+           
+            {itinObj.transferNodeItems[0].transferItem.transferItem1}
+          </p>
 
           {itinObj.prSelections.map((prSelection, index) => (
-            <div key={index} className="Control_Trip_Stages_Item_Group AnimationRipple">
-              <a>
-                <div class="Control_Trip_Stages_Position_outer_wrapper">
-                  <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
-                    <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon">
-                      <l className="Control_Trip_Stages_Stage_Icon_Number">
-                        {index}
-                      </l>
-                    </i>
+            <span>
+              <div
+                key={index}
+                className="Control_Trip_Stages_Item_Group AnimationRipple"
+              >
+                <a>
+                  <div class="Control_Trip_Stages_Position_outer_wrapper">
+                    <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
+                      <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon">
+                        <l className="Control_Trip_Stages_Stage_Icon_Number">
+                          {index + 1}
+                        </l>
+                      </i>
 
-                    <a className="Control_Trip_Stages_Stage_PlaceName" onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>
-                      {prSelection.place}
-                    </a>
+                      <a
+                        className="Control_Trip_Stages_Stage_PlaceName"
+                        onClick={() =>
+                          this.props.setBuilderCardEvent(null, index, "place")
+                        }
+                      >
+                        {prSelection.place}
+                      </a>
+                    </div>
+
+                    <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
+                      <a
+                        className="Control_Trip_Stages_Stage_HotelName"
+                        onClick={() =>
+                          this.props.setBuilderCardEvent(null, index, "hotel")
+                        }
+                      >
+                        {prSelection.hotel}
+                      </a>
+                    </div>
                   </div>
 
-                  <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
-                    <a className="Control_Trip_Stages_Stage_HotelName" onClick={() => this.props.setBuilderCardEvent(null, index, "hotel")}>
-                    {prSelection.hotel}
-                    </a>
+                  <div class="Control_Trip_Stages_Position_outer_wrapper">
+                    <div className="Control_Trip_Dates_Position_left Control_Trip_Stages_Position_inner_wrapper">
+                      <i className="show far fa-car Control_Trip_Stages_Stage_Transport_Icon" />
+                      <i className="hide far fa-bus Control_Trip_Stages_Stage_Transport_Icon" />
+                    </div>
+
+                    <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
+                      <span className="Control_Trip_Stages_Stage_HotelFeatures">
+                        <AccommodationCharacteristics accommodationCharacteristics={prSelection.hotelCard.accommodationCharacteristics}/>
+                      </span>
+                      <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
+
+                      <p className="Control_Trip_Stages_Stage_Nights">
+                        {prSelection.nights}
+                      </p>
+
+                      <a
+                        title="ADD NIGHTS"
+                        onClick={() => this.addNight(index)}
+                      >
+                        <i className="fas fa-caret-up Voyager_Trip_Nights_Add" />
+                      </a>
+
+                      <a
+                        title="SUBTRACT NIGHTS"
+                        onClick={() => this.removeNight(index)}
+                      >
+                        <i className="fas fa-caret-down Voyager_Trip_Nights_Subtract" />
+                      </a>
+
+                      <a
+                        className="Hide Voyager_Trip_Control_Delete"
+                        title="DELETE STAGE"
+                        onClick={() => this.deleteHotel()}
+                      >
+                        <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                
-                <div class="Control_Trip_Stages_Position_outer_wrapper">
-                  <div className="Control_Trip_Dates_Position_left Control_Trip_Stages_Position_inner_wrapper">
-                    <i className="show far fa-car Control_Trip_Stages_Stage_Transport_Icon" />
-                    <i className="hide far fa-bus Control_Trip_Stages_Stage_Transport_Icon" />
-                  </div>
+                </a>
+                <div />
 
-                  <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
-                    <span className="Control_Trip_Stages_Stage_HotelFeatures">
-                      CITY CENTRE - SMALL HOTEL - HERITAGE - £££
-                    </span>
-                    <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
-                    
-                    <p className="Control_Trip_Stages_Stage_Nights">{prSelection.nights}</p>
-                  
+                <a className="Control_Trip_Stages_Stage_Detail_Icon">
+                  <i
+                    className="show fas fa-caret-right "
+                    onClick={() =>
+                      this.props.setBuilderCardEvent(null, index, "place")
+                    }
+                  />
+                </a>
+              </div>
 
-                    <a title="ADD NIGHTS" onClick={() => this.addNight(index)}>
-                    <i className="fas fa-caret-up Voyager_Trip_Nights_Add" />
-                    </a>
-               
-                    <a  title="SUBTRACT NIGHTS" onClick={() => this.removeNight(index)}>
-                    <i className="fas fa-caret-down Voyager_Trip_Nights_Subtract" />
-                    </a>
-
-                    <a className="Hide Voyager_Trip_Control_Delete" title="DELETE STAGE" onClick={() => this.deleteHotel()}>
-                    <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
-                    </a>
-
-                  </div>
-                </div>
-              </a>  
-              <div />
-
-              <a className="Control_Trip_Stages_Stage_Detail_Icon">
-              <i className="show fas fa-caret-right " onClick={() => this.props.setBuilderCardEvent(null, index, "place") } /> </a>
-
-          <p className=" hide Voyager_Trip_Transfer"> { itinObj.transferNodeItems[index + 1].transferItem .transferItem1}</p>
-          <p className="Voyager_Trip_Transfer">{itinObj.transferNodeItems[itinObj.transferNodeItems.length - 1] .transferItem.transferItem1 }</p>
-            </div>
-
-
-
-            
+              <p className="show Voyager_Trip_Transfer">
+              
+                {
+                  itinObj.transferNodeItems[index + 1].transferItem
+                    .transferItem1
+                }
+              </p>
+             
+            </span>
           ))}
-         
+          <p className="Voyager_Trip_Transfer">
+                {
+                  itinObj.transferNodeItems[
+                    itinObj.transferNodeItems.length - 1
+                  ].transferItem.transferItem1
+                }
+              </p>
         </div>
       ); //return
     } //if
@@ -192,17 +235,17 @@ export class ItineraryView extends Component {
       this.renderPRSelections(this.props.itinObj)
     );
     return (
-    <div className="Control_Trip_Stages_Container_Panel_1">
-    <div className="Control_Trip_Stages_Container_Panel_2">
-      <div className="Voyager_Trip_Panel">
-        <l className="Voyager_Trip_Control_Places_Total"> </l>
-        <l className="Voyager_Title_3">
-          {this.props.builderMode && "MY TRIP "}
-        </l>
-        <l className="Voyager_Trip_Control_Nights_Total"> </l>
-        {contents}
-      </div>
-      </div>
+      <div className="Control_Trip_Stages_Container_Panel_1">
+        <div className="Control_Trip_Stages_Container_Panel_2">
+          <div className="Voyager_Trip_Panel">
+            <l className="Voyager_Trip_Control_Places_Total"> </l>
+            <l className="Voyager_Title_3">
+              {this.props.builderMode && "MY TRIP "}
+            </l>
+            <l className="Voyager_Trip_Control_Nights_Total"> </l>
+            {contents}
+          </div>
+        </div>
       </div>
     ); //return
   } //render
