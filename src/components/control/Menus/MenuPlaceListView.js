@@ -4,6 +4,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { CardView } from '../../CardView';
 
+
 const MenuPlaceListView = (props) => {
     const Panel = Collapse.Panel;
     const customPanelStyle = {};
@@ -39,24 +40,15 @@ const MenuPlaceListView = (props) => {
                             </a></div>
                         <div className="show" >
                             <a className="Control_Item_D">
-                                <l className="Control_Text_Left">places</l>
-                                <i className="fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
+                                <l className="Control_Text_Places">places</l>
+                                <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
                             </a></div>
 
-                        <div className="show" >
-                            <a className="Control_Item_D">
-                                <i className="fas fa-image Voyager_Control_Icon_Size_1"></i>
-                            </a></div>
-
-                        <div className="hide" >
-                            <a className="Control_Item_D">
-                                <i className="fas fa-map Voyager_Control_Icon_Size_1"></i>
-                            </a></div>
+            
 
                         <div className="show" >
                             <a className="Control_Item_D" onClick={() => props.changeViewHotelWithFilterByPlace(props.card.title)}>
-                                <i className="fas fa-home Voyager_Control_Icon_Size_1">
-                                    <l className="Control_Text_Right">hotels</l></i>
+                            <l className="Control_Text_Hotels">hotels</l>
                             </a></div>
 
                     </div>

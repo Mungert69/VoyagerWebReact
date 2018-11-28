@@ -10,7 +10,7 @@ export const VisualView = (props) => {
       {props.showMap ? <MapView />
         : <ImageView />}
      
-     <MenuVisualView/>>
+     <MenuVisualView/>
     </span>
     ;
   

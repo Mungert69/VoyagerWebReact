@@ -41,32 +41,24 @@ return(
                     </a></div>
                 <div className="show" >
                     <a className="Control_Item_D" onClick={() => {props.changeView('place')}}>
-                        <l className="Control_Text_Left">places</l>
-                        <i className="fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
+                        <l className="Control_Text_Places">places</l>
+                        <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
                     </a></div>
 
-                <div className="show" >
-                    <a className="Control_Item_D">
-                        <i className="fas fa-image Voyager_Control_Icon_Size_1"></i>
-                    </a></div>
-
-                <div className="hide" >
-                    <a className="Control_Item_D">
-                        <i className="fas fa-map Voyager_Control_Icon_Size_1"></i>
-                    </a></div>
-
-
-                <div className="show" >
-                    <a className="Control_Item_D">
-                        <i className="fas fa-home Voyager_Control_Icon_Size_1">
-                            <l className="Control_Text_Right">hotels</l></i>
-                    </a></div>
-
+    
                 <div className="show" >
                     <a className="Control_Item_D" onClick={()=> props.addHotel(props.card.id,props.card.placeNameId,props.userId)}>
-                    <i className="fas fa-plus-circle Voyager_Control_Icon_Size_1">ADD </i>                    </a>
+                    
+                    <i className="fas fa-plus-circle Voyager_Control_Icon_Size_1">  </i>
+                    <l className="Control_Text_Left"> ADD </l>                   </a>
                     {props.addHotelMsg}
                     </div>
+
+                <div className="show" >
+                    <a className="Control_Item_D">
+                    <l className="Control_Text_Hotels">hotels</l>
+                    </a></div>
+
             </div>
 
 

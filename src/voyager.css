@@ -1887,7 +1887,7 @@ word-wrap:break-word;
 
 .Voyager_Card_Image_Carousel {
 
-   width: 200px;
+   width: 100%;
     margin-right: 0px;
 }
 
@@ -2586,6 +2586,7 @@ position: fixed;
     }
     .Control_2_2 {
         background: rgb(255, 254, 254);
+     
         position: fixed;
         margin-top: -6px;
         left: 0;
@@ -2602,7 +2603,28 @@ position: fixed;
         user-select: none;
        
   }
-
+  .Control_2_3 {
+    background: rgb(255, 254, 254);
+border-top-left-radius: 9px;
+border-top-right-radius: 9px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 158px;
+    height: auto;
+width: 80px;
+text-align: center;
+    z-index: 9;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+   
+}
 
 
     
@@ -3980,7 +4002,7 @@ margin-top:300px;
 
   .Control_Text_Left{
     color: #666666;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
 margin-right: 3px;
@@ -3995,7 +4017,7 @@ transition: color .5s ease-out;
 
   .Control_Text_Right{
     color: #666666;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
     margin-left: 3px;
@@ -4010,7 +4032,55 @@ transition: color .5s ease-out;
 
 
 
+.Control_Text_Places{
+    color: #1f6432;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+margin-right: 0px;
+-webkit-transition: color .5s ease-out;
+-moz-transition: color .5s ease-out;
+-o-transition: color .5s ease-out;
+transition: color .5s ease-out;
+  }
+  .Control_Text_Places:hover{
+    color: #33a752;
+}
 
+
+
+.Control_Text_Hotels{
+    color: #641f1f;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+margin-right: 0px;
+-webkit-transition: color .5s ease-out;
+-moz-transition: color .5s ease-out;
+-o-transition: color .5s ease-out;
+transition: color .5s ease-out;
+  }
+  .Control_Text_Hotels:hover{
+    color: #a73333;
+}
+
+
+
+
+.Control_Text_Add{
+    color: #666;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+margin-right: 0px;
+-webkit-transition: color .5s ease-out;
+-moz-transition: color .5s ease-out;
+-o-transition: color .5s ease-out;
+transition: color .5s ease-out;
+  }
+  .Control_Text_Add:hover{
+    color: #0071bc;
+}
 
 
 .Trip_Name

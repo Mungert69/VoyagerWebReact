@@ -2,12 +2,12 @@
 
 const MenuVisualView = props => {
   return (
-    <div className="Control_2_1">
+    <div className="Control_2_3">
       <div className="flex-container">        
         <div className="show">
           <a className="Voyager_Control_Item_B AnimationRipple">
             <i
-              className="fas fa-map-marker Voyager_Control_Icon_Size_1"
+              className="fas fa-map Voyager_Control_Icon_Size_2"
               onClick={() => props.toggleShowMap(true)}
             />
           </a>
@@ -15,7 +15,7 @@ const MenuVisualView = props => {
         <div className="show">
           <a className="Voyager_Control_Item_B AnimationRipple">
             <i
-              className="fas fa-images Voyager_Control_Icon_Size_1"
+              className="fas fa-images Voyager_Control_Icon_Size_2"
               onClick={() => props.toggleShowMap(false)}
             />
           </a>
