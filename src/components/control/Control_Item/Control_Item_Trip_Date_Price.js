@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-export const Control_Item_Trip_Date_Price = ({datePricesObjs}) => {
-  if (datePricesObjs === undefined || datepricesObjs === null) return <p>Date N/A</p>;
+export const Control_Item_Trip_Date_Price = ({datePriceObjs}) => {
+  if (datePriceObjs === undefined || datePriceObjs === null) return <p>Date N/A</p>;
     return (
       <div>
+      <span className="Trip_Date_Price">
       {
-      datePriceObjs.map(datePriceObj => <span> <span className="Trip_Date_Price"> {datePriceObj.date}</span>
-      <span className="Trip_Date_Price"> {datePriceObj.price}</span></span>)
+      datePriceObjs.map(datePriceObj => <span>{datePriceObj.dateStr} {datePriceObj.price}</span> 
+      )
       }
-    
+      </span>
       </div>
     );
   
