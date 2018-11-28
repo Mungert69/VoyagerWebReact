@@ -18,6 +18,7 @@ export class TripListView extends Component {
   setCard = (card, index) => {
     this.setState({ card: card });
     this.props.setTripItem(index);
+    this.props.setTripCard(card);
   };
   renderCardList = () => {
     let filteredCards = this.props.cards;
