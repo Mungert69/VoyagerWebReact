@@ -12,7 +12,7 @@ export const  AccommodationCharacteristics = (props) => {
     return (
       <div className="Hotel_Characteristics_Panel">
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.smallHotel ? (
             <span>
               Small Hotel
@@ -21,7 +21,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.mediumHotel ? (
             <span>
               medium Hotel
@@ -30,7 +30,6 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
           {props.accommodationCharacteristics.LargeHotel ? (
             <span>
               Large Hotel
@@ -39,7 +38,6 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
           {props.accommodationCharacteristics.modern ? (
             <span>
               modern<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -47,7 +45,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.heritage ? (
             <span>
               heritage
@@ -56,7 +54,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.beachArea ? (
             <span>
               beach Area
@@ -65,7 +63,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.beachFront ? (
             <span>
               beach Front
@@ -74,7 +72,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.cityCentre ? (
             <span>
               city Centre
@@ -83,7 +81,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.cityOutskirts ? (
             <span>
               city Outskirts
@@ -92,7 +90,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.countryside ? (
             <span>
               countryside
@@ -101,7 +99,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.eco ? (
             <span>
               eco<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -109,7 +107,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.bB ? (
             <span>
               bb<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -117,7 +115,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.rustic ? (
             <span>
               rustic<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -125,7 +123,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.cabana ? (
             <span>
               cabana<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -133,7 +131,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.business ? (
             <span>
               business
@@ -142,7 +140,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.ownerManaged ? (
             <span>
               owner Managed
@@ -151,7 +149,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.farmStay ? (
             <span>
               farm Stay
@@ -160,7 +158,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.historicCentre ? (
             <span>
               historic Centre
@@ -169,7 +167,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.casa ? (
             <span>
               casa<i className="fas fa-circle Voyager_Control_Icon_Divider" />
@@ -177,7 +175,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.townCentre ? (
             <span>
               townCentre
@@ -186,7 +184,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.townOutskirts ? (
             <span>
               townOutskirts
@@ -195,7 +193,7 @@ export const  AccommodationCharacteristics = (props) => {
           ) : null}
         </span>
         <span className="Hotel_Characteristics_Item_Title">
-          {" "}
+
           {props.accommodationCharacteristics.coastal ? (
             <span>
               coastal
