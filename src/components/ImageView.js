@@ -19,7 +19,9 @@ export class ImageView extends Component {
     };
     
     render() {
-      if (this.props.card.picFileNames === undefined || this.props.card.picFileNames === null) return null;
+        if (this.props.card === undefined || this.props.card === null) return null;
+     
+        if (this.props.card.picFileNames === undefined || this.props.card.picFileNames === null) return null;
         const props = {
             dots: true,
             infinite: true,
