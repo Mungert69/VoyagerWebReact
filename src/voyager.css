@@ -1887,8 +1887,8 @@ word-wrap:break-word;
 
 .Voyager_Card_Image_Carousel {
 
-   width: 100%;
-    margin-right: 0px;
+    margin: auto;
+    width: 400px;
 }
 
 
@@ -2604,25 +2604,35 @@ position: fixed;
        
   }
   .Control_2_3 {
-    background: rgb(255, 254, 254);
-border-top-left-radius: 9px;
-border-top-right-radius: 9px;
+    background: rgba(255, 254, 254, 0.616);
+
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
-    top: 158px;
-    height: auto;
-width: 80px;
+    top: 165px;
+
 text-align: center;
-    z-index: 9;
+    z-index: 8;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    border:  radial-gradient(  rgb(255,255,255)  40%, rgba(0,0,0,.01) 80% );
+    width: 50px;
+    height: 25px;
+  
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+   
+    border-bottom: 0;
     
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 12;
    
 }
 
@@ -3498,6 +3508,25 @@ a:hover .Voyager_Control_Icon_Layer_Sidebyside {
 }
 
 .Control_Icon_Expand:hover {
+    color: #0071bc;
+}
+
+
+
+
+
+.Voyager_Control_Icon_Map_Image {
+    color: #707070;
+    font-size: 1.2em;
+    margin-top:0px;
+    text-align: center;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+        transition: color .5s ease-out;
+    
+}
+a:hover .Voyager_Control_Icon_Map_Image {
     color: #0071bc;
 }
 
