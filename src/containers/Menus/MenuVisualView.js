@@ -6,7 +6,7 @@ import {
 } from '../../actions/actions';
 
 const mapStateToProps = state => ({
-    
+    showMap : state.tripViewState.showMap
 });
 
 
