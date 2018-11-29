@@ -19,14 +19,10 @@ const MenuPlaceListView = (props) => {
 
                     <div className="Control_Position_left Control_Position_inner_wrapper">
 
-                        <div className="Show" >
-                            <a className="Control_Item_C" >
-                                <i className="fas fa-share-alt Voyager_Control_Icon_Size_1"></i>
-                            </a> </div>
-
-                        <div className="Show" >
-                            <a className="Control_Item_C">
-                                <i className="fas fa-heart Voyager_Control_Icon_Size_1"></i>
+                             <div className="show" >
+                            <a className="Control_Item_D">
+                                <l className="Control_Text_Places">places</l>
+                                <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
                             </a></div>
                     </div>
 
@@ -34,35 +30,34 @@ const MenuPlaceListView = (props) => {
 
 
                     <div className="Control_Position_center Control_Position_inner_wrapper">
-                        <div className="hide" >
-                            <a className="Control_Item_D">
-                                <i className="fas fa-thumbs-down Voyager_Control_Icon_Size_1"> </i>
-                            </a></div>
-                        <div className="show" >
-                            <a className="Control_Item_D">
-                                <l className="Control_Text_Places">places</l>
-                                <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
-                            </a></div>
-                            
+                        
+                                 <div className="Show" >
+                            <a className="Control_Item_C" >
+                                <i className="fas fa-share-alt Voyager_Control_Icon_Size_2"></i>
+                            </a> </div>
+
+                        <div className="Show" >
+                            <a className="Control_Item_C">
+                                <i className="fas fa-heart Voyager_Control_Icon_Size_2"></i>
+                            </a></div>  
                          
-
-                        <div className="show" >
-                            <a className="Control_Item_D" onClick={() => props.changeViewHotelWithFilterByPlace(props.card.title)}>
-                            <l className="Control_Text_Hotels">hotels</l>
-                            </a></div>
-
                     </div>
 
 
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">
+   
+                         <div className="show" >
+                            <a className="Control_Item_D" onClick={() => props.changeViewHotelWithFilterByPlace(props.card.title)}>
+                            <l className="Control_Text_Hotels">hotels</l>
+                            </a></div>
 
-                        <div className="show" >
+                        <div className="hide" >
                             <a className="Control_Item_C">
                                 <i className="fas fa-street-view Voyager_Control_Icon_Size_1"></i>
                             </a></div>
 
-                        <div className="show" >
+                        <div className="hide" >
                             <a className="Control_Item_C">
                                 <i className="fas fa-expand-arrows-alt Voyager_Control_Icon_Size_1"></i>
                             </a></div>
@@ -75,7 +70,7 @@ const MenuPlaceListView = (props) => {
                 <span className="Place_Name">{props.card.title}</span>
                 <span className="Country_Name">{props.card.country}</span>
 
-                <span className="Feature" >place feature - place feature - place feature</span>
+                <span className="Place_Feature" >place feature - place feature - place feature</span>
                 <Collapse className="Show" bordered={false} defaultActiveKey={['1']} >
                     <Panel header={
                         <div className="Voyager_Card_Container_Trip_Details_SubPanel1">

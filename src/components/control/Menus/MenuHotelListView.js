@@ -20,15 +20,12 @@ return(
 
             <div className="Control_Position_left Control_Position_inner_wrapper">
 
-                <div className="Show" >
-                    <a className="Control_Item_C" >
-                        <i className="fas fa-share-alt Voyager_Control_Icon_Size_1"></i>
-                    </a> </div>
-
-                <div className="Show" >
-                    <a className="Control_Item_C">
-                        <i className="fas fa-heart Voyager_Control_Icon_Size_1"></i>
+                 <div className="show AnimationRipple" >
+                    <a className="Control_Item_D" onClick={() => {props.changeView('place')}}>
+                        <l className="Control_Text_Places">places</l>
+                        <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
                     </a></div>
+
             </div>
 
 
@@ -39,25 +36,26 @@ return(
                     <a className="Control_Item_D">
                         <i className="fas fa-thumbs-down Voyager_Control_Icon_Size_1"> </i>
                     </a></div>
-                <div className="show" >
-                    <a className="Control_Item_D" onClick={() => {props.changeView('place')}}>
-                        <l className="Control_Text_Places">places</l>
-                        <i className="hide fas fa-map-marker Voyager_Control_Icon_Size_1"></i>
-                    </a></div>
+           
 
-    
-                <div className="show" >
+        <div className="Show" >
+                    <a className="Control_Item_C" >
+                        <i className="fas fa-share-alt Voyager_Control_Icon_Size_2"></i>
+                    </a> </div>
+
+                <div className="show AnimationRipple" >
                     <a className="Control_Item_D" onClick={()=> props.addHotel(props.card.id,props.card.placeNameId,props.userId)}>
                     
-                    <i className="fas fa-plus-circle Voyager_Control_Icon_Size_1">  </i>
-                    <l className="Control_Text_Left"> ADD </l>                   </a>
+                    <i className="fas fa-plus-circle Voyager_Control_Icon_Stage_Add ">  </i>
+                    <l className="hide Control_Text_Left"> ADD </l></a>
                     {props.addHotelMsg}
                     </div>
 
-                <div className="show" >
-                    <a className="Control_Item_D">
-                    <l className="Control_Text_Hotels">hotels</l>
+                <div className="Show" >
+                    <a className="Control_Item_C">
+                        <i className="fas fa-heart Voyager_Control_Icon_Size_2"></i>
                     </a></div>
+           
 
             </div>
 
@@ -66,13 +64,16 @@ return(
 
 
             <div className="Control_Position_right Control_Position_inner_wrapper">
-
-                <div className="show" >
+     <div className="show AnimationRipple" >
+                    <a className="Control_Item_D">
+                    <l className="Control_Text_Hotels">hotels</l>
+                    </a></div>
+                <div className="hide" >
                     <a className="Control_Item_C">
                         <i className="fas fa-street-view Voyager_Control_Icon_Size_1"></i>
                     </a></div>
 
-                <div className="show" >
+                <div className="hide" >
                     <a className="Control_Item_C">
                         <i className="fas fa-expand-arrows-alt Voyager_Control_Icon_Size_1"></i>
                     </a></div>

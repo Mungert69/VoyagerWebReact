@@ -7,7 +7,7 @@ const MenuVisualView = props => {
         {props.showMap ? (
           <a className="Voyager_Control_Item_B AnimationRipple">
             <i
-              className="fas fa-images Voyager_Control_Icon_Map_Image"
+              className="fas fa-image Voyager_Control_Icon_Map_Image"
               onClick={() => props.toggleShowMap()}
             />
           </a>

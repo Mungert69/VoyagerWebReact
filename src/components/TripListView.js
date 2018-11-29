@@ -31,17 +31,18 @@ export class TripListView extends Component {
         <MenuTripListView card={this.state.card} /> 
         {filteredCards.map((cardValue,index) => (
           <span>
-            <Button
+            <a
               onClick={() =>
                 this.props.setTripCardEvent(cardValue, this.props.userId)
               }
-            >
-              View Trip : {cardValue.title}
-            </Button>
+            > 
+            <div className="hide">View Trip : {cardValue.title}  </div>
+            </a>
             <p className="Voyager_Places_List" key={cardValue.id}>
             <Waypoint onEnter={() => this.setCard(cardValue,index)} />                         
+            
               <TripCardView   card={cardValue} />
-            </p>
+          </p>
           </span>
  
         ))}

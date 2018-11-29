@@ -13,7 +13,7 @@ import { Control_Item_Trip_Name } from '../Control_Item/Control_Item_Trip_Name';
 import { Control_Item_Trip_Stage_Total } from '../Control_Item/Control_Item_Trip_Stage_Total';
 import { Control_Item_Trip_Nights_Total } from '../Control_Item/Control_Item_Trip_Nights_Total';
 import { Control_Item_Trip_Date_Price } from '../Control_Item/Control_Item_Trip_Date_Price';
-import { Control_Item_Country_Name } from '../Control_Item/Control_Item_Country_Name';
+
 import { Control_Item_Trip_Stage_Places } from '../Control_Item/Control_Item_Trip_Stage_Places';
 import { Control_Item_Trip_Description_Short } from '../Control_Item/Control_Item_Trip_Description_Short';
 
@@ -49,7 +49,7 @@ const MenuTripMidView = (props) => {
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
                         <Control_Item_Trip_Date_Price />
-                        <Control_Item_Country_Name />
+                 
                     </div>
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">

@@ -172,7 +172,7 @@ export class MapView extends Component {
                     defaultCenter={this.state.defaultCenter}
                     defaultOptions={{
                         styles: this.state.styleMode,
-                        streetViewControl: true,
+                        streetViewControl: false,
                         scaleControl: false,
                         scrollwheel: true,
                         disableDoubleClickZoom: false,
