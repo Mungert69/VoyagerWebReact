@@ -97,7 +97,7 @@ export class TripContainer extends Component {
               ) : <MenuListView changeView={this.props.changeView} />}
 
 
-               <div className="hide">
+               <div className="Hide">
                 <Control_Filter_Sort_Hotel />
               </div>
               <div className="Hide merge this code with FlightView.js">
