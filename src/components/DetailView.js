@@ -31,6 +31,14 @@ export class DetailView extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    if ( this.props.itinObj !== nextProps.itinObj ||
+      this.props.item !== nextProps.item) {
+      return true;
+    }
+    return false;
+  }
+
   setParams = () => {
     var itemCounted = 0;
     var prItemCounted = 0;

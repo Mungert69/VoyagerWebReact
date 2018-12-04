@@ -12,7 +12,12 @@ export class CardMapView extends Component {
 
     }
 
-
+    shouldComponentUpdate(nextProps) {
+        if (this.props.card.title !== nextProps.card.title) {
+          return true;
+        }
+        return false;
+      }
 
     renderCardView = () => {
         if (this.props.card === undefined || this.props.card === null) { return; }

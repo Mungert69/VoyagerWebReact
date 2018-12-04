@@ -4,8 +4,8 @@ import { ItineraryListView } from "./ItineraryListView";
 import { Button } from "antd";
 import "antd/dist/antd.css";
 import MenuTripListView from "./control/Menus/MenuTripListView";
-import Waypoint from 'react-waypoint';
-import { TripCardView } from './TripCardView';
+import Waypoint from "react-waypoint";
+import { TripCardView } from "./TripCardView";
 
 export class TripListView extends Component {
   constructor(props) {
@@ -24,30 +24,27 @@ export class TripListView extends Component {
     let filteredCards = this.props.cards;
     if (filteredCards.length === 0) return null;
     return (
-      
       <div className="Control_Trip_Cards_Container_Panel_1">
-      <div className="Control_Trip_Cards_Container_Panel_2">
-      <span>
-        <MenuTripListView card={this.state.card} /> 
-        {filteredCards.map((cardValue,index) => (
+        <div className="Control_Trip_Cards_Container_Panel_2">
           <span>
-            <a
-              onClick={() =>
-                this.props.setTripCardEvent(cardValue, this.props.userId)
-              }
-            > 
-            <div className="hide">View Trip : {cardValue.title}  </div>
-            </a>
-            <p className="Voyager_Places_List" key={cardValue.id}>
-            <Waypoint onEnter={() => this.setCard(cardValue,index)} />                         
-            
-              <TripCardView   card={cardValue} />
-          </p>
+            <MenuTripListView card={this.state.card} />
+            {filteredCards.map((cardValue, index) => (
+              <span>
+                <div className="hide">View Trip : {cardValue.title} </div>
+
+                <p className="Voyager_Places_List" key={cardValue.id}>
+                  <Waypoint onEnter={() => this.setCard(cardValue, index)} />
+
+                  <TripCardView
+                    userId={this.props.userId}
+                    setTripCardEvent={this.props.setTripCardEvent}
+                    card={cardValue}
+                  />
+                </p>
+              </span>
+            ))}
           </span>
- 
-        ))}
-      </span> 
-      </div>
+        </div>
       </div>
     ); //Return
   }; //renderCardList

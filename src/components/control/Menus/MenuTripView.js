@@ -40,7 +40,7 @@ const MenuTripView = (props) => {
       <Control_Item_Trip_Transport_Modify/>
 
       <Control_Item_Trip_Stage_Add changeViewPlaceWithFilterByNextHop={props.changeViewPlaceWithFilterByNextHop}/>
-      <Control_Item_Trip_Stage_Remove/>
+          <Control_Item_Trip_Stage_Remove userId={props.userId} deleteHotel={props.deleteHotel}/>
       <Control_Item_Trip_Update/>
 
       <Control_Item_Message_Cancel/>

@@ -43,6 +43,12 @@ export class MapView extends Component {
 
     }
 
+    shouldComponentUpdate(nextProps) {
+        if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
+          return true;
+        }
+        return false;
+      }
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {

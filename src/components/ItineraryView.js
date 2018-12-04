@@ -33,6 +33,8 @@ export class ItineraryView extends Component {
     }
   }
 
+  
+
   refreshPrSelections = () => {
     this.props.fetchStoredItinObj(this.props.userId);
   };
@@ -41,7 +43,7 @@ export class ItineraryView extends Component {
     //ToDo pass this back to MapView
     this.setState({ changeCard: !this.state.changeCard });
   }
-
+/*
   deleteHotel = () => {
     // Add Hotel api call
     let str = apiBaseUrl + "api/Itinerary/DelHotel/" + this.props.userId + "/";
@@ -55,6 +57,7 @@ export class ItineraryView extends Component {
         this.changingFlight();
       }); //fetch
   };
+  */
 
   addNight = index => {
     // Add Hotel api call

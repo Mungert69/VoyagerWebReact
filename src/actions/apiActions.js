@@ -210,7 +210,19 @@ export function fetchTripMapStyleCards(templateTypeId) {
     };
 }
 
-
+export function deleteHotel(userId) {
+    return function (dispatch) {
+        // Del Hotel api call
+        let str = apiBaseUrl + "api/Itinerary/DelHotel/" + userId + "/";
+        fetch(str)
+            .then(response => response.json(),
+            error => console.log('An error occurred in apiActions.deleteHotel : ', error))
+            .then(result => {
+                dispatch(fetchStoredItinObj(userId));
+            })
+            ; //fetch
+    };
+  };
 
 export function addHotel(hotelId, placeNameId, userId) {
     return function (dispatch) {

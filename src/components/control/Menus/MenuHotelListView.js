@@ -4,7 +4,6 @@ import {Collapse } from 'antd';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { CardView } from '../../CardView';
-import { addHotel } from "../../../actions/apiActions";
 import  {AccommodationCharacteristics} from '../../SubComponents/AccommodationCharacteristics';
 
 const MenuHotelListView = (props) => {
