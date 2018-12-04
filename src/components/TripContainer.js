@@ -14,7 +14,7 @@ import MenuMain from './control/Menus/MenuMain';
 import MenuListView from './control/Menus/MenuListView';
 
 
-
+import { Control_Filter_Sort_Hotel } from './control/Filter/Control_Filter_Sort_Hotel';
 
 import { Control_Trip_Flights } from "./control/Control_Trip_Flights";
 import { Control_Trip_Dates } from "./control/Control_Trip_Dates";
@@ -97,6 +97,9 @@ export class TripContainer extends Component {
               ) : <MenuListView changeView={this.props.changeView} />}
 
 
+               <div className="hide">
+                <Control_Filter_Sort_Hotel />
+              </div>
               <div className="Hide merge this code with FlightView.js">
                 <Control_Trip_Flights />
               </div>
