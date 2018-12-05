@@ -1,5 +1,4 @@
 import _ from "lodash";
-import { listeners } from "cluster";
 
 function CardFilter(cardType, state) {
   if (cardType === "trip") {
