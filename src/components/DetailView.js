@@ -22,7 +22,6 @@ export class DetailView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log("logger: In TripDetailsView.componentWillReceiveProps value nextProp changeItin = " + nextProps.changeItin + " value of thisProp changeItin = " + this.props.changeItin);
     if (
       this.props.itinObj !== nextProps.itinObj ||
       this.props.item !== nextProps.item
