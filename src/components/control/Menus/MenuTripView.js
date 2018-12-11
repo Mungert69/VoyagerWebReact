@@ -59,7 +59,7 @@ const MenuTripView = (props) => {
 
       <Control_Item_Trips_All changeView={props.changeView}/>
       <Control_Item_Share/>
-      <Control_Item_Bookmark/>
+      <Control_Item_Bookmark userId={props.userId} saveItinerary={props.saveItinerary}/>
       <Control_Item_Trip_Date/>
       <Control_Item_Trip_Flight/>
       <Control_Item_Message/>

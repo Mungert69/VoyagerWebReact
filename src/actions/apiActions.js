@@ -6,7 +6,7 @@ import {
 
 } from './actions';
 
-import  {addHotelMessage} from './messagesActions';
+import  {addHotelMessage, changeItineraryMessage} from './messagesActions';
 
 import { apiBaseUrl } from '../components/Constants';
 
@@ -218,11 +218,28 @@ export function deleteHotel(userId) {
             .then(response => response.json(),
             error => console.log('An error occurred in apiActions.deleteHotel : ', error))
             .then(result => {
+                dispatch(changeItineraryMessage(result));
                 dispatch(fetchStoredItinObj(userId));
             })
             ; //fetch
     };
   };
+
+  export function saveItinerary(userId) {
+    return function (dispatch) {
+        // Del Hotel api call
+        let str = apiBaseUrl + "api/Itinerary/Save/" + userId + "/";
+        fetch(str)
+            .then(response => response.json(),
+            error => console.log('An error occurred in apiActions.saveItinerary : ', error))
+            .then(result => {
+                dispatch(changeItineraryMessage(result));
+                dispatch(fetchStoredItinObj(userId));
+            })
+            ; //fetch
+    };
+  };
+
 
 export function addHotel(hotelId, placeNameId, userId) {
     return function (dispatch) {

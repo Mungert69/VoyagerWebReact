@@ -5,3 +5,9 @@ export const addHotelMessage = (addHotelMsg) => ({
     payload: addHotelMsg
 
 });
+
+export const changeItineraryMessage = (changeItineraryMsg) => ({
+    type: ActionTypes.CHANGE_ITINERARY_MESSAGE,
+    payload: changeItineraryMsg
+
+});
