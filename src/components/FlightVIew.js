@@ -42,7 +42,7 @@ export class FlightView extends Component {
         let str = apiBaseUrl+'api/Flight/GetAirlines/'+ this.props.userId + '/';
 
         // Get airlines api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ airlines: data, loading: false });
@@ -79,7 +79,7 @@ export class FlightView extends Component {
         });
 
         // Get airlines api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ airlines: data, loading: false });
@@ -94,7 +94,7 @@ export class FlightView extends Component {
         this.setState({ selectedSupplierID: e.target.value });
 
         // Get airlines api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ airports: data, loading: false });
@@ -106,7 +106,7 @@ export class FlightView extends Component {
         this.setState({ selectedAirport: e.target.value });
 
         // Get OutFlights api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ outdates: data, loading: false });
@@ -120,7 +120,7 @@ export class FlightView extends Component {
         this.setState({ selectedOutFlightID: e.target.value });
 
         // Get InFlights api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ indates : data, loading: false });
@@ -133,7 +133,7 @@ export class FlightView extends Component {
         this.setState({ selectedInDate: e.target.options[e.target.selectedIndex].text });
         this.setState({ selectedInFlightID: e.target.value });
         // Get Cost api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ costCalcStatus: data, loading: false });
@@ -144,7 +144,7 @@ export class FlightView extends Component {
         let str = apiBaseUrl+'api/Flight/GetCost/' + this.props.userId + '/';
 
         // Get Cost api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ costCalcStatus: data, loading: false });

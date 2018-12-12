@@ -13,18 +13,9 @@ export class TripView extends Component {
         super(props);
         //this.props.setTripCardDetailLevel(0);
         var cardIn;
-        /*if (props.location.query !== undefined && props.location.query !== null) {
-            if (props.location.query.card !== undefined && props.location.query.card !== null) {
-                cardIn = props.location.query.card;
-                
-            }
-
-        }*/
-        // tempArray used to fill toggleplace array for toggling place hotels visibilty.
-        var tempArray = Array(100).fill(false);
-        this.state = {
+         this.state = {
             itinId: 0,
-            loading: true,
+            loading: false,
             changeItin: true,
             changeFlight: true,
             orderBy: false,
@@ -34,13 +25,7 @@ export class TripView extends Component {
             itemNumber: 0
         };
 
-        // Get places api call.
-        fetch(apiBaseUrl+'api/Places')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ places: data, loading: false });
-            });
-
+        
     }//Constructor
 
     // This event updates the state when a hotel is added. THis triggers an ItineraryView and then FlightView update through its props change.

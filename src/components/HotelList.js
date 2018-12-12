@@ -8,7 +8,7 @@ export class HotelList extends Component {
         let str =apiBaseUrl+ 'api/Hotels/Details/' + props.placeNameId;
         
         // Get hotels api call
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(data => {
                 this.setState({ hotels: data, loading: false, addResult: ' - add' });
@@ -19,7 +19,7 @@ export class HotelList extends Component {
     addHotel = (hotelID) => {
         // Add Hotel api call
         let str = apiBaseUrl+'api/Itinerary/AddHotel/' + this.props.placeNameId+'/'+hotelID+'/'+ this.props.userId +'/';
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json())
             .then(result => {
                 this.setState({ addResult: result });

@@ -25,7 +25,7 @@ function withItinObj(WrappedComponent) {
           this.props.card.typeId +
           "/";
         // Get  Card
-        fetch(str)
+        fetch(str,{cache: "no-store"})
           .then(res => res.text())
           .then(text => (text.length ? JSON.parse(text) : {}))
           .then(data => {

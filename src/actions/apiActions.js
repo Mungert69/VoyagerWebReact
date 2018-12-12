@@ -214,7 +214,7 @@ export function deleteHotel(userId) {
     return function (dispatch) {
         // Del Hotel api call
         let str = apiBaseUrl + "api/Itinerary/DelHotel/" + userId + "/";
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json(),
             error => console.log('An error occurred in apiActions.deleteHotel : ', error))
             .then(result => {
@@ -229,7 +229,7 @@ export function deleteHotel(userId) {
     return function (dispatch) {
         // Del Hotel api call
         let str = apiBaseUrl + "api/Itinerary/Save/" + userId + "/";
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(response => response.json(),
             error => console.log('An error occurred in apiActions.saveItinerary : ', error))
             .then(result => {
@@ -245,7 +245,7 @@ export function addHotel(hotelId, placeNameId, userId) {
     return function (dispatch) {
         // Add Hotel api call
         let str = apiBaseUrl + 'api/Itinerary/AddHotel/' + placeNameId + '/' + hotelId + '/' + userId + '/';
-        fetch(str)
+        fetch(str,{cache: "no-store"})
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in apiActions.addHotel : ', error)
@@ -266,7 +266,8 @@ export const fetchItinObj = (cardVal, userId) => {
 
     return function (dispatch) {
         dispatch(requestItinObj());
-        return fetch(apiBaseUrl + 'api/Itinerary/ItinObj/' + cardVal.id + '/' + cardVal.typeId + '/' + userId + '/')
+        let str=apiBaseUrl + 'api/Itinerary/ItinObj/' + cardVal.id + '/' + cardVal.typeId + '/' + userId + '/';
+        return fetch(str,{cache: "no-store"})
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in apiActions.fetchItinObj : ', error)
@@ -284,7 +285,7 @@ export const fetchStoredItinObj = (userId) => {
 
     return function (dispatch) {
         dispatch(requestItinObj());
-        return fetch(apiBaseUrl + 'api/Itinerary/StoredItinObj/' + userId + '/')
+        return fetch(apiBaseUrl + 'api/Itinerary/StoredItinObj/' + userId + '/',{cache: "no-store"})
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in apiActions.fetchStoredItinObj :', error)

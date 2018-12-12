@@ -19,7 +19,7 @@ function withStoredItinObj(WrappedComponent) {
         str =
           apiBaseUrl +"api/Itinerary/StoredItinObj";
         // Get  Card
-        fetch(str)
+        fetch(str,{cache: "no-store"})
           .then(res => res.text())
           .then(text => (text.length ? JSON.parse(text) : {}))
           .then(data => {

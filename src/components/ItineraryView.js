@@ -12,11 +12,8 @@ export class ItineraryView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      places: [],
       loading: true,
       changeCard: false,
-      nights: 0,
-      placeCount: 0
     };
     this.refreshPrSelections();
   } // constructor
@@ -43,21 +40,7 @@ export class ItineraryView extends Component {
     //ToDo pass this back to MapView
     this.setState({ changeCard: !this.state.changeCard });
   }
-/*
-  deleteHotel = () => {
-    // Add Hotel api call
-    let str = apiBaseUrl + "api/Itinerary/DelHotel/" + this.props.userId + "/";
-    fetch(str)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({ addResult: result });
-      })
-      .then(end => {
-        this.refreshPrSelections();
-        this.changingFlight();
-      }); //fetch
-  };
-  */
+
 
   addNight = index => {
     // Add Hotel api call
@@ -68,7 +51,7 @@ export class ItineraryView extends Component {
       "/" +
       this.props.userId +
       "/";
-    fetch(str)
+    fetch(str,{cache: "no-store"})
       .then(response => response.json())
       .then(result => {
         this.setState({ addResult: result });
@@ -88,7 +71,7 @@ export class ItineraryView extends Component {
       "/" +
       this.props.userId +
       "/";
-    fetch(str)
+    fetch(str,{cache: "no-store"})
       .then(response => response.json())
       .then(result => {
         this.setState({ addResult: result });
