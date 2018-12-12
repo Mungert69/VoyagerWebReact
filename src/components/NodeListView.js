@@ -14,7 +14,6 @@ export class NodeListView extends Component {
         this.state = {
             card: {}
         };
-        //this.props.setTripCardDetailLevel(1);
 
     }//Constructor
 
@@ -40,7 +39,7 @@ export class NodeListView extends Component {
                       
         
                        <span  className="Voyager_Places_List" key={cardValue.id}>
-                       <Waypoint onEnter={() => this.setCard(cardValue,index)}></Waypoint>
+                       <Waypoint></Waypoint>
                           <a onClick={() => this.setCard(cardValue,index)}>
                            {this.props.cardType === 'hotel' ?
                                 <CardView  styleCard={this.props.styleHotelCards[0]} key={cardValue.id + cardValue.title} card={cardValue} />

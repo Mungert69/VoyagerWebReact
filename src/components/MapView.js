@@ -4,7 +4,9 @@ import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
 
 /*global google*/
+const cubaDefaultCenter = { lat: 21.753351, lng: -79.339996 };
 export class MapView extends Component {
+
 
     constructor(props) {
         super(props);
@@ -17,9 +19,9 @@ export class MapView extends Component {
         itemCounted = props.item;
         if (props.jumpCounter === 3) {
             prItemCounted = props.item;
-            if (props.cardType === 'place') prItemShift = 1;
-            if (props.cardType === 'hotel') prItemShift = 2;
-            itemCounted = prItemCounted * props.jumpCounter + prItemShift;
+            if (props.cardType === 'place') prItemShift = 0;
+            if (props.cardType === 'hotel') prItemShift = 1;
+            itemCounted = prItemCounted * 2 + prItemShift;
         }
 
         this.state = {
@@ -28,105 +30,128 @@ export class MapView extends Component {
             itemNumber: 0,
             inputDataType: '',
             markers: [],
-            mapMarkers: [],
+
             styleMode: '',
             centerMarker: {},
-            defaultCenter: { lat: 21.753351, lng: -79.339996 },
+            defaultCenter: cubaDefaultCenter,
             defaultZoom: 7
         };
     }//constructor
 
     componentDidMount() {
 
-        this.refreshPrSelections();
+        this.refreshPrSelections(this.props);
         //console.log("logger: In MapView.componentDidMount buiderMode =" + this.props.builderMode + " style mode is :" + this.state.styleMode);
 
     }
 
     shouldComponentUpdate(nextProps) {
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
-          return true;
+            return true;
         }
         return false;
-      }
+    }
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
-            this.refreshPrSelections();
-            this.setParams();
+            this.refreshPrSelections(nextProps);
         }
     }
 
-    updateStyleMode = () => {
+    updateStyleMode = (props) => {
         var str = '';
-        if (this.props.cardType === 'hotel') {
+        if (props.cardType === 'hotel') {
             str = 'MapStyleHotels';
         }
-        if (this.props.cardType === 'place') {
+        if (props.cardType === 'place') {
             str = 'MapStylePlaces';
         }
-        if (this.props.builderMode === true) {
+        if (props.builderMode === true) {
             str = 'MapStyleTrips';
         }
 
         return str;
     }
 
-    setParams = () => {
+    setParams = (props) => {
         var itemCounted = 0;
         var prItemCounted = 0;
         var prItemShift = 0;
-        itemCounted = this.props.item;
+        itemCounted = props.item;
         // if a list of hotels no need to use jumpCOunter to display trip hotel then place detail.
-        if (this.props.jumpCounter === 3) {
-            prItemCounted = this.props.item;
-            if (this.props.cardType === 'place') prItemShift = 1;
-            if (this.props.cardType === 'hotel') prItemShift = 2;
-            itemCounted = prItemCounted * this.props.jumpCounter + this.props.prItemShift;
+        if (props.jumpCounter === 3) {
+            prItemCounted = props.item;
+            if (props.cardType === 'place') prItemShift = 0;
+            if (props.cardType === 'hotel') prItemShift = 1;
+            itemCounted = prItemCounted * 2 + prItemShift;
         }
 
 
-        this.setState({ item: itemCounted, prItem: prItemCounted });
+        return ({ item: itemCounted, prItem: prItemCounted });
 
     }
 
-    refreshPrSelections = () => {
+    zoomLevelCalc = (cardType) => {
 
-        var styleString = this.updateStyleMode();
-        if (this.props.builderMode) {
+        switch (cardType) {
+            case 'trip':
+                return 7;
 
-            var markers = [];
-            let itemCount = this.props.itinObj.prSelections.length;
-            var marker;
-            this.props.itinObj.prSelections.map((selection) => {
-                marker = { lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) };
-                markers.push(marker);
-            }
-            );
-            this.setState({ itemNumber: itemCount, styleMode: styleString, markers: markers });
+            case 'hotel':
+                return 13;
+
+            case 'place':
+                return 9;
+            default:
+                return 7;
         }
+    }
 
-        if (this.props.cardType === 'place' || this.props.cardType === 'hotel') {
+    refreshPrSelections = (props) => {
 
-            let itemCount = this.props.cards.length;
+        var styleString = this.updateStyleMode(props);
+        if (props.builderMode) {
+
+            var params = this.setParams(props);
+            var markers = [];
+            let itemCount = props.itinObj.prSelections.length * 2;
+            var marker;
+
             var newCenter = this.state.defaultCenter;
             var newZoom = this.state.defaultZoom;
 
-            var markers = [];
-            var marker;
-            this.props.cards.map((card) => {
-                marker = { lat: parseFloat(card.latitude), lng: parseFloat(card.longitude) };
-                markers.push(marker);
-            });
-            if (this.props.item !== 0) {
-                newCenter = markers[this.props.item];
-                newZoom = 9;
+            props.itinObj.prSelections.map((selection) => {
+                marker = { lat: parseFloat(selection.hotelCard.latitude), lng: parseFloat(selection.hotelCard.longitude) };
+                markers.push(marker);                          }
+            );
+            if (props.item !== 0) {
+                newCenter = cubaDefaultCenter;
+                if (props.cardType === 'place') {
+                     newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].placeCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].placeCard.longitude) }; }
+                if (props.cardType === 'hotel') {
+                     newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].hotelCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].hotelCard.longitude) }; }
+                newZoom = this.zoomLevelCalc(props.cardType);
             }
-            this.setState({ defaultZoom: newZoom, defaultCenter: newCenter, mapMarkers: markers, itemNumber: itemCount, styleMode: styleString, markers: [] });
-            console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
+            this.setState({ item: params.item, prItem: params.prItem, defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: markers });
+        } else {
+            if (props.cardType === 'place' || props.cardType === 'hotel') {
+
+                let itemCount = props.cards.length;
+                var newCenter = this.state.defaultCenter;
+                var newZoom = this.state.defaultZoom;
+
+                if (props.item !== 0) {
+                    newCenter = { lat: parseFloat(props.cards[props.item].latitude), lng: parseFloat(props.cards[props.item].longitude) };
+                    newZoom = this.zoomLevelCalc(props.cardType);
+                }
+                this.setState({ defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: [] });
+                console.log("logger: In MapView.refreshPrSelections value of styleString = " + styleString);
 
 
+            }
         }
+
+
     }
 
     setItem(itemVal) {
@@ -163,8 +188,8 @@ export class MapView extends Component {
             withProps({
                 googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAww7cMvMFsHfWR6m0eSbFsOltKyeKyzCk&v=3.exp&libraries=geometry,drawing,places",
                 loadingElement: <div style={{ height: `100%` }} />,
-                containerElement: <div style={{ height: `175px`,marginTop: `36px`, position:`fixed`, left:`0px`, right:`0px`, top:`0px`, zIndex:`2` }} />,
-                mapElement: <div style={{ height: `100%`, width: `100%`}} />,
+                containerElement: <div style={{ height: `175px`, marginTop: `36px`, position: `fixed`, left: `0px`, right: `0px`, top: `0px`, zIndex: `2` }} />,
+                mapElement: <div style={{ height: `100%`, width: `100%` }} />,
                 center: this.state.defaultCenter
 
             }),
@@ -238,6 +263,7 @@ export class MapView extends Component {
                                 >
                                     <CardTripMapView index={index + 1} styleCard={this.props.filteredMapStyleCard} key={index} selection={selection} />
                                 </MarkerWithLabel>
+
                             )
                             :
                             null

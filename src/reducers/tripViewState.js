@@ -9,7 +9,7 @@ const defaultState = {
     item: 0,
     card: {},
     jumpCounter: 1,
-    showMap : false
+    showMap : true
 
 };
 
