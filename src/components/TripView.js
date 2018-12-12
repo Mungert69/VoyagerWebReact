@@ -14,15 +14,9 @@ export class TripView extends Component {
         //this.props.setTripCardDetailLevel(0);
         var cardIn;
          this.state = {
-            itinId: 0,
             loading: false,
             changeItin: true,
-            changeFlight: true,
-            orderBy: false,
-            queryTxt: '',
-            item: 0,
-            itinCards: [],
-            itemNumber: 0
+            changeFlight: true,  
         };
 
         
@@ -38,29 +32,6 @@ export class TripView extends Component {
         this.setState({ changeFlight: !this.state.changeFlight });
 
     }//changingFlight
-
-    setItem(itemVal) {
-        console.log("logger: In TripView.setItem  item = " + itemVal);
-        this.setState({ item: itemVal });
-    }
-
-    // Toggle hotels within place visibilty.
-    togglePlaceClick = (index) => {
-        let tempArr = [...this.state.togglePlace];
-        tempArr[index] = !tempArr[index];
-        this.setState({ togglePlace: tempArr });
-    }//togglePlaceClick
-
-    changeSortOrder() {
-
-        this.setState({ orderBy: !this.state.orderBy });
-    }//changeSortOrder
-
-    searchTrigger(e) {
-        var str = e.target.value;
-        this.setState({ queryTxt: str });
-    }//searchTrigger
-
 
     renderView = () => {
 
