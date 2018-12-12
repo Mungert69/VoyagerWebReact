@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import { DetailView } from "../components/DetailView";
-import { setTripItem,setTripCard } from "../actions/actions";
+import { setTripItem, setTripCard, setCardType } from "../actions/actions";
 
 const mapStateToProps = state => ({
   cards: state.cardState.filteredCards,
   cardType: state.cardState.cardType,
-  //item: state.tripViewState.item,
-  jumpCounter: state.tripViewState.jumpCounter,
+  item: state.tripViewState.item,
+  //jumpCounter: state.tripViewState.jumpCounter,
   stylePlaceCards: state.cardState.placeStyleCards,
   styleHotelCards: state.cardState.hotelStyleCards,
   styleTripCards: state.cardState.tripStyleCards,
@@ -20,7 +20,10 @@ const mapDispatchToProps = dispatch => {
     },
     setTripCard: (cardVal) => {
       dispatch(setTripCard(cardVal));
-  },
+    },
+    setCardType: (cardType) => {
+      dispatch(setCardType(cardType));
+    },
   };
 };
 

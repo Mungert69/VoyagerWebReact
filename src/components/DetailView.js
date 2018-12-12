@@ -4,6 +4,7 @@ import { TripScrollView } from "./TripScrollView";
 import Waypoint from "react-waypoint";
 import MenuHotelListView from '../containers/Menus/MenuHotelListView';
 import MenuPlaceListView from '../containers/Menus/MenuPlaceListView';
+import MenuTripListView from "./control/Menus/MenuTripListView";
 
 export class DetailView extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export class DetailView extends Component {
   } //constructor
 
   componentDidMount() {
-    this.setParams();
+    //this.setParams();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,13 +27,13 @@ export class DetailView extends Component {
       this.props.itinObj !== nextProps.itinObj ||
       this.props.item !== nextProps.item
     ) {
-      this.setParams();
+      //this.setParams();
     }
   }
 
   shouldComponentUpdate(nextProps) {
-    if ( this.props.itinObj !== nextProps.itinObj ||
-      this.props.item !== nextProps.item) {
+    if (this.props.itinObj !== nextProps.itinObj ||
+      this.props.item !== nextProps.item || this.props.cardType !== nextProps.cardType) {
       return true;
     }
     return false;
@@ -67,55 +68,72 @@ export class DetailView extends Component {
     });
   }
 
- 
+
   setCard = (card, index, cardType) => {
     this.setState({ card: card, cardType: cardType });
     this.props.setTripItem(index);
     this.props.setTripCard(card);
+    this.props.setCardType(cardType);
   };
 
   renderTripDetailView = itinObj => {
     //console.log("logger: In TripDetailsView.Render  pRSelections = " + prSelections);
-    var menuContents =
-      this.state.cardType === "hotel" ? (
-        <MenuHotelListView
-          card={this.state.card}
-          styleCard={this.props.styleHotelCards[2]}
-        />
-      ) : (
-        <MenuPlaceListView
-          card={this.state.card}
-          styleCard={this.props.stylePlaceCards[2]}
-        />
-      );
+    var menuContents = '';
+    
+    if (this.state.cardType === 'trip')
+      menuContents = <MenuTripListView
+        card={this.state.card}
+        styleCard={this.props.styleTripCards[2]}
+      />;
+
+    if (this.state.cardType === "hotel")
+      menuContents = <MenuHotelListView
+        card={this.state.card}
+        styleCard={this.props.styleHotelCards[2]}
+      />;
+    if (this.state.cardType === "place")
+      menuContents = <MenuPlaceListView
+        card={this.state.card}
+        styleCard={this.props.stylePlaceCards[2]}
+      />;
+
     var contents = itinObj.prSelections.map((prSelection, index) => (
       <div key={index}>
         <div>
-          <CardView
-            key="itincard"
-            styleCard={this.props.styleTripCards[0]}
-            card={itinObj.card}
-          />
+          <a onClick={() => this.setCard(itinObj.card, index, "trip")}>
+            <CardView
+              key="itincard"
+              styleCard={this.props.styleTripCards[0]}
+              card={itinObj.card}
+            />
+          </a>
+
         </div>
         <Waypoint
           onEnter={() => this.setCard(itinObj.card, index, "trip")}
         />
         <div>
-          <CardView
-            key="placecard"
-            styleCard={this.props.stylePlaceCards[0]}
-            card={prSelection.placeCard}
-          />
+          <a onClick={() => this.setCard(prSelection.placeCard, index, "place")}>
+            <CardView
+              key="placecard"
+              styleCard={this.props.stylePlaceCards[0]}
+              card={prSelection.placeCard}
+            />
+          </a>
+
         </div>
         <Waypoint
           onEnter={() => this.setCard(prSelection.placeCard, index, "place")}
         />
         <div>
-          <CardView
-            key="hotelcard"
-            styleCard={this.props.styleHotelCards[0]}
-            card={prSelection.hotelCard}
-          />
+          <a onClick={() => this.setCard(prSelection.hotelCard, index, "hotel")}>
+            <CardView
+              key="hotelcard"
+              styleCard={this.props.styleHotelCards[0]}
+              card={prSelection.hotelCard}
+            />
+          </a>
+
         </div>
         <Waypoint
           onEnter={() => this.setCard(prSelection.hotelCard, index, "hotel")}
@@ -128,7 +146,7 @@ export class DetailView extends Component {
   render() {
     return (
       <div>
-        
+
         {this.renderTripDetailView(this.props.itinObj)}
       </div>
     ); //return
