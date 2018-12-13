@@ -231,8 +231,9 @@ export class ItineraryView extends Component {
             </l>
             <l className="Voyager_Trip_Control_Nights_Total"> </l>
             {contents}
+            <div  className="Flight_View_Panel">
             <FlightView changeFlight={this.props.changeFlight} userId={this.props.userId} />
-
+</div>
           </div>
         </div>
       </div>

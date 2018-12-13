@@ -3905,8 +3905,8 @@ margin-right: 4px;
                                             }
                 
                 .Control_Filter_Panel{
-                margin-right: 10%;
-                margin-left: 10%;
+                margin-right: 3%;
+                margin-left: 3%;
                 
                 }
                 
@@ -3923,6 +3923,9 @@ margin-right: 4px;
                        margin-left:12px;
                        text-transform: uppercase;
                        letter-spacing: .8px;
+                       
+                       
+                       
                 
                        
                             }
@@ -4018,13 +4021,35 @@ color: #0071bc;
 
 
 
-
-
-
-
+.Flight_View_Panel{
+    margin-top:5px;
+    }
+    
+    .Flight_View_Title{
+        color: #666;
+        font-size: 1.4em;
+       font-weight: 500;
+       display:block;
+    text-align: center;
+      text-transform: uppercase;
+      margin-bottom: -15px;
+      letter-spacing: 1.6px;
+        }
+        
+        .Flight_View_Flight_Price
+        {
+            color: #666;
+            font-size: 1.2em;
+           font-weight: 500;
+           display:block;
+        text-align: center;
+          text-transform: uppercase;
+          margin-bottom: -15px;
+          letter-spacing: 1.6px;
+            }
 
 .Control_Trip_Flights_Panel{
-margin-top:300px;
+margin-top: 10px;
 }
 
 .Control_Trip_Flights_Return_Night_AddRemove{
@@ -4032,7 +4057,8 @@ margin-top:300px;
 }
 
 .Control_Trip_Flights_Return_Date{
-
+width: 240px;
+font-size: .9em;
 }
 
 .Control_Trip_Flights_Return_Night_Total
@@ -4368,7 +4394,7 @@ padding-right: 4%;
     user-select: none;
     margin-bottom: 4px;
     margin-right: 16px;
-    margin-left: 4px;
+    margin-left: 16px;
 
    
 }
