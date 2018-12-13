@@ -47,11 +47,11 @@ export class CardTripMapView extends Component {
                     </span>
 
                     <div  className={panel2Css}>
-                        <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.title}</span></span>
-                        <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.subtitle}<span key="Card_Map_Night" className="Hide"><i className="fas fa-moon Card_Map_Night_Icon"></i><span className="Card_Map_Night_Text">2</span></span></span></span>
-                        <span><p className={this.props.styleCard.Card1ElementDescriptionStyle}>{cardDescription}</p></span>
-                        <span><p className={this.props.styleCard.Card1ElementHotelFeaturesStyle}>{this.props.selection.hotelCard.hotelFeatures}</p></span>
-                        <span><p className={this.props.styleCard.Card1ElementPlaceFeaturesStyle}>{this.props.selection.placeCard.placeFeatures}</p></span>
+                        <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.subtitle}</span></span><br></br>
+                        <span className="Show"><span className={this.props.styleCard.Card1ElementTitleStyle}>{this.props.selection.hotelCard.title}<span key="Card_Map_Night" className="show"><i className="fas fa-moon Card_Map_Night_Icon"></i><span className="Card_Map_Night_Text">2</span></span></span></span>
+                        <span className="Hide"><p className={this.props.styleCard.Card1ElementDescriptionStyle}>{cardDescription}</p></span>
+                        <span className="Hide"><p className={this.props.styleCard.Card1ElementHotelFeaturesStyle}>{this.props.selection.hotelCard.hotelFeatures}</p></span>
+                        <span className="Hide"><p className={this.props.styleCard.Card1ElementPlaceFeaturesStyle}>{this.props.selection.placeCard.placeFeatures}</p></span>
 
 
                     </div>

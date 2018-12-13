@@ -2,7 +2,7 @@
 
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
-
+import { Control_Item_Map_Style } from './control/Control_Item/Control_Item_Map_Style';
 /*global google*/
 const cubaDefaultCenter = { lat: 21.753351, lng: -79.339996 };
 export class MapView extends Component {
@@ -282,8 +282,12 @@ export class MapView extends Component {
                         )
 
                     }
+    <Control_Item_Map_Style className="Control_Item_Map_Style" changeDetailLevel={props.changeDetailLevel}
+                cardDetailLevel={props.cardDetailLevel}/>
+                </GoogleMap>
+                
 
-                </GoogleMap></div>
+                </div>
         );
 
         return (
