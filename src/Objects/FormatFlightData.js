@@ -27,7 +27,7 @@ function FormatFlightData() {
             var airline = airlineTemplate;
             airline.label = row.airline;
             airline.value = row.supplierID;
-            this.airlines.push(airline);
+            this.airlines.push(Object.assign({}, airline));
 
          } );
         
@@ -43,7 +43,7 @@ function FormatFlightData() {
             airport.label = row.airportName;
             airport.value = row.airportName;
             
-            this.airports.push(airport);
+            this.airports.push(Object.assign({}, airport));
 
          } );
       
@@ -57,7 +57,7 @@ function FormatFlightData() {
     outDate.label = row.flightDepartureShortDate;
     outDate.value = row.outFlightID;
            
-            this.outDates.push(outDate);
+            this.outDates.push(Object.assign({}, outDate));
 
          } );
        
@@ -71,14 +71,14 @@ function FormatFlightData() {
         data.map( (row) => {
            
             var inDate = inDateTemplate;
-            inDate.label = row.inFlightID;
-            inDate.value = row.flightDepartureShortDate;
+            inDate.value = row.inFlightID;
+            inDate.label = row.flightDepartureShortDate;
             inDate.nighttotal = '5 NIGHTS';
             inDate.nightaddremove = '-3';
             inDate.color = '#FF5630';
            
            
-            this.inDates.push(inDate);
+            this.inDates.push(Object.assign({}, inDate));
 
          } );
        

@@ -3,6 +3,7 @@ import { Switch, DatePicker, Slider, Select } from 'antd';
 import 'antd/dist/antd.css';
 import {apiBaseUrl} from './Constants';
 import FormatFlightData from '../Objects/FormatFlightData';
+import Select from 'react-select';
 
 const Option = Select.Option;
 
