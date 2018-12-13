@@ -2,7 +2,7 @@
 import { HotelList } from '../components/HotelList';
 import ItineraryView  from '../containers/ItineraryView';
 import _ from 'lodash';
-import { FlightView } from './FlightVIew';
+import { FlightView } from './FlightVIew-not-working-backup';
 import { TripScrollView } from './TripScrollView';
 import {apiBaseUrl} from './Constants';
 import MenuTripListView from './control/Menus/MenuTripListView';
@@ -38,13 +38,13 @@ export class TripView extends Component {
         return (
             <span>
                 <p>Trip View : </p>
-                <MenuTripListView hideStagePlaces={false} />
+                <MenuTripListView card={this.props.card} hideStagePlaces={false} />
                 <ItineraryView userId={this.props.userId} stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
                
 
             </span>
         )//Return;
-    }//renderPlacesHotelVIew
+    }//renderVIew
 
   
 
