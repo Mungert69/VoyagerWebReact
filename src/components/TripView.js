@@ -38,10 +38,9 @@ export class TripView extends Component {
         return (
             <span>
                 <p>Trip View : </p>
-                <MenuTripListView />
-                <ItineraryView stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
-                <FlightView changeFlight={this.state.changeFlight} userId={this.props.userId} />
-
+                <MenuTripListView hideStagePlaces={false} />
+                <ItineraryView userId={this.props.userId} stylePlaceCard={this.props.stylePlaceCard} styleHotelCard={this.props.styleHotelCard} setBuilderCardEvent={this.props.setBuilderCardEvent}  changeItin={this.state.changeItin} changingFlight={this.changingFlight.bind(this)}  />
+               
 
             </span>
         )//Return;
