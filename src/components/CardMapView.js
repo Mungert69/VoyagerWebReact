@@ -40,7 +40,7 @@ export class CardMapView extends Component {
                 <div>
 
                     <span key="Card_Map_Panel_1" className="Card_Map_Panel_1">
-                        <i className="fas fa-map-marker Card_Map_Logic_Icon_2"></i>
+                        <i className="fas fa-map-marker Card_Map_Logic_Icon_1"></i>
                         <span key="Card_Map_Stage" className="Show Card_Map_Stage">9</span>
                     </span>
                     <div key="Card_Map_Panel_2" className="Show Card_Map_Panel_2">
