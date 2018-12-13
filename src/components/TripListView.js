@@ -27,7 +27,7 @@ export class TripListView extends Component {
       <div className="Control_Trip_Cards_Container_Panel_1">
         <div className="Control_Trip_Cards_Container_Panel_2">
           <span>
-            <MenuTripListView card={this.state.card} />
+            <MenuTripListView card={this.state.card} hideStagePlaces={true} />
             {filteredCards.map((cardValue, index) => (
               <span>
               

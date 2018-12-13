@@ -63,8 +63,8 @@ const MenuTripListView = (props) => {
   </div>             
                
                 <div class="">
-                
-                               <Control_Item_Trip_Stage_Places placeObjs={props.card.placeObjs} />
+                                {props.hideStagePlaces ? null : <Control_Item_Trip_Stage_Places placeObjs={props.card.placeObjs} />}
+                              
                    
                         <Control_Item_Trip_Description_Short descriptionShort={props.card.descriptionShort} />
                    </div>

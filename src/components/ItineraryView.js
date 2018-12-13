@@ -7,7 +7,7 @@ import { apiBaseUrl } from "./Constants";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { AccommodationCharacteristics } from "./SubComponents/AccommodationCharacteristics";
-
+import {FlightView} from './FlightVIew';
 export class ItineraryView extends Component {
   constructor(props) {
     super(props);
@@ -231,6 +231,8 @@ export class ItineraryView extends Component {
             </l>
             <l className="Voyager_Trip_Control_Nights_Total"> </l>
             {contents}
+            <FlightView changeFlight={this.props.changeFlight} userId={this.props.userId} />
+
           </div>
         </div>
       </div>

@@ -84,6 +84,7 @@ export class DetailView extends Component {
       menuContents = <MenuTripListView
         card={this.state.card}
         styleCard={this.props.styleTripCards[2]}
+        hideStagePlaces={false} 
       />;
 
     if (this.state.cardType === "hotel")
