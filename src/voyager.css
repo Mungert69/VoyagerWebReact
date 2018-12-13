@@ -1979,7 +1979,7 @@ position: fixed;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    position: fixed;
+    
 }
 
 .Card_Map_Panel_2 {
@@ -2001,7 +2001,7 @@ position: fixed;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    position: fixed;
+ 
 }
 
 
@@ -2111,7 +2111,7 @@ position: fixed;
     letter-spacing: .01em;
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: -10px;
+    margin-left: -6px;
     margin-top: 0px;
     position: absolute;
     
@@ -2146,7 +2146,7 @@ position: fixed;
 }
 
 .Card_Map_Logic_Icon_2 {
-    color: forestgreen;
+    color: rgb(34, 160, 34);
     width: 10px;
     font-size: 1.6em;
 }
@@ -2155,7 +2155,6 @@ position: fixed;
     color: #1565C0;
     width: 10px;
     font-size: 1.6em;
-    top: -3px;
 }
 
 

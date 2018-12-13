@@ -31,8 +31,8 @@ import _ from "lodash";
 const itinTemplateTypeID = 1;
 const placeTemplateTypeID = 43;
 const hotelTemplateTypeID = 44;
-const itinMapTemplateTypeID = 1;
-const placeMapTemplateTypeID = 48;
+const itinMapTemplateTypeID = 49;
+const placeMapTemplateTypeID = 49;
 const hotelMapTemplateTypeID = 49;
 
 const Option = Select.Option;

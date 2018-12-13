@@ -40,12 +40,12 @@ export class CardMapView extends Component {
                 <div>
 
                     <span key="Card_Map_Panel_1" className="Card_Map_Panel_1">
-                        <i className="fas fa-map-marker Card_Map_Logic_Icon_1"></i>
-                        <span key="Card_Map_Stage" className="Show Card_Map_Stage">1</span>
+                        <i className="fas fa-map-marker Card_Map_Logic_Icon_2"></i>
+                        <span key="Card_Map_Stage" className="Show Card_Map_Stage">9</span>
                     </span>
                     <div key="Card_Map_Panel_2" className="Show Card_Map_Panel_2">
                         <span className="Show"><span className={this.props.styleCard.card1ElementTitleStyle}>{this.props.card.title}</span></span>
-                        <span className="Hide"><span className={this.props.styleCard.card1ElementTitleStyle}>{this.props.card.subtitle}<span key="Card_Map_Night" className="Show"><i className="fas fa-moon Card_Map_Night_Icon"></i><span className="Card_Map_Night_Text">2</span></span></span></span>
+                        <span className="Hide"><span className="{this.props.styleCard.card1ElementTitleStyle}">{this.props.card.subtitle}<span key="Card_Map_Night" className="Show"><i className="fas fa-moon Card_Map_Night_Icon"></i><span className="Card_Map_Night_Text">2</span></span></span></span>
                         <span><p className={this.props.styleCard.card1ElementDescriptionStyle}>{cardDescription}</p></span>
                         <span><p className={this.props.styleCard.card1ElementHotelFeaturesStyle}>{this.props.card.hotelFeatures}</p></span>
                         <span><p className={this.props.styleCard.card1ElementPlaceFeaturesStyle}>{this.props.card.placeFeatures}</p></span>

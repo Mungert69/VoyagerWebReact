@@ -209,7 +209,7 @@ export class MapView extends Component {
                         disableDoubleClickZoom: false,
                         mapTypeControl: false,
                         panControl: false,
-                        zoomControl: false,
+                        zoomControl: true,
                         rotateControl: false,
                         fullscreenControl: true
                     }}>
