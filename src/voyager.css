@@ -181,6 +181,7 @@ a:hover {
 
 .Voyager_Trip_Stages_Inline {
     display:inline-flex;
+    
 }
 
 
@@ -222,15 +223,16 @@ a:hover {
 
 .Voyager_Trip_Nights_Add {
     color: #9b9b9b;
-    margin-left: 1px;
+    margin-left: 4px;
     margin-right: 1px;
-    margin-top:-3px;
+    margin-top:-5px;
     cursor: pointer;
-    font-size: 1.7em;
+    font-size: 2em;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
     transition: color .5s ease-out;
+
 }
 
 .Voyager_Trip_Nights_Add:hover {
@@ -242,10 +244,10 @@ a:hover {
 .Voyager_Trip_Nights_Subtract {
     color: #9b9b9b;
     margin-left: 1px;
-    margin-right: 1px;
-    margin-top:-3px;
+    margin-right: 4px;
+    margin-top:-5px;
     cursor: pointer;
-    font-size:1.7em;
+    font-size:2em;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
     -o-transition: color .5s ease-out;
@@ -2534,7 +2536,7 @@ position: fixed;
 
 .Control_1 {
     background: #fff;
-    position: fixed;
+    position: absolute;
     z-index: 9;
     left: 0;
     right: 0;
@@ -2554,6 +2556,7 @@ position: fixed;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+ 
 }
 
     .Control_1:hover {
@@ -2813,6 +2816,7 @@ text-align: center;
     color: #666;
     text-transform: uppercase;
     width: 140px;
+ 
 
 
 }
@@ -3030,7 +3034,7 @@ a:hover .Control_Icon_Size_2 {
 
 .Control_Icon_Size_3 {
     color: #9b9b9b;
-    font-size: 1em;
+    font-size: 3em;
     text-align: center;
     -webkit-transition: color .5s ease-out;
     -moz-transition: color .5s ease-out;
@@ -3039,7 +3043,7 @@ a:hover .Control_Icon_Size_2 {
 }
 
 a:hover .Control_Icon_Size_3 {
-    color: #9b9b9b;
+    color: #0071bc;
 }
 
 .Control_Icon_Size_4 {
@@ -3793,6 +3797,7 @@ z-index: 1;
 text-align: center;
 align-content: center;  
 margin-top: -10px;
+
 }
 
 
@@ -4316,6 +4321,7 @@ padding-right: 4%;
 .Control_Trip_Cards_Container_Panel_1 {
     display: flex;
     justify-content: center;
+
 }
 
 .Control_Trip_Cards_Container_Panel_2 {
@@ -4324,7 +4330,8 @@ padding-right: 4%;
         width: 100%;
         bottom: 75px; 
         overflow: auto;
-        overflow-x: hidden;
+        overflow-x: hidden;  
+
     }
 
 
@@ -4340,7 +4347,7 @@ padding-right: 4%;
         width: 100%;
         bottom: 75px; 
         overflow: auto;
-        overflow-x: hidden;
+        overflow-x: hidden;         
     }
 
 
@@ -4374,7 +4381,7 @@ padding-right: 4%;
     border-radius: 6px;
     background-color: #fff;
     transition: all 0.6s ease-out;
-    width: auto;
+ height: 42px;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -4382,7 +4389,8 @@ padding-right: 4%;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-     margin: 16px;
+    margin-top: 7px;
+     margin-bottom: 7px;
 
     }
     
@@ -4501,6 +4509,7 @@ color: #a09e9e;
         font-size: .9em;
         font-weight: 600;
    margin-right: 4px;
+   margin-top: 5px;
    text-transform: uppercase;
 
 

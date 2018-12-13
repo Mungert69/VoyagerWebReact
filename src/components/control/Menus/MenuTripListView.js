@@ -25,7 +25,9 @@ const MenuTripListView = (props) => {
 
                 <div class="Control_Position_outer_wrapper">
                     <div className="Control_Position_left Control_Position_inner_wrapper">
-                
+                    <a className="Control_Item_C" >
+          <i className="fas fa-caret-left Control_Icon_Size_2"></i>
+      </a>
                     </div>
 
                     <div className="Control_Position_center Control_Position_inner_wrapper">
@@ -34,7 +36,9 @@ const MenuTripListView = (props) => {
                     </div>
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">
-                      
+                    <a className="Control_Item_C" >
+          <i className="fas fa-caret-right Control_Icon_Size_2"></i>
+      </a>
                     </div>
                 </div>
 

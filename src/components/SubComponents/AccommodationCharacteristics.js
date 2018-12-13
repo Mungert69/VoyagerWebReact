@@ -5,7 +5,7 @@ export const  AccommodationCharacteristics = (props) => {
   let contents =
     props.accommodationCharacteristics === undefined ||
     props.accommodationCharacteristics === null ? null : (
-      <span>{renderHtml(props)}></span>
+      <span>{renderHtml(props)}</span>
     );
 
    function renderHtml (props) {

@@ -30,7 +30,7 @@ export class TripListView extends Component {
             <MenuTripListView card={this.state.card} />
             {filteredCards.map((cardValue, index) => (
               <span>
-                <div className="hide">View Trip : {cardValue.title} </div>
+              
 
                 <p className="Voyager_Places_List" key={cardValue.id}>
                   <Waypoint onEnter={() => this.setCard(cardValue, index)} />

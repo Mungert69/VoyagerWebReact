@@ -52,7 +52,7 @@ export class CardView extends Component {
             <div className="Voyager_Card_A_Container AnimationRipple">
                 <span >
                      {carouselToggle ?
-                        <div>
+                        <div className="Hide">
                         <Carousel className="Voyager_Card_Image_Carousel" effect="fade" easing="linear" infinite="true" arrows="true" swipeToSlide="true">
                             <div><img className="Voyager_Card_Image_Rounded" src={url + this.props.card.picFileName} /></div>
                             <div><img className="Voyager_Card_Map" src={urlMap} /></div>

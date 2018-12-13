@@ -148,11 +148,7 @@ export class ItineraryView extends Component {
                       <span className="Control_Trip_Stages_Stage_HotelFeatures">
                         <AccommodationCharacteristics accommodationCharacteristics={prSelection.hotelCard.accommodationCharacteristics}/>
                       </span>
-                      <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
-
-                      <p className="Control_Trip_Stages_Stage_Nights">
-                        {prSelection.nights}
-                      </p>
+                 
 
                       <a
                         title="ADD NIGHTS"
@@ -174,7 +170,12 @@ export class ItineraryView extends Component {
                         onClick={() => this.deleteHotel()}
                       >
                         <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
-                      </a>
+                      </a>   
+                        <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
+
+                      <p className="Control_Trip_Stages_Stage_Nights">
+                        {prSelection.nights}
+                      </p>
                     </div>
                   </div>
                 </a>

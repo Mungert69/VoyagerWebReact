@@ -28,11 +28,11 @@ const MenuMain = (props) =>  {
         <Control_Item_Search/>
 
 
-        <Control_Item_Detail_Level changeDetailLevel={props.changeDetailLevel}
+    <Control_Item_Detail_Level changeDetailLevel={props.changeDetailLevel}
                 cardDetailLevel={props.cardDetailLevel}/>
 
           </div>
-        </div>
+        </div>    
       </div>
     );
   
