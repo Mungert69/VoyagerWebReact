@@ -10,6 +10,7 @@ import {
 
 const mapStateToProps = state => ({
     detailLevel: state.cardState.cardDetailLevel,
+    card : state.tripViewState.card,
     cards: state.cardState.filteredCards,
     stylePlaceCard: state.cardState.placeStyleCards[state.cardState.cardDetailLevel],
     styleHotelCard: state.cardState.hotelStyleCards[state.cardState.cardDetailLevel],
