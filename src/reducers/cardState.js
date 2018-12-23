@@ -96,7 +96,7 @@ const updatePlaceCardsWithPlaceState = (placeCards, placeStates) => {
 const filterCards = (state, orderBy, queryTxt, cardType) => {
     var cardFilter = new CardFilter(cardType, state);
     var test = cardFilter.filterByTitle(orderBy, queryTxt);
-    return cardFilter.cards;
+    return cardFilter.cards.slice(0,15);
 }
 
 const filterPlaceCardsByNextHop = (state) => {

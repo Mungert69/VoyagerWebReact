@@ -92,13 +92,28 @@ export function fetchHotelCards() {
     };
 }
 
-export function fetchTripCards(templateTypeID) {
+export function fetchTripCards(templateTypeId) {
     return function (dispatch) {
         dispatch(requestCards());
-        return fetch(apiBaseUrl + `api/Itinerary/Cards/` + templateTypeID)
+        return fetch(apiBaseUrl + `api/Itinerary/Cards/` + templateTypeId)
             .then(
                 response => response.json(),
                 error => console.log('An error occurred in  apiActions.fetchTripCards : ', error)
+            )
+            .then(data => {
+                dispatch(updateTripCards(data));
+                dispatch(receiveCards());
+            }
+            );
+    };
+}
+export function fetchAllTripCards(userId) {
+    return function (dispatch) {
+        dispatch(requestCards());
+        return fetch(apiBaseUrl + `api/Itinerary/AllCards/` + userId,{cache: "no-store"})
+            .then(
+                response => response.json(),
+                error => console.log('An error occurred in  apiActions.fetchAllTripCards : ', error)
             )
             .then(data => {
                 dispatch(updateTripCards(data));

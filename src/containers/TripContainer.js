@@ -2,7 +2,7 @@
 import { TripContainer} from '../components/TripContainer';
 
 import {
-    fetchPlaceCards, fetchHotelCards, fetchTripCards, fetchHotelMapStyleCards, fetchHotelStyleCards,
+    fetchPlaceCards, fetchHotelCards, fetchAllTripCards, fetchHotelMapStyleCards, fetchHotelStyleCards,
     fetchPlaceMapStyleCards,fetchPlaceStyleCards,fetchTripMapStyleCards,fetchTripStyleCards
 } from '../actions/apiActions';
 import {
@@ -17,7 +17,8 @@ const mapStateToProps = state => ({
     isDetailViewVisible: state.tripViewState.isDetailViewVisible,
     cardDetailLevel: state.cardState.cardDetailLevel,
     cardType: state.cardState.cardType,
-    loading: state.apiState.loadingCards
+    loading: state.apiState.loadingCards,
+    userId : state.userState.userId
 });
 
 const mapDispatchToProps = dispatch => {
@@ -31,8 +32,8 @@ const mapDispatchToProps = dispatch => {
         fetchHotelCards: () => {
             dispatch(fetchHotelCards());
         },
-         fetchTripCards: (templateTypeId) => {
-             dispatch(fetchTripCards(templateTypeId));
+         fetchAllTripCards: (userId) => {
+             dispatch(fetchAllTripCards(userId));
         },
         fetchPlaceStyleCards: (templateTypeId) => {
             dispatch(fetchPlaceStyleCards(templateTypeId));

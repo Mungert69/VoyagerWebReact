@@ -35,8 +35,7 @@ const itinMapTemplateTypeID = 49;
 const placeMapTemplateTypeID = 49;
 const hotelMapTemplateTypeID = 49;
 
-const Option = Select.Option;
-
+const userId = 'xxxx';
 export class TripContainer extends Component {
   displayName = "Trip Container";
 
@@ -53,7 +52,7 @@ export class TripContainer extends Component {
     this.props.fetchPlaceStyleCards(placeTemplateTypeID);
     this.props.fetchHotelStyleCards(hotelTemplateTypeID);
 
-    this.props.fetchTripCards(itinTemplateTypeID);
+    this.props.fetchAllTripCards(userId);
     this.props.fetchPlaceCards();
     this.props.fetchHotelCards();
   } //Constructor
