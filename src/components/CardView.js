@@ -63,7 +63,16 @@ export class CardView extends Component {
                     }
                     <div>   
               
-                           
+                               
+                    <span className="Card_Map_Panel_Key">
+                        <i className="fas fa-circle Card_Key_Icon"></i>
+                        <span key="Card_Key_Text" className="Show Card_Key_Text">19{this.props.index}</span>
+                                            
+
+                    </span>
+                    
+            
+             
                         <span className={this.props.styleCard.card1ElementTitleStyle} >{this.props.card.title}</span>
                         <span className="Show"> <span className={this.props.styleCard.card1ElementCountryStyle}>{this.props.card.subtitle}  {this.props.card.country}</span></span>
                         <AccommodationCharacteristics card={this.props.card}/>
@@ -73,7 +82,9 @@ export class CardView extends Component {
                         <span className={this.props.styleCard.card1ElementCategoriesStyle}>{this.props.card.categories}</span>
                         <span className={this.props.styleCard.card1ElementTagsStyle}>{this.props.card.tags}</span>
                         <span className={this.props.styleCard.card1ElementIdStyle}>{this.props.card.Id}</span>
- 
+                        
+                     
+                  
 
 
 

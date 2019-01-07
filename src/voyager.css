@@ -1954,6 +1954,75 @@ transition: color .5s ease-out;
 
 
 
+/* START - CARDKEY CARDKEY - START */
+
+        .Card_Map_Panel_Key {
+            background-color: rgba(0, 0, 0, 0.00);
+            padding-top: 4px;
+            padding-Left: 4px;
+            padding-Right: 2px;
+            margin-Right: 2px;
+            border-Radius: 3px;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: absolute;
+        }
+        
+        
+ 
+
+        .Card_Key_Icon {
+            color: #c7c7c7;
+            width: 10px;
+            font-size: 1.6em;
+        }
+        
+
+        .Card_Key_Text {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1em;
+            color: #666;
+            letter-spacing: .01em;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-left: -8px;
+            margin-top: 0px;
+            position: absolute;
+            text-align: center;
+            
+        }
+
+
+        .Card_Key_Logic_Icon_1 {
+            color: #666;
+            width: 10px;
+            font-size: 1.6em;
+        }
+        
+        .Card_Key_Logic_Icon_2 {
+            color: rgb(34, 160, 34);
+            width: 10px;
+            font-size: 1.6em;
+        }
+        
+        .Card_Key_Logic_Icon_3 {
+            color: #1565C0;
+            width: 10px;
+            font-size: 1.6em;
+        }
+        
+
+
+/* END - CARDKEY CARDKEY - END */
+
+
+
 /* START - MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP - START */
 
 .VoyagerMap {
@@ -2182,8 +2251,6 @@ position: fixed;
 }
 
 
-
-
 .Card_Map_Image_Panel {
     max-width: 200px;
     margin-top: -1px;
@@ -2232,6 +2299,8 @@ position: fixed;
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.0) 13%, rgb(255,255,255) 19%);
     margin-bottom: -40px;
 }
+
+
 
 
 
