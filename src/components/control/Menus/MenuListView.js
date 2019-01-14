@@ -17,7 +17,7 @@ const MenuListView = (props) => {
     <Control_Item_Places changeView={ props.changeView}/>
     <Control_Item_Hotels changeView={ props.changeView}/>
     <Control_Item_Info/>
-    <Control_Item_Profiles/>
+    <div className="hide"><Control_Item_Profiles/></div>
     </div>
     </div>);
 };

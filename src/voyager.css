@@ -1,5 +1,13 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
+
+
+
+.UI_FLIGHT_BULDER_2019{
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
 hr {
     width: 70%;
     margin-top: -6px;
@@ -1954,6 +1962,13 @@ transition: color .5s ease-out;
 
 
 
+        .Voyager_Carousel_New{
+width:30%;
+        }
+
+
+
+
 /* START - CARDKEY CARDKEY - START */
 
         .Card_Map_Panel_Key {
@@ -2082,6 +2097,7 @@ position: fixed;
     background-color: #fff;
     font-family: 'Roboto','sans-serif';
     border-top-right-radius: 5px;
+    font-size: 10px;
 
 }
 
@@ -3991,6 +4007,15 @@ margin-right: 4px;
                 margin-bottom: 6px;
                 
                     }
+
+                    .Control_Filter_Item_Inline{
+                        margin-top: 16px;
+                        margin-bottom: 6px;
+                        margin-left: 6px;
+                        margin-right: 6px;
+                        display: inline-block;
+                        width: 48%;
+                            }
                     
                     .Control_Filter_Item_Label{
                         color: #c7c7c7;
@@ -4381,16 +4406,37 @@ font-weight: 600;
 margin-left:3px;
 margin-right:3px;
 background-color: #eae4eb;
-padding-left: 6px;
+padding-left: 3px;
 padding-right: 3px;
 padding-top: 1px;
 padding-bottom: 1px;
-border-top-left-radius: 11px;
-border-top-right-radius: 11px;
-border-bottom-left-radius: 11px;
-border-bottom-right-radius: 11px;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+width: 80px;
+text-align: center;
 }
 
+.Trip_Date_Price_Item:hover
+{
+    color: #333;
+
+    background-color:#0071bca8;
+
+}
+
+
+
+.Trip_Date_Price_Item_Active
+{
+ 
+    color: #333;
+
+    background-color:#0071bca8;
+
+
+}
 .Trip_Description_Short_Panel
 {
 padding-left: 4%;
@@ -5058,44 +5104,97 @@ margin-top:10px;
             }
 
 
-            .test2{
+            .test2 {
 
-
-               
-                width: 390px;
-               
-                            }
-                
-
-            .test2{
-
-
-white-space: nowrap;
 max-width: 100%;
 overflow: scroll;
             }
 
-            .carousel {
+
+ .carousel_price_panel {
+               
+                position: relative;
+              }
+              
+            .carousel_price {
                 background: #fff;
+            max-width: 1100px;
+            margin: auto;  
+         
+            left:0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+              }
+
+             
               
+            .carousel {
+                background: #FAFAFA;
               }
               
-              .carousel-image {
-                display: block;
-                height: 300px;
-                /* set min-width, allow images to set cell width */
-                min-width: 150px;
-                max-width: 100%;
-                margin-right: 5px;
-                /* vertically center */
-                top: 50%; 
+              .carousel-cell {
+                width: 66%;
+                height: 200px;
+                margin-right: 10px;
+                background: #8C8;
                 border-radius: 5px;
-                transform: translateY(-50%)
-              
+                counter-increment: carousel-cell;
               }
               
-              .carousel.is-fullscreen .carousel-image {
-                height: auto;
-                max-height: 100%;
+              /* cell number */
+              .carousel-cell:before {
+                display: block;
+                text-align: center;
+                content: counter(carousel-cell);
+                line-height: 200px;
+                font-size: 80px;
+                color: white;
               }
+
+
               
+            
+.flickity-button {
+    background: #fff;
+
+  }
+  .flickity-button:hover {
+    background: #fff;
+    opacity: .9;
+ 
+
+
+  }
+  
+  .flickity-prev-next-button {
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    opacity: .6;
+  }
+  
+  .flickity-button-icon {
+    fill:  #333;
+  }
+
+  .flickity-button-icon:hover {
+    fill: #0071bc;
+  }
+
+
+  .flickity-prev-next-button.previous {
+    left: 0px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    opacity: .6;
+  }
+  .flickity-prev-next-button.next {
+    right: 0px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    opacity: .6;
+  }

@@ -1,9 +1,50 @@
 ﻿import React, { Component } from "react";
-import { Switch, DatePicker, Slider } from "antd";
+import { DatePicker } from "antd";
 import "antd/dist/antd.css";
 import { apiBaseUrl } from "./Constants";
 import FormatFlightData from "../Objects/FormatFlightData";
 import Select from "react-select";
+import moment from 'moment';
+
+
+const { MonthPicker } = DatePicker;
+  
+function range(start, end) {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+function disabledDate(current) {
+  // Can not select days before today and today
+  return current && current < moment().endOf('day');
+}
+
+function disabledDateTime() {
+  return {
+    disabledHours: () => range(0, 24).splice(4, 20),
+    disabledMinutes: () => range(30, 60),
+    disabledSeconds: () => [55, 56],
+  };
+}
+
+function disabledRangeTime(_, type) {
+  if (type === 'start') {
+    return {
+      disabledHours: () => range(0, 60).splice(4, 20),
+      disabledMinutes: () => range(30, 60),
+      disabledSeconds: () => [55, 56],
+    };
+  }
+  return {
+    disabledHours: () => range(0, 60).splice(20, 4),
+    disabledMinutes: () => range(0, 31),
+    disabledSeconds: () => [55, 56],
+  };
+}
+
 
 
 export class FlightView extends Component {
@@ -177,7 +218,13 @@ export class FlightView extends Component {
   renderFlightList = () => {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="Control_Filter_Item">
+     
+        <div><img className="UI_FLIGHT_BULDER_2019" src="http://www.voyagercuba.co.uk/DEVELOP_PARTS/UI_FLIGHT_BULDER_2019.jpg" />  </div>
+
+       
+       <div>
+       
+        <div className="Control_Filter_Item_Inline">
           <l className="Control_Filter_Item_Label">AIRLINE</l>
           <Select
             placeholder="SELECT AIRLINE"
@@ -187,7 +234,7 @@ export class FlightView extends Component {
           />
         </div>
 
-        <div className="Control_Filter_Item">
+        <div className="Control_Filter_Item_Inline">
           <span className="Control_Filter_Item_Label">AIRPORT</span>
           <Select
             placeholder="SELECT AIRPORT"
@@ -196,6 +243,19 @@ export class FlightView extends Component {
             options={this.state.flightData.airports}
           />
         </div>
+</div>
+
+        <div className="Control_Filter_Item">
+<span className="Control_Filter_Item_Label">Approximate departure date</span>
+<br></br>
+ <DatePicker
+    format="YYYY-MM-DD"
+    disabledDate={disabledDate}
+    disabledTime={disabledDateTime}
+    placeholder="Select Approximate departure date"
+    className="Control_Trip_Flight_Approximate_Date"
+    />
+   </div>
 
         <div className="Control_Filter_Item">
           <span className="Control_Filter_Item_Label">DEPARTURE FLIGHT</span>
@@ -231,9 +291,9 @@ export class FlightView extends Component {
 
     return (
       <div>
-        <h1 className="Voyager_Title_2">MY FLIGHTS</h1>
+        <h1 className="Hide">MY FLIGHTS</h1>
         {contents}
-        <h2 className="Voyager_Title_1">{this.state.costCalcStatus}</h2>
+        <h2 className="Flight_View_Flight_Price">{this.state.costCalcStatus}</h2>
       </div>
     ); //return
   } //render
