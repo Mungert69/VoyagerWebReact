@@ -111,13 +111,13 @@ export class ItineraryView extends Component {
                                             <div key="Control_Trip" className="Show">
                                                 <span className="Voyager_Control_Item_A">
                                                     <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>View Builder Place</Button>
-                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight} addNight={this.addNight} deleteHotel={this.deleteHotel} itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.place} card={prSelection.placeCard} />
+                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight.bind(this)} addNight={this.addNight.bind(this)}  itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.place} card={prSelection.placeCard} />
                                               </span>
                                             </div>
                                             <div key="Control_Places" className="Show" >
                                                 <span className="Voyager_Control_Item_A">
                                                     <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'hotel')}>View Builder Hotel</Button>
-                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight} addNight={this.addNight} deleteHotel={this.deleteHotel} itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.hotel} card={prSelection.hotelCard} />
+                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight} addNight={this.addNight}  itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.hotel} card={prSelection.hotelCard} />
                                                 </span>
                                                
                                             </div>

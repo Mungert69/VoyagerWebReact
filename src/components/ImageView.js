@@ -22,7 +22,7 @@ export class ImageView extends Component {
     render() {
         const flickityOptions = {
             initialIndex: 2
-        }
+        };
         if (this.props.card === undefined || this.props.card === null) return null;
      
         if (this.props.card.picFileNames === undefined || this.props.card.picFileNames === null) return null;
