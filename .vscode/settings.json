@@ -58,5 +58,6 @@
         "yml"
     ],
     "terminal.integrated.fontWeight": "500",
-    "terminal.integrated.fontSize": 15
+    "terminal.integrated.fontSize": 15,
+    "editor.colorDecorators": false
 }

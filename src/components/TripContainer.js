@@ -35,7 +35,7 @@ const itinMapTemplateTypeID = 49;
 const placeMapTemplateTypeID = 49;
 const hotelMapTemplateTypeID = 49;
 
-const userId = 'xxxx';
+const userId = 'ffffffff-ffff-ffff-ffff-ffffffffffff';
 export class TripContainer extends Component {
   displayName = "Trip Container";
 
