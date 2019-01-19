@@ -8,7 +8,7 @@ export const Control_Item_Trip_Date_Price = ({ datePriceObjs }) => {
   if (datePriceObjs === undefined || datePriceObjs === null)
     return <p>Date N/A</p>;
   return (
-    <div class="test1">       <PerfectScrollbar className="test2">
+    <div >      
       <span className="Trip_Date_Price_Group">
         {datePriceObjs.map(datePriceObj => (
           <span className="Trip_Date_Price_Item" >
@@ -18,7 +18,7 @@ export const Control_Item_Trip_Date_Price = ({ datePriceObjs }) => {
                      </span>
 
         ))}
-      </span>   </PerfectScrollbar>
+      </span>  
     </div>
   );
 };

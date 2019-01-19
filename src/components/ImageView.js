@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import React, { Component } from 'react';
+import Flickity from 'react-flickity-component'
 export class ImageView extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +20,9 @@ export class ImageView extends Component {
     };
     
     render() {
+        const flickityOptions = {
+            initialIndex: 2
+        }
         if (this.props.card === undefined || this.props.card === null) return null;
      
         if (this.props.card.picFileNames === undefined || this.props.card.picFileNames === null) return null;
@@ -40,6 +44,20 @@ export class ImageView extends Component {
         return (
             <div className="Voyager_Card_Image_Carousel">
 
+<Flickity
+      className={'carousel'} // default ''
+      elementType={'div'} // default 'div'
+      options={flickityOptions} // takes flickity options {}
+      disableImagesLoaded={false} // default false
+      reloadOnUpdate // default false
+    >{
+     this.props.card.picFileNames.map((fileName, index) =>  
+                    <img  src={'http://www.voyagercuba.co.uk/Images/Images-PlacesHotels/'+  fileName} />
+                    
+
+                            )
+    }
+    </Flickity>
                 <div className="AnimationRipple">
                     <Carousel ref={node => this.carousel = node} {...props}>
                         {
