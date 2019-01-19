@@ -5104,13 +5104,6 @@ margin-top:10px;
             }
 
 
-            .test2 {
-
-max-width: 100%;
-overflow: scroll;
-            }
-
-
  .carousel_price_panel {
                
                 position: relative;
@@ -5118,7 +5111,7 @@ overflow: scroll;
               
             .carousel_price {
                 background: #fff;
-            max-width: 1100px;
+            max-width: 1400px;
             margin: auto;  
          
             left:0;
