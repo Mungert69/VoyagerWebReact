@@ -1,6 +1,6 @@
 ﻿﻿import React, { Component } from "react";
 import { HotelList } from "../components/HotelList";
-import { CardView } from "../components/CardView";
+import { CardDynView } from "../components/CardDynView";
 import "../voyager.css";
 import { Select, Button } from "antd";
 import { apiBaseUrl } from "./Constants";
@@ -102,104 +102,35 @@ export class ItineraryView extends Component {
           </p>
 
           {itinObj.prSelections.map((prSelection, index) => (
-            <span>
-              <div
-                key={index}
-                className="Control_Trip_Stages_Item_Group AnimationRipple"
-              >
-                <a>
-                  <div class="Control_Trip_Stages_Position_outer_wrapper">
-                    <div className="Control_Trip_Stages_Position_left Control_Trip_Stages_Position_inner_wrapper">
-                      <i className="show fas fa-circle Control_Trip_Stages_Stage_Icon">
-                        <l className="Control_Trip_Stages_Stage_Icon_Number">
-                          {index + 1}
-                        </l>
-                      </i>
+            <div key={index}>
+                            <div className="Voyager_Trip_Stages_Inline">
 
-                      <a
-                        className="Control_Trip_Stages_Stage_PlaceName"
-                        onClick={() =>
-                          this.props.setBuilderCardEvent(prSelection.placeCard, index, "place")
-                        }
-                      >
-                        {prSelection.place}
-                      </a>
-                    </div>
+                                <span>
+                                    <div className="Voyager_Trip_Control_Panel" >
+                                        <div key="" className="flex-container">
+                                            <div key="Control_Trip" className="Show">
+                                                <span className="Voyager_Control_Item_A">
+                                                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>View Builder Place</Button>
+                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight} addNight={this.addNight} deleteHotel={this.deleteHotel} itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.place} card={prSelection.placeCard} />
+                                              </span>
+                                            </div>
+                                            <div key="Control_Places" className="Show" >
+                                                <span className="Voyager_Control_Item_A">
+                                                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'hotel')}>View Builder Hotel</Button>
+                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight} addNight={this.addNight} deleteHotel={this.deleteHotel} itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.hotel} card={prSelection.hotelCard} />
+                                                </span>
+                                               
+                                            </div>
 
-                    <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
-                      <a
-                        className="Control_Trip_Stages_Stage_HotelName"
-                        onClick={() =>
-                          this.props.setBuilderCardEvent(prSelection.hotelCard, index, "hotel")
-                        }
-                      >
-                        {prSelection.hotel}
-                      </a>
-                    </div>
-                  </div>
+                                        </div>
 
-                  <div class="Control_Trip_Stages_Position_outer_wrapper">
-                    <div className="Control_Trip_Dates_Position_left Control_Trip_Stages_Position_inner_wrapper">
-                      <i className="show far fa-car Control_Trip_Stages_Stage_Transport_Icon" />
-                      <i className="hide far fa-bus Control_Trip_Stages_Stage_Transport_Icon" />
-                    </div>
+                                    </div>
+                                   
+                                </span>
 
-                    <div className="Control_Trip_Stages_Position_right Control_Trip_Stages_Position_inner_wrapper">
-                      <span className="Control_Trip_Stages_Stage_HotelFeatures">
-                        <AccommodationCharacteristics accommodationCharacteristics={prSelection.hotelCard.accommodationCharacteristics}/>
-                      </span>
-                 
+                            </div>
+                        </div>
 
-                      <a
-                        title="ADD NIGHTS"
-                        onClick={() => this.addNight(index)}
-                      >
-                        <i className="fas fa-caret-up Voyager_Trip_Nights_Add" />
-                      </a>
-
-                      <a
-                        title="SUBTRACT NIGHTS"
-                        onClick={() => this.removeNight(index)}
-                      >
-                        <i className="fas fa-caret-down Voyager_Trip_Nights_Subtract" />
-                      </a>
-
-                      <a
-                        className="Hide Voyager_Trip_Control_Delete"
-                        title="DELETE STAGE"
-                        onClick={() => this.deleteHotel()}
-                      >
-                        <i className="fas fa-times Voyager_Trip_Hotel_Remove" />
-                      </a>   
-                        <i className="show fas fa-moon Control_Trip_Stages_Stage_Nights_Icon" />
-
-                      <p className="Control_Trip_Stages_Stage_Nights">
-                        {prSelection.nights}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div />
-
-                <a className="Control_Trip_Stages_Stage_Detail_Icon">
-                  <i
-                    className="show fas fa-caret-right "
-                    onClick={() =>
-                      this.props.setBuilderCardEvent(prSelection.placeCard, index, "place")
-                    }
-                  />
-                </a>
-              </div>
-
-              <p className="show Voyager_Trip_Transfer">
-              
-                {
-                  itinObj.transferNodeItems[index + 1].transferItem
-                    .transferItem1
-                }
-              </p>
-             
-            </span>
           ))}
           <p className="Voyager_Trip_Transfer">
                 {

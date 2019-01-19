@@ -10,7 +10,7 @@ import { AccommodationSelfCater } from './SubComponents/AccommodationSelfCater';
 import { CardStaticView } from './CardStaticView';
 
 
-export class CardView extends Component {
+export class CardDynView extends Component {
 
     constructor(props) {
         super(props);
@@ -65,7 +65,17 @@ export class CardView extends Component {
                  </div>
               </span>
 
+              <div className="Show">
 
+<a className="Voyager_Trip_Control_Nights_remove" title="SUBTRACT NIGHTS" onClick={() => this.props.removeNight(this.props.index)} ><i className="fas fa-angle-down Voyager_Trip_Nights_Subtract"></i></a>
+{this.props.prSelection.nights}
+<a className="Voyager_Trip_Control_Nights_add" title="ADD NIGHTS" onClick={() => this.props.addNight(this.props.index)} ><i className="fas fa-angle-up Voyager_Trip_Nights_Add"></i></a>
+<a className="Voyager_Trip_Control_Delete" title="DELETE STAGE" onClick={() => this.props.deleteHotel()} ><i className="fas fa-times Voyager_Trip_Hotel_Remove"></i></a> <i className="fas fa-bus Voyager_Trip_Transport_Icon"></i>
+
+<p className="Voyager_Trip_Transfer" > {this.props.itinObj.transferNodeItems[this.props.index + 1].transferItem
+.transferItem1}</p>
+
+</div>
                      
             </div>
             </div>
