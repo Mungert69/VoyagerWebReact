@@ -218,9 +218,6 @@ export class FlightView extends Component {
   renderFlightList = () => {
     return (
       <form onSubmit={this.handleSubmit}>
-     
-        <div><img className="UI_FLIGHT_BULDER_2019" src="http://www.voyagercuba.co.uk/DEVELOP_PARTS/UI_FLIGHT_BULDER_2019.jpg" />  </div>
-
        
        <div>
        
@@ -291,9 +288,10 @@ export class FlightView extends Component {
 
     return (
       <div>
-        <h1 className="Hide">MY FLIGHTS</h1>
-        {contents}
+        <h1 className="Hide">MY FLIGHTS</h1> 
         <h2 className="Flight_View_Flight_Price">{this.state.costCalcStatus}</h2>
+        {contents}
+       <br></br>     <br></br><br></br>     <br></br>
       </div>
     ); //return
   } //render
