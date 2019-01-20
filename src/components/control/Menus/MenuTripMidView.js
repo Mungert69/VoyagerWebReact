@@ -64,7 +64,7 @@ const MenuTripMidView = (props) => {
 
                     <div className="Control_Position_center Control_Position_inner_wrapper inline-block">
                         <Control_Item_Trip_Stage_Places />
-                        <Control_Item_Trip_Description_Short />
+                        <div className="Hide"> <Control_Item_Trip_Description_Short /></div>
                     </div>
 
                     <div className="Control_Position_right Control_Position_inner_wrapper">
