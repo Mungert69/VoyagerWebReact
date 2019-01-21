@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import TripContainer  from './containers/TripContainer';
+import TripContainer from './containers/TripContainer';
 import { AppContainer } from './components/AppContainer';
 import { TestView } from './components/TestView';
 
@@ -13,11 +13,7 @@ export default class App extends Component {
 
   render() {
     return (
-        <AppContainer>
-
-            <Route path='/tripcontainer' component={TripContainer} />
-            <Route path='/testview' component={TestView} />
- 
+      <AppContainer>
       </AppContainer>
     );
   }

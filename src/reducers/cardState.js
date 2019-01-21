@@ -68,7 +68,7 @@ const cardState = (state = defaultState, action) => {
             return Object.assign({}, state, { filteredMapStyleCard: filterStyleCard(state, true, state.cardType, state.cardDetailLevel) });
 
         // Note we must also update the individual style card with a card detail update
-        case ActionTypes.SET_TRIP_CARD_DETAIL_LEVEL:
+        case ActionTypes.SET_CARD_DETAIL_LEVEL:
             return Object.assign({}, state, { cardDetailLevel: action.payload, filteredMapStyleCard: filterStyleCard(state, true, state.cardType, action.payload) });
 
         case ActionTypes.TOGGLE_ORDERBY_FILTER:

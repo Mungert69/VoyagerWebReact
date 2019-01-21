@@ -20,7 +20,7 @@ export class NodeListView extends Component {
     setCard = (card, index) => {   
         this.setState({ card: card });
         this.props.setTripItem(index);
-        this.props.setTripCard(card);
+        this.props.setCard(card);
     }
     renderNodeList = () => {
         var filteredCards = this.props.cards;
@@ -68,6 +68,9 @@ export class NodeListView extends Component {
                 {contents}
             </div>
         );//Return
+
+
+
     }//Render
 }
 

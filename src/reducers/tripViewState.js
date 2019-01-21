@@ -28,7 +28,7 @@ const tripViewState = (state = defaultState, action) => {
 
         case ActionTypes.TOGGLE_TRIPVIEW_VISIBLE:
             return Object.assign({}, state, { isTripViewVisible: action.payload });
-        case ActionTypes.SET_TRIP_CARD:
+        case ActionTypes.SET_CARD:
             return Object.assign({}, state, { card: action.payload });
         case ActionTypes.SET_TRIP_ITEM:
             return Object.assign({}, state, { item: action.payload });

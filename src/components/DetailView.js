@@ -72,7 +72,7 @@ export class DetailView extends Component {
   setCard = (card, index, cardType) => {
     this.setState({ card: card, cardType: cardType });
     this.props.setTripItem(index);
-    this.props.setTripCard(card);
+    this.props.setCard(card);
     this.props.setCardType(cardType);
   };
 

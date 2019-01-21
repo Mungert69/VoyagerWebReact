@@ -2,7 +2,7 @@
 import { NodeListView } from '../components/NodeListView';
 
 import {
-    setTripCardDetailLevel,setTripItem,setTripCard
+    setTripCardDetailLevel,setTripItem,setCard
 } from '../actions/actions';
 import {
     setNodeCardEvent
@@ -20,8 +20,8 @@ const mapDispatchToProps = dispatch => {
         setTripCardDetailLevel: (cardDetailLevel) => {
             dispatch(setTripCardDetailLevel(cardDetailLevel));
         },
-        setTripCard: (cardVal) => {
-            dispatch(setTripCard(cardVal));
+        setCard: (cardVal) => {
+            dispatch(setCard(cardVal));
         },
         setTripItem: (item) => {
             dispatch(setTripItem(item));

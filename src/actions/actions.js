@@ -171,9 +171,9 @@ export function setCardType(cardType) {
 }
 
 
-export function setTripCard(card) {
+export function setCard(card) {
     return {
-        type: ActionTypes.SET_TRIP_CARD,
+        type: ActionTypes.SET_CARD,
         payload: card
     };
 }
@@ -192,7 +192,7 @@ export function setTripJumpCounter(jumpCounter) {
 
 export function setTripCardDetailLevel(cardDetailLevel) {
     return {
-        type: ActionTypes.SET_TRIP_CARD_DETAIL_LEVEL,
+        type: ActionTypes.SET_CARD_DETAIL_LEVEL,
         payload: cardDetailLevel
     };
 }

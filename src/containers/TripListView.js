@@ -2,7 +2,7 @@
 import { TripListView } from '../components/TripListView';
 
 import {
-    setTripCardDetailLevel,setTripItem,setTripCard
+    setTripCardDetailLevel,setTripItem,setCard
 } from '../actions/actions';
 import {
      setTripCardEvent
@@ -25,8 +25,8 @@ const mapDispatchToProps = (dispatch) => {
             setTripItem: (item) => {
                 dispatch(setTripItem(item));
             },  
-            setTripCard: (cardVal) => {
-                dispatch(setTripCard(cardVal));
+            setCard: (cardVal) => {
+                dispatch(setCard(cardVal));
             },    
     };
 };

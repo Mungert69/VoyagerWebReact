@@ -1,21 +1,22 @@
 ﻿import React, { Component } from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
-import { NavMenu } from './NavMenu';
-import TripContainer from '../containers/TripContainer';
 
+import TripContainer from '../containers/TripContainer';
+import TestContainer from '../containers/TestContainer';
+import { debugMode } from './Constants';
 
 export class AppContainer extends Component {
     displayName = "App Container";
-test='test';
+    test = 'test';
     render() {
         return (
             <Grid fluid >
                 <Row>
-            
+
 
                     <Col >
-                     
-                        <TripContainer /> 
+                        {debugMode ? <TestContainer /> : <TripContainer />}
+
 
                     </Col>
                 </Row>

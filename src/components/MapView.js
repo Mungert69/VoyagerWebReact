@@ -3,6 +3,7 @@
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
 import { Control_Item_Map_Style } from './control/Control_Item/Control_Item_Map_Style';
+import {debugMode} from './Constants';
 /*global google*/
 const cubaDefaultCenter = { lat: 21.753351, lng: -79.339996 };
 export class MapView extends Component {
@@ -46,6 +47,7 @@ export class MapView extends Component {
     }
 
     shouldComponentUpdate(nextProps) {
+        if (debugMode) return true;
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             return true;
         }
@@ -53,6 +55,7 @@ export class MapView extends Component {
     }
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
+        if (debugMode) this.refreshPrSelections(nextProps);
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections(nextProps);
         }

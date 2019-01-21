@@ -1,7 +1,9 @@
 ﻿import {
-    setTripViewState, setTripItem, setTripJumpCounter, setTripCard,
-     setCardType,setQueryTxt,setTripCardDetailLevel, filterPlaceCardsByNextHop, filterHotelCardsByPlace
+    setTripViewState, setTripItem, setTripJumpCounter, setCard,
+     setCardType,setQueryTxt,setTripCardDetailLevel, 
+     filterPlaceCardsByNextHop, filterHotelCardsByPlace
 } from './actions';
+
 import { fetchItinObj } from './apiActions';
 
 
@@ -9,7 +11,7 @@ export const setNodeCardEvent = (cardVal, item) => {
 
     return function (dispatch) {
         dispatch(setTripViewState(null, false, false, true));
-        dispatch(setTripCard(cardVal));
+        dispatch(setCard(cardVal));
         dispatch(setTripItem(item));
         dispatch(setTripJumpCounter(1));
     };
@@ -18,7 +20,7 @@ export const setNodeCardEvent = (cardVal, item) => {
 export const setBuilderCardEvent = (cardVal, item, cardType) => {
     return function (dispatch) {
         dispatch(setCardType(cardType));
-        dispatch(setTripCard(cardVal));
+        dispatch(setCard(cardVal));
         dispatch(setTripItem(item));
         dispatch(setTripJumpCounter(3));
         dispatch(setTripViewState(true, false, false, true));
@@ -32,7 +34,7 @@ export const setTripCardEvent = (cardVal,userId) => {
     return function (dispatch) {
         dispatch(fetchItinObj(cardVal,userId)).then(() => {         
             dispatch(setTripViewState(true, false, true, false));  
-            dispatch(setTripCard(cardVal));
+            dispatch(setCard(cardVal));
         });
     };
 
