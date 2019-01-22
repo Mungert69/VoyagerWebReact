@@ -13,16 +13,7 @@ import {
 
 
 const mapStateToProps = state => ({
-    isListViewVisible: state.tripViewState.isListViewVisible,
-    isTripViewVisible: state.tripViewState.isTripViewVisible,
-    isDetailViewVisible: state.tripViewState.isDetailViewVisible,
-    cardDetailLevel: state.cardState.cardDetailLevel,
-    cardType: state.cardState.cardType,
-    loading: state.apiState.loadingCards,
-    userId : state.userState.userId,
-    hotelCards : state.cardState.hotelCards,
-    placeCards : state.cardState.placeCards,
-    tripCards : state.cardState.tripCards
+    state : state
 });
 
 const mapDispatchToProps = dispatch => {

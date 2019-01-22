@@ -14,6 +14,7 @@ import MenuTripView from "../../containers/Menus/MenuTripView";
 
 import MenuMain from '../control/Menus/MenuMain';
 import MenuListView from '../control/Menus/MenuListView';
+import {CardDynView} from '../CardDynView';
 
 
 
@@ -37,8 +38,7 @@ export class TestContainer extends Component {
     constructor(props) {
         super(props);
 
-       
-
+    /*
         this.props.fetchTripMapStyleCards(itinMapTemplateTypeID);
         this.props.fetchPlaceMapStyleCards(placeMapTemplateTypeID);
         this.props.fetchHotelMapStyleCards(hotelMapTemplateTypeID);
@@ -51,7 +51,7 @@ export class TestContainer extends Component {
         this.props.fetchPlaceCards();
         this.props.fetchHotelCards();
          
-
+*/
          this.state = { countryId: 1};
     } //Constructor
 
@@ -59,22 +59,23 @@ export class TestContainer extends Component {
         const showComponent = {
             showMenuMain: false,
             showImageView : false,
-            showMapView : true,
+            showMapView : false,
             showVisualView: false,
             showNodeListView: false,
             showTripListView: false,
             showTripView: false,
             showDetailView: false,
             showMenuListView: false,
-            showMenuListView : false
+            showMenuListView : false,
+            showCardDynView :true
         };
 
-       
-//Setup HotelCard for testing
-const hotelCard =this.props.hotelCards[0];
-this.props.setCard(hotelCard);
-//Setup Hotel FilteredCards for testing
-this.props.changeView('hotel');
+   
+        const hotelCard=this.props.state.cardState.hotelCards[0];
+        const hotelStyleCard=this.props.state.cardState.hotelStyleCards[0];
+        const itinObj=this.props.state.apiState.itinObj;
+        const index=0;
+
 
         return (
             <span>
@@ -112,7 +113,10 @@ this.props.changeView('hotel');
                             {showComponent.showMenuListView ? 
                                  <MenuListView changeView={this.props.changeView} /> : null}
 
-
+                            {showComponent.showCardDynView ?
+                                <CardDynView index={index} itinObj={itinObj} card={hotelCard} styleCard={hotelStyleCard}/>
+                                : null}
+                            
 
 
                         </div>

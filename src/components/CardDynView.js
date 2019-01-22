@@ -63,7 +63,7 @@ export class CardDynView extends Component {
                     <div className="Show">
 
                         <a className="Voyager_Trip_Control_Nights_remove" title="SUBTRACT NIGHTS" onClick={() => this.props.removeNight(this.props.index)} ><i className="fas fa-angle-down Voyager_Trip_Nights_Subtract"></i></a>
-                        {this.props.prSelection.nights}
+                        {this.props.itinObj.prSelections[this.props.index].nights}
                         <a className="Voyager_Trip_Control_Nights_add" title="ADD NIGHTS" onClick={() => this.props.addNight(this.props.index)} ><i className="fas fa-angle-up Voyager_Trip_Nights_Add"></i></a>
                        
                         <p className="Voyager_Trip_Transfer" > {this.props.itinObj.transferNodeItems[this.props.index + 1].transferItem

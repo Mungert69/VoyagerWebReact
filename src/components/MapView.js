@@ -47,7 +47,7 @@ export class MapView extends Component {
     }
 
     shouldComponentUpdate(nextProps) {
-        if (debugMode) return true;
+        //if (debugMode) return true;
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             return true;
         }
@@ -55,7 +55,7 @@ export class MapView extends Component {
     }
     componentWillReceiveProps(nextProps) {
         //console.log("logger: In MapView.componentWillReceiveProps value nextProp cardType = " + nextProps.cardType + " value of thisProp cardType = " + this.props.cardType);
-        if (debugMode) this.refreshPrSelections(nextProps);
+        //if (debugMode) this.refreshPrSelections(nextProps);
         if (this.props.item !== nextProps.item || this.props.itinObj !== nextProps.itinObj || this.props.cardType !== nextProps.cardType) {
             this.refreshPrSelections(nextProps);
         }
@@ -261,8 +261,7 @@ export class MapView extends Component {
                                     position={{ lat: parseFloat(selection.placeCard.latitude), lng: parseFloat(selection.placeCard.longitude) }}
                                     labelAnchor={new google.maps.Point(14, 18)}
                                     labelClass={'Card_Map_Panel_1'}
-                                    labelStyle={{}}
-                                    icon={{ url: '' }}
+
                                 >
                                     <CardTripMapView index={index + 1} styleCard={this.props.filteredMapStyleCard} key={index} selection={selection} />
                                 </MarkerWithLabel>
@@ -278,7 +277,7 @@ export class MapView extends Component {
                                 labelAnchor={new google.maps.Point(14, 18)}
                                 labelClass={'Card_Map_Panel_1'}
                                 labelStyle={{}}
-                                icon={{ url: '' }}
+
                             >
                                 <CardMapView index={index + 1} styleCard={this.props.filteredMapStyleCard} key={index} card={card} />
                             </MarkerWithLabel>

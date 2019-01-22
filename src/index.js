@@ -15,18 +15,34 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { loadState, saveState } from './Objects/localStorage';
+import {saveStateOn} from './components/Constants';
+import throttle from 'lodash/throttle';
 
 //const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 const loggerMiddleware = createLogger()
+const persistedState = loadState();
+
 
 const store = createStore(
     rootReducer,
+    persistedState,
     composeWithDevTools(applyMiddleware(
         thunkMiddleware, // lets us dispatch() functions
         loggerMiddleware // neat middleware that logs actions
-    ))
+    )
+    )
 );
+
+if (saveStateOn) {
+
+   
+    store.subscribe(() => { 
+        saveState( store.getState());
+     
+    });
+}
 
 ReactDOM.render(
     <Provider store={store}>
