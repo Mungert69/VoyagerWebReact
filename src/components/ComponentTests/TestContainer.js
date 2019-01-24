@@ -15,6 +15,7 @@ import MenuTripView from "../../containers/Menus/MenuTripView";
 import MenuMain from '../control/Menus/MenuMain';
 import MenuListView from '../control/Menus/MenuListView';
 import {CardDynView} from '../CardDynView';
+import {CheckBox} from '../control/CheckBox';
 
 
 
@@ -52,30 +53,57 @@ export class TestContainer extends Component {
         this.props.fetchHotelCards();
          
 */
-         this.state = { countryId: 1};
+         this.state = {
+            countryId: 1,
+            showComponents: [
+
+              {id: 1, value: "showMenuMain", isChecked: false},
+              {id: 2, value: "showImageView", isChecked: false},
+              {id: 3, value: "showMapView", isChecked: false},
+              {id: 4, value: "showVisualView", isChecked: false},
+              {id: 5, value: "showNodeListView", isChecked: false},
+              {id: 6, value: "showTripListView", isChecked: false},
+              {id: 7, value: "showTripView", isChecked: false},
+              {id: 8, value: "showDetailView", isChecked: false},
+              {id: 9, value: "showMenuListView", isChecked: false},
+              {id: 10, value: "showCardDynView", isChecked: true},
+              {id: 11, value: "placeHolder", isChecked: false},
+              {id: 12, value: "placeHolder", isChecked: false},
+              {id: 13, value: "placeHolder", isChecked: false}
+            ]
+          }
     } //Constructor
 
-    render() {
-        const showComponent = {
-            showMenuMain: false,
-            showImageView : false,
-            showMapView : false,
-            showVisualView: false,
-            showNodeListView: false,
-            showTripListView: false,
-            showTripView: false,
-            showDetailView: false,
-            showMenuListView: false,
-            showMenuListView : false,
-            showCardDynView :true
-        };
+    handleCheckChieldElement = (event) => {
+        let showComponents = this.state.showComponents;
+        showComponents.forEach(showComponent => {
+           if (showComponent.value === event.target.value)
+              showComponent.isChecked =  event.target.checked
+        });
+        this.setState({showComponents: showComponents});
+      }
 
-   
+      handleAllChecked = (event) => {
+        let showComponents = this.state.showComponents;
+        showComponents.forEach(showComponent => showComponent.isChecked = event.target.checked) ;
+        this.setState({showComponents: showComponents});
+      }
+
+       isChecked = (name) =>{
+        this.state.showComponents.forEach(showComponent => {
+            if (showComponent.value === name){                          
+               return showComponent.isChecked;}
+         });
+      }
+
+    render() {
+       
+        var test=this.isChecked('showCardDynView');
         const hotelCard=this.props.state.cardState.hotelCards[0];
         const hotelStyleCard=this.props.state.cardState.hotelStyleCards[0];
         const itinObj=this.props.state.apiState.itinObj;
         const index=0;
-
+        
 
         return (
             <span>
@@ -83,37 +111,47 @@ export class TestContainer extends Component {
                     <span>LOADING...</span>
                 ) : (
                         <div>
-
-                            {showComponent.showMenuMain ? <MenuMain changeView={this.props.changeView}
+<div >
+      <h1> Check and Uncheck All Example </h1>
+      <input type="checkbox" onClick={this.handleAllChecked}  value="checkedall" /> Check / Uncheck All
+        <ul>
+        {
+          this.state.showComponents.map((showComponent) => {
+            return (<CheckBox handleCheckChieldElement={this.handleCheckChieldElement}  {...showComponent} />)
+          })
+        }
+        </ul>
+      </div>
+                            {this.isChecked('showMenuMain') ? <MenuMain changeView={this.props.changeView}
                                 changeDetailLevel={this.props.changeDetailLevel}
                                 cardDetailLevel={this.props.cardDetailLevel} /> : null}
 
 
 
-                            {showComponent.showVisualView ?
+                            {this.isChecked('showVisualView') ?
                                 <VisualView />
                                 : null}
 
-                            {showComponent.showImageView ? <ImageView/> : null}
-                            {showComponent.showMapView ? <MapView/> : null}
+                            {this.isChecked('showImageView') ? <ImageView/> : null}
+                            {this.isChecked('showMapView') ? <MapView/> : null}
 
-                            {showComponent.showNodeListView ?
+                            {this.isChecked('showNodeListView') ?
                                 <NodeListView />
                                 : null}
 
-                            {showComponent.showTripListView ? (
+                            {this.isChecked('showTripListView') ? (
                                 <TripListView />
                             ) : null}
 
-                            {showComponent.showTripView ? <div><TripView /> <MenuTripView /></div> : null}
+                            {this.isChecked('showTripView') ? <div><TripView /> <MenuTripView /></div> : null}
 
-                            {showComponent.showDetailView ? <div><DetailView /> <MenuDetailView /></div> : null}
+                            {this.isChecked('showDetailView') ? <div><DetailView /> <MenuDetailView /></div> : null}
 
 
-                            {showComponent.showMenuListView ? 
+                            {this.isChecked('showMenuListView') ? 
                                  <MenuListView changeView={this.props.changeView} /> : null}
 
-                            {showComponent.showCardDynView ?
+                            {this.isChecked('showCardDynView') ?
                                 <CardDynView index={index} itinObj={itinObj} card={hotelCard} styleCard={hotelStyleCard}/>
                                 : null}
                             
