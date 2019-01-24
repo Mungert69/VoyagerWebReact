@@ -90,10 +90,19 @@ export class TestContainer extends Component {
       }
 
        isChecked = (name) =>{
-        this.state.showComponents.forEach(showComponent => {
-            if (showComponent.value === name){                          
-               return showComponent.isChecked;}
-         });
+        
+        let showComponents = this.state.showComponents;
+        var returnBool = false;
+          for (let showComponent of  showComponents){
+ 
+                if (showComponent.value === name){                          
+                   returnBool= showComponent.isChecked;
+                   break;}
+             };
+
+       
+       
+         return returnBool;
       }
 
     render() {
