@@ -3,6 +3,7 @@ import { Select, Button } from "antd";
 
 import VisualView from "../../containers/VisualView";
 import NodeListView from "../../containers/NodeListView";
+import PlaceListView from "../../containers/PlaceListView";
 import TripListView from "../../containers/TripListView";
 import TripView from "../../containers/TripView";
 import DetailView from "../../containers/DetailView";
@@ -66,8 +67,8 @@ export class TestContainer extends Component {
               {id: 7, value: "showTripView", isChecked: false},
               {id: 8, value: "showDetailView", isChecked: false},
               {id: 9, value: "showMenuListView", isChecked: false},
-              {id: 10, value: "showCardDynView", isChecked: true},
-              {id: 11, value: "placeHolder", isChecked: false},
+              {id: 10, value: "showCardDynView", isChecked: false},
+              {id: 11, value: "showPlaceListView", isChecked: true},
               {id: 12, value: "placeHolder", isChecked: false},
               {id: 13, value: "placeHolder", isChecked: false}
             ]
@@ -146,6 +147,10 @@ export class TestContainer extends Component {
 
                             {this.isChecked('showNodeListView') ?
                                 <NodeListView />
+                                : null}
+
+                            {this.isChecked('showPlaceListView') ?
+                                <PlaceListView />
                                 : null}
 
                             {this.isChecked('showTripListView') ? (
