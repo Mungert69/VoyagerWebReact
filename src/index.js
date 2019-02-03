@@ -16,13 +16,15 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './Objects/localStorage';
-import {saveStateOn} from './components/Constants';
+import {saveStateOn,debugMode} from './components/Constants';
 import throttle from 'lodash/throttle';
 
 //const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 const loggerMiddleware = createLogger()
-const persistedState = loadState();
+var persistedState = {};
+
+if (debugMode) {persistedState=loadState();}
 
 
 const store = createStore(
