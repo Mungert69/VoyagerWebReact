@@ -21,26 +21,15 @@ export class PlaceListView extends Component {
     setCard = (card, index,cardType) => {
         this.setState({ card: card });
         this.props.setCardType(cardType);
-        this.props.setTripItem(index);
+        this.props.setTripItem(card.id);
         this.props.setCard(card);
         
     }
     renderNodeList = () => {
-        var filteredCards = this.props.cards;
-        var hotelCards = this.props.hotelCards.map((obj,index) => {obj.index=index ; return obj;});
-        var filterHotelByPlace = (placeNameId,hotelCard) => {
-
-            if (placeNameId==1){
-
-                const breakHere='';
-            }
-            if (placeNameId == hotelCard.placeNameId) {
-                return true;
-            }
-            else {
-                return false;
-            }
-
+        var placeCards = this.props.placeCards;
+        var hotelCards = this.props.hotelCards;
+        var filterHotelByPlace = (placeNameId,hotelCard) => {    
+            return placeNameId == hotelCard.placeNameId;
         }
 
         return (
@@ -53,7 +42,7 @@ export class PlaceListView extends Component {
                     <div className="Voyager_Card_A_Container_Panel_2"  >
 
                         {
-                            filteredCards.map((cardValue, index) =>
+                            placeCards.map((cardValue, index) =>
 
 
                                 <span className="Voyager_Places_List" key={cardValue.id}>

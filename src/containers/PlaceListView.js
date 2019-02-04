@@ -11,6 +11,7 @@ import {
 const mapStateToProps = state => ({
     cards: state.cardState.filteredCards,
     hotelCards: state.cardState.hotelCards,
+    placeCards: state.cardState.placeCards,
     cardType: state.cardState.cardType,
     stylePlaceCards: state.cardState.placeStyleCards,
     styleHotelCards: state.cardState.hotelStyleCards

@@ -3,7 +3,7 @@
 import { CardMapView } from './CardMapView';
 import { CardTripMapView } from './CardTripMapView';
 import { Control_Item_Map_Style } from './control/Control_Item/Control_Item_Map_Style';
-import {debugMode} from './Constants';
+import { debugMode } from './Constants';
 /*global google*/
 const cubaDefaultCenter = { lat: 21.753351, lng: -79.339996 };
 export class MapView extends Component {
@@ -116,23 +116,24 @@ export class MapView extends Component {
         if (props.builderMode) {
 
             var params = this.setParams(props);
-            var markers = [];
             let itemCount = props.itinObj.prSelections.length * 2;
             var marker;
 
             var newCenter = this.state.defaultCenter;
             var newZoom = this.state.defaultZoom;
 
-            props.itinObj.prSelections.map((selection) => {
-                marker = { lat: parseFloat(selection.hotelCard.latitude), lng: parseFloat(selection.hotelCard.longitude) };
-                markers.push(marker);                          }
+            var markers = props.itinObj.prSelections.map((selection) => {
+                return { lat: parseFloat(selection.hotelCard.latitude), lng: parseFloat(selection.hotelCard.longitude) };
+            }
             );
-            if (props.item !== 0) {
+            if (props.item !== -1) {
                 newCenter = cubaDefaultCenter;
                 if (props.cardType === 'place') {
-                     newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].placeCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].placeCard.longitude) }; }
+                    newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].placeCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].placeCard.longitude) };
+                }
                 if (props.cardType === 'hotel') {
-                     newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].hotelCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].hotelCard.longitude) }; }
+                    newCenter = { lat: parseFloat(props.itinObj.prSelections[props.item].hotelCard.latitude), lng: parseFloat(props.itinObj.prSelections[props.item].hotelCard.longitude) };
+                }
                 newZoom = this.zoomLevelCalc(props.cardType);
             }
             this.setState({ item: params.item, prItem: params.prItem, defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: markers });
@@ -143,8 +144,8 @@ export class MapView extends Component {
                 var newCenter = this.state.defaultCenter;
                 var newZoom = this.state.defaultZoom;
 
-                if (props.item !== 0) {
-                    newCenter = { lat: parseFloat(props.cards[props.item].latitude), lng: parseFloat(props.cards[props.item].longitude) };
+                if (props.item !== -1) {
+                    newCenter = { lat: parseFloat(props.cards.filter( obj => obj.id==props.item).map(obj =>  obj.latitude)), lng: parseFloat(props.cards.filter( obj => obj.id==props.item).map(obj => obj.longitude)) };
                     newZoom = this.zoomLevelCalc(props.cardType);
                 }
                 this.setState({ defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: [] });
@@ -284,12 +285,12 @@ export class MapView extends Component {
                         )
 
                     }
-    <Control_Item_Map_Style className="Control_Item_Map_Style" changeDetailLevel={props.changeDetailLevel}
-                cardDetailLevel={props.cardDetailLevel}/>
+                    <Control_Item_Map_Style className="Control_Item_Map_Style" changeDetailLevel={props.changeDetailLevel}
+                        cardDetailLevel={props.cardDetailLevel} />
                 </GoogleMap>
-                
 
-                </div>
+
+            </div>
         );
 
         return (

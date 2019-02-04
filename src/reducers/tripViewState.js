@@ -6,7 +6,7 @@ const defaultState = {
     isListViewVisible: true,
     isTripViewVisible: false,
     isDetailViewVisible: false,
-    item: 0,
+    item: -1,
     card: {},
     jumpCounter: 1,
     showMap : true
