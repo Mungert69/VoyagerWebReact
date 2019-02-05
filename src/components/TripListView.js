@@ -16,6 +16,7 @@ export class TripListView extends Component {
     //this.props.setTripCardDetailLevel(1);
   } //Constructor
   setCard = (card, index) => {
+    return ;
     this.setState({ card: card });
     this.props.setTripItem(index);
     this.props.setCard(card);
