@@ -122,8 +122,8 @@ export class TestContainer extends Component {
                 ) : (
                         <div>
 <div >
-      <h1> Check and Uncheck All Example </h1>
-      <input type="checkbox" onClick={this.handleAllChecked}  value="checkedall" /> Check / Uncheck All
+      <h1> Select a component to display </h1>
+
         <ul>
         {
           this.state.showComponents.map((showComponent) => {
