@@ -17,14 +17,15 @@ function CardFilter(cardType, state) {
     var filteredCards = [];
     this.cards = _.orderBy(this.cards, ["title"], [orderDir]);
 
-    this.cards.forEach(
+    filteredCArds= this.cards.filter(item => item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1);
+   /* this.cards.forEach(
       item => {
         if (item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1) {
           filteredCards.push(item);
         }
       } //function
     ); //forEach
-
+*/
     this.cards = filteredCards;
   };
 
