@@ -15,6 +15,7 @@ export class PlaceListView extends Component {
         this.state = {
             card: {}
         };
+        //this.props.filterPlaceCards();
 
     }//Constructor
 
@@ -26,7 +27,8 @@ export class PlaceListView extends Component {
         
     }
     renderNodeList = () => {
-        var placeCards = this.props.placeCards;
+       
+        var placeCards = this.props.filteredPlaceCards;
         var hotelCards = this.props.hotelCards;
         var filterHotelByPlace = (placeNameId,hotelCard) => {    
             return placeNameId == hotelCard.placeNameId;

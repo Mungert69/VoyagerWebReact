@@ -138,6 +138,12 @@ export function filterCards() {
     };
 }
 
+export function filterPlaceCards() {
+    return {
+        type: ActionTypes.FILTER_PLACE_CARDS
+    };
+}
+
 export function filterPlaceCardsByNextHop() {
     return {
         type: ActionTypes.FILTER_PLACE_CARDS_BY_NEXT_HOP

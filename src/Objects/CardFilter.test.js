@@ -2,9 +2,10 @@ import CardFilter from "./CardFilter";
 import { isObject } from "util";
 const tripCards = [{ title: "trip1" }, { title: "trip2" }, { title: "trip3" }];
 const placeCards = [
-  { title: "place1" },
-  { title: "place2" },
-  { title: "place3" }
+  { title: "place1", placeState : { isHop : true}  },
+  { title: "place2", placeState : { isHop : true}  },
+  { title: "place3", placeState : { isHop : false} },
+  { title: "place4", placeState : { isHop : false} }
 ];
 const hotelCharacter1 = {
   beachArea: true,
@@ -177,37 +178,73 @@ describe("CardFilter create object tests", () => {
 describe("CardFilter order by tests", () => {
   it("Should return last trip first ", () => {
     var cardFitler = new CardFilter("trip", state);
-    cardFitler.filterByTitle("desc", "");
+    cardFitler.filterByTitle(true, "");
     expect(cardFitler.cards[0].title).toEqual("trip3");
   });
   it("Should return last place first ", () => {
     var cardFitler = new CardFilter("place", state);
-    cardFitler.filterByTitle("desc", "");
-    expect(cardFitler.cards[0].title).toEqual("place3");
+    cardFitler.filterByTitle(true, "");
+    expect(cardFitler.cards[0].title).toEqual("place4");
   });
   it("Should return last hotel first ", () => {
     var cardFitler = new CardFilter("hotel", state);
-    cardFitler.filterByTitle("desc", "");
+    cardFitler.filterByTitle(true, "");
     expect(cardFitler.cards[0].title).toEqual("hotel3");
+  });
+  it("Should return first trip first ", () => {
+    var cardFitler = new CardFilter("trip", state);
+    cardFitler.filterByTitle(false, "");
+    expect(cardFitler.cards[0].title).toEqual("trip1");
+  });
+  it("Should return first place first ", () => {
+    var cardFitler = new CardFilter("place", state);
+    cardFitler.filterByTitle(false, "");
+    expect(cardFitler.cards[0].title).toEqual("place1");
+  });
+  it("Should return first hotel first ", () => {
+    var cardFitler = new CardFilter("hotel", state);
+    cardFitler.filterByTitle(false, "");
+    expect(cardFitler.cards[0].title).toEqual("hotel1");
   });
 });
 
 describe("CardFilter filter by title tests", () => {
   it("Should return filtered trip cards ", () => {
     var cardFitler = new CardFilter("trip", state);
-    cardFitler.filterByTitle("desc", "trip2");
+    cardFitler.filterByTitle(true, "trip2");
     expect(cardFitler.cards[0].title).toEqual("trip2");
   });
   it("Should return filtered place cards ", () => {
     var cardFitler = new CardFilter("place", state);
-    cardFitler.filterByTitle("desc", "place2");
+    cardFitler.filterByTitle(true, "place2");
     expect(cardFitler.cards[0].title).toEqual("place2");
   });
   it("Should return filtered hotel cards ", () => {
     var cardFitler = new CardFilter("hotel", state);
-    cardFitler.filterByTitle("desc", "hotel2");
+    cardFitler.filterByTitle(true, "hotel2");
     expect(cardFitler.cards[0].title).toEqual("hotel2");
   });
+});
+
+describe("CardFilter filter by title and place hop tests", () => {
+  
+  it("Should return filtered place cards desc order ", () => {
+    var cardFitler = new CardFilter("place", state);
+    cardFitler.filterPlaceCardsHopsFirst(false, "");
+    expect(cardFitler.cards[0].title).toEqual("place1");
+    expect(cardFitler.cards[1].title).toEqual("place2");
+    expect(cardFitler.cards[2].title).toEqual("place3");
+    expect(cardFitler.cards[3].title).toEqual("place4");
+  });
+  it("Should return filtered place cards asc order ", () => {
+    var cardFitler = new CardFilter("place", state);
+    cardFitler.filterPlaceCardsHopsFirst(true, "");
+    expect(cardFitler.cards[0].title).toEqual("place2");
+    expect(cardFitler.cards[1].title).toEqual("place1");
+    expect(cardFitler.cards[2].title).toEqual("place4");
+    expect(cardFitler.cards[3].title).toEqual("place3");
+  });
+ 
 });
 
 describe("CardFilter get places filtered by nexthop", () => {

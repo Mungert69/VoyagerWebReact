@@ -14,19 +14,28 @@ function CardFilter(cardType, state) {
 
   this.filterByTitle = function(orderBy, queryTxt) {
     var orderDir = orderBy ? "desc" : "asc";
-
-    var filteredCards = [];
     this.cards = _.orderBy(this.cards, ["title"], [orderDir]);
+    this.cards= this.cards.filter(item => item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1);
+      
+  };
 
-    this.cards.forEach(
-      item => {
-        if (item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1) {
-          filteredCards.push(item);
-        }
-      } //function
-    ); //forEach
+  this.filterPlaceCardsHopsFirst= function(orderBy, queryTxt) {
+    var orderDir = orderBy ? "desc" : "asc";
 
-    this.cards = filteredCards;
+   var nextHops= this.cards.filter(item => item.placeState.isHop);
+    nextHops=_.orderBy(nextHops, ["title"], [orderDir]);
+    var nonHops=this.cards.filter(item => {
+      var countElements=nextHops.filter(hop => hop.title==item.title);
+      return countElements.length==0;
+    });
+    nonHops=_.orderBy(nonHops, ["title"], [orderDir]);
+
+    
+    this.cards=nextHops;
+    this.cards=this.cards.concat(nonHops);
+    //this.cards = _.orderBy(this.cards, ["title"], [orderDir]);
+    //this.cards= this.cards.filter(item => item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1);
+      
   };
 
   this.filterByList = function(list, fieldName) {

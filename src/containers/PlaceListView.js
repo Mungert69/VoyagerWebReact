@@ -2,17 +2,15 @@ import { connect } from 'react-redux';
 import { PlaceListView } from '../components/PlaceListView';
 
 import {
-    setTripCardDetailLevel,setTripItem,setCard,setCardType
+    setTripCardDetailLevel,setTripItem,setCard,setCardType,filterPlaceCards
 } from '../actions/actions';
 import {
     setNodeCardEvent
 } from '../actions/functionalActions';
 
 const mapStateToProps = state => ({
-    cards: state.cardState.filteredCards,
+    filteredPlaceCards: state.cardState.filteredPlaceCards,
     hotelCards: state.cardState.hotelCards,
-    placeCards: state.cardState.placeCards,
-    cardType: state.cardState.cardType,
     stylePlaceCards: state.cardState.placeStyleCards,
     styleHotelCards: state.cardState.hotelStyleCards
 });
@@ -31,6 +29,9 @@ const mapDispatchToProps = dispatch => {
         setCardType: (cardType) => {
             dispatch(setCardType(cardType));
         },
+        filterPlaceCards: () => {
+            dispatch(filterPlaceCards());
+        }
     };
 };
 

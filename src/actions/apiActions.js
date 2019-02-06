@@ -2,7 +2,7 @@
 import {
     updatePlaceCards, updateHotelCards, updateTripCards, updateHotelMapStyleCards, updateHotelStyleCards,
     updatePlaceMapStyleCards, updatePlaceStyleCards, updateTripMapStyleCards, updateTripStyleCards,
-     updatePlaceCardsWithPlaceState,setTripViewState
+     updatePlaceCardsWithPlaceState,setTripViewState,filterPlaceCards
 
 } from './actions';
 
@@ -308,6 +308,7 @@ export const fetchStoredItinObj = (userId) => {
             .then(data => {
                 dispatch(updateItinObj(data));
                 dispatch(updatePlaceCardsWithPlaceState(data.placeStates))
+                dispatch (filterPlaceCards());
                 dispatch(receiveItinObj());
             }
             );
