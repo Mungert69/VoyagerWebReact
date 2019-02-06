@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { PlaceListView } from '../components/PlaceListView';
 
 import {
-    setTripCardDetailLevel,setTripItem,setCard,setCardType,filterPlaceCards
+    setTripCardDetailLevel,setTripItem,setCard,setCardType,filterPlaceCards,toggleBuilderMode
 } from '../actions/actions';
 import {
     setNodeCardEvent
@@ -31,6 +31,9 @@ const mapDispatchToProps = dispatch => {
         },
         filterPlaceCards: () => {
             dispatch(filterPlaceCards());
+        },
+        toggleBuilderMode: (flag) => {
+            dispatch(toggleBuilderMode(flag));
         }
     };
 };

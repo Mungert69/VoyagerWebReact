@@ -104,6 +104,8 @@ const filterCards = (state, orderBy, queryTxt, cardType) => {
     return cardFilter.cards;
 }
 
+
+
 const filterPlaceCards = (state, orderBy, queryTxt) => {
     var cardFilter = new CardFilter('place', state);
     var test = cardFilter.filterPlaceCardsHopsFirst(orderBy, queryTxt);

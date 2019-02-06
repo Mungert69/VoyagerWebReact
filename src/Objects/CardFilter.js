@@ -21,9 +21,13 @@ function CardFilter(cardType, state) {
 
   this.filterPlaceCardsHopsFirst= function(orderBy, queryTxt) {
     var orderDir = orderBy ? "desc" : "asc";
-
-   var nextHops= this.cards.filter(item => item.placeState.isHop);
+var nextHops=[];
+try{
+   nextHops= this.cards.filter(item => item.placeState.isHop);
     nextHops=_.orderBy(nextHops, ["title"], [orderDir]);
+}
+catch (e){}
+
     var nonHops=this.cards.filter(item => {
       var countElements=nextHops.filter(hop => hop.title==item.title);
       return countElements.length==0;

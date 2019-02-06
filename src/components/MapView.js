@@ -139,13 +139,13 @@ export class MapView extends Component {
             this.setState({ item: params.item, prItem: params.prItem, defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: markers });
         } else {
             if (props.cardType === 'place' || props.cardType === 'hotel') {
-
-                let itemCount = props.cards.length;
+                var cards=props.cards;
+                let itemCount = cards.length;
                 var newCenter = this.state.defaultCenter;
                 var newZoom = this.state.defaultZoom;
 
                 if (props.item !== -1) {
-                    newCenter = { lat: parseFloat(props.cards.filter( obj => obj.id==props.item).map(obj =>  obj.latitude)), lng: parseFloat(props.cards.filter( obj => obj.id==props.item).map(obj => obj.longitude)) };
+                    newCenter = { lat: parseFloat(cards.filter( obj => obj.id==props.item).map(obj =>  obj.latitude)), lng: parseFloat(cards.filter( obj => obj.id==props.item).map(obj => obj.longitude)) };
                     newZoom = this.zoomLevelCalc(props.cardType);
                 }
                 this.setState({ defaultZoom: newZoom, defaultCenter: newCenter, itemNumber: itemCount, styleMode: styleString, markers: [] });

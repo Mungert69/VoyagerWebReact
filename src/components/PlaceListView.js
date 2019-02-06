@@ -21,6 +21,7 @@ export class PlaceListView extends Component {
 
     setCard = (card, index,cardType) => {
         this.setState({ card: card });
+        this.props.toggleBuilderMode(false);
         this.props.setCardType(cardType);
         this.props.setTripItem(card.id);
         this.props.setCard(card);
