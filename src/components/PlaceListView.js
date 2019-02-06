@@ -53,7 +53,7 @@ export class PlaceListView extends Component {
 
                                     </a>
                                     {
-                                        hotelCards.filter(filterHotelByPlace.bind(this,cardValue.id)).map(hotelCard => 
+                                        hotelCards.filter( hotelCard => cardValue.id == hotelCard.placeNameId).map(hotelCard => 
                                             <a onClick={() => this.setCard(hotelCard, hotelCard.index, 'hotel')}>
 
                                             <CardView styleCard={this.props.styleHotelCards[0]} key={hotelCard.id + hotelCard.title} card={hotelCard} />

@@ -11,21 +11,21 @@ function CardFilter(cardType, state) {
     this.cards = state.placeCards;
   }
 
+
   this.filterByTitle = function(orderBy, queryTxt) {
     var orderDir = orderBy ? "desc" : "asc";
 
     var filteredCards = [];
     this.cards = _.orderBy(this.cards, ["title"], [orderDir]);
 
-    filteredCArds= this.cards.filter(item => item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1);
-   /* this.cards.forEach(
+    this.cards.forEach(
       item => {
         if (item.title.toLowerCase().indexOf(queryTxt.toLowerCase()) !== -1) {
           filteredCards.push(item);
         }
       } //function
     ); //forEach
-*/
+
     this.cards = filteredCards;
   };
 

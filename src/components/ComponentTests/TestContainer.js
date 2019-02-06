@@ -64,11 +64,11 @@ export class TestContainer extends Component {
               {id: 4, value: "showVisualView", isChecked: false},
               {id: 5, value: "showNodeListView", isChecked: false},
               {id: 6, value: "showTripListView", isChecked: false},
-              {id: 7, value: "showTripView", isChecked: true},
+              {id: 7, value: "showTripView", isChecked: false},
               {id: 8, value: "showDetailView", isChecked: false},
               {id: 9, value: "showMenuListView", isChecked: false},
               {id: 10, value: "showCardDynView", isChecked: false},
-              {id: 11, value: "showPlaceListView", isChecked: false},
+              {id: 11, value: "showPlaceListView", isChecked: true},
               {id: 12, value: "placeHolder", isChecked: false},
               {id: 13, value: "placeHolder", isChecked: false}
             ]
