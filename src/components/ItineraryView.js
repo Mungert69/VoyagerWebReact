@@ -8,6 +8,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { AccommodationCharacteristics } from "./SubComponents/AccommodationCharacteristics";
 import {FlightView} from './FlightVIew';
+import { truncate } from "fs";
 export class ItineraryView extends Component {
   constructor(props) {
     super(props);
@@ -86,6 +87,14 @@ export class ItineraryView extends Component {
     this.props.changingFlight();
   };
 
+  setCard = (card, index,cardType) => {
+    this.props.toggleBuilderMode(true);
+    this.props.setCardType(cardType);
+    this.props.setTripItem(index);
+    this.props.setCard(card);
+    
+}
+
   renderPRSelections = itinObj => {
     if (itinObj === undefined) return;
     // Only render if there are items in the itinerary.
@@ -109,17 +118,19 @@ export class ItineraryView extends Component {
                                     <div className="Voyager_Trip_Control_Panel" >
                                         <div key="" className="flex-container">
                                             <div key="Control_Trip" className="Show">
+                                            <a onClick={() => this.setCard(prSelection.placeCard, index,'place')}>
                                                 <span className="Voyager_Control_Item_A">
-                                                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'place')}>View Builder Place</Button>
-                                                    <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight.bind(this)} addNight={this.addNight.bind(this)}  itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.place} card={prSelection.placeCard} />
+                                                     <CardDynView index={index} prSelection={prSelection} removeNight={this.removeNight.bind(this)} addNight={this.addNight.bind(this)}  itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.place} card={prSelection.placeCard} />
                                               </span>
+                                              </a>
                                             </div>
                                             <div key="Control_Places" className="Show" >
+                                            <a onClick={() => this.setCard(prSelection.hotelCard, index,'hotel')}>
+                                            
                                                 <span className="Voyager_Control_Item_A">
-                                                    <Button onClick={() => this.props.setBuilderCardEvent(null, index, 'hotel')}>View Builder Hotel</Button>
                                                     <CardDynView index={index} removeNight={this.removeNight} addNight={this.addNight}  itinObj={itinObj} styleCard={this.props.styleHotelCard} key={index + prSelection.hotel} card={prSelection.hotelCard} />
                                                 </span>
-                                               
+                                               </a>
                                             </div>
 
                                         </div>

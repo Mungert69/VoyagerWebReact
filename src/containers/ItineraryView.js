@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { ItineraryView } from '../components/ItineraryView';
 
-
+import {
+    setTripCardDetailLevel,setTripItem,setCard,setCardType,toggleBuilderMode
+} from '../actions/actions';
 import {
     fetchStoredItinObj
 } from '../actions/apiActions';
@@ -17,6 +19,19 @@ const mapDispatchToProps = dispatch => {
        
         fetchStoredItinObj: (userId) => {
             dispatch(fetchStoredItinObj(userId));
+        },
+        setCard: (cardVal) => {
+            dispatch(setCard(cardVal));
+        },
+        setTripItem: (item) => {
+            dispatch(setTripItem(item));
+        },
+        setCardType: (cardType) => {
+            dispatch(setCardType(cardType));
+        },
+       
+        toggleBuilderMode: (flag) => {
+            dispatch(toggleBuilderMode(flag));
         }
        
     };
