@@ -12,15 +12,13 @@ export class PlaceListView extends Component {
     constructor(props) {
 
         super(props);
-        this.state = {
-            card: {}
-        };
+       
         //this.props.filterPlaceCards();
 
     }//Constructor
 
     setCard = (card, index,cardType) => {
-        this.setState({ card: card });
+
         this.props.toggleBuilderMode(false);
         this.props.setCardType(cardType);
         this.props.setTripItem(card.id);
@@ -39,7 +37,7 @@ export class PlaceListView extends Component {
             <span >
                 <div className="Show"  >
                     {this.props.cardType === 'hotel' ?
-                        <MenuHotelListView card={this.state.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.state.card} styleCard={this.props.stylePlaceCards[2]} />
+                        <MenuHotelListView card={this.props.card} styleCard={this.props.styleHotelCards[2]} /> : <MenuPlaceListView card={this.props.card} styleCard={this.props.stylePlaceCards[2]} />
                     }</div>
                 <div className="Voyager_Card_A_Container_Panel_1"  >
                     <div className="Voyager_Card_A_Container_Panel_2"  >
