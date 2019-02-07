@@ -6,7 +6,7 @@ import MenuPlaceListView from '../containers/Menus/MenuPlaceListView';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { updatePlaceCardsWithPlaceState } from '../actions/actions';
-//import 'antd/dist/antd.css';
+
 
 export class PlaceListView extends Component {
     constructor(props) {
