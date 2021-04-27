@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.12",
-    "@fortawesome/free-brands-svg-icons": "^5.6.3",
-    "@fortawesome/free-solid-svg-icons": "^5.6.3",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "antd": "^3.12.3",
     "auth0-js": "^9.9.0",
     "bootstrap": "^3.4.0",
@@ -44,7 +40,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-pro": "^5.6.3",
     "eslint": "^5.12.0"
   }
 }
