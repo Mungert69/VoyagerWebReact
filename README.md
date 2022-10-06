@@ -1,1 +1,1 @@
-This project is the front end of a web app for Voyager World Travel. This is the react front end. It was unfinished. It is a little dated now as it uses component classes. Feel free to copy code if you find it usefull
+This project is the front end of a web app for Voyager World Travel. This is the react front end. It was unfinished. It is a little dated now as it uses component classes and Redux. Feel free to copy code if you find it usefull
